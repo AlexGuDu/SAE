@@ -1,0 +1,181 @@
+/* LOGIN */
+#login {
+  background: url("../imagenes/uabc-fca.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#header {
+  border-radius: 0px 0px 50px 75px;
+/*  height: 25%;
+  overflow: auto;*/
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+/*  padding: 8px 0 8px 0;*/
+}
+
+#Escudo {
+  height: 80%;
+  width: 9%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#Letras {
+  height: 25%;
+  width: 56%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#logo {
+  height: 50%;
+  width: 50%;
+  vertical-align: middle;
+  display: block;
+  margin: 0 auto;
+}
+
+#ingresar {
+  background: rgba(255, 255, 255, 0.9);
+  /*width: 60%;*/
+/*  padding-top: 10px;
+  padding-bottom: 1px;*/
+  margin: 60px auto auto auto;
+  border-radius: 30px 30px 30px 30px;
+}
+
+.textBox {
+  width: 50%;
+}
+
+#boton {
+  border-radius: 12px;
+  height: 30px;
+  width: 174px;
+    border-width: 1px;
+  transition-duration: 0.3s;
+    background-color: #FFFFFFFF;
+  border-color: #13673A;
+}
+
+#boton:hover {
+  background-color: #13673A;
+  color: white;
+}
+
+.textoLogin {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 15px;
+  color: #373737;
+  font-weight: 500;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.inputLogin {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+/* LOGIN */
+
+
+
+/* HEADER SAE */
+
+#interrogacion{
+	height: 95%;
+	width: 95%;
+}
+
+.top-buffer{
+	margin-top: 20px;
+}
+
+.top-buffer-alumno{
+	margin-top: 30px
+}
+/* HEADER SAE */
+
+
+/* ESTATUD ACTIVIDAD */
+.boton{
+	border-radius: 11px;
+	height: 30px;
+	width: 100%;
+	border-width: 1px;
+	transition-duration: 0.3s;
+	background-color: #FFF;
+	border-color: #13673A;
+}
+
+.boton:hover {
+	background-color: #13673A;
+	color: #FFF;
+}
+
+#header-table{
+	background-color: #13673A;
+	color: #FFF;
+}
+
+.scrollableStatus{
+    height: 300px;
+    overflow: scroll;
+  }
+/* ESTATUS ACTIVIDAD */
+
+
+
+/* REGISTRAR ACTIVIDAD */
+
+.fondo: {
+  background: url("../imagenes/solicitud-fondo.png");
+}
+
+#header-sae{
+  background: #FFFFFFFF;
+}
+
+#entirePage {
+  border-radius: 35px;
+  background: #F4F4F4FF;
+  height: 80%;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;
+  margin:0 auto;
+ }
+
+ #buttons {
+   background: rgba(60, 180, 180);
+   padding-top: 15px;
+   padding-bottom: 15px;
+
+  }
+
+  label{
+    font-weight: 600;
+  }
+
+  .scrollable{
+    height: 400px;
+    overflow: scroll;
+  }
+
+.btn{
+  border-radius: 11px;
+  transition-duration: 0.1s;
+  color: #111;
+  background-color: #FFF;
+  border-color: #13673A;
+}
+
+.btn:hover{
+  background-color: #13673A;
+  color: #FFF;
+}
+/* REGISTAR ACTIVIDAD */

@@ -1,0 +1,48 @@
+body{
+  background: url("../imagenes/solicitud-fondo.png");
+  background-size: 35% 40%;
+}
+
+#header-sae{
+  background: #FFFFFFFF;
+}
+
+#entirePage {
+  border-radius: 35px;
+  background: #F4F4F4FF;
+  height: 80%;
+  width: 80%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: block;
+  margin:0 auto;
+ }
+
+ #buttons {
+   background: rgba(60, 180, 180);
+   padding-top: 15px;
+   padding-bottom: 15px;
+
+  }
+
+  label{
+    font-weight: 600;
+  }
+
+  .scrollable{
+    height: 400px;
+    overflow: scroll;
+  }
+
+.btn{
+  border-radius: 11px;
+  transition-duration: 0.1s;
+  color: #111;
+  background-color: #FFF;
+  border-color: #13673A;
+}
+
+.btn:hover{
+  background-color: #13673A;
+  color: #FFF;
+}

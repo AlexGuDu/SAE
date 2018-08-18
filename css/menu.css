@@ -1,0 +1,19 @@
+.boton{
+	border-radius: 11px;
+	height: 30px;
+	width: 100%;
+	border-width: 1px;
+	transition-duration: 0.3s;
+	background-color: #FFF;
+	border-color: #13673A;
+}
+
+.boton:hover {
+	background-color: #13673A;
+	color: #FFF;
+}
+
+#header-table{
+	background-color: #13673A;
+	color: #FFF;
+}
