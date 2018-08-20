@@ -5,7 +5,7 @@ $('#Agregar').click(function(){
   };
   $.ajax({
     type : 'POST',
-    url : '_agregarMatricula.php',
+    url : '../control/agregarMatricula.php',
     data : datosEnviados,
     dataType : 'json',
     encode : true

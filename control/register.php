@@ -1,5 +1,5 @@
 <?php
-require_once '_connection.php';
+require_once '../config/connection.php';
 session_start();
 $matricula=$_POST['matricula'];
 $contra=$_POST['contra'];

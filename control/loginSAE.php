@@ -1,5 +1,5 @@
 <?php
-require_once '_connection.php';
+require_once '../config/connection.php';
 session_start();
 $matricula=$_POST['matricula'];
 $pass=$_POST['contra'];
@@ -15,13 +15,13 @@ if(strlen($matricula) > 0 && strlen($pass) > 0){
   endforeach;
   echo "$bandera";
   if ($bandera==1) {
-    header('Location: menu.html');
+    header('Location: ../views/menu.html');
   }else {
     $_SESSION['error']=1;
-    header('Location: home.php');
+    header('Location: ../views/home.php');
   }
 }else{
   $_SESSION['error']=1;
-header('Location: home.php');
+header('Location: ../views/home.php');
 }
 ?>
