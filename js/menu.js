@@ -3,8 +3,8 @@ document.getElementById('registrarActividad').addEventListener('click', openRegi
 
 
 function openSolicitud(){
-  window.location.href = "solicitud.html";
+  window.location.href = "../views/solicitud.html";
 }
 function openRegistro(){
-  window.location.href = "registrar.html";
+  window.location.href = "../views/registrar.html";
 }

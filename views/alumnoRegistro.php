@@ -6,8 +6,8 @@ Session_start();
 <head>
 	<!-- BOOTSTRAP Y CSS STYLES -->
 	<title>Registro de alumnos</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/alumnoRegistro.css">
+	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../styles/css/alumnoRegistro.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 </head>
@@ -17,8 +17,8 @@ Session_start();
 <div class="container-fluid" id="header">
 	<div class="row" >
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<img id="Escudo" src="imagenes/logo-uabc.png" alt="Escudo UABC">
-			<img id="Letras" src="imagenes/uabc-letras.png" alt="Letras UABC">
+			<img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC">
+			<img id="Letras" src="../assets/img/uabc-letras.png" alt="Letras UABC">
 		</div>
 	</div>
 </div>
@@ -28,8 +28,8 @@ Session_start();
 <div class="container-fluid" >
 	<div class="row">
 		<div id="registro" class="col-11 col-md-10 col-lg-6">
-			<img id="logo" src="imagenes/Logo Oficial.png" alt="Escudo S.A.E.">
-			<form action="_registrarse.php" method="post">
+			<img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
+			<form action="../control/register.php" method="post">
 			<p class="texto">Matricula</p>
 			<input class="textBox form-control block" type="text" name="matricula" autofocus="autofocus">
 			<p class="texto">Contrase&ntilde;a</p>
@@ -44,7 +44,7 @@ Session_start();
 			<?php
 			if(isset($_SESSION['error'])){
 				if ($_SESSION['error']=1) {
-					echo '<p style="color:rgb(255,0,0);">La cuentra que trata de ingregrar ya se encuentra registrada.</p>';
+					echo '<p style="color:rgb(255,0,0);">La cuentra que trata de ingresar ya se encuentra registrada.</p>';
 				}
 				unset($_SESSION['error']);
 			}

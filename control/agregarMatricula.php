@@ -1,5 +1,5 @@
 <?php
-require '_connection.php';
+require '../config/connection.php';
 session_start();
 $matricula=$_POST['matricula'];
 $sql="SELECT * FROM alumno where Matricula='$matricula'";

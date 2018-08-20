@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/menu.css">
+    <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -16,7 +16,7 @@
     <!-- HEADER -->
     <div id="Header">
         <script type="text/javascript">
-            $("#Header").load("__header-sae.php #header-sae");
+            $("#Header").load("shared/_header-sae.php #header-sae");
         </script>
     </div>
     <!-- FIN HEADER -->
@@ -74,14 +74,14 @@
         </div>
         <div class="row justify-content-center">
 
-        <form class="" action="_salir.php">
+        <form class="" action="../control/logout.php">
         <input type="submit" name="" class="boton" value="Salir">
         </form>
         </div>
     </div>
     <!-- FIN TABLA ACTIVIDADES -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
 
 </html>

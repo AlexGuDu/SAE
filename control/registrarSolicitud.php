@@ -1,5 +1,5 @@
 <?php
-require '_connection.php';
+require '../config/connection.php';
 session_start();
   $territorio=$_POST['territorio'];
   if ($territorio=="Nacional") {
