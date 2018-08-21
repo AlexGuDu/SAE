@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Solicitud</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../styles/css/solicitud.css" rel="stylesheet">
   </head>
