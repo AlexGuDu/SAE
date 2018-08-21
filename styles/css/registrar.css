@@ -1,48 +1,115 @@
 body{
-  background: url("../assets/img/solicitud-fondo.png");
-  background-size: 35% 40%;
+     background: url("../assets/img/solicitud-fondo.png");
+     background-size: 35% 40%;
 }
-
-#header-sae{
-  background: #FFFFFFFF;
+ #header-sae{
+     background: #FFFFFFFF;
+     animation-name: openHeader;
+     animation-duration: 1.3s;
+     opacity: 0.95;
 }
-
-#entirePage {
-  border-radius: 35px;
-  background: #F4F4F4FF;
-  height: 80%;
-  width: 80%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: block;
-  margin:0 auto;
- }
-
+ #entirePage {
+     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
+     border-radius: 35px;
+     background: #F4F4F4FF;
+     height: 80%;
+     width: 70%;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     display: block;
+     margin:0 auto;
+}
  #buttons {
-   background: rgba(60, 180, 180);
-   padding-top: 15px;
-   padding-bottom: 15px;
-
-  }
-
-  label{
-    font-weight: 600;
-  }
-
-  .scrollable{
-    height: 400px;
-    overflow: scroll;
-  }
-
-.btn{
-  border-radius: 11px;
-  transition-duration: 0.1s;
-  color: #111;
-  background-color: #FFF;
-  border-color: #13673A;
+     background: rgba(60, 180, 180);
+     padding-top: 15px;
+     padding-bottom: 15px;
 }
-
-.btn:hover{
-  background-color: #13673A;
-  color: #FFF;
+ label{
+     font-weight: 600;
 }
+ .scrollable{
+     height: 560px;
+     overflow: scroll;
+}
+ .btn{
+     border-radius: 11px;
+     transition-duration: 0.1s;
+     color: #111;
+     background-color: #FFF;
+     border-color: #13673A;
+}
+ .btn:hover{
+     background-color: #13673A;
+     color: #FFF;
+}
+ .modal{
+     display: none;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.5);
+     animation-name: openModalBlock;
+     animation-duration: 1.5s;
+}
+ .modal-content{
+     background-color: #f4f4f4;
+     margin: 20% auto;
+     padding: 20px;
+     width: 40%;
+     height: 13%;
+     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
+     animation-name: openModalBlock;
+     animation-duration: 1.5s;
+}
+ .closeBtn{
+     color: #fff;
+     float: right;
+     font-size: 35px;
+}
+ #confirmacionSi{
+     max-width: inherit;
+     width: 155px;
+}
+ #confirmacionNo{
+     max-width: inherit;
+     width: 155px;
+}
+ #section_one{
+     display: block;
+     animation-name: openSection;
+     animation-duration: 1.5s;
+}
+ #section_two{
+     display: none;
+     animation-name: openSection;
+     animation-duration: 1.5s;
+}
+ #section_three{
+     display: none;
+     animation-name: openSection;
+     animation-duration: 1.5s;
+}
+ #formExt{
+     display: none;
+}
+ @keyframes openSection{
+     from{
+        opacity: 0
+    }
+     to {
+        opacity: 1
+    }
+}
+ @keyframes openHeader{
+     from{
+        opacity: 0
+    }
+     to {
+        opacity: 0.95
+    }
+}
+ 

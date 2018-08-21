@@ -23,75 +23,76 @@
         </script>
     </div>
     <!-- FIN HEADER  -->
+
     <form name="entireForm" action="control/registrarSolicitud.php" method="post">
-    <div style="height:30px"></div>
-    <div id="entirePage">
+        <div style="height:30px"></div>
+        <div id="entirePage">
 
-        <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
+            <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
 
-        <div id="section_one">
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
+            <div id="section_one">
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4">
 
-                        <label> SELECCIONE SI EL EVENTO SERA DENTRO DE TERRITORIO NACIONAL O EXTRANJERO: </label>
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-success btn-sm active" id="territorioNac">
+                            <label> SELECCIONE SI EL EVENTO SERA DENTRO DE TERRITORIO NACIONAL O EXTRANJERO: </label>
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success btn-sm active" id="territorioNac">
                               <input type="radio" name="territorio" value="Nacional" checked> NACIONAL
                             </label>
-                            <label class="btn btn-success btn-sm" id="territorioExt">
+                                <label class="btn btn-success btn-sm" id="territorioExt">
                               <input type="radio" name="territorio" value="Extranjero"> EXTRANJERO
                             </label>
-                        </div>
-                        <br> <br>
+                            </div>
+                            <br> <br>
 
-                        <!-- FORMS - TERRITORIO NACIONAL/EXTRANJERO -->
+                            <!-- FORMS - TERRITORIO NACIONAL/EXTRANJERO -->
 
-                        <div id="formNac" class="form-group">
-                            <label> SELECCIONE EL ESTADO: </label>
-                            <select class="form-control form-control-sm" name="estado">
+                            <div id="formNac" class="form-group">
+                                <label> SELECCIONE EL ESTADO: </label>
+                                <select class="form-control form-control-sm" name="estado">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="DIF">Distrito Federal</option>
-                            	<option value="AGS">Aguascalientes</option>
-                            	<option value="BCN">Baja California</option>
-                            	<option value="BCS">Baja California Sur</option>
-                            	<option value="CAM">Campeche</option>
-                            	<option value="CHP">Chiapas</option>
-                            	<option value="CHI">Chihuahua</option>
-                            	<option value="COA">Coahuila</option>
-                            	<option value="COL">Colima</option>
-                            	<option value="DUR">Durango</option>
-                            	<option value="GTO">Guanajuato</option>
-                            	<option value="GRO">Guerrero</option>
-                            	<option value="HGO">Hidalgo</option>
-                            	<option value="JAL">Jalisco</option>
-                            	<option value="MEX">M&eacute;xico</option>
-                            	<option value="MIC">Michoac&aacute;n</option>
-                            	<option value="MOR">Morelos</option>
-                            	<option value="NAY">Nayarit</option>
-                            	<option value="NLE">Nuevo Le&oacute;n</option>
-                            	<option value="OAX">Oaxaca</option>
-                            	<option value="PUE">Puebla</option>
-                            	<option value="QRO">Quer&eacute;taro</option>
-                            	<option value="ROO">Quintana Roo</option>
-                            	<option value="SLP">San Luis Potos&iacute;</option>
-                            	<option value="SIN">Sinaloa</option>
-                            	<option value="SON">Sonora</option>
-                            	<option value="TAB">Tabasco</option>
-                            	<option value="TAM">Tamaulipas</option>
-                            	<option value="TLX">Tlaxcala</option>
-                            	<option value="VER">Veracruz</option>
-                            	<option value="YUC">Yucat&aacute;n</option>
-                            	<option value="ZAC">Zacatecas</option>
+                              <option value="AGS">Aguascalientes</option>
+                              <option value="BCN">Baja California</option>
+                              <option value="BCS">Baja California Sur</option>
+                              <option value="CAM">Campeche</option>
+                              <option value="CHP">Chiapas</option>
+                              <option value="CHI">Chihuahua</option>
+                              <option value="COA">Coahuila</option>
+                              <option value="COL">Colima</option>
+                              <option value="DUR">Durango</option>
+                              <option value="GTO">Guanajuato</option>
+                              <option value="GRO">Guerrero</option>
+                              <option value="HGO">Hidalgo</option>
+                              <option value="JAL">Jalisco</option>
+                              <option value="MEX">M&eacute;xico</option>
+                              <option value="MIC">Michoac&aacute;n</option>
+                              <option value="MOR">Morelos</option>
+                              <option value="NAY">Nayarit</option>
+                              <option value="NLE">Nuevo Le&oacute;n</option>
+                              <option value="OAX">Oaxaca</option>
+                              <option value="PUE">Puebla</option>
+                              <option value="QRO">Quer&eacute;taro</option>
+                              <option value="ROO">Quintana Roo</option>
+                              <option value="SLP">San Luis Potos&iacute;</option>
+                              <option value="SIN">Sinaloa</option>
+                              <option value="SON">Sonora</option>
+                              <option value="TAB">Tabasco</option>
+                              <option value="TAM">Tamaulipas</option>
+                              <option value="TLX">Tlaxcala</option>
+                              <option value="VER">Veracruz</option>
+                              <option value="YUC">Yucat&aacute;n</option>
+                              <option value="ZAC">Zacatecas</option>
                             </select>
-                            <br>
-                            <label>INGRESE LA CIUDAD: </label>
-                            <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad">
-                        </div>
-                        <div id="formExt" class="form-group">
-                            <label>SELECCIONE EL PAIS: </label>
-                            <select class="form-control form-control-sm" name="pais" >
+                                <br>
+                                <label>INGRESE LA CIUDAD: </label>
+                                <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad">
+                            </div>
+                            <div id="formExt" class="form-group">
+                                <label>SELECCIONE EL PAIS: </label>
+                                <select class="form-control form-control-sm" name="pais">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="USA">Estados Unidos</option>
                               <option value="CAN">Canadá</option>
@@ -336,18 +337,18 @@
                               <option value="ZMB">Zambia</option>
                               <option value="ZWE">Zimbabue</option>
                             </select>
-                            <br>
-                            <label>INGRESE EL ESTADO: </label>
-                            <input type="text" class="form-control" placeholder="ej. California" name="estado_extranjera">
-                            <br>
-                            <label>INGRESE LA CIUDAD: </label>
-                            <input type="text" class="form-control" placeholder="ej. Anaheim" name="ciudad_extranjera">
-                        </div>
-                        <div style="height:5px;"></div>
-                        <hr style="height: 10px;">
-                        <div class="form-group">
-                            <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
-                            <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento">
+                                <br>
+                                <label>INGRESE EL ESTADO: </label>
+                                <input type="text" class="form-control" placeholder="ej. California" name="estado_extranjera">
+                                <br>
+                                <label>INGRESE LA CIUDAD: </label>
+                                <input type="text" class="form-control" placeholder="ej. Anaheim" name="ciudad_extranjera">
+                            </div>
+                            <div style="height:5px;"></div>
+                            <hr style="height: 10px;">
+                            <div class="form-group">
+                                <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
+                                <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento">
                                 <option selected disabled hidden> SELECCIONE </option>
                                 <option value="1"> Vinculacion </option>
                                 <option value="2"> Cientifica </option>
@@ -355,10 +356,10 @@
                                 <option value="4"> Responsabilidad Social </option>
                                 <option value="5"> Cultural </option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                            <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad">
+                            </div>
+                            <div class="form-group">
+                                <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
+                                <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad">
                                 <option selected disabled hidden value="0"> SELECCIONE </option>
                                 <option hidden value="1"> Visitas Empresariales </option>
                                 <option hidden value="2"> Viajes de Estudio </option>
@@ -372,184 +373,184 @@
                                 <option hidden value="10"> Caminata </option>
                                 <option hidden value="11"> Otro </option>
                             </select>
-                        </div>
-                        <div style="height:5px;"></div>
-                        <hr style="height: 10px;">
-                        <div class="form-group">
-                            <label>FECHA INICIAL DEL EVENTO: </label> <br>
-                            <input type="date" class="form-control" name="fecha">
-                        </div>
-                        <div class="form-group">
-                            <label>HORA INICIAL DEL EVENTO: </label> <br>
-                            <input type="time" class="form-control" name="hora">
-                        </div>
-                    </div>
-                    <!-- End of left column -->
-                    <div class="col">  </div>
-
-                    <div class="col-md-7 col-sm-7">
-                        <div class="form-group">
-                            <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-lg" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2" id="matriculas">
-                                <div class="input-group-append">
-                                    <button  class="btn btn-success" id="Agregar"  type="button">Agregar</button>
-                                </div>
+                            </div>
+                            <div style="height:5px;"></div>
+                            <hr style="height: 10px;">
+                            <div class="form-group">
+                                <label>FECHA INICIAL DEL EVENTO: </label> <br>
+                                <input type="date" class="form-control" name="fecha">
+                            </div>
+                            <div class="form-group">
+                                <label>HORA INICIAL DEL EVENTO: </label> <br>
+                                <input type="time" class="form-control" name="hora">
                             </div>
                         </div>
-                        <br>
-                        <div class="scrollable">
-                            <table class="table table-bordered" id="datos_tabla">
-                                <thead>
-                                    <tr>
-                                        <td>Matricula</td>
-                                        <td>Nombre</td>
-                                        <td>Carrera</td>
-                                        <td>Grupo</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Cargar Matriculas - AJAX -->
+                        <!-- End of left column -->
+                        <div class="col"> </div>
 
-                                    <!-- Cargar Matriculas - AJAX -->
-                                </tbody>
-                            </table>
+                        <div class="col-md-7 col-sm-7">
+                            <div class="form-group">
+                                <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2" id="matriculas">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" id="Agregar" type="button">Agregar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="scrollable">
+                                <table class="table table-bordered" id="datos_tabla">
+                                    <thead>
+                                        <tr>
+                                            <td>Matricula</td>
+                                            <td>Nombre</td>
+                                            <td>Carrera</td>
+                                            <td>Grupo</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Cargar Matriculas - AJAX -->
+
+                                        <!-- Cargar Matriculas - AJAX -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- End of right column -->
+                    </div>
+                    <!-- End of row -->
+                </div>
+                <!-- End first row container -->
+
+                <br>
+
+                <!-- LUGAR DEL EVENTO -->
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>LUGAR DEL EVENTO</label>
+                                <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento">
+                            </div>
+                            <br>
+                            <div class="text-center"><button type="button" id="nextBtn_one" class="btn btn-success btn-lg">SIGUIENTE</button></div>
                         </div>
                     </div>
-                    <!-- End of right column -->
                 </div>
-                <!-- End of row -->
+                <!-- End second row container -->
             </div>
-            <!-- End first row container -->
+            <!-- end section one -->
 
-            <br>
+            <!-- FIN LIGAR DEL EVENTO -->
 
-            <!-- LUGAR DEL EVENTO -->
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label>LUGAR DEL EVENTO</label>
-                            <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento">
+
+            <!-- DATOS DE LA ACTIVIDAD -->
+
+            <div id="section_two">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="text-center"><button type="button" id="previousBtn_one" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
+                            <div class="form-group">
+                                <label for="nombreEmpresa">Nombre de la empresa:</label>
+                                <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa">
+                            </div>
                         </div>
-                        <br>
-                        <div class="text-center"><button type="button" id="nextBtn_one" class="btn btn-success btn-lg">SIGUIENTE</button></div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="temaVisita">Tema de la visita:</label>
+                                <input type="text" class="form-control" id="temaVisita" name="temaVisita">
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="recibeEmpresa">Nombre de quien los recibe en la empresa:</label>
+                                <input type="text" class="form-control" id="recibeEmpresa" name="recibeEmpresa">
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="contactoEmpresa">Datos de contacto de la empresa:</label>
+                                <input type="text" class="form-control" id="contactoEmpresa" name="contactoEmpresa">
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <button type="button" id="nextBtn_two" class="btn btn-success btn-lg">SIGUIENTE</button>
+                            </div>
+                        </div>
                     </div>
+                    <!-- End of Justified-Center Row -->
+                </div>
+                <!-- End third row container -->
+            </div>
+            <!-- End section two -->
+
+            <!-- FIN DATOS DE LA ACTIVIDAD -->
+
+            <!-- JUSTIFICACION DEL EVENTO -->
+
+            <div id="section_three">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-sm-8">
+                            <div class="text-center"><button type="button" id="previousBtn_two" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
+                            <div class="form-group">
+                                <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
+                                <input type="text" class="form-control" id="objetivoEvento" name="objetivoEvento">
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
+                                <select class="form-control" id="materiaFortalecida" name="materiaFortalecida"></select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
+                                <input type="text" class="form-control" id="maestroMateria" name="maestroMateria">
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
+                                <select class="form-control" id="aspectoProfesional" name="aspectoProfesional"></select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8">
+                            <div class="form-group">
+                                <label for="proponeAsistir">Quien propone asistir al evento: </label>
+                                <select class="form-control" id="proponeAsistir" name="proponeAsistir"></select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- End of Justified-Center Row </from> -->
+                    <hr>
+                    <div class="text-center">
+                        <button id="solicitarPermiso" class="btn btn-success btn-lg" type="submit">SOLICITAR PERMISO</button>
+                    </div>
+
                 </div>
             </div>
-            <!-- End second row container -->
+            <!-- end section three -->
+            <!-- FIN JUSTIFICACION DEL EVENTO -->
         </div>
-        <!-- end section one -->
-
-        <!-- FIN LIGAR DEL EVENTO -->
-
-
-        <!-- DATOS DE LA ACTIVIDAD -->
-
-        <div id="section_two">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-sm-8">
-                      <div class="text-center"><button type="button" id="previousBtn_one" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
-                        <div class="form-group">
-                            <label for="nombreEmpresa">Nombre de la empresa:</label>
-                            <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa">
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="temaVisita">Tema de la visita:</label>
-                            <input type="text" class="form-control" id="temaVisita" name="temaVisita">
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="recibeEmpresa">Nombre de quien los recibe en la empresa:</label>
-                            <input type="text" class="form-control" id="recibeEmpresa" name="recibeEmpresa">
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="contactoEmpresa">Datos de contacto de la empresa:</label>
-                            <input type="text" class="form-control" id="contactoEmpresa" name="contactoEmpresa">
-                        </div>
-                        <br>
-                        <div class="text-center">
-                            <button type="button" id="nextBtn_two"  class="btn btn-success btn-lg">SIGUIENTE</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- End of Justified-Center Row -->
-            </div>
-            <!-- End third row container -->
-        </div>
-        <!-- End section two -->
-
-        <!-- FIN DATOS DE LA ACTIVIDAD -->
-
-        <!-- JUSTIFICACION DEL EVENTO -->
-
-        <div id="section_three">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-sm-8">
-                      <div class="text-center"><button type="button" id="previousBtn_two" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
-                        <div class="form-group">
-                            <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
-                            <input type="text" class="form-control" id="objetivoEvento" name="objetivoEvento">
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                            <select class="form-control" id="materiaFortalecida" name="materiaFortalecida"></select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
-                            <input type="text" class="form-control" id="maestroMateria" name="maestroMateria">
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
-                            <select class="form-control" id="aspectoProfesional" name="aspectoProfesional"></select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-8 col-sm-8">
-                        <div class="form-group">
-                            <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                            <select class="form-control" id="proponeAsistir" name="proponeAsistir"></select>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- End of Justified-Center Row </from> -->
-                <hr>
-                <div class="text-center">
-                    <button id="solicitarPermiso" class="btn btn-success btn-lg" type="submit">SOLICITAR PERMISO</button>
-                </div>
-
-            </div>
-        </div>
-        <!-- end section three -->
-        <!-- FIN JUSTIFICACION DEL EVENTO -->
-    </div>
-  </form>
+    </form>
     <div style="height:40px"></div>
     <div id="warningModal" class="modal">
-      <div class="modal-content">
-           <h2>Favor de llenar todos los campos.</h2>
-      </div>
+        <div class="modal-content">
+            <h2>Favor de llenar todos los campos.</h2>
+        </div>
     </div>
 
 </body>
@@ -557,4 +558,5 @@
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.min.js"></script>
 <script src="../js/solicitud.js"></script>
+
 </html>

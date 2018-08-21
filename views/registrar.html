@@ -23,291 +23,305 @@
     </div>
     <!-- FIN HEADER -->
 
-    <div id="entirePage">
-        <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <p>
-                        <label>LA ACTIVIDAD SE REALIZO DENTRO DEL CAMPUS?</label>
-                    </p>
-                    <p>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" name="campus" id="dentroSi" value="si">
-                            <label for="dentroSi" class="form-check-label">Si</label>
+    <form name="entireForm" action="control/registrarSolicitud.php" method="post">
+        <div style="height:30px"></div>
+        <div id="entirePage">
+            <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <p>
+                            <label>LA ACTIVIDAD SE REALIZO DENTRO DEL CAMPUS?</label>
+                        </p>
+
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-success btn-sm active" id="confirmacionSi">
+                        <input type="radio" name="confirmacion" value="Si" checked> SI
+                    </label>
+                            <label class="btn btn-success btn-sm" id="confirmacionNo">
+                        <input type="radio" name="confirmacion" value="No"> NO
+                    </label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input type="radio" class="form-check-input" name="campus" id="dentroNo" value="no">
-                            <label for="dentroNo" class="form-check-label">No</label>
-                        </div>
-                    </p>
-                </div>
-                <div class="col-7">
-                    <div class="form-group">
-                        <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
-                        <select class="form-control">
+                    </div>
+                    <div class="col"> </div>
+                    <div class="col-7">
+                        <div class="form-group">
+                            <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
+                            <select class="form-control">
                             <option value="1002">Contabilidad para...</option>
                             <option value="1003">Hacienda y Credito publico</option>
                         </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-11 col-md-4">
-                    <div class="form-group">
-                        <label>ELIJA EL TIPO DE EVENTO DE INTERES: </label>
-                        <select class="form-control">
+                <div class="row">
+                    <div class="col-11 col-md-4">
+                        <div class="form-group">
+                            <label>ELIJA EL TIPO DE EVENTO DE INTERES: </label>
+                            <select class="form-control">
                             <option value="Vinculacion">Vinculacion</option>
                             <option value="Cultural">Cultural</option>
                             <option value="Deportiva">Deportiva</option>
                             <option value="Responsabilidad Social">Responsabilidad Social</option>
                             <option value="Ci entifica">Cientifica</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                        <select class="form-control" disabled="disabled">>
+                        </div>
+                        <div class="form-group">
+                            <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
+                            <select class="form-control" disabled="disabled">>
                         </select>
-                    </div>
-                    <div style="height:5px;"></div>
-                    <hr style="height: 10px;">
-                    <!-- STATE AND CITY DROPDOWNS -->
-                    <div class="form-group">
-                        <label>SELECCIONE EL ESTADO:</label>
-                        <select class="form-control">
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>SELECCIONE LA CIUDAD: </label>
-                        <select class="form-control" disabled="disabled">
+                        </div>
+                        <div style="height:5px;"></div>
+                        <hr style="height: 10px;">
+                        <!-- STATE AND CITY DROPDOWNS -->
+                        <div class="form-group">
+                            <label>SELECCIONE EL ESTADO:</label>
+                            <select class="form-control">
 
                         </select>
-                    </div>
-                    <div style="height:5px;"></div>
-                    <hr style="height: 10px;">
-                    <div class="form-group">
-                        <label>FECHA INICIAL DEL EVENTO: </label>
-                        <select class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>SELECCIONE LA CIUDAD: </label>
+                            <select class="form-control" disabled="disabled">
 
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label>HORA INICIAL DEL EVENTO: </label>
-                        <select class="form-control">
+                        </div>
+                        <div style="height:5px;"></div>
+                        <hr style="height: 10px;">
+                        <div class="form-group">
+                            <label>FECHA INICIAL DEL EVENTO: </label>
+                            <select class="form-control">
 
                         </select>
-                    </div>
-                </div>
-                <!-- End of left column -->
-                <!--    <div class="col-md-1">
+                        </div>
+                        <div class="form-group">
+                            <label>HORA INICIAL DEL EVENTO: </label>
+                            <select class="form-control">
 
-        </div> -->
-
-                <div class="col-11 col-md-7">
-                    <div class="form-group">
-                        <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-dark" type="button">Ingresar</button>
-                            </div>
+                        </select>
                         </div>
                     </div>
+                    <!-- End of left column -->
+                    <!--    <div class="col-md-1">
 
-                    <br>
-                    <div class="scrollable">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <td>matricula</td>
-                                    <td>nombre</td>
-                                    <td>carrera</td>
-                                    <td>grupo</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                                <tr>
-                                    <td>123445</td>
-                                    <td>oscar lopez</td>
-                                    <td>LI</td>
-                                    <td>362</td>
-                                </tr>
-                            </tbody>
+        </div> -->
+                    <div class="col"> </div>
+                    <div class="col-11 col-md-7">
+                        <div class="form-group">
+                            <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-dark" type="button">Ingresar</button>
+                                </div>
+                            </div>
+                        </div>
 
-                        </table>
+                        <br>
+                        <div class="scrollable">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>matricula</td>
+                                        <td>nombre</td>
+                                        <td>carrera</td>
+                                        <td>grupo</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                    <tr>
+                                        <td>123445</td>
+                                        <td>oscar lopez</td>
+                                        <td>LI</td>
+                                        <td>362</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </div>
 
                     </div>
-
+                    <!-- End of right column -->
                 </div>
-                <!-- End of right column -->
+                <!-- End of row -->
             </div>
-            <!-- End of row -->
-        </div>
-        <!-- End first row container -->
+            <!-- End first row container -->
 
-        <br>
+            <br>
 
-        <!-- LUGAR DEL EVENTO -->
-        <div class="container">
-            <div class="row">
-                <div class="col-11">
-                    <div class="form-group">
-                        <label>LUGAR DEL EVENTO</label>
-                        <input type="text" class="form-control" placeholder="ej. CECUT">
-                    </div>
-                    <br>
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-lg">SIGUIENTE</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FIN LIGAR DEL EVENTO -->
-
-        <hr>
-        <br>
-        <br>
-
-        <!-- DATOS DE LA ACTIVIDAD -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="nombreActividad">Nombre de la actividad:</label>
-                        <input type="text" class="form-control" id="nombreActividad">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="nombreOrganiza">Nombre de quien organiza:</label>
-                        <input type="text" class="form-control" id="nombreOrganiza">
-                    </div>
-                    <br>
-                    <div class="text-center">
-                        <button class="btn btn-primary btn-lg">SIGUIENTE</button>
+            <!-- LUGAR DEL EVENTO -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-11">
+                        <div class="form-group">
+                            <label>LUGAR DEL EVENTO</label>
+                            <input type="text" class="form-control" placeholder="ej. CECUT">
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg">SIGUIENTE</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- FIN DATOS DE LA ACTIVIDAD -->
+            <!-- FIN LIGAR DEL EVENTO -->
 
-        <hr>
-        <br>
-        <br>
-
-        <!-- JUSTIFICACION DEL EVENTO -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
-                        <input type="text" class="form-control" id="objetivoEvento">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                        <select class="form-control" id="materiaFortalecida" disabled="disabled"></select>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
-                        <input type="text" class="form-control" id="maestroMateria">
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="aspectoProfesional">Aspecto profecional que se fortalecera por la realizacion de esta actividad: </label>
-                        <select class="form-control" id="aspectoProfesional" disabled="disabled"></select>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-8 col-md-7">
-                    <div class="form-group">
-                        <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                        <select class="form-control" id="proponeAsistir" disabled="disabled"></select>
-                    </div>
-                </div>
-            </div>
             <hr>
-            <div class="text-center">
-                <button class="btn btn-primary btn-lg">SOLICITAR PERMISO</button>
+            <br>
+            <br>
+
+            <!-- DATOS DE LA ACTIVIDAD -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="nombreActividad">Nombre de la actividad:</label>
+                            <input type="text" class="form-control" id="nombreActividad">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="nombreOrganiza">Nombre de quien organiza:</label>
+                            <input type="text" class="form-control" id="nombreOrganiza">
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-lg">SIGUIENTE</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- FIN DATOS DE LA ACTIVIDAD -->
+
+            <hr>
+            <br>
+            <br>
+
+            <!-- JUSTIFICACION DEL EVENTO -->
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
+                            <input type="text" class="form-control" id="objetivoEvento">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
+                            <select class="form-control" id="materiaFortalecida" disabled="disabled"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
+                            <input type="text" class="form-control" id="maestroMateria">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="aspectoProfesional">Aspecto profecional que se fortalecera por la realizacion de esta actividad: </label>
+                            <select class="form-control" id="aspectoProfesional" disabled="disabled"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-7">
+                        <div class="form-group">
+                            <label for="proponeAsistir">Quien propone asistir al evento: </label>
+                            <select class="form-control" id="proponeAsistir" disabled="disabled"></select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg">SOLICITAR PERMISO</button>
+                </div>
+            </div>
+            <!-- FIN JUSTIFICACION DEL EVENTO -->
         </div>
-        <!-- FIN JUSTIFICACION DEL EVENTO -->
+    </form>
+
+    <div style="height:40px"></div>
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <h2>Favor de llenar todos los campos.</h2>
+        </div>
     </div>
 
 </body>
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="../assets/bootstrap/bootstrap.min.js"></script>
+<script src="../js/solicitud.js"></script>
 
 </html>
