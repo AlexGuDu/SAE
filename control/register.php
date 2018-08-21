@@ -21,7 +21,7 @@ foreach ($stament as $filas):
           // QUita esta cosita del alert pofavo
           echo'<script type="text/javascript">
           alert("Alumno registrado");
-          window.location.href="home.php";
+          window.location.href="../views.home.php";
           </script>';
 
         }else {

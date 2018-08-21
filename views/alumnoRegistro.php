@@ -29,7 +29,7 @@ Session_start();
 	<div class="row">
 		<div id="registro" class="col-11 col-md-10 col-lg-6">
 			<img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
-			<form action="../control/register.php" method="post">
+			<form id="ingresarForm" action="../control/register.php" method="post">
 			<p class="texto">Matricula</p>
 			<input class="textBox form-control block" type="text" name="matricula" autofocus="autofocus">
 			<p class="texto">Contrase&ntilde;a</p>
@@ -50,8 +50,9 @@ Session_start();
 			}
 			?>
 			<br>
-			<input id="boton" type="button" name="Registrar" value="Registrar">
-			</form>
+      </form>
+			<input id="boton" type="SUBMIT" name="Registrar" form="ingresarForm" value="Registrar">
+
 			<br>
 		</div>
 	</div>

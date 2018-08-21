@@ -52,7 +52,7 @@ $stament->execute();
                     <p class="text-center">Nombre del Alumno</p>
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center"><?php
-                      echo $filas['ApePat']." ".$filas['ApeMat']." ".$filas['Nombre'];
+                      echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
                     ?></p>
                 </div>
                 <div class="col-4">

@@ -1,8 +1,9 @@
 <?php
-define('SERVER', '148.231.130.234');
-define('DATABASE', 'alu36216');
-define('USERNAME', 'alu36216');
-define('PASSWORD', 'alumno16');
+
+define('SERVER', 'localhost');
+define('DATABASE', 'sae');
+define('USERNAME', 'root');
+define('PASSWORD', '');
 
 try {
   $dbh = new PDO(
