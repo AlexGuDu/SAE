@@ -2,7 +2,7 @@
 <?php
 Session_start();
 if(isset($_SESSION['matricula'])){
-	header('Location: views/menu.html');
+	header('Location: menu.html');
 }
 ?>
 <html lang="en">

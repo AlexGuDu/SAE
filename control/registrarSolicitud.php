@@ -60,7 +60,7 @@ session_start();
   and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable'";
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   foreach ($filas as $filas) :
-    $folio= $filas['Folio'];
+    $folio= $filas['folio'];
   endforeach;
 
 
