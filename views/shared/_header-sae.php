@@ -9,7 +9,7 @@ $stament->execute();
  ?>
 <html>
 
-<head>
+<head >
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Bootstrap and CSS styles -->
@@ -19,7 +19,7 @@ $stament->execute();
     <link rel="stylesheet" href="../styles/css/header-sae.css">
 </head>
 
-<body>
+<body onload="ConsultaDeRegistros()">
     <div id="header-sae">
         <!-- LOGO -->
         <div class="container" id="logo-sae">
@@ -44,7 +44,7 @@ $stament->execute();
                 <div class="col-4">
                     <p class="text-center">Matr&Iacute;cula</p>
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center"><?php foreach ($stament as $filas) :
+                    <p class="text-center" id="matricula"><?php foreach ($stament as $filas) :
                       echo $filas['Matricula'];
                     ?></p>
                 </div>
@@ -58,7 +58,7 @@ $stament->execute();
                 <div class="col-4">
                     <p class="text-center">Carrera</p>
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center"><?php
+                    <p class="text-center" ><?php
                       echo $filas['Carrera'];
                     endforeach; ?></p>
                 </div>
