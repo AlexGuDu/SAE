@@ -5,7 +5,8 @@ window.addEventListener('click', clickOutside);
 var solicitudPopup = document.getElementById('solicitudPopup');
 
 
-  function openSolicitud(){
+
+function openSolicitud(){
     window.location.href = "../views/solicitud.html";
   }
 
@@ -28,3 +29,33 @@ var solicitudPopup = document.getElementById('solicitudPopup');
         solicitudPopup.style.display = 'none';
     }
 });
+
+
+// Ajax Tabla de Matriculas START
+function ConsultaDeRegistros(){
+  var datosEnviados = {
+  };
+  $.ajax({
+    type : 'POST',
+    url : '../control/Consultas.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+
+      for (var i = 1; i < datos.count; i=i+4) {
+    $('#consulta tbody').append(
+        '<tr>'+
+          '<td>'+datos[i]+'</td>'+
+          '<td>'+datos[i+1]+'</td>'+
+          '<td>'+datos[i+2]+'</td>'+
+          '<td>'+datos[i+3]+'</td>'+
+        '</tr>'
+    );
+    }
+    });
+
+  }
+
+// Ajax Tabla de Matriculas END
