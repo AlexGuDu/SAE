@@ -2,7 +2,7 @@
 
 <html lang="en">
 
-<head >
+<head>
     <meta charset="UTF-8">
     <title>Menu</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
+<body  onload="ConsultaDeRegistros()">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -27,7 +27,6 @@
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
         <div class="row justify-content-center">
-          <a href="solicitud_doc.php">asdfasdfasdfasdf</a>
             <div class="col-5 col-md-5 col-lg-3">
                 <input id="solicitarPermiso" class="boton" type="button" name="registar" value="SOLICITAR PERMISO">
             </div>
@@ -43,7 +42,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 scrollable">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="consulta">
                     <thead id="header-table">
                         <tr>
                             <th>Actividades solicitadas</th>
@@ -52,9 +51,9 @@
                             <th>Fecha</th>
                         </tr>
                     </thead>
-                    <tbody id="consulta">
+                    <tbody >
                       <!-- Cargar Folios - AJAX -->
-                      
+
                       <!-- Cargar Folios - AJAX -->
                     </tbody>
                 </table>
@@ -102,6 +101,7 @@
         <form class="" action="../control/logout.php">
         <input type="submit" name="" class="boton" value="Salir">
         </form>
+        <input type="button" value="wawawa" id="wawawa">
         </div>
     </div>
     <!-- FIN TABLA ACTIVIDADES -->

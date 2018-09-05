@@ -8,10 +8,11 @@ function openSolicitud(){
 function openRegistro(){
   window.location.href = "../views/registrar.html";
 }
+
+
 // Ajax Tabla de Matriculas START
-ConsultaDeRegistros(){
+function ConsultaDeRegistros(){
   var datosEnviados = {
-    'matricula' : $('#matricula').val()
   };
   $.ajax({
     type : 'POST',
@@ -21,14 +22,19 @@ ConsultaDeRegistros(){
     encode : true
   })
   .done(function(datos){
-    $('#consulta').append(
+
+      for (var i = 1; i < datos.count; i=i+4) {
+    $('#consulta tbody').append(
         '<tr>'+
-          '<td>'+datos.d4+'</td>'+
-          '<td>'+datos.d1+'</td>'+
-          '<td>'+datos.d2+'</td>'+
-          '<td>'+datos.d3+'</td>'+
+          '<td>'+datos[i]+'</td>'+
+          '<td>'+datos[i+1]+'</td>'+
+          '<td>'+datos[i+2]+'</td>'+
+          '<td>'+datos[i+3]+'</td>'+
         '</tr>'
     );
+    }
     });
-  });
+
+  }
+
 // Ajax Tabla de Matriculas END

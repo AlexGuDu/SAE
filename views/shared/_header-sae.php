@@ -19,7 +19,7 @@ $stament->execute();
     <link rel="stylesheet" href="../styles/css/header-sae.css">
 </head>
 
-<body onload="ConsultaDeRegistros()">
+<body>
     <div id="header-sae">
         <!-- LOGO -->
         <div class="container" id="logo-sae">
