@@ -24,29 +24,7 @@
  .btn:active {
      background-color: #13673A;
 }
- .modal{
-     display: none;
-     position: fixed;
-     z-index: 1;
-     left: 0;
-     top: 0;
-     width: 100%;
-     height: 100%;
-     overflow: auto;
-     background-color: rgba(0, 0, 0, 0.5);
-     animation-name: openModalBlock;
-     animation-duration: 1.5s;
-}
- .modal-content{
-     background-color: #f4f4f4;
-     margin: 20% auto;
-     padding: 20px;
-     width: 40%;
-     height: 13%;
-     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
-     animation-name: openModalBlock;
-     animation-duration: 1.5s;
-}
+
  .closeBtn{
      color: #fff;
      float: right;
@@ -74,32 +52,10 @@
      padding-top: 15px;
      padding-bottom: 15px;
 }
- #territorioNac{
-     max-width: inherit;
-     width: 175px;
-}
- #territorioExt{
-     max-width: inherit;
-     width: 175px;
-}
- #section_one{
-     display: block;
-     animation-name: openSection;
-     animation-duration: 1.5s;
-}
- #section_two{
-     display: none;
-     animation-name: openSection;
-     animation-duration: 1.5s;
-}
- #section_three{
-     display: none;
-     animation-name: openSection;
-     animation-duration: 1.5s;
-}
- #formExt{
-     display: none;
-}
+
+
+
+
  @keyframes openSection{
      from{
         opacity: 0
@@ -116,4 +72,3 @@
         opacity: 0.95
     }
 }
- 

@@ -17,3 +17,26 @@
 	background-color: #13673A;
 	color: #FFF;
 }
+
+.modal{
+		display: none;
+		position: fixed;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.5);
+		animation-name: openModalBlock;
+		animation-duration: .5s;
+}
+
+
+@keyframes openModalBlock{
+    from{
+       opacity: 0
+   }
+    to {
+       opacity: 1
+   }

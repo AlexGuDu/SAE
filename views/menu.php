@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
+
 <body  onload="ConsultaDeRegistros()">
     <br>
     <!-- HEADER -->
@@ -24,9 +25,23 @@
     <!-- FIN HEADER -->
     <br>
 
+
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
         <div class="row justify-content-center">
+    <!-- Solicitud_Doc -->
+    <div id="solicitudPopup" class="modal" >
+          <script type="text/javascript">
+              $("#solicitudPopup").load("shared/_solicitud_doc.php");
+          </script>
+    </div>
+
+    <!-- BOTONES ACTIVIDAD -->
+    <div class="container">
+      <button class="btn btn-default" type="button" name="button" id="popup_test">Solicitud Popup</button>
+        <div class="row justify-content-center">
+
+
             <div class="col-5 col-md-5 col-lg-3">
                 <input id="solicitarPermiso" class="boton" type="button" name="registar" value="SOLICITAR PERMISO">
             </div>
@@ -42,7 +57,9 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 scrollable">
+
                 <table class="table table-bordered table-hover" id="consulta">
+                <table class="table table-bordered table-hover">
                     <thead id="header-table">
                         <tr>
                             <th>Actividades solicitadas</th>
@@ -51,10 +68,12 @@
                             <th>Fecha</th>
                         </tr>
                     </thead>
+
                     <tbody >
                       <!-- Cargar Folios - AJAX -->
 
                       <!-- Cargar Folios - AJAX -->
+
                     </tbody>
                 </table>
             </div>
@@ -101,7 +120,7 @@
         <form class="" action="../control/logout.php">
         <input type="submit" name="" class="boton" value="Salir">
         </form>
-        <input type="button" value="wawawa" id="wawawa">
+
         </div>
     </div>
     <!-- FIN TABLA ACTIVIDADES -->
