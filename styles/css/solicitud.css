@@ -74,14 +74,21 @@
      padding-top: 15px;
      padding-bottom: 15px;
 }
+
+/* Territorio Styles */
+#territory_button_group{
+  text-align: center;
+  width: 100%;
+}
  #territorioNac{
      max-width: inherit;
-     width: 175px;
+     width: inherit;
 }
  #territorioExt{
      max-width: inherit;
-     width: 175px;
+     width: inherit;
 }
+
  #section_one{
      display: block;
      animation-name: openSection;

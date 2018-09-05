@@ -8,9 +8,11 @@ var solicitudPopup = document.getElementById('solicitudPopup');
   function openSolicitud(){
     window.location.href = "../views/solicitud.html";
   }
+
   function openRegistro(){
     window.location.href = "../views/registrar.html";
   }
+  
   function popSolicitud(){
     solicitudPopup.style.display = 'block';
   }

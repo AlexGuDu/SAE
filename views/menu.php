@@ -25,7 +25,7 @@
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal" >
           <script type="text/javascript">
-              $("#solicitudPopup").load("shared/solicitud_doc.php");
+              $("#solicitudPopup").load("shared/_solicitud_doc.php");
           </script>
     </div>
 
