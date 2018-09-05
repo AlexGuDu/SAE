@@ -22,10 +22,18 @@
     <!-- FIN HEADER -->
     <br>
 
+    <!-- Solicitud_Doc -->
+    <div id="solicitudPopup" class="modal" >
+          <script type="text/javascript">
+              $("#solicitudPopup").load("shared/_solicitud_doc.php");
+          </script>
+    </div>
+
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
+      <button class="btn btn-default" type="button" name="button" id="popup_test">Solicitud Popup</button>
         <div class="row justify-content-center">
-          <a href="solicitud_doc.php">asdfasdfasdfasdf</a>
+
             <div class="col-5 col-md-5 col-lg-3">
                 <input id="solicitarPermiso" class="boton" type="button" name="registar" value="SOLICITAR PERMISO">
             </div>
@@ -108,7 +116,7 @@
                 </table>
             </div>
         </div>
-            
+
         </div>
         <div class="row justify-content-center">
 
