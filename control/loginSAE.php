@@ -15,7 +15,7 @@ if(strlen($matricula) > 0 && strlen($pass) > 0){
   endforeach;
   echo "$bandera";
   if ($bandera==1) {
-    header('Location: ../views/menu.html');
+    header('Location: ../views/menu.php');
   }else {
     $_SESSION['error']=1;
     header('Location: ../views/home.php');
