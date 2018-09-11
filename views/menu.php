@@ -19,7 +19,6 @@
     <div id="Header">
         <script type="text/javascript">
             $("#Header").load("shared/_header-sae.php #header-sae");
-
         </script>
     </div>
     <!-- FIN HEADER -->
@@ -31,18 +30,14 @@
         <div class="row justify-content-center">
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal" >
-<<<<<<< HEAD
-      
-=======
-          <script type="text/javascript">
-              $("#solicitudPopup").load("shared/_solicitud_doc.php");
-          </script>
->>>>>>> 870416d44af3d5ca8bd02a2a00d790618f11d2ab
+      <script type="text/javascript">
+        $("#solicitudPopup").load("shared/_solicitud_doc.php");
+      </script>
     </div>
 
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
-      <button class="btn btn-default" type="button" name="button" id="popup_test">Solicitud Popup</button>
+      <button class="btn btn-default" type="button" name="button" id="popup_test" >asdsd</button>
         <div class="row justify-content-center">
 
 

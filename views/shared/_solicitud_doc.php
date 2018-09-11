@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<?php
-require_once '../../config/connection.php';
-session_start();
-$folio=$_GET["folio"];
-$sql="SELECT * FROM solicitud where folio= :folio";
-$stament = $dbh->prepare($sql);
-$stament->bindParam(':folio', $folio);
-$stament->execute();
- ?>
-
-?>
+<!-- <?php
+// require_once '../../config/connection.php';
+// session_start();
+// $folio=$_GET["folio"];
+// $sql="SELECT * FROM solicitud where folio= :folio";
+// $stament = $dbh->prepare($sql);
+// $stament->bindParam(':folio', $folio);
+// $stament->execute();
+ ?>-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
