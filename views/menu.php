@@ -31,7 +31,13 @@
         <div class="row justify-content-center">
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal" >
+<<<<<<< HEAD
       
+=======
+          <script type="text/javascript">
+              $("#solicitudPopup").load("shared/_solicitud_doc.php");
+          </script>
+>>>>>>> 870416d44af3d5ca8bd02a2a00d790618f11d2ab
     </div>
 
     <!-- BOTONES ACTIVIDAD -->

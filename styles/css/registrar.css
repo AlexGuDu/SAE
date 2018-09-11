@@ -70,13 +70,18 @@ body{
      float: right;
      font-size: 35px;
 }
+
+#confirmacion_button_group{
+  text-align: center;
+  width: 100%;
+}
  #confirmacionSi{
      max-width: inherit;
-     width: 155px;
+     width: inherit;
 }
  #confirmacionNo{
      max-width: inherit;
-     width: 155px;
+     width: inherit;
 }
  #section_one{
      display: block;
@@ -112,4 +117,3 @@ body{
         opacity: 0.95
     }
 }
- 

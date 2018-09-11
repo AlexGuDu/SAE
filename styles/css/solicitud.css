@@ -35,7 +35,7 @@
      overflow: auto;
      background-color: rgba(0, 0, 0, 0.5);
      animation-name: openModalBlock;
-     animation-duration: 1.5s;
+     animation-duration: 1s;
 }
  .modal-content{
      background-color: #f4f4f4;
@@ -74,14 +74,21 @@
      padding-top: 15px;
      padding-bottom: 15px;
 }
+
+/* Territorio Styles */
+#territory_button_group{
+  text-align: center;
+  width: 100%;
+}
  #territorioNac{
      max-width: inherit;
-     width: 175px;
+     width: inherit;
 }
  #territorioExt{
      max-width: inherit;
-     width: 175px;
+     width: inherit;
 }
+
  #section_one{
      display: block;
      animation-name: openSection;
@@ -108,6 +115,7 @@
         opacity: 1
     }
 }
+
  @keyframes openHeader{
      from{
         opacity: 0
@@ -116,4 +124,12 @@
         opacity: 0.95
     }
 }
- 
+
+@keyframes openModalBlock{
+    from{
+       opacity: 0
+   }
+    to {
+       opacity: 1
+   }
+}

@@ -8,6 +8,8 @@ $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
  ?>
+
+?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -54,13 +56,12 @@ $stament->execute();
           <div class="col-md-6 col-sm-6">
             <label>Tema de la Visita:</label> <label id="tema_visita"><?php echo $filas['hora']; ?></label> <br>
             <label>Datos de Contacto de Empresa:</label> <label id="datos_contacto"><?php echo $filas['hora']; ?></label>
-          </div>
-        </div> <!-- Row #3 -->
+v> <!-- Row #3 -->
         <hr>
         <div class="row">
           <div class="col-md-12 col-sm-12">
             <label>Objetivo de la Actividad:</label> <label id="objetivo_actividad"><?php echo $filas['hora']; ?></label>
-          </div>
+iv>
         </div> <!-- Row #4 -->
         <hr>
         <div class="row">
@@ -75,6 +76,5 @@ $stament->execute();
         </div> <!-- Row #5 -->
       </div> <!-- Container -->
     </div> <!-- Entire Page -->
-  <?php endforeach ?>
   </body>
 </html>
