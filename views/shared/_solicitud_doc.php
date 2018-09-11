@@ -8,8 +8,6 @@ $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
  ?>
-
-?>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">

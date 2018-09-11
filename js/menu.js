@@ -8,6 +8,7 @@ window.addEventListener('click', clickOutside);
 
 function openSolicitud(folio){
     solicitudPopup.load("shared/_solicitud_doc.php?folio="+folio);
+    
   }
 
   function openRegistro(){

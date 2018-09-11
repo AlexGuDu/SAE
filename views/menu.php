@@ -31,6 +31,7 @@
         <div class="row justify-content-center">
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal" >
+      
     </div>
 
     <!-- BOTONES ACTIVIDAD -->
