@@ -2,12 +2,12 @@ document.getElementById('solicitarPermiso').addEventListener('click', openSolici
 document.getElementById('registrarActividad').addEventListener('click', openRegistro)
 document.getElementById('popup_test').addEventListener('click', popSolicitud)
 window.addEventListener('click', clickOutside);
-var solicitudPopup = document.getElementById('solicitudPopup');
+// var solicitudPopup = document.getElementById('solicitudPopup');
 
 
 
-function openSolicitud(){
-    window.location.href = "../views/solicitud.html";
+function openSolicitud(folio){
+    solicitudPopup.load("shared/_solicitud_doc.php?folio="+folio);
   }
 
   function openRegistro(){
@@ -49,13 +49,11 @@ function ConsultaDeRegistros(){
         '<tr>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
-          '<td>'+datos[i+2]+'</td>'+
+          '<td aling="center">'+'<button onclick="popSolicitud('+1+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
           '<td>'+datos[i+3]+'</td>'+
-        '</tr>'
-    );
+        '</tr>');
     }
     });
-
   }
 
 // Ajax Tabla de Matriculas END

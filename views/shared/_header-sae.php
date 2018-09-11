@@ -6,6 +6,7 @@ $sql="SELECT * FROM alumno where Matricula= :matricula";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':matricula', $_SESSION['matricula']);
 $stament->execute();
+
  ?>
 <html>
 
