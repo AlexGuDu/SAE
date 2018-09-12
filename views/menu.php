@@ -37,7 +37,7 @@
 
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
-      <button class="btn btn-default" type="button" name="button" id="popup_test" >asdsd</button>
+      <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
 
 
@@ -55,10 +55,9 @@
     <!-- TABLA ACTIVIDADES -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 scrollable">
+            <div class="col-12 col-lg-7 ">
 
                 <table class="table table-bordered table-hover" id="consulta">
-                <table class="table table-bordered table-hover">
                     <thead id="header-table">
                         <tr>
                             <th>Actividades solicitadas</th>
@@ -67,8 +66,7 @@
                             <th>Fecha</th>
                         </tr>
                     </thead>
-
-                    <tbody >
+                    <tbody>
                       <!-- Cargar Folios - AJAX -->
 
                       <!-- Cargar Folios - AJAX -->
@@ -79,7 +77,7 @@
         </div>
         <br><br>
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 scrollable">
+            <div class="col-12 col-lg-7 s">
                 <table class="table table-bordered table table-hover">
                     <thead id="header-table">
                         <tr>

@@ -8,7 +8,7 @@ $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 foreach ($filas as $filas):
 $datos[$i]=$filas['tema'];
 $datos[$i+1]=$filas['Estado'];
-$datos[$i+2]=$filas['Aprovacion'];
+$datos[$i+2]=$filas['Aprobacion'];
 $datos[$i+3]=$filas['fecha'];
 $i=$i+4;
 endforeach;

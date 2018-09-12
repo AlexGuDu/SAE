@@ -6,8 +6,8 @@ window.addEventListener('click', clickOutside);
 
 
 
-function openSolicitud(folio){
-    window.location.href = "../views/menu.php";
+function openSolicitud(){
+    window.location.href = "../views/solicitud.html";
   }
 
   function openRegistro(){
@@ -15,6 +15,7 @@ function openSolicitud(folio){
   }
 
   function popSolicitud(){
+
     solicitudPopup.style.display = 'block';
   }
 
@@ -43,13 +44,12 @@ function ConsultaDeRegistros(){
     encode : true
   })
   .done(function(datos){
-
       for (var i = 1; i < datos.count; i=i+4) {
     $('#consulta tbody').append(
         '<tr>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
-          '<td aling="center">'+'<button onclick="popSolicitud('+1+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+          '<td>'+'<button onclick="popSolicitud()" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
           '<td>'+datos[i+3]+'</td>'+
         '</tr>');
     }
