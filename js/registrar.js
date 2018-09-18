@@ -12,6 +12,7 @@ var estadoSelector = document.getElementById('estadoSelector');
 var ciudadSelector = document.getElementById('ciudadSelector');
 var fecha_input = document.getElementById('fecha');
 var hora_input = document.getElementById('hora');
+var clear = document.getElementById('clear');
 
 function folio_ComboBox(){
   $.ajax({
@@ -30,7 +31,9 @@ function folio_ComboBox(){
 
 var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
+  $('#matriculasTbody').empty();
   if(folio.value == 'clear'){
+    clear.hidden=true;
     eventoSelector.disabled = false;
     estadoSelector.disabled = false;
     fecha.disabled = false;
@@ -63,6 +66,7 @@ folio.addEventListener('change', function(){
     proponeAsistir_input.value = "";
   }
   else {
+    clear.hidden=false;
     var datosEnviados = {
       'folio' : folio.value
     };
@@ -73,7 +77,7 @@ folio.addEventListener('change', function(){
       dataType : 'json',
       encode : true
     })
-    .done(function(datos){
+    .done(function(datos,alumno){
       actividadSelector.disabled = "disabled";
       eventoSelector.disabled = "disabled";
       estadoSelector.disabled = "disabled";
@@ -104,6 +108,16 @@ folio.addEventListener('change', function(){
       maestroMateria_input.value = datos.Maestro;
       aspectoProfesional_input.value = "null";
       proponeAsistir_input.value = "null";
+      for (var i = 1; i < datos.count; i=i+4) {
+
+      $('#mostrarMatriculas tbody').append(
+        '<tr>'+
+        '<td>'+datos.alumno[i]+'</td>'+
+        '<td>'+datos.alumno[i+1]+'</td>'+
+        '<td>'+datos.alumno[i+2]+'</td>'+
+        '<td>'+datos.alumno[i+3]+'</td>'+
+        '</tr>');
+        }
       });
 }
 });

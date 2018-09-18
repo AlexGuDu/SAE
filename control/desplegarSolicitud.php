@@ -1,5 +1,6 @@
 <?php
 require '../config/connection.php';
+$i=1;
 session_start();
 $folio=$_POST['folio'];
 $sql="SELECT * FROM solicitud where folio= :folio";
@@ -25,5 +26,19 @@ $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
 $datos['Maestro']=$stament['Maestro'];
 endforeach;
+
+$sql="SELECT * FROM alumno a,alumnosolicitud b where a.Matricula=b.Matricula and b.folio= :folio";
+$stament = $dbh->prepare($sql);
+$stament->bindParam(':folio', $folio);
+$stament->execute();
+foreach ($stament as $alum) :
+  $datos['alumno'][$i]=$alum['Matricula'];
+  $datos['alumno'][$i+1]=$alum['Nombre'];
+  $datos['alumno'][$i+2]=$alum['Carrera'];
+  $datos['alumno'][$i+3]=$alum['Grupo'];
+  $i=$i+4;
+endforeach;
+$datos['count']=$i;
+
 echo json_encode($datos);
 ?>

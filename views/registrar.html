@@ -47,7 +47,7 @@
                             <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
                             <select class="form-control" id='folioCB' >
                             <option selected hidden value="0"> SELECCIONE </option>
-                            <option value="clear">Ninguna </opction>
+                            <option id="clear" hidden value="clear">Ninguna </opction>
                         </select>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
 
                         <br>
                         <div class="scrollable">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="mostrarMatriculas">
                                 <thead>
                                     <tr>
                                         <td>matricula</td>
@@ -125,7 +125,7 @@
                                         <td>grupo</td>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="matriculasTbody">
 
                                 </tbody>
 
