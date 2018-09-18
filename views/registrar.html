@@ -13,13 +13,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body>
+<body onload="folio_ComboBox()">
     <!-- HEADER -->
     <div style="height:30px"></div>
     <div id="Header">
         <script type="text/javascript">
             $("#Header").load("shared/_header-sae.php #header-sae");
-        </script>
+        </script>C
     </div>
     <!-- FIN HEADER -->
 
@@ -45,9 +45,9 @@
                     <div class="col-7">
                         <div class="form-group">
                             <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
-                            <select class="form-control">
-                            <option value="1002">Contabilidad para...</option>
-                            <option value="1003">Hacienda y Credito publico</option>
+                            <select class="form-control" id='folioCB' >
+                            <option selected hidden value="0"> SELECCIONE </option>
+                            <option value="clear">Ninguna </opction>
                         </select>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="col-11 col-md-4">
                         <div class="form-group">
                             <label>ELIJA EL TIPO DE EVENTO DE INTERES: </label>
-                            <select class="form-control">
+                            <select class="form-control" id="eventoSelector">
                             <option value="Vinculacion">Vinculacion</option>
                             <option value="Cultural">Cultural</option>
                             <option value="Deportiva">Deportiva</option>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group">
                             <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                            <select class="form-control" disabled="disabled">>
+                            <select class="form-control" id="actividadSelector" disabled="disabled">
                         </select>
                         </div>
                         <div style="height:5px;"></div>
@@ -75,13 +75,13 @@
                         <!-- STATE AND CITY DROPDOWNS -->
                         <div class="form-group">
                             <label>SELECCIONE EL ESTADO:</label>
-                            <select class="form-control">
+                            <select class="form-control" id="estadoSelector">
 
                         </select>
                         </div>
                         <div class="form-group">
                             <label>SELECCIONE LA CIUDAD: </label>
-                            <select class="form-control" disabled="disabled">
+                            <select class="form-control" disabled="disabled" id="ciudadSelector">
 
                         </select>
                         </div>
@@ -89,13 +89,11 @@
                         <hr style="height: 10px;">
                         <div class="form-group">
                             <label>FECHA INICIAL DEL EVENTO: </label>
-                            <select class="form-control">
-
-                        </select>
+                            <input type="date" class="form-control" name="fecha" id=fecha>
                         </div>
                         <div class="form-group">
                             <label>HORA INICIAL DEL EVENTO: </label>
-                            <select class="form-control">
+                            <select class="form-control" id="hora">
 
                         </select>
                         </div>
@@ -128,72 +126,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
-                                    <tr>
-                                        <td>123445</td>
-                                        <td>oscar lopez</td>
-                                        <td>LI</td>
-                                        <td>362</td>
-                                    </tr>
+
                                 </tbody>
 
                             </table>
@@ -215,7 +148,7 @@
                     <div class="col-11">
                         <div class="form-group">
                             <label>LUGAR DEL EVENTO</label>
-                            <input type="text" class="form-control" placeholder="ej. CECUT">
+                            <input type="text" class="form-control" id="lugarEvento" placeholder="ej. CECUT">
                         </div>
                         <br>
                         <div class="text-center">
@@ -321,6 +254,6 @@
 <!-- SCRIPTS -->
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.min.js"></script>
-<script src="../js/solicitud.js"></script>
+<script src="../js/registrar.js"></script>
 
 </html>

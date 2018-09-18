@@ -56,8 +56,7 @@ function openSolicitud(){
       nombre_representante_label.innerHTML = datos.Nombre_Recibe;
       datos_contacto_label.innerHTML = datos.Contacto_empresa;
       objetivo_actividad_label.innerHTML = datos.Objetivo;
-      // mete.innerHTML = datos.d1;
-      // .innerHTML = datos.d1;
+      maestro_responsable_label.innerHTML= datos.Maestro;
       });
 
     solicitudPopup.style.display = 'block';
@@ -78,12 +77,9 @@ function openSolicitud(){
 
 // Ajax Tabla de Matriculas START
 function ConsultaDeRegistros(){
-  var datosEnviados = {
-  };
   $.ajax({
     type : 'POST',
     url : '../control/Consultas.php',
-    data : datosEnviados,
     dataType : 'json',
     encode : true
   })

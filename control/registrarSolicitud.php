@@ -23,7 +23,7 @@ session_start();
   $contacto_empresa=$_POST['contactoEmpresa'];
   $objetivo=$_POST['objetivoEvento'];
   $maestro=$_POST['maestroMateria'];
-  $responsable=$_SESSION['matricula'];
+  $responsable=$_POST['responsable'];
 
 
   $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable)
@@ -63,7 +63,6 @@ session_start();
     $folio= $filas['folio'];
   endforeach;
 
-
   echo $folio;
   echo "<br>";
   echo $cantidad;
@@ -78,10 +77,13 @@ session_start();
   $stament->bindParam(':folio', $folio);
   $stament->bindParam(':aprobacion', $aprovacion);
   $stament->execute();
-  echo "<script>
-  alert('Solicitud Registrada');
-  </script>";
-  header('Location:home.php');
   }
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
+  $stament = $dbh->prepare($sql);
+  $stament->bindParam(':matricula', $_SESSION['matricula']);
+  $stament->bindParam(':folio', $folio);
+  $stament->bindParam(':aprobacion', $aprovacion);
+  $stament->execute();
   unset( $_SESSION['matriculas']);
+  header('Location:../views/home.php');
  ?>

@@ -106,7 +106,7 @@
         </div>
     </div>
 
-    <br>
+    <br><br><br>
     <!-- TABLA ACTIVIDADES -->
     <div class="container">
         <div class="row justify-content-center">

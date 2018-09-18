@@ -1,5 +1,6 @@
 <?php
 require '../config/connection.php';
+session_start();
 $folio=$_POST['folio'];
 $sql="SELECT * FROM solicitud where folio= :folio";
 $stament = $dbh->prepare($sql);
@@ -22,6 +23,7 @@ $datos['Objetivo']=$stament['Objetivo'];
 $datos['Maestro']=$stament['Maestro'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
+$datos['Maestro']=$stament['Maestro'];
 endforeach;
 echo json_encode($datos);
- ?>
+?>
