@@ -125,7 +125,6 @@
                       <!-- Cargar Folios - AJAX -->
 
                       <!-- Cargar Folios - AJAX -->
-
                     </tbody>
                 </table>
             </div>

@@ -28,6 +28,7 @@
         <div style="height:30px"></div>
         <div id="entirePage">
             <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
+            <div id="section_one">
             <div class="container">
                 <div class="row">
                     <div class="col-4">
@@ -56,52 +57,63 @@
                 <div class="row">
                     <div class="col-11 col-md-4">
                         <div class="form-group">
-                            <label>ELIJA EL TIPO DE EVENTO DE INTERES: </label>
-                            <select class="form-control" id="eventoSelector">
-                            <option value="Vinculacion">Vinculacion</option>
-                            <option value="Cultural">Cultural</option>
-                            <option value="Deportiva">Deportiva</option>
-                            <option value="Responsabilidad Social">Responsabilidad Social</option>
-                            <option value="Ci entifica">Cientifica</option>
+                            <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
+                            <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento">
+                            <option selected disabled hidden> SELECCIONE </option>
+                            <option value="1"> Vinculacion </option>
+                            <option value="2"> Cientifica </option>
+                            <option value="3"> Deportiva </option>
+                            <option value="4"> Responsabilidad Social </option>
+                            <option value="5"> Cultural </option>
                         </select>
                         </div>
                         <div class="form-group">
                             <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                            <select class="form-control" id="actividadSelector" disabled="disabled">
+                            <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad">
+                            <option selected disabled hidden value="0"> SELECCIONE </option>
+                            <option hidden value="1"> Visitas Empresariales </option>
+                            <option hidden value="2"> Viajes de Estudio </option>
+                            <option hidden value="3"> Practicas Academicas </option>
+                            <option hidden value="4"> Congresos </option>
+                            <option hidden value="5"> Conferencias </option>
+                            <option hidden value="6"> Talleres </option>
+                            <option hidden value="7"> Platicas </option>
+                            <option hidden value="8"> Maratones </option>
+                            <option hidden value="9"> Diplomados </option>
+                            <option hidden value="10"> Caminata </option>
+                            <option hidden value="11"> Otro </option>
                         </select>
                         </div>
+
                         <div style="height:5px;"></div>
                         <hr style="height: 10px;">
                         <!-- STATE AND CITY DROPDOWNS -->
-                        <div class="form-group">
-                            <label>SELECCIONE EL ESTADO:</label>
-                            <select class="form-control" id="estadoSelector">
-
-                        </select>
+                        <div id="infoGeo">
+                          <div class="form-group">
+                              <label> ESTADO: </label>
+                              <br>
+                              <input type="text" class="form-control" id="estado_show"></input>
+                          </div>
+                          <div class="form-group">
+                              <label> CIUDAD: </label>
+                              <br>
+                              <input type="text" class="form-control" id="ciudad_show"></input>
+                          </div>
+                          <div style="height:5px;"></div>
+                          <hr style="height: 10px;">
                         </div>
-                        <div class="form-group">
-                            <label>SELECCIONE LA CIUDAD: </label>
-                            <select class="form-control" disabled="disabled" id="ciudadSelector">
 
-                        </select>
-                        </div>
-                        <div style="height:5px;"></div>
-                        <hr style="height: 10px;">
                         <div class="form-group">
                             <label>FECHA INICIAL DEL EVENTO: </label>
                             <input type="date" class="form-control" name="fecha" id=fecha>
                         </div>
                         <div class="form-group">
-                            <label>HORA INICIAL DEL EVENTO: </label>
-                            <select class="form-control" id="hora">
-
-                        </select>
+                            <label>HORA INICIAL DEL EVENTO: </label> <br>
+                            <input type="time" class="form-control" id="hora">
                         </div>
                     </div>
                     <!-- End of left column -->
-                    <!--    <div class="col-md-1">
 
-        </div> -->
                     <div class="col"> </div>
                     <div class="col-11 col-md-7">
                         <div class="form-group">
@@ -158,7 +170,7 @@
                 </div>
             </div>
             <!-- FIN LIGAR DEL EVENTO -->
-
+            </div>
             <hr>
             <br>
             <br>

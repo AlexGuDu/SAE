@@ -22,9 +22,8 @@ window.addEventListener('click', clickOutside);
   var razon_propuesta_label = document.getElementById('razon_propuesta');
 
 
-function openSolicitud(){
+  function openSolicitud(){
     window.location.href = "../views/solicitud.html";
-
   }
 
   function openRegistro(){
