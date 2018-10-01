@@ -96,6 +96,54 @@ var infoGeo = document.getElementById('infoGeo');
 
 /*------------------------------------------------------------------------------------------------------*/
 
+// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos START
+
+var section_1 = document.getElementById('section_one');
+var section_2 = document.getElementById('section_two');
+var section_3 = document.getElementById('section_three');
+
+var nextBtn_1 = document.getElementById('nextBtn_one')
+var nextBtn_2 = document.getElementById('nextBtn_two')
+var previousBtn_1 = document.getElementById('previousBtn_one')
+var previousBtn_2 = document.getElementById('previousBtn_two')
+
+
+nextBtn_1.addEventListener('click', openSection_2);
+nextBtn_2.addEventListener('click', openSection_3);
+previousBtn_1.addEventListener('click', returnToSection_1);
+previousBtn_2.addEventListener('click', returnToSection_2);
+
+
+  // Regresar a Section ONE
+  function returnToSection_1(){
+    section_1.style.display = 'block'
+    section_2.style.display = 'none'
+  }
+
+  // Regresar a Section TWO
+  function returnToSection_2(){
+    section_2.style.display = 'block';
+    section_1.style.display = 'none'
+    section_3.style.display = 'none'
+  }
+
+  // Validar Section One START
+  function openSection_2(){
+    section_2.style.display = 'block';
+    section_1.style.display = 'none'
+    section_3.style.display = 'none'
+  }
+
+  // Validar Section Two START
+  function openSection_3(){
+    section_2.style.display = 'none'
+    section_3.style.display = 'block';
+
+  }
+
+
+// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
+
 function folio_ComboBox(){
   $.ajax({
     type : 'POST',
@@ -167,7 +215,7 @@ folio.addEventListener('change', function(){
       estado_show.value = datos.Estado;
       ciudad_show.value = datos.Ciudad;
       hora_input.value = datos.hora;
-    
+
       fecha_input.value = datos.fecha;
       lugarEvento_input.value = datos.lugar;
       nombreActividad_input.value = datos.tema;

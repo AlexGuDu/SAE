@@ -29,6 +29,8 @@
         <div id="entirePage">
             <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
             <div id="section_one">
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-4">
@@ -157,26 +159,26 @@
             <!-- LUGAR DEL EVENTO -->
             <div class="container">
                 <div class="row">
-                    <div class="col-11">
+                    <div class="col-12">
                         <div class="form-group">
                             <label>LUGAR DEL EVENTO</label>
                             <input type="text" class="form-control" id="lugarEvento" placeholder="ej. CECUT">
                         </div>
                         <br>
                         <div class="text-center">
-                            <button class="btn btn-primary btn-lg">SIGUIENTE</button>
+                            <button type="button" id="nextBtn_one" class="btn btn-success btn-lg">SIGUIENTE</button>
                         </div>
                     </div>
                 </div>
             </div>
+
             <!-- FIN LIGAR DEL EVENTO -->
-            </div>
-            <hr>
-            <br>
-            <br>
+            </div> <!-- section one -->
 
             <!-- DATOS DE LA ACTIVIDAD -->
-            <div class="container">
+
+            <div class="container" id="section_two">
+              <div class="text-center"><button type="button" id="previousBtn_one" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
                 <div class="row justify-content-center">
                     <div class="col-8 col-md-7">
                         <div class="form-group">
@@ -193,19 +195,17 @@
                         </div>
                         <br>
                         <div class="text-center">
-                            <button class="btn btn-primary btn-lg">SIGUIENTE</button>
+                            <button type="button" id="nextBtn_two" class="btn btn-success btn-lg">SIGUIENTE</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- FIN DATOS DE LA ACTIVIDAD -->
 
-            <hr>
-            <br>
-            <br>
 
             <!-- JUSTIFICACION DEL EVENTO -->
-            <div class="container">
+            <div class="container" id="section_three">
+              <div class="text-center"><button type="button" id="previousBtn_two" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
                 <div class="row justify-content-center">
                     <div class="col-8 col-md-7">
                         <div class="form-group">
