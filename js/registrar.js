@@ -13,6 +13,8 @@ var ciudad_show = document.getElementById('ciudad_show');
 var fecha_input = document.getElementById('fecha');
 var hora_input = document.getElementById('hora');
 var infoGeo = document.getElementById('infoGeo');
+var ingresar_matricula = document.getElementById('ingresar_matricula');
+var boton_ingresar_matricula = document.getElementById('boton_ingresar_matricula');
 
 /*------------------------------------------------------------------------------------------------------*/
 
@@ -165,6 +167,8 @@ folio.addEventListener('change', function(){
     eventoSelector.disabled = false;
     fecha.disabled = false;
     hora.disabled = false;
+    ingresar_matricula.disabled = false;
+    boton_ingresar_matricula.disabled = false;
     infoGeo.style.display = 'none';
     $('#eventoSelector').append(
       '<option disabled selected hidden value="0">SELECCIONE</option>'
@@ -206,6 +210,13 @@ folio.addEventListener('change', function(){
       infoGeo.style.display = 'block';
       estado_show.disabled = "disabled";
       ciudad_show.disabled = "disabled";
+      lugarEvento.disabled = "disabled";
+      nombreActividad.disabled = "disabled";
+      nombreOrganiza.disabled = "disabled";
+      objetivoEvento.disabled = "disabled";
+      maestroMateria.disabled = "disabled";
+      ingresar_matricula.disabled = "disabled";
+      boton_ingresar_matricula.disabled = "disabled";
       $('#eventoSelector').append(
         '<option disabled selected hidden value="'+datos.tipo_evento+'">'+datos.tipo_evento+'</option>'
       );
