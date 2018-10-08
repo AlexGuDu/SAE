@@ -1,7 +1,7 @@
 <p align="center"><img src="assets/img/logo-sae-cimarron.png" height="124px" width="153px"></p>
 
 <h1 align="center"> SAE </h1>
-<p align="center">Sistema de Actividades Extracurriculares</p>
+<p align="center">Sistema de Actividades Extracurriculares.</p>
 
 ---
 <p>
