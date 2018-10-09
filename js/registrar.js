@@ -146,6 +146,9 @@ previousBtn_2.addEventListener('click', returnToSection_2);
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
 
+
+// Generacion de datos de solicitud previa en campos de Registro
+
 function folio_ComboBox(){
   $.ajax({
     type : 'POST',
@@ -218,10 +221,10 @@ folio.addEventListener('change', function(){
       ingresar_matricula.disabled = "disabled";
       boton_ingresar_matricula.disabled = "disabled";
       $('#eventoSelector').append(
-        '<option disabled selected hidden value="'+datos.tipo_evento+'">'+datos.tipo_evento+'</option>'
+        '<option disabled selected hidden value="'+datos.tipo_evento+'">'+nombre_evento(datos.tipo_evento)+'</option>'
       );
       $('#actividadSelector').append(
-        '<option disabled selected hidden value="'+datos.tipo_actividad+'">'+datos.tipo_actividad+'</option>'
+        '<option disabled selected hidden value="'+datos.tipo_actividad+'">'+nombre_actividad(datos.tipo_actividad)+'</option>'
       );
       estado_show.value = datos.Estado;
       ciudad_show.value = datos.Ciudad;
@@ -239,3 +242,72 @@ folio.addEventListener('change', function(){
       });
 }
 });
+
+
+
+function nombre_evento(evento){
+  switch (evento) {
+    case '1':
+      return "Vinculacion"
+      break;
+    case '2':
+      return "Cientifica"
+      break;
+    case '3':
+      return "Deportiva"
+      break;
+    case '4':
+      return "Responsabilidad Social"
+      break;
+    case '5':
+      return "Cultural"
+      break;
+
+    default:
+      return "0"
+
+  }
+}
+
+
+function nombre_actividad(actividad){
+  switch (actividad) {
+    case '1':
+      return "Visitas Empresariales"
+      break;
+    case '2':
+      return "Viajes de Estudio"
+      break;
+    case '3':
+      return "Practicas Academicas"
+      break;
+    case '4':
+      return "Congresos"
+      break;
+    case '5':
+      return "Conferencias"
+      break;
+    case '6':
+      return "Talleres"
+      break;
+    case '7':
+      return "Platicas"
+      break;
+    case '8':
+      return "Maratones"
+      break;
+    case '9':
+      return "Diplomados"
+      break;
+    case '10':
+      return "Caminata"
+      break;
+    case '11':
+      return "Otro"
+      break;
+
+    default:
+      return "0"
+
+  }
+}
