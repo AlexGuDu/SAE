@@ -21,12 +21,12 @@ foreach ($stament as $filas):
           // QUita esta cosita del alert pofavo
           echo'<script type="text/javascript">
           alert("Alumno registrado");
-          window.location.href="../views.home.php";
+          window.location.href="../views/home.php";
           </script>';
 
         }else {
           $_SESSION['error']=1;
-          header('Location: RegistarAlumno.php');
+          header('Location: ../views/alumnoRegistro.php');
         }
       }
 endforeach;

@@ -13,6 +13,7 @@ var ciudad_show = document.getElementById('ciudad_show');
 var fecha_input = document.getElementById('fecha');
 var hora_input = document.getElementById('hora');
 var infoGeo = document.getElementById('infoGeo');
+var confirm_campus = document.getElementById('confirm_campus');
 var ingresar_matricula = document.getElementById('ingresar_matricula');
 var boton_ingresar_matricula = document.getElementById('boton_ingresar_matricula');
 
@@ -168,11 +169,19 @@ var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
   if(folio.value == 'clear'){
     eventoSelector.disabled = false;
-    fecha.disabled = false;
-    hora.disabled = false;
+    fecha_input.disabled = false;
+    hora_input  .disabled = false;
     ingresar_matricula.disabled = false;
     boton_ingresar_matricula.disabled = false;
     infoGeo.style.display = 'none';
+    confirm_campus.style.display = 'block';
+    lugarEvento.disabled = false;
+    nombreActividad.disabled = false;
+    nombreOrganiza.disabled = false;
+    objetivoEvento.disabled = false;
+    maestroMateria.disabled = false;
+    ingresar_matricula.disabled = false;
+    boton_ingresar_matricula.disabled = false;
     $('#eventoSelector').append(
       '<option disabled selected hidden value="0">SELECCIONE</option>'
     );
@@ -193,6 +202,8 @@ folio.addEventListener('change', function(){
     maestroMateria_input.value = "";
     aspectoProfesional_input.value = "";
     proponeAsistir_input.value = "";
+    fecha_input.value = "";
+    hora_input.value = "";
   }
   else {
     var datosEnviados = {
@@ -211,6 +222,7 @@ folio.addEventListener('change', function(){
       fecha_input.disabled = "disabled";
       hora_input.disabled = "disabled";
       infoGeo.style.display = 'block';
+      confirm_campus.style.display = 'none';
       estado_show.disabled = "disabled";
       ciudad_show.disabled = "disabled";
       lugarEvento.disabled = "disabled";
