@@ -32,6 +32,11 @@
 		animation-duration: .5s;
 }
 
+.preview_label{
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
 
 @keyframes openModalBlock{
     from{

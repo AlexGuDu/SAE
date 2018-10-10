@@ -71,7 +71,11 @@ window.addEventListener('click', clickOutside);
      if (e.keyCode == 27) { // escape key maps to keycode `27`
         solicitudPopup.style.display = 'none';
     }
-});
+  });
+
+  document.getElementById('cerrarPreview').addEventListener('click', function(){
+    solicitudPopup.style.display = 'none';
+  })
 
 
 // Ajax Tabla de Matriculas START

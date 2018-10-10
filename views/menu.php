@@ -30,28 +30,28 @@
     <div class="container">
         <div class="row justify-content-center">
     <!-- Solicitud_Doc -->
-    <div id="solicitudPopup" class="modal" >
+    <div id="solicitudPopup" class="modal">
       <div id="entirePage">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <label>Territorio:</label> <label id="territorio"></label> <br>
-              <label>Pais:</label> <label id="pais"></label>
+              <label class="preview_label">Territorio:</label> <label id="territorio"></label> <br>
+              <label class="preview_label">Pais:</label> <label id="pais"></label>
             </div>
             <div class="col-md-6 col-sm-6">
-              <label>Estado:</label> <label id="estado"></label> <br>
-              <label>Ciudad:</label> <label id="ciudad"></label>
+              <label class="preview_label">Estado:</label> <label id="estado"></label> <br>
+              <label class="preview_label">Ciudad:</label> <label id="ciudad"></label>
             </div>
           </div> <!-- Row #1 -->
           <hr>
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <label>Tipo de Evento:</label> <label id="tipo_evento"></label> <br>
-              <label>Fecha Inicial de Evento:</label> <label id="fecha_inicial"></label>
+              <label class="preview_label">Tipo de Evento:</label> <label id="tipo_evento"></label> <br>
+              <label class="preview_label">Fecha Inicial de Evento:</label> <label id="fecha_inicial"></label>
             </div>
             <div class="col-md-6 col-sm-6">
-              <label>Tipo de Actividad:</label> <label id="tipo_actividad"></label> <br>
-              <label>Hora Inicial de Evento:</label> <label id="hora_inicial"></label>
+              <label class="preview_label">Tipo de Actividad:</label> <label id="tipo_actividad"></label> <br>
+              <label class="preview_label">Hora Inicial de Evento:</label> <label id="hora_inicial"></label>
             </div>
           </div><!-- Row #2 -->
 
@@ -60,32 +60,39 @@
 
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <label>Nombre de la Empresa:</label> <label id="nombre_empresa"></label> <br>
-              <label>Nombre de Representante de Empresa:</label> <label id="nombre_representante"></label>
+              <label class="preview_label">Nombre de la Empresa:</label> <label id="nombre_empresa"></label> <br>
+              <label class="preview_label">Nombre de Representante de Empresa:</label> <label id="nombre_representante"></label>
             </div>
 
             <div class="col-md-6 col-sm-6">
-              <label>Tema de la Visita:</label> <label id="tema_visita"></label> <br>
-              <label>Datos de Contacto de Empresa:</label> <label id="datos_contacto"></label>
+              <label class="preview_label">Tema de la Visita:</label> <label id="tema_visita"></label> <br>
+              <label class="preview_label">Datos de Contacto de Empresa:</label> <label id="datos_contacto"></label>
             </div>
           </div> <!-- Row #3 -->
           <hr>
           <div class="row">
             <div class="col-md-12 col-sm-12">
-              <label>Objetivo de la Actividad:</label> <label id="objetivo_actividad"></label>
+              <label class="preview_label">Objetivo de la Actividad:</label> <label id="objetivo_actividad"></label>
             </div>
           </div> <!-- Row #4 -->
           <hr>
           <div class="row">
             <div class="col-md-6 col-sm-6">
-              <label>Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
-              <label>Aspecto Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
+              <label class="preview_label">Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
+              <label class="preview_label">Aspecto Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
             </div>
             <div class="col-md-6 col-sm-6">
-              <label>Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
-              <label>Razon de Propuesta:</label> <label id="razon_propuesta"></label>
+              <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
+              <label class="preview_label">Razon de Propuesta:</label> <label id="razon_propuesta"></label>
             </div>
-          </div> <!-- Row #5 -->
+          </div> <!-- Row #5 --> <br>
+          <div class="row">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-4 col-sm-4">
+              <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+          </div> <!-- Row #6 --> 
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div>
