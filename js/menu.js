@@ -44,11 +44,11 @@ window.addEventListener('click', clickOutside);
     .done(function(datos){
       territorio_label.innerHTML = datos.Territorio;
       pais_label.innerHTML = datos.Pais;
-      estado_label.innerHTML = datos.Estado;
+      estado_label.innerHTML = nombre_estado(datos.Estado);
       ciudad_label.innerHTML = datos.Ciudad;
-      tipo_evento_label.innerHTML = datos.tipo_evento;
+      tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
       fecha_inicial_label.innerHTML = datos.fecha;
-      tipo_actividad_label.innerHTML = datos.tipo_actividad;
+      tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
       hora_inicial_label.innerHTML = datos.hora;
       nombre_empresa_label.innerHTML = datos.empresa;
       tema_visita_label.innerHTML = datos.tema;
@@ -98,3 +98,179 @@ function ConsultaDeRegistros(){
 
 
 // Ajax Tabla de Matriculas END
+
+// Regresar nombre de evento a base de clave
+
+function nombre_evento(evento){
+  switch (evento) {
+    case '1':
+      return "Vinculacion"
+      break;
+    case '2':
+      return "Cientifica"
+      break;
+    case '3':
+      return "Deportiva"
+      break;
+    case '4':
+      return "Responsabilidad Social"
+      break;
+    case '5':
+      return "Cultural"
+      break;
+
+    default:
+      return "0"
+
+  }
+}
+
+// Regresar nombre de actividad a base de clave
+function nombre_actividad(actividad){
+  switch (actividad) {
+    case '1':
+      return "Visitas Empresariales"
+      break;
+    case '2':
+      return "Viajes de Estudio"
+      break;
+    case '3':
+      return "Practicas Academicas"
+      break;
+    case '4':
+      return "Congresos"
+      break;
+    case '5':
+      return "Conferencias"
+      break;
+    case '6':
+      return "Talleres"
+      break;
+    case '7':
+      return "Platicas"
+      break;
+    case '8':
+      return "Maratones"
+      break;
+    case '9':
+      return "Diplomados"
+      break;
+    case '10':
+      return "Caminata"
+      break;
+    case '11':
+      return "Otro"
+      break;
+
+    default:
+      return "0"
+
+  }
+}
+
+
+// Regresra nombre de estado a base de clave
+function nombre_estado(estado){
+  switch (estado) {
+    case "DIF":
+    return "Distrito Federal"
+    break;
+    case "AGS":
+    return "Aguascalientes"
+    break;
+    case "BCN":
+    return "Baja California"
+    break;
+    case "BCS":
+    return "Baja California Sur"
+    break;
+    case "CAM":
+    return "Campeche"
+    break;
+    case "CHP":
+    return "Chiapas"
+    break;
+    case "CHI":
+    return "Chihuahua"
+    break;
+    case "COA":
+    return "Coahuila"
+    break;
+    case "COL":
+    return "Colima"
+    break;
+    case "DUR":
+    return "Durango"
+    break;
+    case "GTO":
+    return "Guanajuato"
+    break;
+    case "GRO":
+    return "Guerrero"
+    break;
+    case "HGO":
+    return "Hidalgo"
+    break;
+    case "JAL":
+    return "Jalisco"
+    break;
+    case "MEX":
+    return "M&eacute;xico"
+    break;
+    case "MIC":
+    return "Michoac&aacute;n"
+    break;
+    case "MOR":
+    return "Morelos"
+    break;
+    case "NAY":
+    return "Nayarit"
+    break;
+    case "NLE":
+    return "Nuevo Le&oacute;n"
+    break;
+    case "OAX":
+    return "Oaxaca"
+    break;
+    case "PUE":
+    return "Puebla"
+    break;
+    case "QRO":
+    return "Quer&eacute;taro"
+    break;
+    case "ROO":
+    return "Quintana Roo"
+    break;
+    case "SLP":
+    return "San Luis Potos&iacute;"
+    break;
+    case "SIN":
+    return "Sinaloa"
+    break;
+    case "SON":
+    return "Sonora"
+    break;
+    case "TAB":
+    return "Tabasco"
+    break;
+    case "TAM":
+    return "Tamaulipas"
+    break;
+    case "TLX":
+    return "Tlaxcala"
+    break;
+    case "VER":
+    return "Veracruz"
+    break;
+    case "YUC":
+    return "Yucat&aacute;n"
+    break;
+    case "ZAC":
+    return "Zacatecas"
+    break;
+
+    default:
+    return "0"
+
+  }
+}
