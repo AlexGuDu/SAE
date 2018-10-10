@@ -55,6 +55,7 @@ $('#Agregar').click(function(){
   var tipo_actividad = document.getElementById('actividadSelector');
   tipo_evento.addEventListener('change', function(){
     tipo_actividad.disabled = false;
+    tipo_actividad.value = "0";
     if(tipo_evento.value == '1'){                 // Vinculacion:
       tipo_actividad.selected == tipo_actividad.options[12];
       tipo_actividad.options[1].hidden = false;   // Visitas Empresariales

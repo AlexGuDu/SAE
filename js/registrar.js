@@ -1,4 +1,4 @@
-var lugarEvento_input = document.getElementById('lugarEvento');
+var lugarEvento_input = document.getElementById('lugar_evento');
 var nombreActividad_input = document.getElementById('nombreActividad');
 var nombreOrganiza_input = document.getElementById('nombreOrganiza');
 var objetivoEvento_input = document.getElementById('objetivoEvento');
@@ -16,6 +16,7 @@ var infoGeo = document.getElementById('infoGeo');
 var confirm_campus = document.getElementById('confirm_campus');
 var ingresar_matricula = document.getElementById('ingresar_matricula');
 var boton_ingresar_matricula = document.getElementById('boton_ingresar_matricula');
+var solicitud = false;
 
 /*------------------------------------------------------------------------------------------------------*/
 
@@ -25,6 +26,7 @@ var boton_ingresar_matricula = document.getElementById('boton_ingresar_matricula
   var tipo_actividad = document.getElementById('actividadSelector');
   tipo_evento.addEventListener('change', function(){
     tipo_actividad.disabled = false;
+    tipo_actividad.value = "0";
     if(tipo_evento.value == '1'){                 // Vinculacion:
       tipo_actividad.selected == tipo_actividad.options[12];
       tipo_actividad.options[1].hidden = false;   // Visitas Empresariales
@@ -99,54 +101,6 @@ var boton_ingresar_matricula = document.getElementById('boton_ingresar_matricula
 
 /*------------------------------------------------------------------------------------------------------*/
 
-// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos START
-
-var section_1 = document.getElementById('section_one');
-var section_2 = document.getElementById('section_two');
-var section_3 = document.getElementById('section_three');
-
-var nextBtn_1 = document.getElementById('nextBtn_one')
-var nextBtn_2 = document.getElementById('nextBtn_two')
-var previousBtn_1 = document.getElementById('previousBtn_one')
-var previousBtn_2 = document.getElementById('previousBtn_two')
-
-
-nextBtn_1.addEventListener('click', openSection_2);
-nextBtn_2.addEventListener('click', openSection_3);
-previousBtn_1.addEventListener('click', returnToSection_1);
-previousBtn_2.addEventListener('click', returnToSection_2);
-
-
-  // Regresar a Section ONE
-  function returnToSection_1(){
-    section_1.style.display = 'block'
-    section_2.style.display = 'none'
-  }
-
-  // Regresar a Section TWO
-  function returnToSection_2(){
-    section_2.style.display = 'block';
-    section_1.style.display = 'none'
-    section_3.style.display = 'none'
-  }
-
-  // Validar Section One START
-  function openSection_2(){
-    section_2.style.display = 'block';
-    section_1.style.display = 'none'
-    section_3.style.display = 'none'
-  }
-
-  // Validar Section Two START
-  function openSection_3(){
-    section_2.style.display = 'none'
-    section_3.style.display = 'block';
-
-  }
-
-
-// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
-
 
 // Generacion de datos de solicitud previa en campos de Registro
 
@@ -168,6 +122,7 @@ function folio_ComboBox(){
 var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
   if(folio.value == 'clear'){
+    solicitud = false;
     eventoSelector.disabled = false;
     fecha_input.disabled = false;
     hora_input  .disabled = false;
@@ -175,7 +130,7 @@ folio.addEventListener('change', function(){
     boton_ingresar_matricula.disabled = false;
     infoGeo.style.display = 'none';
     confirm_campus.style.display = 'block';
-    lugarEvento.disabled = false;
+    lugarEvento_input.disabled = false;
     nombreActividad.disabled = false;
     nombreOrganiza.disabled = false;
     objetivoEvento.disabled = false;
@@ -186,12 +141,6 @@ folio.addEventListener('change', function(){
       '<option disabled selected hidden value="0">SELECCIONE</option>'
     );
     $('#actividadSelector').append(
-      '<option disabled selected hidden value="0">SELECCIONE</option>'
-    );
-    $('#fecha').append(
-      '<option disabled selected hidden value="0">SELECCIONE</option>'
-    );
-    $('#hora').append(
       '<option disabled selected hidden value="0">SELECCIONE</option>'
     );
     lugarEvento_input.value = "";
@@ -206,6 +155,7 @@ folio.addEventListener('change', function(){
     hora_input.value = "";
   }
   else {
+    solicitud = true;
     var datosEnviados = {
       'folio' : folio.value
     };
@@ -225,7 +175,7 @@ folio.addEventListener('change', function(){
       confirm_campus.style.display = 'none';
       estado_show.disabled = "disabled";
       ciudad_show.disabled = "disabled";
-      lugarEvento.disabled = "disabled";
+      lugarEvento_input.disabled = "disabled";
       nombreActividad.disabled = "disabled";
       nombreOrganiza.disabled = "disabled";
       objetivoEvento.disabled = "disabled";
@@ -430,3 +380,93 @@ function nombre_estado(estado){
 
   }
 }
+
+// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos START
+var warningModal = document.getElementById('warningModal');
+
+var section_1 = document.getElementById('section_one');
+var section_2 = document.getElementById('section_two');
+var section_3 = document.getElementById('section_three');
+
+var nextBtn_1 = document.getElementById('nextBtn_one')
+var nextBtn_2 = document.getElementById('nextBtn_two')
+var previousBtn_1 = document.getElementById('previousBtn_one')
+var previousBtn_2 = document.getElementById('previousBtn_two')
+var registrarActividad = document.getElementById('registrarActividad');
+
+
+  nextBtn_1.addEventListener('click', openSection_2);
+  nextBtn_2.addEventListener('click', openSection_3);
+  previousBtn_1.addEventListener('click', returnToSection_1);
+  previousBtn_2.addEventListener('click', returnToSection_2);
+  registrarActividad.addEventListener('click', validateSection_3)
+  window.addEventListener('click', clickOutside);
+
+    function clickOutside(e){
+      if(e.target == warningModal){
+      warningModal.style.display = 'none';
+      }
+    }
+
+
+    // Regresar a Section ONE
+    function returnToSection_1(){
+      section_1.style.display = 'block'
+      section_2.style.display = 'none'
+    }
+
+    // Regresar a Section TWO
+    function returnToSection_2(){
+      section_2.style.display = 'block';
+      section_1.style.display = 'none'
+      section_3.style.display = 'none'
+    }
+
+    // Validar Section One START
+    function openSection_2(){
+      if (solicitud == false) {
+        var tipo_evento = document.forms["entireForm"]["tipo_evento"].value;
+        var tipo_actividad = document.forms["entireForm"]["tipo_actividad"].value;
+        var fecha = document.forms["entireForm"]["fecha"].value;
+        var hora = document.forms["entireForm"]["hora"].value;
+        var lugar_evento = document.forms["entireForm"]["lugar_evento"].value;
+        if(tipo_evento == "" || tipo_evento == 0 || tipo_actividad == "" || tipo_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
+          warningModal.style.display = 'block';
+        } else {
+          section_2.style.display = 'block';
+          section_1.style.display = 'none';
+          section_3.style.display = 'none';
+        }
+      } // if solicitud
+      else {
+        section_2.style.display = 'block';
+        section_1.style.display = 'none';
+        section_3.style.display = 'none';
+      }
+    }
+
+    // Validar Section Two START
+    function openSection_3(){
+      var nombreActividad = document.forms["entireForm"]["nombreActividad"].value;
+      var nombreOrganiza = document.forms["entireForm"]["nombreOrganiza"].value;
+
+      if(nombreActividad == "" || nombreOrganiza == ""){
+        warningModal.style.display = 'block';
+      } else {
+        section_2.style.display = 'none';
+        section_3.style.display = 'block';
+      }
+    }
+
+    function validateSection_3(){
+      // Validar Section Three START
+      var objetivoEvento = document.forms["entireForm"]["objetivoEvento"].value;
+      var maestroMateria = document.forms["entireForm"]["maestroMateria"].value;
+      // pending more inputs
+
+      if(objetivoEvento == "" || maestroMateria == ""){
+        alert("Favor de llenar todos los campos!");
+      }
+    }
+
+// Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END

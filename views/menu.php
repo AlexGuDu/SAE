@@ -92,7 +92,7 @@
               <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
             </div>
             <div class="col-md-4 col-sm-4"></div>
-          </div> <!-- Row #6 --> 
+          </div> <!-- Row #6 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div>
