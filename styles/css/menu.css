@@ -20,7 +20,7 @@
 
 .modal{
 		display: none;
-		position: fixed;
+		position: auto;
 		z-index: 1;
 		left: 0;
 		top: 0;

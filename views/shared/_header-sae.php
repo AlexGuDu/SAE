@@ -26,7 +26,7 @@ $stament->execute();
         <div class="container" id="logo-sae">
             <div class="row top-buffer align-items-center justify-content-center">
                 <div class="col-3 col-md-2">
-                    <img src="../assets/img/logo-sae-cimarron.png" class="img-fluid">
+                    <img id="cimarron" src="../assets/img/logo-sae-cimarron.png" class="img-fluid">
                 </div>
                 <div class="col-7 col-md-9">
                     <p class="h1 font-weight-light text-center ">Sistema de Actividades Extracurriculares</p>
@@ -68,5 +68,6 @@ $stament->execute();
     </div>
 
 </body>
+<script src="../../js/header-sae.js"></script>
 
 </html>

@@ -238,7 +238,7 @@ folio.addEventListener('change', function(){
       $('#actividadSelector').append(
         '<option disabled selected hidden value="'+datos.tipo_actividad+'">'+nombre_actividad(datos.tipo_actividad)+'</option>'
       );
-      estado_show.value = datos.Estado;
+      estado_show.value = nombre_estado(datos.Estado);
       ciudad_show.value = datos.Ciudad;
       hora_input.value = datos.hora;
 
@@ -255,7 +255,7 @@ folio.addEventListener('change', function(){
 }
 });
 
-
+// Regresar nombre de evento a base de clave
 
 function nombre_evento(evento){
   switch (evento) {
@@ -281,7 +281,7 @@ function nombre_evento(evento){
   }
 }
 
-
+// Regresar nombre de actividad a base de clave
 function nombre_actividad(actividad){
   switch (actividad) {
     case '1':
@@ -320,6 +320,113 @@ function nombre_actividad(actividad){
 
     default:
       return "0"
+
+  }
+}
+
+
+// Regresra nombre de estado a base de clave
+function nombre_estado(estado){
+  switch (estado) {
+    case "DIF":
+    return "Distrito Federal"
+    break;
+    case "AGS":
+    return "Aguascalientes"
+    break;
+    case "BCN":
+    return "Baja California"
+    break;
+    case "BCS":
+    return "Baja California Sur"
+    break;
+    case "CAM":
+    return "Campeche"
+    break;
+    case "CHP":
+    return "Chiapas"
+    break;
+    case "CHI":
+    return "Chihuahua"
+    break;
+    case "COA":
+    return "Coahuila"
+    break;
+    case "COL":
+    return "Colima"
+    break;
+    case "DUR":
+    return "Durango"
+    break;
+    case "GTO":
+    return "Guanajuato"
+    break;
+    case "GRO":
+    return "Guerrero"
+    break;
+    case "HGO":
+    return "Hidalgo"
+    break;
+    case "JAL":
+    return "Jalisco"
+    break;
+    case "MEX":
+    return "M&eacute;xico"
+    break;
+    case "MIC":
+    return "Michoac&aacute;n"
+    break;
+    case "MOR":
+    return "Morelos"
+    break;
+    case "NAY":
+    return "Nayarit"
+    break;
+    case "NLE":
+    return "Nuevo Le&oacute;n"
+    break;
+    case "OAX":
+    return "Oaxaca"
+    break;
+    case "PUE":
+    return "Puebla"
+    break;
+    case "QRO":
+    return "Quer&eacute;taro"
+    break;
+    case "ROO":
+    return "Quintana Roo"
+    break;
+    case "SLP":
+    return "San Luis Potos&iacute;"
+    break;
+    case "SIN":
+    return "Sinaloa"
+    break;
+    case "SON":
+    return "Sonora"
+    break;
+    case "TAB":
+    return "Tabasco"
+    break;
+    case "TAM":
+    return "Tamaulipas"
+    break;
+    case "TLX":
+    return "Tlaxcala"
+    break;
+    case "VER":
+    return "Veracruz"
+    break;
+    case "YUC":
+    return "Yucat&aacute;n"
+    break;
+    case "ZAC":
+    return "Zacatecas"
+    break;
+
+    default:
+    return "0"
 
   }
 }
