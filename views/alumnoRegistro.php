@@ -38,7 +38,7 @@ Session_start();
 			<input class="textBox form-control block" type="text" name="correo" >
 			<label for="correo" class="control-label inline">@uabc.edu.mx</label>
 			<p class="texto">Grupo</p>
-			<input class="textBox" type="text" name="telefono">
+			<input class="textBox" type="text" name="grupo">
 			<p class="texto">Telefono</p>
 			<input class="textBox" type="text" name="telefono">
 			<?php
