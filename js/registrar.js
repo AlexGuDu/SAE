@@ -394,6 +394,16 @@ var previousBtn_1 = document.getElementById('previousBtn_one')
 var previousBtn_2 = document.getElementById('previousBtn_two')
 var registrarActividad = document.getElementById('registrarActividad');
 
+// Utilizadas para el cambio de colores dependiendo de campo vacio o seleccionado
+// S1
+var es = document.getElementById('estado');
+var ci = document.getElementById('ciudad');
+var t_e = document.getElementById('eventoSelector');
+var t_a = document.getElementById('actividadSelector');
+var fe = document.getElementById('fecha');
+var ho = document.getElementById('hora');
+var l_e = document.getElementById('lugar_evento');
+
 
   nextBtn_1.addEventListener('click', openSection_2);
   nextBtn_2.addEventListener('click', openSection_3);
@@ -435,12 +445,33 @@ var registrarActividad = document.getElementById('registrarActividad');
     // Validar Section One START
     function openSection_2(){
       if (solicitud == false) {
-        var tipo_evento = document.forms["entireForm"]["tipo_evento"].value;
-        var tipo_actividad = document.forms["entireForm"]["tipo_actividad"].value;
+        var valor_evento = document.forms["entireForm"]["tipo_evento"].value;
+        var valor_actividad = document.forms["entireForm"]["tipo_actividad"].value;
         var fecha = document.forms["entireForm"]["fecha"].value;
         var hora = document.forms["entireForm"]["hora"].value;
         var lugar_evento = document.forms["entireForm"]["lugar_evento"].value;
         if(tipo_evento == "" || tipo_evento == 0 || tipo_actividad == "" || tipo_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
+          if(estado == "" || estado == 0){
+            es.style.backgroundColor = '#ffa76d';
+          }
+          if (ciudad == "") {
+            ci.style.backgroundColor = '#ffa76d';
+          }
+          if (valor_evento == "" || valor_evento == 0) {
+            t_e.style.backgroundColor = '#ffa76d';
+          }
+          if (valor_actividad == "" || valor_actividad == 0) {
+            t_a.style.backgroundColor = '#ffa76d';
+          }
+          if (fecha == "") {
+            fe.style.backgroundColor = '#ffa76d';
+          }
+          if (hora == "" ) {
+            ho.style.backgroundColor = '#ffa76d';
+          }
+          if (lugar_evento == "") {
+            l_e.style.backgroundColor = '#ffa76d';
+          }
           warningModal.style.display = 'block';
         } else {
           section_2.style.display = 'block';
@@ -478,5 +509,29 @@ var registrarActividad = document.getElementById('registrarActividad');
         alert("Favor de llenar todos los campos!");
       }
     }
+
+    // Limpiar border
+      // S1
+      es.onclick = function(){
+        es.style.backgroundColor = 'white';
+      };
+      ci.onclick = function(){
+        ci.style.backgroundColor = 'white';
+      };
+      t_e.onclick = function(){
+        t_e.style.backgroundColor = 'white';
+      };
+      t_a.onclick = function(){
+        t_a.style.backgroundColor = 'white';
+      };
+      fe.onclick = function(){
+        fe.style.backgroundColor = 'white';
+      };
+      ho.onclick = function(){
+        ho.style.backgroundColor = 'white';
+      };
+      l_e.onclick = function(){
+        l_e.style.backgroundColor = 'white';
+      };
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
