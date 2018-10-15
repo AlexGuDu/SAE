@@ -8,6 +8,8 @@
 		padding-bottom: 20px;
 		display: block;
 		margin:0 auto;
+		animation-name: slideModalContent;
+		animation-duration: .5s;
 }
 
 .btn{
@@ -44,6 +46,12 @@
 	color: #FFF;
 }
 
+
+.table table-bordered table-hover #header-table{
+	border-radius: 15px 15px 0px 0px;
+}
+
+
 .modal{
 		display: none;
 		position: auto;
@@ -63,10 +71,41 @@
 	font-weight: bold;
 }
 
-@keyframes openModalBlock{
+#Header{
+	animation-name: slideHeader;
+	animation-duration: 0.8s;
+}
+
+
+@keyframes slideHeader{
     from{
-       opacity: 0
+       opacity: 0;
+			 transform: translateY(2.5rem);
    }
     to {
-       opacity: 1
+       opacity: 1;
+			 transform: translateY(0);
+   };
+}
+
+@keyframes openModalBlock{
+    from{
+       opacity: 0;
+
    }
+    to {
+       opacity: 1;
+
+   };
+}
+
+@keyframes slideModalContent{
+    from{
+       opacity: 0;
+			 transform: translateY(2.5rem);
+   }
+    to {
+       opacity: 1;
+			 transform: translateY(0);
+   };
+}

@@ -99,8 +99,10 @@
     </div> <!-- Modal -->
 
     <!-- BOTONES ACTIVIDAD -->
-  
 
+
+
+  <div id="entirePage" class="col-md-8 col-sm-8">
 
 
     <!-- BOTONES ACTIVIDAD -->
@@ -167,7 +169,9 @@
           <input type="submit" name="" class="boton" value="Salir">
           </form>
         </div>
-      </div>
+      </div> <!-- Whole container -->
+    </div>
+    <div style="height:60px"></div>
 
 
     <!-- FIN TABLA ACTIVIDADES -->
