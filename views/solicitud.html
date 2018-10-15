@@ -50,7 +50,7 @@
 
                             <div id="formNac" class="form-group">
                                 <label> SELECCIONE EL ESTADO: </label>
-                                <select class="form-control form-control-sm" name="estado">
+                                <select class="form-control form-control-sm" name="estado" id="estado">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="DIF">Distrito Federal</option>
                               <option value="AGS">Aguascalientes</option>
@@ -87,7 +87,7 @@
                             </select>
                                 <br>
                                 <label>INGRESE LA CIUDAD: </label>
-                                <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad">
+                                <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad" id="ciudad">
                             </div>
                             <div id="formExt" class="form-group">
                                 <label>SELECCIONE EL PAIS: </label>
@@ -347,8 +347,8 @@
                             <hr style="height: 10px;">
                             <div class="form-group">
                                 <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
-                                <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento">
-                                <option selected disabled hidden> SELECCIONE </option>
+                                <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento" >
+                                <option selected disabled hidden value="0"> SELECCIONE </option>
                                 <option value="1"> Vinculacion </option>
                                 <option value="2"> Cientifica </option>
                                 <option value="3"> Deportiva </option>
@@ -358,7 +358,7 @@
                             </div>
                             <div class="form-group">
                                 <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                                <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad">
+                                <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad" >
                                 <option selected disabled hidden value="0"> SELECCIONE </option>
                                 <option hidden value="1"> Visitas Empresariales </option>
                                 <option hidden value="2"> Viajes de Estudio </option>
@@ -377,11 +377,11 @@
                             <hr style="height: 10px;">
                             <div class="form-group">
                                 <label>FECHA INICIAL DEL EVENTO: </label> <br>
-                                <input type="date" class="form-control" name="fecha">
+                                <input type="date" class="form-control" name="fecha" id="fecha">
                             </div>
                             <div class="form-group">
                                 <label>HORA INICIAL DEL EVENTO: </label> <br>
-                                <input type="time" class="form-control" name="hora">
+                                <input type="time" class="form-control" name="hora" id="hora">
                             </div>
                         </div>
                         <!-- End of left column -->
@@ -430,7 +430,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label>LUGAR DEL EVENTO</label>
-                                <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento">
+                                <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento" id="lugar_evento" >
                             </div>
                             <br>
                             <div class="text-center"><button type="button" id="nextBtn_one" class="btn btn-success btn-lg">SIGUIENTE</button></div>
@@ -546,11 +546,16 @@
         </div>
     </form>
     <div style="height:40px"></div>
+
     <div id="warningModal" class="modal">
         <div class="modal-content">
             <h2>Favor de llenar todos los campos.</h2>
+            <input id="ok_modal"  class="btn btn-success btn-lg" type="button" name="ok_modal" value="Ok">
         </div>
     </div>
+
+
+
 
 </body>
 <!-- SCRIPTS -->

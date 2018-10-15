@@ -408,6 +408,16 @@ var registrarActividad = document.getElementById('registrarActividad');
       }
     }
 
+    $(document).keyup(function(e) {
+       if (e.keyCode == 27) { // escape key maps to keycode `27`
+          warningModal.style.display = 'none';
+      }
+    });
+
+    document.getElementById('ok_modal').addEventListener('click', function(){
+      warningModal.style.display = 'none';
+    })
+
 
     // Regresar a Section ONE
     function returnToSection_1(){

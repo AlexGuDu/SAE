@@ -27,7 +27,7 @@
  .modal{
      display: none;
      position: fixed;
-     z-index: 1;
+     z-index: 2;
      left: 0;
      top: 0;
      width: 100%;
@@ -41,8 +41,9 @@
      background-color: #f4f4f4;
      margin: 20% auto;
      padding: 20px;
-     width: 40%;
-     height: 13%;
+     width: 30%;
+     height: 15%;
+     text-align: center;
      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
      animation-name: openModalBlock;
      animation-duration: 1.5s;
@@ -107,6 +108,18 @@
  #formExt{
      display: none;
 }
+
+#ok_modal{
+  margin: auto;
+  width: 50%;
+}
+
+/* .form-control{
+  background-color: red;
+} */
+
+
+
  @keyframes openSection{
      from{
         opacity: 0

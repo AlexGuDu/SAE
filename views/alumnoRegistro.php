@@ -17,8 +17,10 @@ Session_start();
 <div class="container-fluid" id="header">
 	<div class="row" >
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <a href="home.php">
 			<img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
 			<img id="Letras" src="../assets/img/uabc-letras.png" alt="Letras UABC">
+      </a>
 		</div>
 	</div>
 </div>
