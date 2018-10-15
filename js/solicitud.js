@@ -35,11 +35,16 @@ $('#Agregar').click(function(){
     var terrFlag = 'nac'; // Used in Form Validation's if condition
 
     toggleNacional.addEventListener('click', function(){
+      es.style.backgroundColor = 'white';
+      ci.style.backgroundColor = 'white';
       formNacional.style.display = 'block';
       formExtranjero.style.display = 'none';
       terrFlag = 'nac';
     });
     toggleExtranjero.addEventListener('click', function(){
+      ext_pais.style.backgroundColor = 'white';
+      ext_es.style.backgroundColor = 'white';
+      ext_ci.style.backgroundColor = 'white';
       formNacional.style.display = 'none';
       formExtranjero.style.display = 'block';
       terrFlag = 'ext';
@@ -147,8 +152,11 @@ var previousBtn_2 = document.getElementById('previousBtn_two')
 
 // Utilizadas para el cambio de colores dependiendo de campo vacio o seleccionado
 // S1
-var es = document.getElementById('estado');
-var ci = document.getElementById('ciudad');
+var ext_pa = document.getElementById('ext_pais');
+var ext_es = document.getElementById('ext_estado');
+var ext_ci = document.getElementById('ext_ciudad');
+var es = document.getElementById('nac_estado');
+var ci = document.getElementById('nac_ciudad');
 var t_e = document.getElementById('eventoSelector');
 var t_a = document.getElementById('actividadSelector');
 var fe = document.getElementById('fecha');
@@ -205,42 +213,83 @@ window.addEventListener('click', clickOutside);
   // Validar Section One START
   function openSection_2(){
     // Entrega valores a variables al momento de dar click en "SIGUIENTE"
-    var estado = document.forms["entireForm"]["estado"].value;
-    var ciudad = document.forms["entireForm"]["ciudad"].value;
+    var ext_pais = document.forms["entireForm"]["ext_pais"].value;
+    var ext_estado = document.forms["entireForm"]["ext_estado"].value;
+    var ext_ciudad = document.forms["entireForm"]["ext_ciudad"].value;
+    var estado = document.forms["entireForm"]["nac_estado"].value;
+    var ciudad = document.forms["entireForm"]["nac_ciudad"].value;
     var valor_evento = document.forms["entireForm"]["tipo_evento"].value;
     var valor_actividad = document.forms["entireForm"]["tipo_actividad"].value;
     var fecha = document.forms["entireForm"]["fecha"].value;
     var hora = document.forms["entireForm"]["hora"].value;
     var lugar_evento = document.forms["entireForm"]["lugar_evento"].value;
-    if(estado == "" || estado == 0 || ciudad == "" || valor_evento == "" || valor_evento == 0 || valor_actividad == "" || valor_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
-      if(estado == "" || estado == 0){
-        es.style.backgroundColor = '#ffa76d';
-      }
-      if (ciudad == "") {
-        ci.style.backgroundColor = '#ffa76d';
-      }
-      if (valor_evento == "" || valor_evento == 0) {
-        t_e.style.backgroundColor = '#ffa76d';
-      }
-      if (valor_actividad == "" || valor_actividad == 0) {
-        t_a.style.backgroundColor = '#ffa76d';
-      }
-      if (fecha == "") {
-        fe.style.backgroundColor = '#ffa76d';
-      }
-      if (hora == "" ) {
-        ho.style.backgroundColor = '#ffa76d';
-      }
-      if (lugar_evento == "") {
-        l_e.style.backgroundColor = '#ffa76d';
-      }
-      warningModal.style.display = 'block';
 
-    } else {
-      section_2.style.display = 'block';
-      section_1.style.display = 'none'
-      section_3.style.display = 'none'
+    if (terrFlag == "nac") {
+      if(estado == "" || estado == 0 || ciudad == "" || valor_evento == "" || valor_evento == 0 || valor_actividad == "" || valor_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
+        if(estado == "" || estado == 0){
+          es.style.backgroundColor = '#ffa76d';
+        }
+        if (ciudad == "") {
+          ci.style.backgroundColor = '#ffa76d';
+        }
+        if (valor_evento == "" || valor_evento == 0) {
+          t_e.style.backgroundColor = '#ffa76d';
+        }
+        if (valor_actividad == "" || valor_actividad == 0) {
+          t_a.style.backgroundColor = '#ffa76d';
+        }
+        if (fecha == "") {
+          fe.style.backgroundColor = '#ffa76d';
+        }
+        if (hora == "" ) {
+          ho.style.backgroundColor = '#ffa76d';
+        }
+        if (lugar_evento == "") {
+          l_e.style.backgroundColor = '#ffa76d';
+        }
+        warningModal.style.display = 'block';
+
+      } else {
+        section_2.style.display = 'block';
+        section_1.style.display = 'none'
+        section_3.style.display = 'none'
+      }
     }
+    if (terrFlag == "ext") {
+      if(ext_pais == "" || ext_pais == 0 || ext_estado == "" || ext_estado == 0 || ext_ciudad == "" || valor_evento == "" || valor_evento == 0 || valor_actividad == "" || valor_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
+        if(ext_pais == "" || ext_pais == 0){
+          ext_pa.style.backgroundColor = '#ffa76d';
+        }
+        if(ext_estado == "" || ext_estado == 0){
+          ext_es.style.backgroundColor = '#ffa76d';
+        }
+        if (ext_ciudad == "") {
+          ext_ci.style.backgroundColor = '#ffa76d';
+        }
+        if (valor_evento == "" || valor_evento == 0) {
+          t_e.style.backgroundColor = '#ffa76d';
+        }
+        if (valor_actividad == "" || valor_actividad == 0) {
+          t_a.style.backgroundColor = '#ffa76d';
+        }
+        if (fecha == "") {
+          fe.style.backgroundColor = '#ffa76d';
+        }
+        if (hora == "" ) {
+          ho.style.backgroundColor = '#ffa76d';
+        }
+        if (lugar_evento == "") {
+          l_e.style.backgroundColor = '#ffa76d';
+        }
+        warningModal.style.display = 'block';
+
+      } else {
+        section_2.style.display = 'block';
+        section_1.style.display = 'none'
+        section_3.style.display = 'none'
+      }
+    }
+
   }
 
   // Validar Section Two START
@@ -289,6 +338,15 @@ window.addEventListener('click', clickOutside);
 
 // Limpiar border
   // S1
+  ext_pa.onclick = function(){
+    ext_pa.style.backgroundColor = 'white';
+  };
+  ext_es.onclick = function(){
+    ext_es.style.backgroundColor = 'white';
+  };
+  ext_ci.onclick = function(){
+    ext_ci.style.backgroundColor = 'white';
+  };
   es.onclick = function(){
     es.style.backgroundColor = 'white';
   };
