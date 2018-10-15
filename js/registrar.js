@@ -182,6 +182,11 @@ folio.addEventListener('change', function(){
       maestroMateria.disabled = "disabled";
       ingresar_matricula.disabled = "disabled";
       boton_ingresar_matricula.disabled = "disabled";
+      t_e.style.backgroundColor = 'white';
+      t_a.style.backgroundColor = 'white';
+      fe.style.backgroundColor = 'white';
+      ho.style.backgroundColor = 'white';
+      l_e.style.backgroundColor = 'white';
       $('#eventoSelector').append(
         '<option disabled selected hidden value="'+datos.tipo_evento+'">'+nombre_evento(datos.tipo_evento)+'</option>'
       );
@@ -396,13 +401,14 @@ var registrarActividad = document.getElementById('registrarActividad');
 
 // Utilizadas para el cambio de colores dependiendo de campo vacio o seleccionado
 // S1
-var es = document.getElementById('estado');
-var ci = document.getElementById('ciudad');
 var t_e = document.getElementById('eventoSelector');
 var t_a = document.getElementById('actividadSelector');
 var fe = document.getElementById('fecha');
 var ho = document.getElementById('hora');
 var l_e = document.getElementById('lugar_evento');
+// S2
+var nomAct = document.getElementById('nombreActividad');
+var nomOrg = document.getElementById('nombreOrganiza');
 
 
   nextBtn_1.addEventListener('click', openSection_2);
@@ -451,12 +457,7 @@ var l_e = document.getElementById('lugar_evento');
         var hora = document.forms["entireForm"]["hora"].value;
         var lugar_evento = document.forms["entireForm"]["lugar_evento"].value;
         if(tipo_evento == "" || tipo_evento == 0 || tipo_actividad == "" || tipo_actividad == 0 || fecha == "" || hora == "" || lugar_evento == ""){
-          if(estado == "" || estado == 0){
-            es.style.backgroundColor = '#ffa76d';
-          }
-          if (ciudad == "") {
-            ci.style.backgroundColor = '#ffa76d';
-          }
+
           if (valor_evento == "" || valor_evento == 0) {
             t_e.style.backgroundColor = '#ffa76d';
           }
@@ -492,6 +493,12 @@ var l_e = document.getElementById('lugar_evento');
       var nombreOrganiza = document.forms["entireForm"]["nombreOrganiza"].value;
 
       if(nombreActividad == "" || nombreOrganiza == ""){
+        if (nombreActividad == "") {
+          nomAct.style.backgroundColor = '#ffa76d';
+        }
+        if (nombreOrganiza == "") {
+          nomOrg.style.backgroundColor = '#ffa76d';
+        }
         warningModal.style.display = 'block';
       } else {
         section_2.style.display = 'none';
@@ -512,12 +519,6 @@ var l_e = document.getElementById('lugar_evento');
 
     // Limpiar border
       // S1
-      es.onclick = function(){
-        es.style.backgroundColor = 'white';
-      };
-      ci.onclick = function(){
-        ci.style.backgroundColor = 'white';
-      };
       t_e.onclick = function(){
         t_e.style.backgroundColor = 'white';
       };
@@ -532,6 +533,13 @@ var l_e = document.getElementById('lugar_evento');
       };
       l_e.onclick = function(){
         l_e.style.backgroundColor = 'white';
+      };
+      // S2
+      nomAct.onclick = function(){
+        nomAct.style.backgroundColor = 'white';
+      };
+      nomOrg.onclick = function(){
+        nomOrg.style.backgroundColor = 'white';
       };
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
