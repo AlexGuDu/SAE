@@ -7,7 +7,6 @@
     <title>Menu</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
-    <link href="../styles/css/solicitud_doc.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -31,13 +30,9 @@
     <!-- FIN HEADER -->
     <br>
 
-
-    <!-- BOTONES ACTIVIDAD -->
-    <div class="container">
-        <div class="row justify-content-center">
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal">
-      <div id="entirePage">
+      <div id="entirePage" class="col-md-6 col-sm-6">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -101,7 +96,12 @@
           </div> <!-- Row #6 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
-    </div>
+    </div> <!-- Modal -->
+
+    <!-- BOTONES ACTIVIDAD -->
+  
+
+
 
     <!-- BOTONES ACTIVIDAD -->
     <div class="container">
@@ -145,7 +145,7 @@
         <br><br>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 s">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered table-hover" id="consulta">
                     <thead id="header-table">
                         <tr>
                             <th>Actividades registradas</th>
@@ -155,39 +155,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tecnologias renovables</td>
-                            <td>Rechazada</td>
-                            <td><a href="">Archivo.pdf</a></td>
-                            <td>2018/02/02</td>
-                        </tr>
-                        <tr>
-                            <td>Tecnologias renovables</td>
-                            <td>Rechazada</td>
-                            <td><a href="">Archivo.pdf</a></td>
-                            <td>2018/02/02</td>
-                        </tr>
-                        <tr>
-                            <td>Tecnologias renovables</td>
-                            <td>Rechazada</td>
-                            <td><a href="">Archivo.pdf</a></td>
-                            <td>2018/02/02</td>
-                        </tr>
+                      <!-- Cargar Folios - AJAX -->
+
+                      <!-- Cargar Folios - AJAX -->
                     </tbody>
                 </table>
             </div>
         </div>
-
-        </div>
         <div class="row justify-content-center">
-
-
-        <form class="" action="../control/logout.php">
-        <input type="submit" name="" class="boton" value="Salir">
-        </form>
-      
+          <form class="" action="../control/logout.php">
+          <input type="submit" name="" class="boton" value="Salir">
+          </form>
         </div>
-    </div>
+      </div>
+
+
     <!-- FIN TABLA ACTIVIDADES -->
     <script src="../assets/bootstrap/bootstrap.min.js"></script>
     <script src="../js/menu.js"></script>

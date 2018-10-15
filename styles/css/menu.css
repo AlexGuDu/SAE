@@ -1,5 +1,29 @@
+#entirePage {
+		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
+		border-radius: 35px;
+		background: #F4F4F4FF;
+		height: auto;
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		display: block;
+		margin:0 auto;
+}
 
-
+.btn{
+		border-radius: 15px;
+		transition-duration: 0.1s;
+		color: #111;
+		background-color: #FFF;
+		border-color: #13673A;
+}
+.btn:hover{
+		background-color: #13673A;
+		color: #FFF;
+}
+.btn:active {
+		background-color: #13673A;
+}
 .boton{
 	border-radius: 11px;
 	height: 30px;
