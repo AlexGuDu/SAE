@@ -102,7 +102,7 @@
 
 
 
-  <div id="entirePage" class="col-md-8 col-sm-8">
+  <div id="entirePage" class="col-md-8 col-sm-10">
 
 
     <!-- BOTONES ACTIVIDAD -->
