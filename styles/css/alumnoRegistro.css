@@ -9,12 +9,13 @@ html {
   overflow: auto;*/
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 7px 20px 0 rgba(0,0,0,0.3);
 /*  padding: 8px 0 8px 0;*/
 }
 
 #Escudo {
   height: 80%;
-  width: 9%;
+  width: 8%;
   vertical-align: middle;
   display: inline-block;
   margin: 0 auto;
@@ -22,7 +23,7 @@ html {
 
 #Letras {
   height: 25%;
-  width: 56%;
+  width: 40%;
   vertical-align: middle;
   display: inline-block;
   margin: 0 auto;
@@ -44,6 +45,7 @@ html {
   padding-bottom: 1px;*/
   margin: 60px auto auto auto;
   border-radius: 30px 30px 30px 30px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 7px 20px 0 rgba(0,0,0,0.3);
 }
 
 .textBox {

@@ -52,7 +52,7 @@ if(isset($_SESSION['matricula'])){
                     <?php
                     if(isset($_SESSION['error'])){
                       if ($_SESSION['error']=1) {
-                        echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo otra vez.</p>';
+                        echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
                       }
                       unset($_SESSION['error']);
                     }

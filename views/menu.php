@@ -104,7 +104,7 @@
 
 
             <div class="col-5 col-md-5 col-lg-3">
-                <input id="solicitarPermiso" class="boton" type="button" name="registar" value="SOLICITAR PERMISO">
+                <input id="solicitarPermiso" class="boton" type="button" name="registrar" value="SOLICITAR PERMISO">
             </div>
             <div class="col-1 col-md-1"></div>
             <div class="col-6 col-md-5 col-lg-3">
