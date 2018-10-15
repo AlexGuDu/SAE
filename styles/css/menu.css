@@ -8,6 +8,15 @@
 	border-color: #13673A;
 }
 
+.botonsm{
+	border-radius: 0px;
+	height: 2px;
+	width: 15%;
+	border-width: 0px;
+	transition-duration: 0.3s;
+	background-color: #FFF;
+	border-color: #13673A;
+}
 .boton:hover {
 	background-color: #13673A;
 	color: #FFF;

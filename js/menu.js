@@ -3,23 +3,24 @@ document.getElementById('registrarActividad').addEventListener('click', openRegi
 document.getElementById('popup_test').addEventListener('click', popSolicitud)
 window.addEventListener('click', clickOutside);
 // var solicitudPopup = document.getElementById('solicitudPopup');
-  var territorio_label = document.getElementById('territorio');
-  var pais_label = document.getElementById('pais');
-  var estado_label = document.getElementById('estado');
-  var ciudad_label = document.getElementById('ciudad');
-  var tipo_evento_label = document.getElementById('tipo_evento');
-  var fecha_inicial_label = document.getElementById('fecha_inicial');
-  var tipo_actividad_label = document.getElementById('tipo_actividad');
-  var hora_inicial_label = document.getElementById('hora_inicial');
-  var nombre_empresa_label = document.getElementById('nombre_empresa');
-  var tema_visita_label = document.getElementById('tema_visita');
-  var nombre_representante_label = document.getElementById('nombre_representante');
-  var datos_contacto_label = document.getElementById('datos_contacto');
-  var objetivo_actividad_label = document.getElementById('objetivo_actividad');
-  var materia_fortalecida_label = document.getElementById('materia_fortalecida');
-  var aspecto_profesional_label = document.getElementById('aspecto_profesional');
-  var maestro_responsable_label = document.getElementById('maestro_responsable');
-  var razon_propuesta_label = document.getElementById('razon_propuesta');
+var territorio_label = document.getElementById('territorio');
+var pais_label = document.getElementById('pais');
+var responsable_label = document.getElementById('responsable');
+var estado_label = document.getElementById('estado');
+var ciudad_label = document.getElementById('ciudad');
+var tipo_evento_label = document.getElementById('tipo_evento');
+var fecha_inicial_label = document.getElementById('fecha_inicial');
+var tipo_actividad_label = document.getElementById('tipo_actividad');
+var hora_inicial_label = document.getElementById('hora_inicial');
+var nombre_empresa_label = document.getElementById('nombre_empresa');
+var tema_visita_label = document.getElementById('tema_visita');
+var nombre_representante_label = document.getElementById('nombre_representante');
+var datos_contacto_label = document.getElementById('datos_contacto');
+var objetivo_actividad_label = document.getElementById('objetivo_actividad');
+var materia_fortalecida_label = document.getElementById('materia_fortalecida');
+var aspecto_profesional_label = document.getElementById('aspecto_profesional');
+var maestro_responsable_label = document.getElementById('maestro_responsable');
+var razon_propuesta_label = document.getElementById('razon_propuesta');
 
 
 function openSolicitud(){
@@ -57,6 +58,7 @@ function openSolicitud(){
       datos_contacto_label.innerHTML = datos.Contacto_empresa;
       objetivo_actividad_label.innerHTML = datos.Objetivo;
       maestro_responsable_label.innerHTML= datos.Maestro;
+      responsable_label.innerHTML= datos.responsable;
       });
 
     solicitudPopup.style.display = 'block';

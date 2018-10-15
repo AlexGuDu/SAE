@@ -18,7 +18,6 @@ foreach ($stament as $filas):
           $stament->bindParam(':grupo', $grupo);
           $stament->bindParam(':telefono', $telefono);
           $stament->execute();
-          // QUita esta cosita del alert pofavo
           echo'<script type="text/javascript">
           alert("Alumno registrado");
           window.location.href="../views/home.php";

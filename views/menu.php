@@ -86,6 +86,11 @@
               <label>Razon de Propuesta:</label> <label id="razon_propuesta"></label>
             </div>
           </div> <!-- Row #5 -->
+          <div class="row">
+            <div class="col-md-6 col-sm-6" align="center">
+              <label>Responsable:</label> <label id="responsable"></label> <br>
+            </div>
+          </div><!-- Row #6 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div>

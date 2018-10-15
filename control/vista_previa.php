@@ -22,6 +22,14 @@ $datos['Objetivo']=$stament['Objetivo'];
 $datos['Maestro']=$stament['Maestro'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
+$responsable=$stament['responsable'];
 endforeach;
+
+$sql="SELECT * from alumno where Matricula=:matricula";
+$stament = $dbh->prepare($sql);
+$stament->bindParam(':matricula', $responsable);
+$stament->execute();
+$datos['responsable']= $stament['ApePa']+" "+$stament['ApeMA']+" "+$stament['Nombre'];
+
 echo json_encode($datos);
  ?>

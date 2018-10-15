@@ -77,7 +77,7 @@ folio.addEventListener('change', function(){
       dataType : 'json',
       encode : true
     })
-    .done(function(datos,alumno){
+    .done(function(datos){
       actividadSelector.disabled = "disabled";
       eventoSelector.disabled = "disabled";
       estadoSelector.disabled = "disabled";
