@@ -6,27 +6,27 @@ var tel = document.forms["rg_al_form"]["telefono"].value;
 
 function validateForm(){
   if(mat == ''){
-    document.getElementByID("empty_warning").innerHTML = "you missed one";
+    document.getElementById("empty_warning").innerHTML = "you missed one";
     return false;
   }
 
   if(con == ''){
-    document.getElementByID("empty_warning").innerHTML = "you missed one";
+    document.getElementById("empty_warning").innerHTML = "you missed one";
     return false;
   }
 
   if(cor == ''){
-    document.getElementByID("empty_warning").innerHTML = "you missed one";
+    document.getElementById("empty_warning").innerHTML = "you missed one";
     return false;
   }
 
   if(gru == ''){
-    document.getElementByID("empty_warning").innerHTML = "you missed one";
+    document.getElementById("empty_warning").innerHTML = "you missed one";
     return false;
   }
 
   if(tel == ''){
-    document.getElementByID("empty_warning").innerHTML = "you missed one";
+    document.getElementById("empty_warning").innerHTML = "you missed one";
     return false;
   }
 

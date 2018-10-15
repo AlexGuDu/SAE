@@ -142,10 +142,11 @@ var nextBtn_1 = document.getElementById('nextBtn_one')
 var nextBtn_2 = document.getElementById('nextBtn_two')
 var previousBtn_1 = document.getElementById('previousBtn_one')
 var previousBtn_2 = document.getElementById('previousBtn_two')
-var solicitarPermiso = document.getElementById('solicitarPermiso');
+// var solicitarPermiso = document.getElementById('solicitarPermiso');
 
 
 // Utilizadas para el cambio de colores dependiendo de campo vacio o seleccionado
+// S1
 var es = document.getElementById('estado');
 var ci = document.getElementById('ciudad');
 var t_e = document.getElementById('eventoSelector');
@@ -154,12 +155,21 @@ var fe = document.getElementById('fecha');
 var ho = document.getElementById('hora');
 var l_e = document.getElementById('lugar_evento');
 
+// S2
+var nomEmp = document.getElementById('nombreEmpresa');
+var temVis = document.getElementById('temaVisita');
+var recEmp = document.getElementById('recibeEmpresa');
+var conEmp = document.getElementById('contactoEmpresa');
+
+// S3
+var objEve = document.getElementById('objetivoEvento');
+var maeMat = document.getElementById('maestroMateria');
 
 nextBtn_1.addEventListener('click', openSection_2);
 nextBtn_2.addEventListener('click', openSection_3);
 previousBtn_1.addEventListener('click', returnToSection_1);
 previousBtn_2.addEventListener('click', returnToSection_2);
-solicitarPermiso.addEventListener('click', validateSection_3)
+// solicitarPermiso.addEventListener('click', validateSection_3)
 window.addEventListener('click', clickOutside);
 
   function clickOutside(e){
@@ -240,6 +250,18 @@ window.addEventListener('click', clickOutside);
     var recibeEmpresa = document.forms["entireForm"]["recibeEmpresa"].value;
     var contactoEmpresa = document.forms["entireForm"]["contactoEmpresa"].value;
     if(nombreEmpresa == "" || temaVisita == "" || recibeEmpresa == "" || contactoEmpresa == ""){
+      if (nombreEmpresa == "") {
+        nomEmp.style.backgroundColor = '#ffa76d';
+      }
+      if (temaVisita == "") {
+        temVis.style.backgroundColor = '#ffa76d';
+      }
+      if (recibeEmpresa == "") {
+        recEmp.style.backgroundColor = '#ffa76d';
+      }
+      if (contactoEmpresa == "") {
+        conEmp.style.backgroundColor = '#ffa76d';
+      }
       warningModal.style.display = 'block';
     } else {
       section_2.style.display = 'none'
@@ -254,11 +276,19 @@ window.addEventListener('click', clickOutside);
     // pending more inputs
 
     if(objetivoEvento == "" || maestroMateria == ""){
-      alert("Favor de llenar todos los campos!");
+      if (objetivoEvento == "") {
+        objEve.style.backgroundColor = '#ffa76d';
+      }
+      if (maestroMateria == "") {
+        maeMat.style.backgroundColor = '#ffa76d';
+      }
+      warningModal.style.display = 'block';
+      return false;
     }
   }
 
 // Limpiar border
+  // S1
   es.onclick = function(){
     es.style.backgroundColor = 'white';
   };
@@ -281,7 +311,27 @@ window.addEventListener('click', clickOutside);
     l_e.style.backgroundColor = 'white';
   };
 
+  // S2
+  nomEmp.onclick = function(){
+    nomEmp.style.backgroundColor = 'white';
+  };
+  temVis.onclick = function(){
+    temVis.style.backgroundColor = 'white';
+  };
+  recEmp.onclick = function(){
+    recEmp.style.backgroundColor = 'white';
+  };
+  conEmp.onclick = function(){
+    conEmp.style.backgroundColor = 'white';
+  };
 
+  // S3
+  objEve.onclick = function(){
+    objEve.style.backgroundColor = 'white';
+  };
+  maeMat.onclick = function(){
+    maeMat.style.backgroundColor = 'white';
+  };
 
 
 
