@@ -9,7 +9,7 @@
 		display: block;
 		margin:0 auto;
 		animation-name: slideModalContent;
-		animation-duration: .5s;
+		animation-duration: 1s;
 }
 
 .btn{
@@ -46,9 +46,9 @@
 	color: #FFF;
 }
 
-
-.table table-bordered table-hover #header-table{
-	border-radius: 15px 15px 0px 0px;
+#entire_content{
+	animation-name: slideModalContent;
+	animation-duration: 1s;
 }
 
 
@@ -73,7 +73,7 @@
 
 #Header{
 	animation-name: slideHeader;
-	animation-duration: 0.8s;
+	animation-duration: 1s;
 }
 
 

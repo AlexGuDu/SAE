@@ -106,6 +106,9 @@
 
 
     <!-- BOTONES ACTIVIDAD -->
+    <div id="entire_content">
+
+
     <div class="container">
       <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
@@ -165,11 +168,14 @@
             </div>
         </div>
         <div class="row justify-content-center">
-          <form class="" action="../control/logout.php">
-          <input type="submit" name="" class="boton" value="Salir">
-          </form>
+          <div class="col-md-2 col-sm-2">
+            <form class="" action="../control/logout.php">
+            <input type="submit" name="" class="boton" value="Salir">
+            </form>
+          </div>
         </div>
       </div> <!-- Whole container -->
+    </div> <!-- Entire content -->
     </div>
     <div style="height:60px"></div>
 
