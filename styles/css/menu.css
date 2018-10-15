@@ -1,3 +1,5 @@
+
+
 .boton{
 	border-radius: 11px;
 	height: 30px;
@@ -36,7 +38,6 @@
 	font-size: 1.1rem;
 	font-weight: bold;
 }
-
 
 @keyframes openModalBlock{
     from{

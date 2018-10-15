@@ -11,10 +11,16 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 </head>
 
 
 <body  onload="ConsultaDeRegistros()">
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -79,7 +85,7 @@
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
-              <label class="preview_label">Aspecto Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
+              <label class="preview_label">Aspectol Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
             </div>
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
@@ -139,7 +145,7 @@
         <br><br>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 s">
-                <table class="table table-bordered table table-hover">
+                <table class="table table-bordered table-hover">
                     <thead id="header-table">
                         <tr>
                             <th>Actividades registradas</th>
@@ -175,10 +181,11 @@
         </div>
         <div class="row justify-content-center">
 
+
         <form class="" action="../control/logout.php">
         <input type="submit" name="" class="boton" value="Salir">
         </form>
-
+      
         </div>
     </div>
     <!-- FIN TABLA ACTIVIDADES -->

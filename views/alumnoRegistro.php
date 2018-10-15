@@ -29,22 +29,12 @@ Session_start();
 
 		<div id="registro" class="col-md-6 col-lg-6">
 			<br> <img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E."> <br>
-			<form id="ingresarForm" onsubmit="event.preventDefault(); validateForm();" action="../control/register.php" method="post" >
-
-
-
-
-
-
-
-
-
-
+			<form id="ingresarForm" action="../control/register.php" method="post" name="rg_al_form">
       <div class="row justify-content-center">
           <div class="col-6">
               <div class="form-group">
                 <label>Matricula</label>
-                <input class="form-control" type="text" name="matricula" id="mat" autofocus="autofocus">
+                <input class="form-control" type="text" name="matricula"  autofocus="autofocus" required>
               </div>
           </div>
       </div>
@@ -52,7 +42,7 @@ Session_start();
           <div class="col-6">
               <div class="form-group">
                 <label>Contrase&ntilde;a</label>
-                <input class="form-control" type="password" name="contra" id="con" >
+                <input class="form-control" type="password" name="contra"  required>
               </div>
           </div>
       </div>
@@ -60,7 +50,7 @@ Session_start();
           <div class="col-6">
               <div class="form-group">
                 <label>Correo</label>
-                <input class="form-control" type="text" name="correo" id="cor">
+                <input class="form-control" type="text" name="correo" required>
                 <label for="correo" class="control-label inline">@uabc.edu.mx</label>
               </div>
           </div>
@@ -69,7 +59,7 @@ Session_start();
           <div class="col-6">
               <div class="form-group">
                 <label>Grupo</label>
-                <input class="form-control" type="text" name="grupo" id="gru">
+                <input class="form-control" type="text" name="grupo" required>
               </div>
           </div>
       </div>
@@ -78,27 +68,28 @@ Session_start();
           <div class="col-6">
               <div class="form-group">
                 <labe>Telefono</label>
-                <input class="form-control" type="text" name="telefono" id="tel" placeholder="(664) 000-0000">
+                <input class="form-control" type="text" name="telefono"  placeholder="(664) 000-0000" required>
               </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-6">
+            <?php
+            if(isset($_SESSION['error'])){
+              if ($_SESSION['error']=1) {
+                echo '<label style="color:rgb(255,0,0);">La matricula intenta registrar ya se encuentra registrada.</label>';
+              }
+              unset($_SESSION['error']);
+            }
+            ?>
+            <label id="empty_warning"></label>
           </div>
       </div>
 
 
 
-
-
-			<?php
-			if(isset($_SESSION['error'])){
-				if ($_SESSION['error']=1) {
-					echo '<p style="color:rgb(255,0,0);">La cuenta que trata de ingresar ya se encuentra registrada.</p>';
-				}
-				unset($_SESSION['error']);
-			}
-			?>
-
       </form>
-			<input id="boton" type="SUBMIT" name="Registrar" form="ingresarForm" value="Registrar">
-
+			<input id="boton" type="submit" name="Registrar" form="ingresarForm" value="Registrar">
 			<br>
 
 	</div>
