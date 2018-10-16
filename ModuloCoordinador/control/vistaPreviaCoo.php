@@ -1,5 +1,5 @@
 <?php
-require '../config/connection.php';
+require '../../config/connection.php';
 $folio=$_POST['folio'];
 $sql="SELECT * FROM solicitud where folio= :folio";
 $stament = $dbh->prepare($sql);

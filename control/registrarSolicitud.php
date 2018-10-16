@@ -23,7 +23,7 @@ session_start();
   $contacto_empresa=$_POST['contactoEmpresa'];
   $objetivo=$_POST['objetivoEvento'];
   $maestro=$_POST['maestroMateria'];
-  $responsable=$_POST['responsable'];
+  $responsable=$_SESSION['matricula'];
 
 
   $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable)

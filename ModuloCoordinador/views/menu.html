@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
-    <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/css/menu.css">
+    <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 </head>
 
 
@@ -19,13 +16,12 @@
     <!-- HEADER -->
     <div id="Header">
         <script type="text/javascript">
-            $("#Header").load("shared/_header-sae.php #header-sae");
+            $("#Header").load("_header-sae2.php #header-sae");
         </script>
     </div>
     <!-- FIN HEADER -->
     <br>
 
-    <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal">
       <div id="entirePopup" class="col-md-6 col-lg-10">
         <div class="container">
@@ -93,90 +89,93 @@
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->
 
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-sm-3">
+        <input type="button" name="" class="boton" value="Consultar actividades registradas" id="actividadRegistradas">
+      </div>
+    </div>
+
     <!-- BOTONES ACTIVIDAD -->
+    <div class="container">
+        <div class="row justify-content-center">
 
-
-
-  <div id="entirePage" class="col-md-8 col-sm-10">
-
+      </div> <!-- Entire Page -->
+    </div>
 
     <!-- BOTONES ACTIVIDAD -->
-    <div id="entire_content">
-
-
     <div class="container">
       <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
-
-
-            <div class="col-5 col-md-5 col-lg-3">
-                <input id="solicitarPermiso" class="boton" type="button" name="registrar" value="SOLICITAR PERMISO">
-            </div>
-            <div class="col-1 col-md-1"></div>
-            <div class="col-6 col-md-5 col-lg-3">
-                <input id="registrarActividad" class="boton" type="button" name="registradas" value="REGISTRAR ACTIVIDAD">
-            </div>
         </div>
     </div>
 
-
+    <br>
     <!-- TABLA ACTIVIDADES -->
-    <div class="container"> <br>
+    <div id="entirePage" class="col-md-8 col-sm-10">
+    <div class="container" >
+      <div class="form-group">
+          <label> <b> Solicitudes para desarrollar actividades por atender </b> </label>
+      </div>
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 ">
+            <div class="col-25 col-lg-20 ">
+                <table class="table table-bordered table-hover" id='consulta' >
+                  <thead id="header-table">
+                      <tr>
+                          <th>Acciones</th>
+                          <th>Matricula</th>
+                          <th>Actividad</th>
+                          <th>Vista Preliminar</th>
+                          <th>Fecha de emision</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Cargar Folios - AJAX -->
 
-                <table class="table table-bordered table-hover" id="consulta">
-                    <thead id="header-table">
-                        <tr>
-                            <th>Actividades solicitadas</th>
-                            <th>Estatus</th>
-                            <th>Vista Preliminar</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <!-- Cargar Folios - AJAX -->
+                    <!-- Cargar Folios - AJAX -->
 
-                      <!-- Cargar Folios - AJAX -->
-                    </tbody>
-                </table>
+                  </tbody>
+              </table>
             </div>
         </div>
-        <br><br>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 s">
-                <table class="table table-bordered table-hover" id="consulta">
-                    <thead id="header-table">
-                        <tr>
-                            <th>Actividades registradas</th>
-                            <th>Estatus</th>
-                            <th>Vista Preliminar</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <!-- Cargar Folios - AJAX -->
+        <br> <br>
 
-                      <!-- Cargar Folios - AJAX -->
-                    </tbody>
-                </table>
+        <div class="form-group">
+            <label><strong> Solicitudes para registro de actividad por atender </strong></label>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-25 col-lg-20 ">
+                <table class="table table-bordered table-hover" id='consulta' >
+                  <thead id="header-table">
+                      <tr>
+                          <th>Acciones</th>
+                          <th>Matricula</th>
+                          <th>Actividad</th>
+                          <th>Vista Preliminar</th>
+                          <th>Fecha de emision</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Cargar Folios - AJAX -->
+
+                    <!-- Cargar Folios - AJAX -->
+
+                  </tbody>
+              </table>
             </div>
+        </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
-            <form class="" action="../control/logout.php">
+            <form class="" action="../control/logoutCoo.php">
             <input type="submit" name="" class="boton" value="Salir">
             </form>
           </div>
         </div>
-      </div> <!-- Whole container -->
-    </div> <!-- Entire content -->
     </div>
+  </div>
     <div style="height:60px"></div>
-
-
     <!-- FIN TABLA ACTIVIDADES -->
-    <script src="../assets/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/bootstrap/bootstrap.min.js"></script>
     <script src="../js/menu.js"></script>
 </body>
 
