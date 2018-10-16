@@ -97,13 +97,9 @@
 
 
 
-  <div id="entirePage" class="col-md-8 col-sm-10">
-
-
+  <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
     <div id="entire_content">
-
-
     <div class="container">
       <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
@@ -121,7 +117,7 @@
 
 
     <!-- TABLA ACTIVIDADES -->
-    <div class="container"> <br>
+    <div class="container     "> <br>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 ">
 
