@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -56,7 +57,7 @@
         <div class="row">
           <div class="col-md-6 col-sm-6">
             <label>Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
-            <label>Aspecto Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
+            <label>Aspecto Profesional Fortalecido:</label> <label id="aspecto_profesional"></label>
           </div>
           <div class="col-md-6 col-sm-6">
             <label>Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>

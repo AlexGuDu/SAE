@@ -63,7 +63,6 @@ session_start();
     $folio= $filas['folio'];
   endforeach;
 
-
   echo $folio;
   echo "<br>";
   echo $cantidad;
@@ -78,10 +77,13 @@ session_start();
   $stament->bindParam(':folio', $folio);
   $stament->bindParam(':aprobacion', $aprovacion);
   $stament->execute();
-  echo "<script>
-  alert('Solicitud Registrada');
-  </script>";
-  header('Location:home.php');
   }
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
+  $stament = $dbh->prepare($sql);
+  $stament->bindParam(':matricula', $_SESSION['matricula']);
+  $stament->bindParam(':folio', $folio);
+  $stament->bindParam(':aprobacion', $aprovacion);
+  $stament->execute();
   unset( $_SESSION['matriculas']);
+  header('Location:../views/home.php');
  ?>

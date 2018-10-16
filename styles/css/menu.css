@@ -1,3 +1,49 @@
+#entirePage {
+		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
+		border-radius: 35px;
+		background: #F4F4F4FF;
+		height: auto;
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		display: block;
+		margin: auto;
+		animation-name: slideModalContent;
+		animation-duration: 1s;
+}
+
+#entirePopup {
+		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
+		border-radius: 35px;
+		background: #F4F4F4FF;
+		height: auto;
+		width: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		display: block;
+		margin: auto;
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.btn{
+		border-radius: 15px;
+		transition-duration: 0.1s;
+		color: #111;
+		background-color: #FFF;
+		border-color: #13673A;
+}
+.btn:hover{
+		background-color: #13673A;
+		color: #FFF;
+}
+.btn:active {
+		background-color: #13673A;
+}
 .boton{
 	border-radius: 11px;
 	height: 30px;
@@ -18,9 +64,15 @@
 	color: #FFF;
 }
 
+#entire_content{
+	animation-name: slideModalContent;
+	animation-duration: 1s;
+}
+
+
 .modal{
 		display: none;
-		position: fixed;
+		position: auto;
 		z-index: 1;
 		left: 0;
 		top: 0;
@@ -32,11 +84,46 @@
 		animation-duration: .5s;
 }
 
+.preview_label{
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+#Header{
+	animation-name: slideHeader;
+	animation-duration: 1s;
+}
+
+
+@keyframes slideHeader{
+    from{
+       opacity: 0;
+			 transform: translateY(2.5rem);
+   }
+    to {
+       opacity: 1;
+			 transform: translateY(0);
+   };
+}
 
 @keyframes openModalBlock{
     from{
-       opacity: 0
+       opacity: 0;
+
    }
     to {
-       opacity: 1
+       opacity: 1;
+
+   };
+}
+
+@keyframes slideModalContent{
+    from{
+       opacity: 0;
+			 transform: translateY(2.5rem);
    }
+    to {
+       opacity: 1;
+			 transform: translateY(0);
+   };
+}

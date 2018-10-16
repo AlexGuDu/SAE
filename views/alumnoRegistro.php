@@ -17,8 +17,10 @@ Session_start();
 <div class="container-fluid" id="header">
 	<div class="row" >
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC">
+      <a href="home.php">
+			<img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
 			<img id="Letras" src="../assets/img/uabc-letras.png" alt="Letras UABC">
+      </a>
 		</div>
 	</div>
 </div>
@@ -26,40 +28,80 @@ Session_start();
 
 <!-- REGISTRO -->
 <div class="container-fluid" >
-	<div class="row">
-		<div id="registro" class="col-11 col-md-10 col-lg-6">
-			<img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
-			<form id="ingresarForm" action="../control/register.php" method="post">
-			<p class="texto">Matricula</p>
-			<input class="textBox form-control block" type="text" name="matricula" autofocus="autofocus">
-			<p class="texto">Contrase&ntilde;a</p>
-			<input class="textBox form-control block" type="password" name="contra" >
-			<p class="texto">Correo</p>
-			<input class="textBox form-control block" type="text" name="correo" >
-			<label for="correo" class="control-label inline">@uabc.edu.mx</label>
-			<p class="texto">Grupo</p>
-			<input class="textBox" type="text" name="telefono">
-			<p class="texto">Telefono</p>
-			<input class="textBox" type="text" name="telefono">
-			<?php
-			if(isset($_SESSION['error'])){
-				if ($_SESSION['error']=1) {
-					echo '<p style="color:rgb(255,0,0);">La cuentra que trata de ingresar ya se encuentra registrada.</p>';
-				}
-				unset($_SESSION['error']);
-			}
-			?>
-			<br>
-      </form>
-			<input id="boton" type="SUBMIT" name="Registrar" form="ingresarForm" value="Registrar">
 
+		<div id="registro" class="col-md-6 col-lg-6">
+			<br> <img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E."> <br>
+			<form id="ingresarForm" action="../control/register.php" method="post" name="rg_al_form">
+      <div class="row justify-content-center">
+          <div class="col-6">
+              <div class="form-group">
+                <label>Matricula</label>
+                <input class="form-control" type="text" name="matricula"  autofocus="autofocus" required>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-6">
+              <div class="form-group">
+                <label>Contrase&ntilde;a</label>
+                <input class="form-control" type="password" name="contra"  required>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-6">
+              <div class="form-group">
+                <label>Correo</label>
+                <input class="form-control" type="text" name="correo" required>
+                <label for="correo" class="control-label inline">@uabc.edu.mx</label>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-6">
+              <div class="form-group">
+                <label>Grupo</label>
+                <input class="form-control" type="text" name="grupo" required>
+              </div>
+          </div>
+      </div>
+
+      <div class="row justify-content-center">
+          <div class="col-6">
+              <div class="form-group">
+                <labe>Telefono</label>
+                <input class="form-control" type="text" name="telefono"  placeholder="(664) 000-0000" required>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-6">
+            <?php
+            if(isset($_SESSION['error'])){
+              if ($_SESSION['error']==1) {
+                echo '<label style="color:rgb(255,0,0);">La matricula intenta registrar ya se encuentra registrada.</label>';
+              }
+              if ($_SESSION['error']==2) {
+                echo '<label style="color:rgb(255,0,0);">No se encontro un alumno con esta matricula!.</label>';
+              }
+              unset($_SESSION['error']);
+            }
+            ?>
+            <label id="empty_warning"></label>
+          </div>
+      </div>
+
+
+
+      </form>
+			<input id="boton" type="submit" name="Registrar" form="ingresarForm" value="Registrar">
 			<br>
-		</div>
+
 	</div>
 	<br>
 </div>
 <!-- FIN DE REGISTRO -->
-
-
+<script src="../assets/bootstrap/bootstrap.min.js"></script>
+<script src="../js/alumno_registro.js"></script>
 </body>
 </html>

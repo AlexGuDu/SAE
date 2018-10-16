@@ -27,7 +27,7 @@
  .modal{
      display: none;
      position: fixed;
-     z-index: 1;
+     z-index: 2;
      left: 0;
      top: 0;
      width: 100%;
@@ -35,17 +35,19 @@
      overflow: auto;
      background-color: rgba(0, 0, 0, 0.5);
      animation-name: openModalBlock;
-     animation-duration: 1s;
+     animation-duration: 0.4s;
 }
  .modal-content{
+     border-radius: 20px;
      background-color: #f4f4f4;
      margin: 20% auto;
      padding: 20px;
-     width: 40%;
-     height: 13%;
+     width: 30%;
+     height: auto;
+     text-align: center;
      box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
      animation-name: openModalBlock;
-     animation-duration: 1.5s;
+     animation-duration: 0.7s;
 }
  .closeBtn{
      color: #fff;
@@ -54,8 +56,8 @@
 }
  #header-sae{
      background: #FFFFFFFF;
-     animation-name: openHeader;
-     animation-duration: 1.3s;
+     animation-name: slideHeader;
+     animation-duration: 1s;
      opacity: 0.95;
 }
  #entirePage {
@@ -68,6 +70,8 @@
      padding-bottom: 20px;
      display: block;
      margin:0 auto;
+     animation-name: openSection;
+     animation-duration: 1s;
 }
  #buttons {
      background: rgba(60, 180, 180);
@@ -92,38 +96,57 @@
  #section_one{
      display: block;
      animation-name: openSection;
-     animation-duration: 1.5s;
+     animation-duration: 1s;
 }
  #section_two{
      display: none;
      animation-name: openSection;
-     animation-duration: 1.5s;
+     animation-duration: 1s;
 }
  #section_three{
      display: none;
      animation-name: openSection;
-     animation-duration: 1.5s;
+     animation-duration: 1s;
 }
  #formExt{
      display: none;
 }
- @keyframes openSection{
+
+#ok_modal{
+  margin: auto;
+  width: 50%;
+}
+
+/* .form-control{
+  border-radius: 8px;
+}
+ */
+
+
+ @keyframes slideHeader{
      from{
-        opacity: 0
+        opacity: 0;
+ 			 transform: translateY(2rem);
     }
      to {
-        opacity: 1
+        opacity: 1;
+ 			 transform: translateY(0);
+    };
+ }
+
+
+ @keyframes openSection{
+     from{
+        opacity: 0;
+         transform: translateY(2.5rem);
+    }
+     to {
+        opacity: 1;
+         transform: translateY(0);
     }
 }
 
- @keyframes openHeader{
-     from{
-        opacity: 0
-    }
-     to {
-        opacity: 0.95
-    }
-}
+
 
 @keyframes openModalBlock{
     from{
