@@ -78,8 +78,11 @@ Session_start();
           <div class="col-6">
             <?php
             if(isset($_SESSION['error'])){
-              if ($_SESSION['error']=1) {
+              if ($_SESSION['error']==1) {
                 echo '<label style="color:rgb(255,0,0);">La matricula intenta registrar ya se encuentra registrada.</label>';
+              }
+              if ($_SESSION['error']==2) {
+                echo '<label style="color:rgb(255,0,0);">No se encontro un alumno con esta matricula!.</label>';
               }
               unset($_SESSION['error']);
             }

@@ -32,7 +32,7 @@
 
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal">
-      <div id="entirePopup" class="col-md-6 col-sm-6">
+      <div id="entirePopup" class="col-md-6 col-lg-10">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">

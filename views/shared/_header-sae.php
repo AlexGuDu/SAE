@@ -30,7 +30,7 @@ $stament->execute();
 
                 </div>
                 <div class="col-7 col-md-9">
-                    <p class="h1 font-weight-light text-center ">Sistema de Actividades Extracurriculares</p>
+                    <a href="menu.php"><p class="h1 font-weight-light text-center ">Sistema de Actividades Extracurriculares</p> </a> 
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
                 </div>
                 <div class="col-2 col-md-1 align-self-start">
