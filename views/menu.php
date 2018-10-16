@@ -15,11 +15,6 @@
 
 
 <body  onload="ConsultaDeRegistros()">
-  <script type="text/javascript">
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
     <br>
     <!-- HEADER -->
     <div id="Header">

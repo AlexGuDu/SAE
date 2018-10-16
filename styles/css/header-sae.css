@@ -10,15 +10,3 @@
 .top-buffer-alumno{
 	margin-top: 30px
 }
-
-.h1 font-weight-light text-center{
-	color: black;
-	text-decoration: none !important;
-}
-
-a.h1 font-weight-light text-center:hover{
-	color: black;
-	text-decoration: none !important;
-}
-
-Si la matricula no existe.
