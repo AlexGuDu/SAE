@@ -48,6 +48,7 @@ if(isset($_SESSION['matricula'])){
 												</form>
                     </div>
 
+						
                     <button type="submit" id="iniciarSesion" form="ingresarForm">Iniciar</button> <br><br>
                     <?php
                     if(isset($_SESSION['error'])){

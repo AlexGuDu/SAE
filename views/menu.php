@@ -27,7 +27,8 @@
 
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+
+      <div id="entirePopup" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -93,17 +94,14 @@
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->
 
+
     <!-- BOTONES ACTIVIDAD -->
 
 
 
-  <div id="entirePage" class="col-md-8 col-sm-10">
-
-
+  <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
     <div id="entire_content">
-
-
     <div class="container">
       <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
@@ -121,7 +119,9 @@
 
 
     <!-- TABLA ACTIVIDADES -->
+
     <div class="container"> <br>
+
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 ">
 
