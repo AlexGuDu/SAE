@@ -34,8 +34,6 @@ html{
 }
 
 
-
-
 .btn{
 		border-radius: 15px;
 		transition-duration: 0.1s;
@@ -50,6 +48,8 @@ html{
 .btn:active {
 		background-color: #13673A;
 }
+
+
 .boton{
 	border-radius: 11px;
 	height: 30px;

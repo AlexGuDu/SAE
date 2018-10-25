@@ -87,17 +87,18 @@ function ConsultaDeRegistros(){
     encode : true
   })
   .done(function(datos){
-      for (var i = 1; i < datos.count; i=i+5) {
-    $('#consulta tbody').append(
-        '<tr>'+
-          '<td>'+datos[i]+'</td>'+
-          '<td>'+textoEstatus(datos[i+1])+'</td>'+
-          '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
-          '<td>'+datos[i+2]+'</td>'+
-        '</tr>');
+    for (var i = 1; i < datos.count; i=i+4) {
+      $('#consulta tbody').append(
+          '<tr>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+textoEstatus(datos[i+1])+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>'
+      );
     }
-    });
-  }
+  });
+}
 
 
 
@@ -291,7 +292,7 @@ function textoEstatus(estatus){
     return "Rechazada";
     break;
     default:
-    return "Nada";
+    return "0";
 
   }
 }
