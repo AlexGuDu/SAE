@@ -130,7 +130,7 @@
                         <tr>
                             <th>Actividades solicitadas</th>
                             <th>Estatus</th>
-                            <th>Vista Preliminar</th>
+                            <th>Consulta</th>
                             <th>Fecha</th>
                         </tr>
                     </thead>
@@ -150,7 +150,7 @@
                         <tr>
                             <th>Actividades registradas</th>
                             <th>Estatus</th>
-                            <th>Vista Preliminar</th>
+                            <th>Consulta</th>
                             <th>Fecha</th>
                         </tr>
                     </thead>

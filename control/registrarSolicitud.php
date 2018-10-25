@@ -51,7 +51,7 @@ session_start();
   else{
     $stament->execute();
   }
-  $aprovacion="0";
+  $aprobacion="0";
   $cantidad=COUNT($_SESSION['matriculas']);
 
 
@@ -71,18 +71,18 @@ session_start();
   echo "<br>";
   echo $_SESSION['matriculas'][1];
   for ($i=0; $i<$cantidad ; $i++) {
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprovacion);
+  $stament->bindParam(':aprobacion', $aprobacion);
   $stament->execute();
   }
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matricula']);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprovacion);
+  $stament->bindParam(':aprobacion', $aprobacion);
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');

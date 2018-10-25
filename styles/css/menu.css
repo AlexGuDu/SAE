@@ -1,3 +1,8 @@
+html{
+  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
 #entirePage {
 		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
 		border-radius: 35px;
@@ -113,7 +118,7 @@
 @keyframes slideHeader{
     from{
        opacity: 0;
-			 transform: translateY(2.5rem);
+			 transform: translateY(5rem);
    }
     to {
        opacity: 1;

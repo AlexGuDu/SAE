@@ -91,9 +91,9 @@ function ConsultaDeRegistros(){
     $('#consulta tbody').append(
         '<tr>'+
           '<td>'+datos[i]+'</td>'+
-          '<td>'+datos[i+1]+'</td>'+
-          '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
-          '<td>'+datos[i+3]+'</td>'+
+          '<td>'+textoEstatus(datos[i+1])+'</td>'+
+          '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+          '<td>'+datos[i+2]+'</td>'+
         '</tr>');
     }
     });
@@ -275,6 +275,23 @@ function nombre_estado(estado){
 
     default:
     return "0"
+
+  }
+}
+
+function textoEstatus(estatus){
+  switch (estatus) {
+    case 1:
+    return "Pendiente";
+    break;
+    case 2:
+    return "Aprobada";
+    break;
+    case 3:
+    return "Rechazada";
+    break;
+    default:
+    return "Nada";
 
   }
 }

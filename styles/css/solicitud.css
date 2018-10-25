@@ -1,8 +1,8 @@
-/* body{
-     background: url("../assets/img/solicitud-fondo.png");
-     background-size: 35% 40%;
+html{
+  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
- */
+
  label{
      font-weight: 600;
 }
@@ -10,7 +10,8 @@
      height: 560px;
      overflow: scroll;
 }
- .btn{
+
+.btn{
      border-radius: 15px;
      transition-duration: 0.1s;
      color: #111;
@@ -23,6 +24,9 @@
 }
  .btn:active {
      background-color: #13673A;
+}
+.form-control::placeholder {
+  opacity: 0.4;
 }
  .modal{
      display: none;
@@ -55,7 +59,6 @@
      font-size: 35px;
 }
  #header-sae{
-     background: #FFFFFFFF;
      animation-name: slideHeader;
      animation-duration: 1s;
      opacity: 0.95;
@@ -126,7 +129,7 @@
  @keyframes slideHeader{
      from{
         opacity: 0;
- 			 transform: translateY(2rem);
+ 			 transform: translateY(5rem);
     }
      to {
         opacity: 1;

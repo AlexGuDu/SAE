@@ -1,9 +1,8 @@
-body{
-   background: url("../assets/img/solicitud-fondo.png");
-   background-size: 35% 40%;
+html{
+  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 #header-sae{
-   background: #FFFFFFFF;
    animation-name: slideHeader;
    animation-duration: 1s;
    opacity: 0.95;
@@ -118,7 +117,7 @@ width: 100%;
 @keyframes slideHeader{
     from{
        opacity: 0;
-      transform: translateY(2rem);
+      transform: translateY(5rem);
    }
     to {
        opacity: 1;
