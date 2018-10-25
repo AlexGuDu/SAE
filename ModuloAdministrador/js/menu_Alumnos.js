@@ -1,5 +1,6 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
+document.getElementById('regresar').addEventListener('click', openMenuAdministrador);
 window.addEventListener('click', clickOutside);
 var solicitudPopup = document.getElementById('solicitudPopup');
 var territorio_label = document.getElementById('territorio');
@@ -20,6 +21,11 @@ var materia_fortalecida_label = document.getElementById('materia_fortalecida');
 var aspecto_profesional_label = document.getElementById('aspecto_profesional');
 var maestro_responsable_label = document.getElementById('maestro_responsable');
 var razon_propuesta_label = document.getElementById('razon_propuesta');
+
+
+function openMenuAdministrador(){
+  window.location.href = "../views/menu.html";
+}
 
 function openActividades(){
   window.location.href = "../views/menu_consultas.html";
@@ -82,10 +88,10 @@ function ConsultaDeRegistros(){
       for (var i = 1; i < datos.count; i=i+4) {
     $('#consulta tbody').append(
         '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value="Aceptar" ><input type="button" name="" class="botonsm boton-del" value="Rechazar" >'+'</td>'+
+          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value=" " ><input type="button" name="" class="botonsm boton-del" value=" " >'+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
           '<td>'+datos[i]+'</td>'+
-          '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+          '<td>'+'placeholder Num'+'</td>'+
           '<td>'+datos[i+2]+'</td>'+
         '</tr>');
     }

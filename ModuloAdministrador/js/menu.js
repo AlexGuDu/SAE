@@ -82,7 +82,7 @@ function ConsultaDeRegistros(){
       for (var i = 1; i < datos.count; i=i+4) {
     $('#consulta tbody').append(
         '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value="Aceptar" ><input type="button" name="" class="botonsm boton-del" value="Rechazar" >'+'</td>'+
+          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value=" " ><input type="button" name="" class="botonsm boton-del" value=" " ><input type="button" name="" class="botonsm boton-plus" value="  " >'+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+

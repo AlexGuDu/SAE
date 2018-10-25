@@ -60,20 +60,50 @@
 	color: #FFF;
 }
 
-.botonsm{
+/* .botonsm{
 	border-radius: 11px;
 	height: 30px;
-	width: 100%;
+	width: 50%;
 	border-width: 1px;
 	transition-duration: 0.3s;
 	background-color: #FFF;
 	border-color: #13673A;
+} */
+
+.boton-add, .boton-del, .boton-regresar, .boton-plus{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+		background-size: Contain;
+    border-radius: 12px;
+		border: none;
+    cursor: pointer;
+    height: 30px;
+    padding-left: 16px;
+    vertical-align: middle;
 }
 
-.botonsm:hover {
+.boton-regresar{
+	background-image: url(../../assets/img/regresar.png);
+	height: 50px;
+}
+
+.boton-add{
+		background-image: url(../../assets/img/exito.png);
+}
+
+.boton-del{
+		background-image: url(../../assets/img/error.png);
+}
+
+.boton-plus{
+	background-image: url(../../assets/img/mas.png);
+}
+
+/* .botonsm:hover {
 	background-color: #13673A;
 	color: #FFF;
-}
+} */
 #header-table{
 	background-color: #13673A;
 	color: #FFF;
