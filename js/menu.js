@@ -78,18 +78,17 @@ window.addEventListener('click', clickOutside);
   })
 
 
-// Ajax Tabla de Matriculas START
-function ConsultaDeRegistros(){
+// Ajax Tabla de Solicitudes
+function ConsultaDeActividades(){
   $.ajax({
     type : 'POST',
-    url : '../control/Consultas.php',
+    url : '../control/consultaSolicitudes.php',
     dataType : 'json',
     encode : true
   })
   .done(function(datos){
     for (var i = 1; i < datos.count; i=i+4) {
-      console.log(datos[i+1]);
-      $('#consulta tbody').append(
+      $('#consultaSolicitudes tbody').append(
           '<tr>'+
             '<td>'+datos[i]+'</td>'+
             '<td>'+textoEstatus(datos[i+1])+'</td>'+
@@ -99,11 +98,32 @@ function ConsultaDeRegistros(){
       );
     }
   });
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/consultaRegistros.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+    for (var i = 1; i < datos.count; i=i+4) {
+      $('#consultaRegistros tbody').append(
+          '<tr>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+textoEstatus(datos[i+1])+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>'
+      );
+    }
+  });
+
 }
 
 
 
-// Ajax Tabla de Matriculas END
+
+
 
 // Regresar nombre de evento a base de clave
 
@@ -284,13 +304,13 @@ function nombre_estado(estado){
 function textoEstatus(estatus){
   switch (estatus) {
     case '1':
-    return "Pendiente";
+    return '<div class="bg-warning text-center estatus" role="alert">Pendiente</div>'
     break;
     case '2':
-    return "Aprobada";
+    return '<div class="bg-success text-center estatus" role="alert">Aprobada</div>';
     break;
     case '3':
-    return "Rechazada";
+    return '<div class="bg-danger text-center estatus" role="alert">Rechazada</div>';
     break;
     default:
     return "0";

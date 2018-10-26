@@ -71,7 +71,7 @@ function openActividades(){
 
 
 // Ajax Tabla de Matriculas START
-function ConsultaDeRegistros(){
+function ConsultaDeActividades(){
   $.ajax({
     type : 'POST',
     url : '../control/consultas.php',

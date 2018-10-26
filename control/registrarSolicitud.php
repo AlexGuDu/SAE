@@ -26,8 +26,8 @@ session_start();
   $responsable=$_SESSION['matricula'];
 
 
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable )";
+  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
+  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
@@ -45,6 +45,8 @@ session_start();
   $stament->bindParam(':tipo_evento', $tipo_evento);
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);
+  $stament->bindParam(':solicitadoPrev', 1);
+  $stament->bindParam(':estatusSolicitud', 1);
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";
   }
