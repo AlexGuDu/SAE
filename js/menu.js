@@ -88,6 +88,7 @@ function ConsultaDeRegistros(){
   })
   .done(function(datos){
     for (var i = 1; i < datos.count; i=i+4) {
+      console.log(datos[i+1]);
       $('#consulta tbody').append(
           '<tr>'+
             '<td>'+datos[i]+'</td>'+
@@ -282,13 +283,13 @@ function nombre_estado(estado){
 
 function textoEstatus(estatus){
   switch (estatus) {
-    case 1:
+    case '1':
     return "Pendiente";
     break;
-    case 2:
+    case '2':
     return "Aprobada";
     break;
-    case 3:
+    case '3':
     return "Rechazada";
     break;
     default:
