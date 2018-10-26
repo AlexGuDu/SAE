@@ -307,10 +307,10 @@ function textoEstatus(estatus){
     return '<div class="bg-warning text-center estatus" role="alert">Pendiente</div>'
     break;
     case '2':
-    return '<div class="bg-success text-center estatus" role="alert">Aprobada</div>';
+    return '<div class="bg-success text-center text-white estatus" role="alert">Aprobada</div>';
     break;
     case '3':
-    return '<div class="bg-danger text-center estatus" role="alert">Rechazada</div>';
+    return '<div class="bg-danger text-center text-white estatus" role="alert">Rechazada</div>';
     break;
     default:
     return "0";
