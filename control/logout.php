@@ -5,5 +5,4 @@ unset($_SESSION['matriculas']);
 unset($_SESSION['error']);
 header('Location: ../views/home.php');
 
-
- ?>
+?>
