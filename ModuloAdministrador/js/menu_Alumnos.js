@@ -37,7 +37,7 @@ function openActividades(){
     };
     $.ajax({
       type : 'POST',
-      url : '../control/vistaPreviaCoo.php',
+      url : '../control/vistaPreviaAdmin.php',
       data : datosEnviados,
       dataType : 'json',
       encode : true

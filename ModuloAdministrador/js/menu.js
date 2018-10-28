@@ -1,6 +1,8 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
+// document.getElementById('popComentarioAcept').addEventListener('click', popComentarioAc);
+// var popComentarioA = document.getElementById('comentarioAceptar');
 var solicitudPopup = document.getElementById('solicitudPopup');
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
@@ -25,13 +27,17 @@ function openActividades(){
   window.location.href = "../views/menu_consultas.html";
 }
 
+// function popComentarioAc(){
+//   popComentarioA.style.display = 'block';
+// }
+
   function popSolicitud(folio){
     var datosEnviados = {
       'folio' : folio
     };
     $.ajax({
       type : 'POST',
-      url : '../control/vistaPreviaCoo.php',
+      url : '../control/vistaPreviaAdmin.php',
       data : datosEnviados,
       dataType : 'json',
       encode : true
@@ -82,7 +88,7 @@ function ConsultaDeRegistros(){
       for (var i = 1; i < datos.count; i=i+4) {
     $('#consulta tbody').append(
         '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value=" " ><input type="button" name="" class="botonsm boton-del" value=" " ><input type="button" name="" class="botonsm boton-plus" value="  " >'+'</td>'+
+          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value=" " ><input type="button" name="" class="botonsm boton-del" value=" " ><input type="button" name="" id="popComentarioAcept" class="botonsm boton-plus" value="  " >'+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+

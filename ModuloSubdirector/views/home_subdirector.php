@@ -15,6 +15,7 @@
     <!-- BOOTSTRAP Y CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home.css">
+        <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
     <title>Login Alumnos</title>
 </head>
 

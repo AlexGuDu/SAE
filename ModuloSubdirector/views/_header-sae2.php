@@ -44,14 +44,14 @@ $stament->execute();
         <div class="container" id="info-alumno">
             <div class="row justify-content-end  top-buffer-alumno">
                 <div class="col-6">
-                    <p class="text-center">Nombre Coordinador</p>
+                    <p class="text-center">Nombre Subdirector</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center"><?php foreach ($stament as $filas) :
                      echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
                     ?></p>
                 </div>
                 <div class="col-6">
-                    <p class="text-center">Carrera</p>
+                    <p class="text-center">Puesto</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center" ><?php
                      echo $filas['CarreraAsig'];
