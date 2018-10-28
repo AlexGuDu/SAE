@@ -1,6 +1,6 @@
-document.getElementById('solicitarPermiso').addEventListener('click', openSolicitud)
-document.getElementById('registrarActividad').addEventListener('click', openRegistro)
-document.getElementById('popup_test').addEventListener('click', popSolicitud)
+document.getElementById('solicitarPermiso').addEventListener('click', openSolicitud);
+document.getElementById('registrarActividad').addEventListener('click', openRegistro);
+document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
 // var solicitudPopup = document.getElementById('solicitudPopup');
   var territorio_label = document.getElementById('territorio');
@@ -78,30 +78,52 @@ window.addEventListener('click', clickOutside);
   })
 
 
-// Ajax Tabla de Matriculas START
-function ConsultaDeRegistros(){
+// Ajax Tabla de Solicitudes
+function ConsultaDeActividades(){
   $.ajax({
     type : 'POST',
-    url : '../control/Consultas.php',
+    url : '../control/consultaSolicitudes.php',
     dataType : 'json',
     encode : true
   })
   .done(function(datos){
-      for (var i = 1; i < datos.count; i=i+5) {
-    $('#consulta tbody').append(
-        '<tr>'+
-          '<td>'+datos[i]+'</td>'+
-          '<td>'+datos[i+1]+'</td>'+
-          '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
-          '<td>'+datos[i+3]+'</td>'+
-        '</tr>');
+    for (var i = 1; i < datos.count; i=i+4) {
+      $('#consultaSolicitudes tbody').append(
+          '<tr>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+textoEstatus(datos[i+1])+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>'
+      );
     }
-    });
-  }
+  });
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/consultaRegistros.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+    for (var i = 1; i < datos.count; i=i+4) {
+      $('#consultaRegistros tbody').append(
+          '<tr>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+textoEstatus(datos[i+1])+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>'
+      );
+    }
+  });
+
+}
 
 
 
-// Ajax Tabla de Matriculas END
+
+
 
 // Regresar nombre de evento a base de clave
 
@@ -275,6 +297,23 @@ function nombre_estado(estado){
 
     default:
     return "0"
+
+  }
+}
+
+function textoEstatus(estatus){
+  switch (estatus) {
+    case '1':
+    return '<div class="bg-warning text-center estatus" role="alert">Pendiente</div>'
+    break;
+    case '2':
+    return '<div class="bg-success text-center text-white estatus" role="alert">Aprobada</div>';
+    break;
+    case '3':
+    return '<div class="bg-danger text-center text-white estatus" role="alert">Rechazada</div>';
+    break;
+    default:
+    return "0";
 
   }
 }

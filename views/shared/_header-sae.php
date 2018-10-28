@@ -26,7 +26,7 @@ $stament->execute();
         <div class="container" id="logo-sae">
             <div class="row top-buffer align-items-center justify-content-center">
                 <div class="col-3 col-md-2">
-                  <a href="menu.php"><img id="cimarron" src="../assets/img/logo-sae-cimarron.png" class="img-fluid"></a>
+                  <a href="menu.php"><img  id="cimarron" src="../assets/img/logo-sae-cimarron.png" class="img-fluid"></a>
 
                 </div>
                 <div class="col-7 col-md-9">

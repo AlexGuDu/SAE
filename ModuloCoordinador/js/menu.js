@@ -69,20 +69,53 @@ function openActividades(){
     }
 });
 
-
-// Ajax Tabla de Matriculas START
-function ConsultaDeRegistros(){
+ function aceptarSolicitud(folio){
+  $(document).on('click', '.boton-add', function (event) {
+  event.preventDefault();
+  $(this).closest('tr').remove();
+});
+  var datosEnviados = {
+    'folio' : folio
+  };
   $.ajax({
     type : 'POST',
-    url : '../control/consultas.php',
+    url : '../control/aceptarSolicitud.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+}
+
+ function rechazarSolicitud(folio){
+  $(document).on('click', '.boton-del', function (event) {
+  event.preventDefault();
+  $(this).closest('tr').remove();
+});
+  var datosEnviados = {
+    'folio' : folio
+  };
+  $.ajax({
+    type : 'POST',
+    url : '../control/rechazarSolicitud.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+}
+
+// Ajax Tabla de Matriculas START
+function consultaDeSolicitud(){
+  $.ajax({
+    type : 'POST',
+    url : '../control/consultaSolicitud.php',
     dataType : 'json',
     encode : true
   })
   .done(function(datos){
       for (var i = 1; i < datos.count; i=i+4) {
-    $('#consulta tbody').append(
+    $('#consultaSolicitud tbody').append(
         '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm" value="Aceptar" ><input type="button" name="" class="botonsm" value="Rechazar" >'+'</td>'+
+          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="aceptarSolicitud('+datos[i+3]+')" > <input type="button" name="" onclick="rechazarSolicitud('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
@@ -92,6 +125,25 @@ function ConsultaDeRegistros(){
     });
   }
 
-
+  function consultaDeRegistro(){
+    $.ajax({
+      type : 'POST',
+      url : '../control/consultaRegistro.php',
+      dataType : 'json',
+      encode : true
+    })
+    .done(function(datos){
+        for (var i = 1; i < datos.count; i=i+4) {
+      $('#consultaRegistro tbody').append(
+          '<tr>'+
+            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" ><input type="button" name="" class="botonsm boton-del">'+'</td>'+
+            '<td>'+datos[i+1]+'</td>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>');
+      }
+      });
+    }
 
 // Ajax Tabla de Matriculas END

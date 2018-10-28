@@ -7,7 +7,6 @@ $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
 foreach ($stament as $stament):
-
 $datos['d1']=$stament['folio'];
 $datos['Territorio']=$stament['Territorio'];
 $datos['Estado']=$stament['Estado'];
@@ -25,9 +24,6 @@ $datos['Maestro']=$stament['Maestro'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
 $datos['Maestro']=$stament['Maestro'];
-if ($datos['estatusSolicitud']==0) {
-  $stament['estatusSolicitud']='Pendiente';
-}
 endforeach;
 echo json_encode($datos);
 ?>

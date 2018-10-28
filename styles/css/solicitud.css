@@ -1,8 +1,8 @@
-/* body{
-     background: url("../assets/img/solicitud-fondo.png");
-     background-size: 35% 40%;
+html{
+  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
- */
+
  label{
      font-weight: 600;
 }
@@ -10,7 +10,8 @@
      height: 560px;
      overflow: scroll;
 }
- .btn{
+
+.btn{
      border-radius: 15px;
      transition-duration: 0.1s;
      color: #111;
@@ -23,6 +24,9 @@
 }
  .btn:active {
      background-color: #13673A;
+}
+.form-control::placeholder {
+  opacity: 0.4;
 }
  .modal{
      display: none;
@@ -54,8 +58,35 @@
      float: right;
      font-size: 35px;
 }
+.boton{
+	border-radius: 11px;
+	height: 30px;
+	width: 100%;
+	border-width: 1px;
+	transition-duration: 0.3s;
+	background-color: #FFF;
+	border-color: #13673A;
+}
+.boton:hover {
+	background-color: #13673A;
+	color: #FFF;
+}
+.boton-add, .boton-del, .boton-regresar, .boton-plus{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+		background-size: Contain;
+    border-radius: 12px;
+		border: none;
+    cursor: pointer;
+    height: 30px;
+    padding-left: 16px;
+    vertical-align: middle;
+}
+.boton-del{
+		background-image: url(../../assets/img/error.png);
+}
  #header-sae{
-     background: #FFFFFFFF;
      animation-name: slideHeader;
      animation-duration: 1s;
      opacity: 0.95;
@@ -116,7 +147,6 @@
   margin: auto;
   width: 50%;
 }
-
 /* .form-control{
   border-radius: 8px;
 }
@@ -126,7 +156,7 @@
  @keyframes slideHeader{
      from{
         opacity: 0;
- 			 transform: translateY(2rem);
+ 			 transform: translateY(5rem);
     }
      to {
         opacity: 1;

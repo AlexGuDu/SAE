@@ -24,10 +24,12 @@ session_start();
   $objetivo=$_POST['objetivoEvento'];
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
+  $solicitudPrev=1;
+  $estatusSolicitud=1;
+  $aprobacion="0";
 
-
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable )";
+  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
+  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
@@ -45,44 +47,48 @@ session_start();
   $stament->bindParam(':tipo_evento', $tipo_evento);
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);
+  $stament->bindParam(':solicitadoPrev', $solicitudPrev);
+  $stament->bindParam(':estatusSolicitud', $estatusSolicitud);
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";
   }
   else{
     $stament->execute();
   }
-  $aprovacion="0";
+
   $cantidad=COUNT($_SESSION['matriculas']);
-
-
   $sql="SELECT * FROM solicitud where Territorio='$territorio' and Estado='$estado' and Ciudad='$ciudad' and fecha='$fecha'
   and hora='$hora' and empresa='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
-  and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable' and  estatusSolicitud='0'";
+  and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable'";
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   foreach ($filas as $filas) :
     $folio= $filas['folio'];
   endforeach;
 
-  echo $folio;
-  echo "<br>";
-  echo $cantidad;
-  echo "<br>";
-  echo $_SESSION['matriculas'][0];
-  echo "<br>";
-  echo $_SESSION['matriculas'][1];
-  for ($i=0; $i<$cantidad ; $i++) {
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
-  $stament = $dbh->prepare($sql);
-  $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
-  $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprovacion);
-  $stament->execute();
+  // echo $folio;
+  // echo "<br>";
+  // echo $cantidad;
+  // echo "<br>";
+  // echo $_SESSION['matriculas'][0];
+  // echo "<br>";
+  // echo $_SESSION['matriculas'][1];
+  if(isset($_SESSION['matriculas'])){
+    for ($i=0; $i<$cantidad ; $i++) {
+      if ($_SESSION['matriculas'][$i]!=0) {
+      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+      $stament = $dbh->prepare($sql);
+      $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
+      $stament->bindParam(':folio', $folio);
+      $stament->bindParam(':aprobacion', $aprobacion);
+      $stament->execute();
+      }
+    }
   }
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, Aprobacion) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matricula']);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprovacion);
+  $stament->bindParam(':aprobacion', $aprobacion);
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');

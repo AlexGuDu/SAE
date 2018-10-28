@@ -14,7 +14,7 @@
 </head>
 
 
-<body  onload="ConsultaDeRegistros()">
+<body  onload="ConsultaDeActividades()">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -27,7 +27,8 @@
 
     <!-- Solicitud_Doc -->
     <div id="solicitudPopup" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+
+      <div id="entirePopup" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -75,7 +76,7 @@
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
-              <label class="preview_label">Aspectol Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
+              <label class="preview_label">Aspecto Profesional Fortalecido:</label> <label id="aspecto_profesional"></label>
             </div>
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
@@ -93,17 +94,14 @@
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->
 
+
     <!-- BOTONES ACTIVIDAD -->
 
 
 
-  <div id="entirePage" class="col-md-8 col-sm-10">
-
-
+  <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
     <div id="entire_content">
-
-
     <div class="container">
       <button class="btn btn-default" type="button" name="button" id="popup_test" style="display: none;"></button>
         <div class="row justify-content-center">
@@ -121,16 +119,20 @@
 
 
     <!-- TABLA ACTIVIDADES -->
-    <div class="container"> <br>
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 ">
 
-                <table class="table table-bordered table-hover" id="consulta">
+    <div class="container"> <br>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-7 pane">
+                <table class="table table-bordered table-hover" id="consultaSolicitudes">
                     <thead id="header-table">
-                        <tr>
-                            <th>Actividades solicitadas</th>
+                      <tr>
+                        <th colspan="4">Solicitudes de Actividades</th>
+                      </tr>
+                        <tr class="header-table-columns">
+                            <th>Actividades</th>
                             <th>Estatus</th>
-                            <th>Vista Preliminar</th>
+                            <th>Consulta</th>
                             <th>Fecha</th>
                         </tr>
                     </thead>
@@ -145,16 +147,19 @@
         <br><br>
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 s">
-                <table class="table table-bordered table-hover" id="consulta">
+                <table class="table table-bordered table-hover" id="consultaRegistros">
                     <thead id="header-table">
                         <tr>
-                            <th>Actividades registradas</th>
+                          <th colspan="4">Registros de Cumplimiento de Actividades</th>
+                        </tr>
+                        <tr class="header-table-columns">
+                            <th>Actividades</th>
                             <th>Estatus</th>
-                            <th>Vista Preliminar</th>
+                            <th>Consulta</th>
                             <th>Fecha</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                       <!-- Cargar Folios - AJAX -->
 
                       <!-- Cargar Folios - AJAX -->
@@ -162,6 +167,7 @@
                 </table>
             </div>
         </div>
+
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
             <form class="" action="../control/logout.php">

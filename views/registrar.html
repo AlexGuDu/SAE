@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body onload="folio_ComboBox()">
+<body onload="folio_ComboBox(); limpiarMatriculas()">
     <!-- HEADER -->
     <div style="height:30px"></div>
     <div id="Header">
@@ -24,7 +24,7 @@
     <!-- FIN HEADER -->
 
 
-    <form name="entireForm" action="../control/registrarSolicitud.php" method="post">
+    <form name="entireForm" action="../control/registroRegistrar.php" method="post">
         <div style="height:30px"></div>
         <div id="entirePage">
             <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
@@ -33,7 +33,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div id="confirm_campus"class="col-4">
+                    <div  id="confirm_campus"class="col-4">
                         <label>LA ACTIVIDAD SE REALIZO DENTRO DEL CAMPUS?</label>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons" id="confirmacion_button_group">
                           <label class="btn btn-success btn-sm active" id="confirmacionSi">
@@ -48,7 +48,7 @@
                     <div class="col-7">
                         <div class="form-group">
                             <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
-                            <select class="form-control" id='folioCB' >
+                            <select class="form-control" id='folioCB' name="folio">
                             <option selected hidden value="0"> SELECCIONE </option>
                             <option value="clear">Ninguna </opction>
                         </select>
@@ -94,12 +94,12 @@
                           <div class="form-group">
                               <label> ESTADO: </label>
                               <br>
-                              <input type="text" class="form-control" id="estado_show"></input>
+                              <input type="text" class="form-control" id="estado_show" name="estado"></input>
                           </div>
                           <div class="form-group">
                               <label> CIUDAD: </label>
                               <br>
-                              <input type="text" class="form-control" id="ciudad_show"></input>
+                              <input type="text" class="form-control" id="ciudad_show" name="ciudad"></input>
                           </div>
                           <div style="height:5px;"></div>
                           <hr style="height: 10px;">
@@ -111,7 +111,7 @@
                         </div>
                         <div class="form-group">
                             <label>HORA INICIAL DEL EVENTO: </label> <br>
-                            <input type="time" class="form-control" id="hora">
+                            <input type="time" class="form-control" id="hora" name="hora">
                         </div>
                     </div>
                     <!-- End of left column -->
@@ -260,6 +260,15 @@
         <div class="modal-content">
             <h2>Favor de llenar todos los campos.</h2>
             <input id="ok_modal"  class="btn btn-success btn-lg" type="button" name="ok_modal" value="Ok">
+        </div>
+    </div>
+    <div id="warningModalMatricula" class="modal">
+        <div class="modal-content">
+          <h2 id="error1">No se ingreso ninguna matricula</h2>
+          <h2 id="error2">La matricula que ingreso no existe</h2>
+          <h2 id="error3">No puede ingresar su matricula en esta tabla</h2>
+          <h2 id="error4">La matricula ya fue ingresada</h2>
+          <input id="ok_modalMatricula"  class="btn btn-success btn-lg" type="button" name="ok_modal" value="Ok">
         </div>
     </div>
 

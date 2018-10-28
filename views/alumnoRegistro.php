@@ -31,7 +31,7 @@ Session_start();
 
 		<div id="registro" class="col-md-6 col-lg-6">
 			<br> <img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E."> <br>
-			<form id="ingresarForm" action="../control/register.php" method="post" name="rg_al_form">
+			<form id="ingresarForm" action="../control/registroAlumno.php" method="post" name="rg_al_form">
       <div class="row justify-content-center">
           <div class="col-6">
               <div class="form-group">
