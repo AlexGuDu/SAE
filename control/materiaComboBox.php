@@ -8,7 +8,8 @@ $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 foreach ($filas as $filas):
   $datos[$i]=$filas['NomMateria'];
   $datos[$i+1]=$filas['carrera'];
-  $i=$i+2;
+  $datos[$i+2]=$filas['cveMateria'];
+  $i=$i+3;
 endforeach;
 
 $datos['count']=$i;

@@ -20,6 +20,7 @@ window.addEventListener('click', clickOutside);
   var aspecto_profesional_label = document.getElementById('aspecto_profesional');
   var maestro_responsable_label = document.getElementById('maestro_responsable');
   var razon_propuesta_label = document.getElementById('razon_propuesta');
+  var materiaName;
 
 
   function openSolicitud(){
@@ -42,6 +43,23 @@ window.addEventListener('click', clickOutside);
       encode : true
     })
     .done(function(datos){
+
+      // Conseguir nombre de materia a base de clave
+      var datosEnviados = {
+        'cveMateria': datos.materia
+      }
+      $.ajax({
+        type: 'POST',
+        url :'../control/materiaNombre.php',
+        data: datosEnviados,
+        dataType: 'json',
+        encode: true
+      })
+      .done(function(datos){
+        materia_fortalecida.innerHTML =  datos.NomMateria;
+      });
+      // END
+
       territorio_label.innerHTML = datos.Territorio;
       pais_label.innerHTML = datos.Pais;
       estado_label.innerHTML = nombre_estado(datos.Estado);
@@ -55,6 +73,7 @@ window.addEventListener('click', clickOutside);
       nombre_representante_label.innerHTML = datos.Nombre_Recibe;
       datos_contacto_label.innerHTML = datos.Contacto_empresa;
       objetivo_actividad_label.innerHTML = datos.Objetivo;
+
       maestro_responsable_label.innerHTML= datos.Maestro;
       });
 

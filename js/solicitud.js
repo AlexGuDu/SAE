@@ -237,12 +237,9 @@ function materia_ComboBox(){
     encode : true
   })
   .done(function(datos){
-     for (var i = 1; i < datos.count; i=i+2) {
-
-
-
+     for (var i = 1; i < datos.count; i=i+3) {
     $('#materiaCB').append(
-      '<option value="'+datos[i+1]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
+      '<option value="'+datos[i+2]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
      }
     });
 }

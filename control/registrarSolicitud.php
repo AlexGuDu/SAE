@@ -22,6 +22,7 @@ session_start();
   $nombre_recibe=$_POST['recibeEmpresa'];
   $contacto_empresa=$_POST['contactoEmpresa'];
   $objetivo=$_POST['objetivoEvento'];
+  $materiaFortalecida=$_POST['materiaFortalecida'];
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
   $solicitudPrev=1;
@@ -29,8 +30,8 @@ session_start();
   $aprobacion="0";
 
 
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
+  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
+  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :materia, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
@@ -45,6 +46,7 @@ session_start();
   $stament->bindParam(':Contacto_empresa', $contacto_empresa);
   $stament->bindParam(':Objetivo', $objetivo);
   $stament->bindParam(':Maestro', $maestro);
+  $stament->bindParam(':materia', $materiaFortalecida);
   $stament->bindParam(':tipo_evento', $tipo_evento);
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);
