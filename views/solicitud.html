@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="limpiarMatriculas()">
+<body onload="limpiarMatriculas(); materia_ComboBox();">
     <!-- HEADER -->
     <div style="height:30px"></div>
     <div id="Header">
@@ -507,7 +507,9 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                                <select class="custom-select" id="materiaFortalecida" name="materiaFortalecida"></select>
+                                <select class="custom-select" id="materiaCB" name="materiaFortalecida">
+                                    <option selected disabled hidden value="0"> SELECCIONE </option>
+                                </select>
                             </div>
                         </div>
 

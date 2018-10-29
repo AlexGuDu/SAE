@@ -226,6 +226,27 @@ $('#Agregar').click(function(){
 
 /*------------------------------------------------------------------------------------------------------*/
 
+// Generacion de datos de materia
+
+function materia_ComboBox(){
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/materiaComboBox.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+     for (var i = 1; i < datos.count; i=i+2) {
+
+
+
+    $('#materiaCB').append(
+      '<option value="'+datos[i+1]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
+     }
+    });
+}
+
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos START
 var warningModal = document.getElementById('warningModal');

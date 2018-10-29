@@ -230,7 +230,7 @@ function folio_ComboBox(){
       '<option value="'+datos[i]+'">'+datos[i+1]+'</option>');
      }
     });
-    }
+}
 
 var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
