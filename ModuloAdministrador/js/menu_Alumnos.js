@@ -38,7 +38,7 @@ function consultaDeAlumnos(){
       for (var i = 1; i < datos.count; i=i+7) {
     $('#consultaAlum tbody').append(
         '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value=" " ><input type="button" name="" class="botonsm boton-del" value=" " ><input type="button" name="" class="botonsm boton-plus" value=" " >'+'</td>'+
+          '<td>'+'<input type="button" name="" class="botonsm boton-plus" value=" " >'+'</td>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+datos[i+2]+' '+datos[i+3]+' '+datos[i+1]+'</td>'+
           '<td>'+datos[i+4]+'</td>'+

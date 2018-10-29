@@ -1,0 +1,54 @@
+
+#registro {
+  background: rgba(255, 255, 255, 0.9);
+  /*width: 60%;*/
+/*  padding-top: 10px;
+  padding-bottom: 1px;*/
+  margin: 60px auto auto auto;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.3), 0 7px 20px 0 rgba(0,0,0,0.3);
+}
+
+.textBox {
+  width: 50%;
+}
+
+#boton {
+  border-radius: 12px;
+  height: 30px;
+  width: 174px;
+    border-width: 1px;
+  transition-duration: 0.3s;
+    background-color: #FFFFFFFF;
+  border-color: #13673A;
+}
+
+#boton:hover {
+  background-color: #13673A;
+  color: white;
+}
+
+
+input, select {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inline{
+  display: inline-block;
+  text-align: center;
+}
+
+.block{
+  display: inline-block;
+  margin-left: 25%;
+}
+
+.form-control::placeholder {
+  opacity: 0.6;
+}
+
+.form-control:focus::placeholder{
+  color: transparent;
+}
