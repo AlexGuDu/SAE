@@ -1,5 +1,6 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
+document.getElementById('regresaR').addEventListener('click', cerrarpopup);
 window.addEventListener('click', clickOutside);
  // var comentarioAceptarSS = document.getElementById('comentarioAceptarSS');
 var territorio_label = document.getElementById('territorio');
@@ -26,13 +27,12 @@ function openActividades(){
 
 }
 
+function cerrarpopup() {
+  comentarioAceptarR.style.display = 'none';
+}
 function comentarioAceptaS(folio){
   comentarioAceptarS.style.display = 'block';
   $('#agregar').click(function(){
-   $(document).on('click', '.boton-add', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio ,
      'comentario' : $('#comentario').val()
@@ -60,10 +60,7 @@ function comentarioAceptaS(folio){
  function comentarioRechazaS(folio){
    comentarioDenegarS.style.display = 'block';
     $('#rechazar').click(function(){
-   $(document).on('click', '.boton-del', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
+    comentarioAceptarR.style.display = 'none';
    var datosEnviados = {
      'folio' : folio,
       'comentario' : $('#comentarioRechazar').val()
@@ -91,10 +88,6 @@ function comentarioAceptaS(folio){
 function comentarioAceptaR(folio){
   comentarioAceptarR.style.display = 'block';
   $('#agregarR').click(function(){
-   $(document).on('click', '.boton-add', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio ,
      'comentario' : $('#comentario').val()
@@ -122,10 +115,6 @@ function comentarioAceptaR(folio){
  function comentarioRechazaR(folio){
    comentarioDenegarR.style.display = 'block';
     $('#rechazaR').click(function(){
-   $(document).on('click', '.boton-del', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio,
       'comentario' : $('#comentarioRechazar').val()
@@ -149,7 +138,6 @@ function comentarioAceptaR(folio){
        comentarioDenegarR.style.display = 'none';
    }
 });
-
 
   function popSolicitud(folio){
     var datosEnviados = {
@@ -187,6 +175,7 @@ function comentarioAceptaR(folio){
     if(e.target == solicitudPopup){
     solicitudPopup.style.display = 'none';
     }
+
   }
 
   $(document).keyup(function(e) {
@@ -194,8 +183,9 @@ function comentarioAceptaR(folio){
         solicitudPopup.style.display = 'none';
     }
 });
-
-
+document.getElementById('cerrarPreview').addEventListener('click', function(){
+  solicitudPopup.style.display = 'none';
+})
 
 // Ajax Tabla de Matriculas START
 
@@ -231,7 +221,7 @@ function consultaDeSolicitud(){
         for (var i = 1; i < datos.count; i=i+4) {
       $('#consultaRegistro tbody').append(
           '<tr>'+
-            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAcepta('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechaza('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
+            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
             '<td>'+datos[i+1]+'</td>'+
             '<td>'+datos[i]+'</td>'+
             '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+

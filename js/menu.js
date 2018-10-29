@@ -43,7 +43,6 @@ window.addEventListener('click', clickOutside);
       encode : true
     })
     .done(function(datos){
-
       // Conseguir nombre de materia a base de clave
       var datosEnviados = {
         'cveMateria': datos.materia
