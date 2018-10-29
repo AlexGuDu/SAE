@@ -6,7 +6,6 @@
 // $stament = $dbh->prepare($sql);
 // $stament->bindParam(':numEmp', $_SESSION['numEmp']);
 // $stament->execute();
-
  ?>
 <html>
 

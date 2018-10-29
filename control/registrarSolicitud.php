@@ -28,6 +28,7 @@ session_start();
   $estatusSolicitud=1;
   $aprobacion="0";
 
+
   $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
   values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
   $stament = $dbh->prepare($sql);
@@ -49,6 +50,7 @@ session_start();
   $stament->bindParam(':responsable', $responsable);
   $stament->bindParam(':solicitadoPrev', $solicitudPrev);
   $stament->bindParam(':estatusSolicitud', $estatusSolicitud);
+
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";
   }
@@ -58,20 +60,14 @@ session_start();
 
   $cantidad=COUNT($_SESSION['matriculas']);
   $sql="SELECT * FROM solicitud where Territorio='$territorio' and Estado='$estado' and Ciudad='$ciudad' and fecha='$fecha'
-  and hora='$hora' and empresa='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
+  and hora='$hora' and empresadd='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
   and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable'";
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   foreach ($filas as $filas) :
     $folio= $filas['folio'];
   endforeach;
 
-  // echo $folio;
-  // echo "<br>";
-  // echo $cantidad;
-  // echo "<br>";
-  // echo $_SESSION['matriculas'][0];
-  // echo "<br>";
-  // echo $_SESSION['matriculas'][1];
+
   if(isset($_SESSION['matriculas'])){
     for ($i=0; $i<$cantidad ; $i++) {
       if ($_SESSION['matriculas'][$i]!=0) {
@@ -83,6 +79,7 @@ session_start();
       $stament->execute();
       }
     }
+
   }
   $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
   $stament = $dbh->prepare($sql);

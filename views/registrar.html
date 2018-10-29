@@ -48,7 +48,9 @@
                     <div class="col-7">
                         <div class="form-group">
                             <label>SELECCIONE LA SOLICITUD PENDIENTE POR REGISTAR: </label>
+
                             <select class="form-control" id='folioCB' name="folio">
+
                             <option selected hidden value="0"> SELECCIONE </option>
                             <option value="clear">Ninguna </opction>
                         </select>
@@ -60,7 +62,7 @@
                     <div class="col-11 col-md-4">
                         <div class="form-group">
                             <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
-                            <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento">
+                            <select id="eventoSelector" class="custom-select" name="tipo_evento">
                             <option selected disabled hidden value="0"> SELECCIONE </option>
                             <option value="1"> Vinculacion </option>
                             <option value="2"> Cientifica </option>
@@ -71,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                            <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad">
+                            <select id="actividadSelector" class="custom-select" disabled="disabled" name="tipo_actividad">
                             <option selected disabled hidden value="0"> SELECCIONE </option>
                             <option hidden value="1"> Visitas Empresariales </option>
                             <option hidden value="2"> Viajes de Estudio </option>
@@ -218,7 +220,7 @@
                     <div class="col-8 col-md-7">
                         <div class="form-group">
                             <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                            <select class="form-control" id="materiaFortalecida" disabled="disabled"></select>
+                            <select class="custom-select" id="materiaFortalecida" disabled="disabled"></select>
                         </div>
                     </div>
                 </div>
@@ -234,7 +236,7 @@
                     <div class="col-8 col-md-7">
                         <div class="form-group">
                             <label for="aspectoProfesional">Aspecto profecional que se fortalecera por la realizacion de esta actividad: </label>
-                            <select class="form-control" id="aspectoProfesional" disabled="disabled"></select>
+                            <select class="custom-select" id="aspectoProfesional" disabled="disabled"></select>
                         </div>
                     </div>
                 </div>
@@ -242,7 +244,7 @@
                     <div class="col-8 col-md-7">
                         <div class="form-group">
                             <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                            <select class="form-control" id="proponeAsistir" disabled="disabled"></select>
+                            <select class="custom-select" id="proponeAsistir" disabled="disabled"></select>
                         </div>
                     </div>
                 </div>
@@ -274,7 +276,6 @@
 
 </body>
 <!-- SCRIPTS -->
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.min.js"></script>
 <script src="../js/registrar.js"></script>
 

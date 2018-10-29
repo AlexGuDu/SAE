@@ -2,6 +2,7 @@ html{
   background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+
 #entirePage {
 		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
 		border-radius: 35px;
@@ -32,8 +33,12 @@ html{
     transform: translate(-50%, -50%);
 }
 
-
-
+.estatus{
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
 
 .btn{
 		border-radius: 15px;
@@ -49,6 +54,7 @@ html{
 .btn:active {
 		background-color: #13673A;
 }
+
 .boton{
 	border-radius: 11px;
 	height: 30px;
@@ -90,6 +96,7 @@ html{
 .boton-regresar{
 	background-image: url(../../assets/img/regresar.png);
 	height: 50px;
+
 }
 
 .boton-add{
@@ -99,6 +106,7 @@ html{
 .boton-del{
 		background-image: url(../../assets/img/error.png);
 }
+
 
 .boton-plus{
 	background-image: url(../../assets/img/mas.png);
@@ -116,6 +124,10 @@ html{
 #entire_content{
 	animation-name: slideModalContent;
 	animation-duration: 1s;
+}
+
+.header-table-columns{
+	background-color: #187f48;
 }
 
 
@@ -147,7 +159,7 @@ html{
 @keyframes slideHeader{
     from{
        opacity: 0;
-			 transform: translateY(2.5rem);
+			 transform: translateY(5rem);
    }
     to {
        opacity: 1;

@@ -1,4 +1,6 @@
+
 document.getElementById('regresar').addEventListener('click', openMenuAdministrador);
+
 
 function openMenuAdministrador(){
   window.location.href = "../views/menu.html";
@@ -28,6 +30,7 @@ function consultaDeAlumnos(){
   $.ajax({
     type : 'POST',
     url : '../control/consultaAlumno.php',
+
     dataType : 'json',
     encode : true
   })
@@ -41,6 +44,7 @@ function consultaDeAlumnos(){
           '<td>'+datos[i+4]+'</td>'+
           '<td>'+datos[i+5]+'</td>'+
           '<td>'+datos[i+6]+'</td>'+
+
         '</tr>');
     }
     });

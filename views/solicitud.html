@@ -50,7 +50,7 @@
 
                             <div id="formNac" class="form-group">
                                 <label> SELECCIONE EL ESTADO: </label>
-                                <select class="form-control form-control-sm" name="estado" id="nac_estado">
+                                <select class="custom-select" name="estado" id="nac_estado">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="DIF">Distrito Federal</option>
                               <option value="AGS">Aguascalientes</option>
@@ -91,7 +91,7 @@
                             </div>
                             <div id="formExt" class="form-group">
                                 <label>SELECCIONE EL PAIS: </label>
-                                <select class="form-control form-control-sm" name="pais" id="ext_pais">
+                                <select class="custom-select" name="pais" id="ext_pais">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="USA">Estados Unidos</option>
                               <option value="CAN">Canadá</option>
@@ -347,7 +347,7 @@
                             <hr style="height: 10px;">
                             <div class="form-group">
                                 <label> SELECCIONE EL TIPO DE EVENTO DE INTERES: </label>
-                                <select id="eventoSelector" class="form-control form-control-sm" name="tipo_evento" >
+                                <select id="eventoSelector" class="custom-select" name="tipo_evento" >
                                 <option selected disabled hidden value="0"> SELECCIONE </option>
                                 <option value="1"> Vinculacion </option>
                                 <option value="2"> Cientifica </option>
@@ -358,7 +358,7 @@
                             </div>
                             <div class="form-group">
                                 <label>SELECCIONE TIPO DE ACTIVIDAD A REALIZAR: </label>
-                                <select id="actividadSelector" class="form-control form-control-sm" disabled="disabled" name="tipo_actividad" >
+                                <select id="actividadSelector" class="custom-select" disabled="disabled" name="tipo_actividad" >
                                 <option selected disabled hidden value="0"> SELECCIONE </option>
                                 <option hidden value="1"> Visitas Empresariales </option>
                                 <option hidden value="2"> Viajes de Estudio </option>
@@ -507,7 +507,7 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                                <select class="form-control" id="materiaFortalecida" name="materiaFortalecida"></select>
+                                <select class="custom-select" id="materiaFortalecida" name="materiaFortalecida"></select>
                             </div>
                         </div>
 
@@ -521,14 +521,14 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
-                                <select class="form-control" id="aspectoProfesional" name="aspectoProfesional"></select>
+                                <select class="custom-select" id="aspectoProfesional" name="aspectoProfesional"></select>
                             </div>
                         </div>
 
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                                <select class="form-control" id="proponeAsistir" name="proponeAsistir"></select>
+                                <select class="custom-select" id="proponeAsistir" name="proponeAsistir"></select>
                             </div>
 
                         </div>
@@ -569,7 +569,6 @@
 
 </body>
 <!-- SCRIPTS -->
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.min.js"></script>
 <script src="../js/solicitud.js"></script>
 

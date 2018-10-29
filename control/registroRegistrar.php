@@ -35,6 +35,7 @@ session_start();
   //     header('Location:../views/home.php');
   // }
   // else {
+
   $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
   values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
   $stament = $dbh->prepare($sql);
@@ -56,6 +57,7 @@ session_start();
   $stament->bindParam(':responsable', $responsable);
   $stament->bindParam(':solicitadoPrev', $solicitudPrev);
   $stament->bindParam(':estatusSolicitud', $estatusSolicitud);
+
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";
   }
@@ -71,6 +73,7 @@ session_start();
   foreach ($filas as $filas) :
     $folio= $filas['folio'];
   endforeach;
+
 
 
   if(isset($_SESSION['matriculas'])){
@@ -93,5 +96,5 @@ session_start();
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');
-  // }
+
  ?>
