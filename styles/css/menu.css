@@ -96,6 +96,7 @@ html{
 .boton-regresar{
 	background-image: url(../../assets/img/regresar.png);
 	height: 50px;
+
 }
 
 .boton-add{
@@ -105,6 +106,7 @@ html{
 .boton-del{
 		background-image: url(../../assets/img/error.png);
 }
+
 
 .boton-plus{
 	background-image: url(../../assets/img/mas.png);

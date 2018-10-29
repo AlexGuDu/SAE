@@ -121,7 +121,6 @@
     <!-- TABLA ACTIVIDADES -->
 
     <div class="container"> <br>
-
         <div class="row justify-content-center">
             <div class="col-12 col-lg-7 pane">
                 <table class="table table-bordered table-hover" id="consultaSolicitudes">

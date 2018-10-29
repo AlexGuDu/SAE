@@ -20,6 +20,7 @@ foreach ($stament as $filas):
           $stament->bindParam(':grupo', $grupo);
           $stament->bindParam(':telefono', $telefono);
           $stament->execute();
+          header('Location: ../views/home.php');
         } else {
           $_SESSION['error']=1;
           header('Location: ../views/alumnoRegistro.php');

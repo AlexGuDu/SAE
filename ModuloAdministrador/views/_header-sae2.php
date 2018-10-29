@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php
-require_once '../../config/connection.php';
-session_start();
-$sql="SELECT * FROM coocarrera where numEmp= :numEmp";
-$stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
-$stament->execute();
-
+// require_once '../../config/connection.php';
+// session_start();
+// $sql="SELECT * FROM coocarrera where numEmp= :numEmp";
+// $stament = $dbh->prepare($sql);
+// $stament->bindParam(':numEmp', $_SESSION['numEmp']);
+// $stament->execute();
  ?>
 <html>
 
@@ -46,16 +45,16 @@ $stament->execute();
                 <div class="col-6">
                     <p class="text-center">Nombre Coordinadora de Formacion Profesional</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center"><?php foreach ($stament as $filas) :
-                     echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
+                    <p class="text-center"><?php //foreach ($stament as $filas) :
+                    // echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
                     ?></p>
                 </div>
                 <div class="col-6">
                     <p class="text-center">Puesto</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center" ><?php
-                     echo $filas['CarreraAsig'];
-                   endforeach; ?></p>
+                  //   echo $filas['CarreraAsig'];
+                  // endforeach; ?></p>
                 </div>
             </div>
         </div>

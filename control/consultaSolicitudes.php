@@ -10,7 +10,7 @@
   foreach ($filas as $filas):
     $datos[$i]=$filas['tema'];
     $datos[$i+1]=$filas['estatusSolicitud'];
-    $datos[$i+2]=$filas['fecha'];
+    $datos[$i+2]=$filas['fecha_registro'];
     $datos[$i+3]=$filas['folio'];
     $i=$i+4;
   endforeach;
