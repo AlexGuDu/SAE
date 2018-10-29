@@ -9,7 +9,7 @@ $stament->execute();
 foreach ($stament as $filas):
   $carrera=$filas['CarreraAsig'];
 endforeach;
-$sql="SELECT * FROM alumno a,solicitud b, alumnosolicitud c where a.Matricula=c.Matricula and b.folio=c.Folio and a.Carrera= :carrera and a.Matricula=b.responsable and b.solicitadoPrev=1 and b.estatusSolicitud=1 and b.estadoCoordinador=1";
+$sql="SELECT * FROM alumno a,solicitud b, alumnosolicitud c where a.Matricula=c.Matricula and b.folio=c.Folio and a.Carrera= :carrera and a.Matricula=b.responsable and b.solicitadoPrev=1 and b.estatusSolicitud=1 and b.estadoCoordinador=2";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':carrera', $carrera);
 $stament->execute();

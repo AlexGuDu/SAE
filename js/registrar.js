@@ -249,10 +249,13 @@ function folio_ComboBox(){
       '<option value="'+datos[i]+'">'+datos[i+1]+'</option>');
      }
     });
+
+
 }
 
 var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
+      $('#matriculasTbody').empty();
   if(folio.value == 'clear'){
     solicitud = false;
     folio_val = null;
@@ -338,6 +341,18 @@ folio.addEventListener('change', function(){
       maestroMateria_input.value = datos.Maestro;
       aspectoProfesional_input.value = datos.aspecto_pro;
       proponeAsistir_input.value = datos.proponente;
+
+      for (var i = 1; i < datos.count; i=i+4) {
+
+      $('#mostrarMatriculas tbody').append(
+        '<tr>'+
+        '<td>'+datos.alumno[i]+'</td>'+
+        '<td>'+datos.alumno[i+1]+'</td>'+
+        '<td>'+datos.alumno[i+2]+'</td>'+
+        '<td>'+datos.alumno[i+3]+'</td>'+
+        '</tr>');
+        }
+
       });
 }
 });
