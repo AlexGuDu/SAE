@@ -1,7 +1,11 @@
 <?php
 require '../../config/connection.php';
 $folio=$_POST['folio'];
-$sql = "UPDATE solicitud set estatusSolicitud=2  WHERE folio=$folio";
-$filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-header('Location:../views/menu.html');
+$comentario=$_POST['comentario'];
+$sql = "UPDATE solicitud set estadoCoordinador = 1, Comentario = :comentario  WHERE folio= :folio";
+$stament = $dbh->prepare($sql);
+$stament->bindParam(':folio', $folio);
+$stament->bindParam(':comentario', $comentario);
+$stament->execute();
+
  ?>

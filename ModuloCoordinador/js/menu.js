@@ -1,7 +1,7 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
-var solicitudPopup = document.getElementById('solicitudPopup');
+ // var comentarioAceptarSS = document.getElementById('comentarioAceptarSS');
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
 var responsable_label = document.getElementById('responsable');
@@ -23,7 +23,133 @@ var razon_propuesta_label = document.getElementById('razon_propuesta');
 
 function openActividades(){
   window.location.href = "../views/menu_consultas.html";
+
 }
+
+function comentarioAceptaS(folio){
+  comentarioAceptarS.style.display = 'block';
+  $('#agregar').click(function(){
+   $(document).on('click', '.boton-add', function (event) {
+   event.preventDefault();
+   $(this).closest('tr').remove();
+ });
+   var datosEnviados = {
+     'folio' : folio ,
+     'comentario' : $('#comentario').val()
+   };
+   $.ajax({
+     type : 'POST',
+     url : '../control/aceptarSolicitud.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+  });
+ }
+ function clickOutside(e){
+   if(e.target == comentarioAceptarS){
+   comentarioAceptarS.style.display = 'none';
+   }
+ }
+ $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+       comentarioAceptarS.style.display = 'none';
+   }
+});
+
+ function comentarioRechazaS(folio){
+   comentarioDenegarS.style.display = 'block';
+    $('#rechazar').click(function(){
+   $(document).on('click', '.boton-del', function (event) {
+   event.preventDefault();
+   $(this).closest('tr').remove();
+ });
+   var datosEnviados = {
+     'folio' : folio,
+      'comentario' : $('#comentarioRechazar').val()
+   };
+   $.ajax({
+     type : 'POST',
+     url : '../control/rechazarSolicitud.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+  });
+ }
+ function clickOutside(e){
+   if(e.target == comentarioDenegarS){
+   comentarioDenegarS.style.display = 'none';
+   }
+ }
+ $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+       comentarioDenegarS.style.display = 'none';
+   }
+});
+
+function comentarioAceptaR(folio){
+  comentarioAceptarR.style.display = 'block';
+  $('#agregarR').click(function(){
+   $(document).on('click', '.boton-add', function (event) {
+   event.preventDefault();
+   $(this).closest('tr').remove();
+ });
+   var datosEnviados = {
+     'folio' : folio ,
+     'comentario' : $('#comentario').val()
+   };
+   $.ajax({
+     type : 'POST',
+     url : '../control/aceptarRegistro.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+  });
+ }
+ function clickOutside(e){
+   if(e.target == comentarioAceptarR){
+   comentarioAceptarR.style.display = 'none';
+   }
+ }
+ $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+       comentarioAceptarR.style.display = 'none';
+   }
+});
+
+ function comentarioRechazaR(folio){
+   comentarioDenegarR.style.display = 'block';
+    $('#rechazaR').click(function(){
+   $(document).on('click', '.boton-del', function (event) {
+   event.preventDefault();
+   $(this).closest('tr').remove();
+ });
+   var datosEnviados = {
+     'folio' : folio,
+      'comentario' : $('#comentarioRechazar').val()
+   };
+   $.ajax({
+     type : 'POST',
+     url : '../control/rechazarRegistro.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+  });
+ }
+ function clickOutside(e){
+   if(e.target == comentarioDenegarR){
+   comentarioDenegarR.style.display = 'none';
+   }
+ }
+ $(document).keyup(function(e) {
+    if (e.keyCode == 27) { // escape key maps to keycode `27`
+       comentarioDenegarR.style.display = 'none';
+   }
+});
+
 
   function popSolicitud(folio){
     var datosEnviados = {
@@ -69,39 +195,7 @@ function openActividades(){
     }
 });
 
- function aceptarSolicitud(folio){
-  $(document).on('click', '.boton-add', function (event) {
-  event.preventDefault();
-  $(this).closest('tr').remove();
-});
-  var datosEnviados = {
-    'folio' : folio
-  };
-  $.ajax({
-    type : 'POST',
-    url : '../control/aceptarSolicitud.php',
-    data : datosEnviados,
-    dataType : 'json',
-    encode : true
-  })
-}
 
- function rechazarSolicitud(folio){
-  $(document).on('click', '.boton-del', function (event) {
-  event.preventDefault();
-  $(this).closest('tr').remove();
-});
-  var datosEnviados = {
-    'folio' : folio
-  };
-  $.ajax({
-    type : 'POST',
-    url : '../control/rechazarSolicitud.php',
-    data : datosEnviados,
-    dataType : 'json',
-    encode : true
-  })
-}
 
 // Ajax Tabla de Matriculas START
 
@@ -116,11 +210,7 @@ function consultaDeSolicitud(){
       for (var i = 1; i < datos.count; i=i+4) {
     $('#consultaSolicitud tbody').append(
         '<tr>'+
-
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="aceptarSolicitud('+datos[i+3]+')" > <input type="button" name="" onclick="rechazarSolicitud('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
-
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" value="Aceptar" ><input type="button" name="" class="botonsm boton-del" value="Rechazar" >'+'</td>'+
-
+          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaS('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaS('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
           '<td>'+datos[i+1]+'</td>'+
           '<td>'+datos[i]+'</td>'+
           '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
@@ -141,7 +231,7 @@ function consultaDeSolicitud(){
         for (var i = 1; i < datos.count; i=i+4) {
       $('#consultaRegistro tbody').append(
           '<tr>'+
-            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" ><input type="button" name="" class="botonsm boton-del">'+'</td>'+
+            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAcepta('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechaza('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
             '<td>'+datos[i+1]+'</td>'+
             '<td>'+datos[i]+'</td>'+
             '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+

@@ -2,14 +2,15 @@
 require '../../config/connection.php';
 session_start();
 $i=1;
+$asd=12;
 $sql="SELECT * FROM coocarrera where numEmp= :numEmp";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
+$stament->bindParam(':numEmp', $asd);
 $stament->execute();
 foreach ($stament as $filas):
   $carrera=$filas['CarreraAsig'];
 endforeach;
-$sql="SELECT * FROM alumno a,solicitud b, alumnosolicitud c where a.Matricula=c.Matricula and b.folio=c.Folio and a.Carrera= :carrera and a.Matricula=b.responsable and b.solicitadoPrev=1 and b.estatusSolicitud=1 and b.estadoCoordinador=0";
+$sql="SELECT * FROM alumno a,solicitud b, alumnosolicitud c where a.Matricula=c.Matricula and b.folio=c.Folio and a.Carrera= :carrera and a.Matricula=b.responsable and c.aprobacionRegistro=1 and b.estadoCoordinador=2";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':carrera', $carrera);
 $stament->execute();
