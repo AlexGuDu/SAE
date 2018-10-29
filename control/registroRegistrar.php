@@ -73,12 +73,12 @@ session_start();
   echo "<br>";
   echo $_SESSION['matriculas'][1];
   for ($i=0; $i<$cantidad ; $i++) {
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
-  $stament = $dbh->prepare($sql);
-  $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
-  $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprobacion);
-  $stament->execute();
+    $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+    $stament = $dbh->prepare($sql);
+    $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
+    $stament->bindParam(':folio', $folio);
+    $stament->bindParam(':aprobacion', $aprobacion);
+    $stament->execute();
   }
   $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
   $stament = $dbh->prepare($sql);

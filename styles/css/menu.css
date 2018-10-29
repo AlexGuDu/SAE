@@ -33,6 +33,12 @@ html{
     transform: translate(-50%, -50%);
 }
 
+.estatus{
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
 
 .btn{
 		border-radius: 15px;
@@ -48,7 +54,6 @@ html{
 .btn:active {
 		background-color: #13673A;
 }
-
 
 .boton{
 	border-radius: 11px;
@@ -117,6 +122,10 @@ html{
 #entire_content{
 	animation-name: slideModalContent;
 	animation-duration: 1s;
+}
+
+.header-table-columns{
+	background-color: #187f48;
 }
 
 

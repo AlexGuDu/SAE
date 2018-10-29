@@ -125,7 +125,7 @@ folio.addEventListener('change', function(){
     solicitud = false;
     eventoSelector.disabled = false;
     fecha_input.disabled = false;
-    hora_input  .disabled = false;
+    hora_input.disabled = false;
     ingresar_matricula.disabled = false;
     boton_ingresar_matricula.disabled = false;
     infoGeo.style.display = 'none';
@@ -182,11 +182,7 @@ folio.addEventListener('change', function(){
       maestroMateria.disabled = "disabled";
       ingresar_matricula.disabled = "disabled";
       boton_ingresar_matricula.disabled = "disabled";
-      t_e.style.backgroundColor = 'white';
-      t_a.style.backgroundColor = 'white';
-      fe.style.backgroundColor = 'white';
-      ho.style.backgroundColor = 'white';
-      l_e.style.backgroundColor = 'white';
+
       $('#eventoSelector').append(
         '<option disabled selected hidden value="'+datos.tipo_evento+'">'+nombre_evento(datos.tipo_evento)+'</option>'
       );
