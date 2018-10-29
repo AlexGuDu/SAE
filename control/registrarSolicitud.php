@@ -23,6 +23,8 @@ session_start();
   $contacto_empresa=$_POST['contactoEmpresa'];
   $objetivo=$_POST['objetivoEvento'];
   $materiaFortalecida=$_POST['materiaFortalecida'];
+  $aspectoProfesional=$_POST['aspectoProfesional'];
+  $proponeAsistir=$_POST['proponeAsistir'];
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
   $solicitudPrev=1;
@@ -30,8 +32,8 @@ session_start();
   $aprobacion="0";
 
 
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estadoCoordinador)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :materia, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estadoCoordinador )";
+  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, aspecto_pro, proponente, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estadoCoordinador)
+  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :materia, :Maestro, :aspectoProfesional, :proponeAsistir, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estadoCoordinador )";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
@@ -47,6 +49,8 @@ session_start();
   $stament->bindParam(':Objetivo', $objetivo);
   $stament->bindParam(':Maestro', $maestro);
   $stament->bindParam(':materia', $materiaFortalecida);
+  $stament->bindParam(':aspectoProfesional', $aspectoProfesional);
+  $stament->bindParam(':proponeAsistir', $proponeAsistir);
   $stament->bindParam(':tipo_evento', $tipo_evento);
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);

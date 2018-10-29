@@ -21,6 +21,8 @@ $datos['Contacto_empresa']=$stament['Contacto_empresa'];
 $datos['Objetivo']=$stament['Objetivo'];
 $datos['materia']=$stament['materia'];
 $datos['Maestro']=$stament['Maestro'];
+$datos['aspect_pro']=$stament['aspecto_pro'];
+$datos['proponente']=$stament['proponente'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
 endforeach;

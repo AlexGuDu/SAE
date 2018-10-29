@@ -9,9 +9,10 @@
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   foreach ($filas as $filas):
     $datos[$i]=$filas['tema'];
-    $datos[$i+1]=$filas['estatusSolicitud'];
-    $datos[$i+2]=$filas['fecha_registro'];
-    $datos[$i+3]=$filas['folio'];
+    $datos[$i+1]=$filas['estadoCoordinador'];
+    $datos[$i+2]=$filas['estatusSolicitud'];
+    $datos[$i+3]=$filas['fecha_registro'];
+    $datos[$i+4]=$filas['folio'];
     $i=$i+4;
   endforeach;
 

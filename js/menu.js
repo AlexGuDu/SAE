@@ -74,6 +74,8 @@ window.addEventListener('click', clickOutside);
       objetivo_actividad_label.innerHTML = datos.Objetivo;
       // materia fortalecida
       maestro_responsable_label.innerHTML= datos.Maestro;
+      aspecto_profesional_label.innerHTML = datos.aspect_pro;
+      razon_propuesta_label.innerHTML = datos.proponente;
       });
 
     solicitudPopup.style.display = 'block';
@@ -106,12 +108,18 @@ function ConsultaDeActividades(){
   })
   .done(function(datos){
     for (var i = 1; i < datos.count; i=i+4) {
+      if(datos[i+2]!=0){
+        var msg = textoEstatus(datos[i+2]);
+      } else {
+        var msg = textoEstatus(datos[i+1]);
+      }
+      console.log(msg);
       $('#consultaSolicitudes tbody').append(
           '<tr>'+
             '<td>'+datos[i]+'</td>'+
-            '<td>'+textoEstatus(datos[i+1])+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
-            '<td>'+datos[i+2]+'</td>'+
+            '<td>'+msg+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+3]+'</td>'+
           '</tr>'
       );
     }
@@ -124,13 +132,16 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
-    for (var i = 1; i < datos.count; i=i+4) {
+    for (var i = 1; i < datos.count; i=i+5) {
+      if(datos[i+2]==1){
+        var msg = textoEstatus('1');
+      }
       $('#consultaRegistros tbody').append(
           '<tr>'+
             '<td>'+datos[i]+'</td>'+
-            '<td>'+textoEstatus(datos[i+1])+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
-            '<td>'+datos[i+2]+'</td>'+
+            '<td>'+msg+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+datos[i+3]+'</td>'+
           '</tr>'
       );
     }

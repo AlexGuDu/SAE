@@ -10,9 +10,10 @@
   foreach ($filas as $filas):
     $datos[$i]=$filas['tema'];
     $datos[$i+1]=$filas['aprobacionCoordinador'];
-    $datos[$i+2]=$filas['fecha'];
-    $datos[$i+3]=$filas['folio'];
-    $i=$i+4;
+    $datos[$i+2]=$filas['aprobacionRegistro'];
+    $datos[$i+3]=$filas['fecha'];
+    $datos[$i+4]=$filas['folio'];
+    $i=$i+5;
   endforeach;
 
   $datos['count']=$i;
