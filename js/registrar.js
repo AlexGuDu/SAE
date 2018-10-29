@@ -214,6 +214,23 @@ function borrar(matricula){
 /*------------------------------------------------------------------------------------------------------*/
 
 
+function materia_ComboBox(){
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/materiaComboBox.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+     for (var i = 1; i < datos.count; i=i+3) {
+    $('#materiaCB').append(
+      '<option value="'+datos[i+2]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
+     }
+    });
+}
+
+
 // Generacion de datos de solicitud previa en campos de Registro
 
 function folio_ComboBox(){

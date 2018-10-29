@@ -460,7 +460,7 @@
 
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
-                                <label for="temaVisita">Tema de la visita:</label>
+                                <label for="temaVisita">Tema de la visita (Nombre de la Actividad):</label>
                                 <input type="text" class="form-control" id="temaVisita" name="temaVisita">
                             </div>
                         </div>
@@ -474,7 +474,7 @@
 
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
-                                <label for="contactoEmpresa">Datos de contacto de la empresa:</label>
+                                <label for="contactoEmpresa">Correo de la empresa:</label>
                                 <input type="text" class="form-control" id="contactoEmpresa" name="contactoEmpresa">
                             </div>
                             <br>
@@ -523,16 +523,23 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
-                                <select class="custom-select" id="aspectoProfesional" name="aspectoProfesional"></select>
+                                <select class="custom-select" id="aspectoProfesional">
+                                  <option selected disabled hidden value="0"> SELECCIONE </option>
+                                  <option value="Tigre">Tigre</option>
+                                  <option value="Mantis">Mantis</option>
+                                  <option value="Dragon">Dragon</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="col-md-8 col-sm-8">
-                            <div class="form-group">
-                                <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                                <select class="custom-select" id="proponeAsistir" name="proponeAsistir"></select>
-                            </div>
-
+                          <select class="custom-select" id="proponeAsistir" name="proponeAsistir">
+                            <option selected disabled hidden value="0"> SELECCIONE </option>
+                            <option value="Coordinacion">Coordinacion</option>
+                            <option value="Docente">Docente</option>
+                            <option value="Subdireccion">Subdireccion</option>
+                            <option value="Otros">Otros</option>
+                          </select>
                         </div>
                     </div>
 

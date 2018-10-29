@@ -73,7 +73,7 @@ window.addEventListener('click', clickOutside);
       nombre_representante_label.innerHTML = datos.Nombre_Recibe;
       datos_contacto_label.innerHTML = datos.Contacto_empresa;
       objetivo_actividad_label.innerHTML = datos.Objetivo;
-
+      // materia fortalecida
       maestro_responsable_label.innerHTML= datos.Maestro;
       });
 

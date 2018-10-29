@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
-<body onload="folio_ComboBox(); limpiarMatriculas()">
+<body onload="materia_ComboBox(); folio_ComboBox(); limpiarMatriculas();">
     <!-- HEADER -->
     <div style="height:30px"></div>
     <div id="Header">
@@ -209,7 +209,7 @@
             <div class="container" id="section_three">
               <div class="text-center"><button type="button" id="previousBtn_two" class="btn btn-success btn-lg">ANTERIOR</button></div> <br>
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-7">
+                    <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
                             <input type="text" class="form-control" id="objetivoEvento">
@@ -217,15 +217,17 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-7">
-                        <div class="form-group">
-                            <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
-                            <select class="custom-select" id="materiaFortalecida" disabled="disabled"></select>
-                        </div>
-                    </div>
+                  <div class="col-md-8 col-sm-8">
+                      <div class="form-group">
+                          <label for="materiaFortalecida">Seleccione la materia que se vera fortalecida por la realizacion de esta actividad:</label>
+                          <select class="custom-select" id="materiaCB" name="materiaFortalecida">
+                              <option selected disabled hidden value="0"> SELECCIONE </option>
+                          </select>
+                      </div>
+                  </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-7">
+                    <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
                             <input type="text" class="form-control" id="maestroMateria">
@@ -233,19 +235,30 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-7">
+                    <div class="col-md-8 col-sm-8">
                         <div class="form-group">
-                            <label for="aspectoProfesional">Aspecto profecional que se fortalecera por la realizacion de esta actividad: </label>
-                            <select class="custom-select" id="aspectoProfesional" disabled="disabled"></select>
+                            <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
+                            <select class="custom-select" id="aspectoProfesional" >
+                              <option selected disabled hidden value="0"> SELECCIONE </option>
+                              <option value="Tigre">Tigre</option>
+                              <option value="Mantis">Mantis</option>
+                              <option value="Dragon">Dragon</option>
+                            </select>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-7">
-                        <div class="form-group">
-                            <label for="proponeAsistir">Quien propone asistir al evento: </label>
-                            <select class="custom-select" id="proponeAsistir" disabled="disabled"></select>
-                        </div>
+                    <div class="col-md-8 col-sm-8">
+                      <div class="form-group">
+                          <label for="proponeAsistir">Quien propone asistir al evento: </label>
+                          <select class="custom-select" id="proponeAsistir" name="proponeAsistir">
+                            <option selected disabled hidden value="0"> SELECCIONE </option>
+                            <option value="Coordinacion">Coordinacion</option>
+                            <option value="Docente">Docente</option>
+                            <option value="Subdireccion">Subdireccion</option>
+                            <option value="Otros">Otros</option>
+                          </select>
+                      </div>
                     </div>
                 </div>
                 <hr>
