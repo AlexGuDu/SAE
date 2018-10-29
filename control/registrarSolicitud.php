@@ -60,7 +60,7 @@ session_start();
 
   $cantidad=COUNT($_SESSION['matriculas']);
   $sql="SELECT * FROM solicitud where Territorio='$territorio' and Estado='$estado' and Ciudad='$ciudad' and fecha='$fecha'
-  and hora='$hora' and empresadd='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
+  and hora='$hora' and empresa='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
   and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable'";
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   foreach ($filas as $filas) :
