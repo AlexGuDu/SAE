@@ -97,6 +97,13 @@
 
     <!-- BOTONES ACTIVIDAD -->
 
+  <div class="container smooth-jazz" style="text-align: center;">
+    <h4>Actividades realizadas (2/5)</h4>
+    <div class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
+        <div class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+      </div>
+  </div>
+  <br>
 
 
   <div id="entirePage" class="col-md-8 col-sm-8">
@@ -166,6 +173,56 @@
                 </table>
             </div>
         </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body bg-success" style="border-radius: 1rem;">
+                Cientifica<label class="float-right">(1)</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body" style="border-radius: 1rem;">
+                Cultural<label class="float-right">(0)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body" style="border-radius: 1rem;">
+                Vinculacion<label class="float-right">(0)</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body bg-success" style="border-radius: 1rem;">
+                Deportiva<label class="float-right">(1)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body" style="border-radius: 1rem;">
+                Otros <label class="float-right">(0)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+
 
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
