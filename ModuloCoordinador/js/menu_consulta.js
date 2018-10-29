@@ -4,6 +4,7 @@ function openMenuCoordinador(){
   window.location.href = "../views/menu.html";
 }
 // Ajax Tabla de Matriculas START
+
 function ConsultaDeAlumnos(){
   var j=1;
   $.ajax({

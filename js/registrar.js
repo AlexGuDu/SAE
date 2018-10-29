@@ -25,6 +25,15 @@ var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
 var folio_val;
 
+function limpiarMatriculas(){
+  $.ajax({
+    type : 'POST',
+    url : '../control/limpiarMatriculas.php',
+    dataType : 'json',
+    encode : true
+  })
+}
+
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
@@ -70,7 +79,7 @@ function limpiarMatriculas(){
 //Agregar alumno a trabla de solicitud
 $('#Agregar').click(function(){
   var datosEnviados = {
-    'matricula' : $('#matriculas').val()
+    'matricula' : $('#ingresar_matricula').val()
   };
   $.ajax({
     type : 'POST',
@@ -101,7 +110,7 @@ $('#Agregar').click(function(){
       error4.style.display='block';
     }
     else {
-    $('#datos_tabla tbody').append(
+    $('#mostrarMatriculas tbody').append(
         '<tr>'+
           '<td>'+'<input type="button" onclick="borrar('+datos.d5+')" name="boton" class="boton boton-del">'+'</td>'+
           '<td>'+datos.d4+'</td>'+
