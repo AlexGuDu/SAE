@@ -16,6 +16,7 @@ var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
@@ -226,6 +227,24 @@ $('#Agregar').click(function(){
 
 /*------------------------------------------------------------------------------------------------------*/
 
+// Generacion de datos de materia
+
+function materia_ComboBox(){
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/materiaComboBox.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+     for (var i = 1; i < datos.count; i=i+3) {
+    $('#materiaCB').append(
+      '<option value="'+datos[i+2]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
+     }
+    });
+}
+
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos START
 var warningModal = document.getElementById('warningModal');
@@ -268,7 +287,7 @@ nextBtn_1.addEventListener('click', openSection_2);
 nextBtn_2.addEventListener('click', openSection_3);
 previousBtn_1.addEventListener('click', returnToSection_1);
 previousBtn_2.addEventListener('click', returnToSection_2);
-// solicitarPermiso.addEventListener('click', validateSection_3)
+
 window.addEventListener('click', clickOutside);
 
   function clickOutside(e){

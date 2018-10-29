@@ -3,7 +3,7 @@ var lugarEvento_input = document.getElementById('lugar_evento');
 var nombreActividad_input = document.getElementById('nombreActividad');
 var nombreOrganiza_input = document.getElementById('nombreOrganiza');
 var objetivoEvento_input = document.getElementById('objetivoEvento');
-var materiaFortalecida_input = document.getElementById('materiaFortalecida');
+var materiaFortalecida_input = document.getElementById('materiaCB');
 var maestroMateria_input = document.getElementById('maestroMateria');
 var aspectoProfesional_input = document.getElementById('aspectoProfesional');
 var proponeAsistir_input = document.getElementById('proponeAsistir');
@@ -23,6 +23,8 @@ var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+var folio_val;
+
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
@@ -214,6 +216,23 @@ function borrar(matricula){
 /*------------------------------------------------------------------------------------------------------*/
 
 
+function materia_ComboBox(){
+
+  $.ajax({
+    type : 'POST',
+    url : '../control/materiaComboBox.php',
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(datos){
+     for (var i = 1; i < datos.count; i=i+3) {
+    $('#materiaCB').append(
+      '<option value="'+datos[i+2]+'">'+datos[i+1]+" - "+datos[i]+'</option>');
+     }
+    });
+}
+
+
 // Generacion de datos de solicitud previa en campos de Registro
 
 function folio_ComboBox(){
@@ -230,12 +249,13 @@ function folio_ComboBox(){
       '<option value="'+datos[i]+'">'+datos[i+1]+'</option>');
      }
     });
-    }
+}
 
 var folio = document.getElementById('folioCB');
 folio.addEventListener('change', function(){
   if(folio.value == 'clear'){
     solicitud = false;
+    folio_val = null;
     eventoSelector.disabled = false;
     fecha_input.disabled = false;
     hora_input.disabled = false;
@@ -266,9 +286,12 @@ folio.addEventListener('change', function(){
     proponeAsistir_input.value = "";
     fecha_input.value = "";
     hora_input.value = "";
+
   }
   else {
     solicitud = true;
+    folio_val = folio.value;
+
     var datosEnviados = {
       'folio' : folio.value
     };
@@ -280,6 +303,7 @@ folio.addEventListener('change', function(){
       encode : true
     })
     .done(function(datos){
+
       actividadSelector.disabled = "disabled";
       eventoSelector.disabled = "disabled";
       fecha_input.disabled = "disabled";
@@ -305,16 +329,15 @@ folio.addEventListener('change', function(){
       estado_show.value = nombre_estado(datos.Estado);
       ciudad_show.value = datos.Ciudad;
       hora_input.value = datos.hora;
-
       fecha_input.value = datos.fecha;
       lugarEvento_input.value = datos.lugar;
       nombreActividad_input.value = datos.tema;
       nombreOrganiza_input.value = datos.Nombre_Recibe;
       objetivoEvento_input.value = datos.Objetivo;
-      materiaFortalecida_input.value = "null";
+      materiaFortalecida_input.value = datos.materia;
       maestroMateria_input.value = datos.Maestro;
-      aspectoProfesional_input.value = "null";
-      proponeAsistir_input.value = "null";
+      aspectoProfesional_input.value = datos.aspecto_pro;
+      proponeAsistir_input.value = datos.proponente;
       });
 }
 });
@@ -518,13 +541,15 @@ var l_e = document.getElementById('lugar_evento');
 // S2
 var nomAct = document.getElementById('nombreActividad');
 var nomOrg = document.getElementById('nombreOrganiza');
+// S3
+var objEve = document.getElementById('objetivoEvento');
+var maeMat = document.getElementById('maestroMateria');
 
 
   nextBtn_1.addEventListener('click', openSection_2);
   nextBtn_2.addEventListener('click', openSection_3);
   previousBtn_1.addEventListener('click', returnToSection_1);
   previousBtn_2.addEventListener('click', returnToSection_2);
-  registrarActividad.addEventListener('click', validateSection_3)
   window.addEventListener('click', clickOutside);
 
     function clickOutside(e){
@@ -619,10 +644,32 @@ var nomOrg = document.getElementById('nombreOrganiza');
       // Validar Section Three START
       var objetivoEvento = document.forms["entireForm"]["objetivoEvento"].value;
       var maestroMateria = document.forms["entireForm"]["maestroMateria"].value;
+
       // pending more inputs
 
       if(objetivoEvento == "" || maestroMateria == ""){
-        alert("Favor de llenar todos los campos!");
+        if (objetivoEvento == "") {
+          objEve.style.backgroundColor = '#ffa76d';
+        }
+        if (maestroMateria == "") {
+          maeMat.style.backgroundColor = '#ffa76d';
+        }
+        warningModal.style.display = 'block';
+        return false;
+      }
+      else if(folio_val != null){
+        var datosEnviados = {
+          'folio' : folio_val
+        };
+        $.ajax({
+          type : 'POST',
+          url : '../control/solicitud_a_registro.php',
+          data : datosEnviados,
+          dataType : 'json',
+          encode : true
+        });
+        window.location.href = "../views/menu.html";
+        return false;
       }
     }
 

@@ -19,6 +19,7 @@ $datos['tema']=$stament['tema'];
 $datos['Nombre_Recibe']=$stament['Nombre_Recibe'];
 $datos['Contacto_empresa']=$stament['Contacto_empresa'];
 $datos['Objetivo']=$stament['Objetivo'];
+$datos['materia']=$stament['materia'];
 $datos['Maestro']=$stament['Maestro'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
