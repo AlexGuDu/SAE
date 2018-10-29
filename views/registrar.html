@@ -19,12 +19,15 @@
     <div id="Header">
         <script type="text/javascript">
             $("#Header").load("shared/_header-sae.php #header-sae");
-        </script>C
-    </div>
+        </script>
+    </div> <br>
     <!-- FIN HEADER -->
 
+    <div id="form_titulo" class="container">
+      <h1>Registro de Cumplimiento de Actividad</h1>
+    </div>
 
-    <form name="entireForm" action="../control/registroRegistrar.php" method="post">
+    <form name="entireForm" action="../control/registroRegistrar.php" method="post" onsubmit="return validateSection_3();">
         <div style="height:30px"></div>
         <div id="entirePage">
             <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
@@ -212,7 +215,7 @@
                     <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="objetivoEvento">Ingrese brevemente el objetivo de la asistencia a este evento:</label>
-                            <input type="text" class="form-control" id="objetivoEvento">
+                            <input type="text" class="form-control" id="objetivoEvento" name="objetivoEvento">
                         </div>
                     </div>
                 </div>
@@ -230,7 +233,7 @@
                     <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
-                            <input type="text" class="form-control" id="maestroMateria">
+                            <input type="text" class="form-control" id="maestroMateria" name="maestroMateria">
                         </div>
                     </div>
                 </div>
@@ -238,7 +241,7 @@
                     <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="aspectoProfesional">Aspecto profesional que se fortalecera por la realizacion de esta actividad: </label>
-                            <select class="custom-select" id="aspectoProfesional" >
+                            <select class="custom-select" id="aspectoProfesional" name="aspectoProfesional">
                               <option selected disabled hidden value="0"> SELECCIONE </option>
                               <option value="Tigre">Tigre</option>
                               <option value="Mantis">Mantis</option>

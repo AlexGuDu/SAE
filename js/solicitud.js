@@ -16,6 +16,7 @@ var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
@@ -286,7 +287,7 @@ nextBtn_1.addEventListener('click', openSection_2);
 nextBtn_2.addEventListener('click', openSection_3);
 previousBtn_1.addEventListener('click', returnToSection_1);
 previousBtn_2.addEventListener('click', returnToSection_2);
-// solicitarPermiso.addEventListener('click', validateSection_3)
+
 window.addEventListener('click', clickOutside);
 
   function clickOutside(e){

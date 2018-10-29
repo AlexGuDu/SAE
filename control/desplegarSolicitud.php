@@ -2,7 +2,7 @@
 require '../config/connection.php';
 session_start();
 $folio=$_POST['folio'];
-$sql="SELECT * FROM solicitud where folio= :folio";
+$sql="SELECT * FROM solicitud where folio=:folio";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
@@ -20,10 +20,13 @@ $datos['tema']=$stament['tema'];
 $datos['Nombre_Recibe']=$stament['Nombre_Recibe'];
 $datos['Contacto_empresa']=$stament['Contacto_empresa'];
 $datos['Objetivo']=$stament['Objetivo'];
+$datos['materia']=$stament['materia'];
 $datos['Maestro']=$stament['Maestro'];
+$datos['aspecto_pro']=$stament['aspecto_pro'];
+$datos['proponente']=$stament['proponente'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
-$datos['Maestro']=$stament['Maestro'];
+
 endforeach;
 echo json_encode($datos);
 ?>
