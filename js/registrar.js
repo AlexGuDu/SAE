@@ -668,9 +668,13 @@ var maeMat = document.getElementById('maestroMateria');
           dataType : 'json',
           encode : true
         });
-        window.location.href = "../views/menu.html";
+        setTimeout(function() {redirect();}, 200);
         return false;
       }
+    }
+
+    function redirect(){
+      window.location.href = "../views/menu.php";
     }
 
     // Limpiar border
