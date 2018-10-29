@@ -26,12 +26,12 @@ session_start();
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
   $solicitudPrev=1;
-  $estatusSolicitud=1;
+  $estadoCoordinador=1;
   $aprobacion="0";
 
 
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :materia, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
+  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estadoCoordinador)
+  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :materia, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estadoCoordinador )";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
@@ -51,7 +51,7 @@ session_start();
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);
   $stament->bindParam(':solicitadoPrev', $solicitudPrev);
-  $stament->bindParam(':estatusSolicitud', $estatusSolicitud);
+  $stament->bindParam(':estadoCoordinador', $estadoCoordinador);
 
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";

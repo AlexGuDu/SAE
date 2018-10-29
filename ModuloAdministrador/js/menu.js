@@ -60,7 +60,6 @@ function comentarioAceptaS(folio){
  function comentarioRechazaS(folio){
    comentarioDenegarS.style.display = 'block';
     $('#rechazar').click(function(){
-    comentarioAceptarR.style.display = 'none';
    var datosEnviados = {
      'folio' : folio,
       'comentario' : $('#comentarioRechazar').val()
