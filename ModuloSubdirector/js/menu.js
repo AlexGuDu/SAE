@@ -57,11 +57,11 @@ function openActividades(){
     solicitudPopup.style.display = 'block';
   }
 
-  function clickOutside(e){
-    if(e.target == solicitudPopup){
-    solicitudPopup.style.display = 'none';
-    }
-  }
+  // function clickOutside(e){
+  //   if(e.target == solicitudPopup){
+  //   solicitudPopup.style.display = 'none';
+  //   }
+  // }
 
   $(document).keyup(function(e) {
      if (e.keyCode == 27) { // escape key maps to keycode `27`

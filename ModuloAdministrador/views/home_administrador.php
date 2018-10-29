@@ -15,7 +15,7 @@
     <!-- BOOTSTRAP Y CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home.css">
-        <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
     <title>Login Alumnos</title>
 </head>
 
@@ -40,7 +40,7 @@
                 <br>
 
                     <div class="form-group">
-                        <form id="ingresarForm" action="../control/loginSAECoo.php" method="post" >
+                        <form id="ingresarForm" action="../control/loginSAEAdmin.php" method="post" >
                         <label> Numero de empleado: </label>
                         <input type="text" class="form-control" autofocus="autofocus" name="numEmp">
                     </div>
