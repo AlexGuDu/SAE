@@ -107,7 +107,7 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
-    for (var i = 1; i < datos.count; i=i+4) {
+    for (var i = 1; i < datos.count; i=i+5) {
       if(datos[i+2]!=0){
         var msg = textoEstatus(datos[i+2]);
       } else {

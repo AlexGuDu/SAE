@@ -13,7 +13,7 @@
     $datos[$i+2]=$filas['estatusSolicitud'];
     $datos[$i+3]=$filas['fecha_registro'];
     $datos[$i+4]=$filas['folio'];
-    $i=$i+4;
+    $i=$i+5;
   endforeach;
 
   $datos['count']=$i;

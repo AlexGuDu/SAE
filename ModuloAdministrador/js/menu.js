@@ -1,6 +1,10 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
+document.getElementById('alumnos').addEventListener('click', openAlumnos);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 document.getElementById('regresaR').addEventListener('click', cerrarpopup);
+document.getElementById('regresaS').addEventListener('click', cerrarpopup);
+document.getElementById('regresarR').addEventListener('click', cerrarpopup);
+document.getElementById('regresarR').addEventListener('click', cerrarpopup);
 window.addEventListener('click', clickOutside);
  // var comentarioAceptarSS = document.getElementById('comentarioAceptarSS');
 var territorio_label = document.getElementById('territorio');
@@ -26,10 +30,18 @@ function openActividades(){
   window.location.href = "../views/menu_consultas.html";
 
 }
+function openAlumnos(){
+  window.location.href = "../views/menu_alumnos.html";
+
+}
 
 function cerrarpopup() {
   comentarioAceptarR.style.display = 'none';
+  comentarioAceptarS.style.display = 'none';
+  comentarioDenegarR.style.display = 'none';
+  comentarioDenegarS.style.display = 'none';
 }
+
 function comentarioAceptaS(folio){
   comentarioAceptarS.style.display = 'block';
   $('#agregar').click(function(){

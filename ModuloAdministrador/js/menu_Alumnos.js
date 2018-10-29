@@ -9,13 +9,14 @@ function openMenuAdministrador(){
 function openActividades(){
   window.location.href = "../views/menu_consultas.html";
 }
-modificarAlumno(matricula){
+function modificarAlumno(matricula){
   var datosEnviados = {
     'matricula' : matricula
   };
   $.ajax({
     type : 'POST',
     url : '../control/buscarMatricula.php',
+    data : datosEnviados,
     dataType : 'json',
     encode : true
   })

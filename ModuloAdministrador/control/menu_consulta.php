@@ -2,18 +2,8 @@
 require '../../config/connection.php';
 $i=1;
 session_start();
-$sql="SELECT * FROM coocarrera where numEmp= :numEmp";
-$stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
-$stament->execute();
-foreach ($stament as $filas):
-  $carrera=$filas['CarreraAsig'];
-endforeach;
-
-$sql="SELECT * FROM `alumno` where Carrera= :carrera";
-$stament = $dbh->prepare($sql);
-$stament->bindParam(':carrera', $carrera);
-$stament->execute();
+$sql="SELECT * FROM alumno ";
+$stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 foreach ($stament as $filas):
 $datos[$i]=$filas['Matricula'];
 $datos[$i+1]=$filas['Carrera'];
