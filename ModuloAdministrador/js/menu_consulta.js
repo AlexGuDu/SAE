@@ -3,13 +3,9 @@ document.getElementById('regresar').addEventListener('click', openMenuAdministra
 function openMenuAdministrador(){
   window.location.href = "../views/menu.html";
 }
+
 function generarReporte() {
-  $.ajax({
-    type : 'POST',
-    url : '../control/generarReporte.php',
-    dataType : 'json',
-    encode : true
-  })
+  window.location.href = "../control/generarReporte.php";
 }
 
 // Ajax Tabla de Matriculas START
