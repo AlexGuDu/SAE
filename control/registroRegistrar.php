@@ -1,33 +1,25 @@
 <?php
 require '../config/connection.php';
 session_start();
-  $territorio=$_POST['territorio'];
-  if ($territorio=="Nacional") {
-    $estado=$_POST['estado'];
-    $ciudad=$_POST['ciudad'];
-    $pais="Mexico";
-  }
-  else {
-    $estado=$_POST['estado_extranjera'];
-    $ciudad=$_POST['ciudad_extranjera'];
-    $pais=$_POST['pais'];
-  }
+
+  $territorio= 'Nacional';
+  $estado = 'BCN';
+  $ciudad = 'Tijuana';
+  $pais = 'Mexico';
   $tipo_evento=$_POST['tipo_evento'];
   $tipo_actividad=$_POST['tipo_actividad'];
   $fecha=$_POST['fecha'];
   $hora=$_POST['hora'];
   $lugar=$_POST['lugar_evento'];
-  $empresa=$_POST['nombreEmpresa'];
-  $tema=$_POST['temaVisita'];
-  $nombre_recibe=$_POST['recibeEmpresa'];
-  $contacto_empresa=$_POST['contactoEmpresa'];
+  $tema=$_POST['nombreActividad'];
+  $nombre_recibe=$_POST['nombreOrganiza'];
+  $contacto_empresa = 'N/A';
   $objetivo=$_POST['objetivoEvento'];
+  $materiaFortalecida=$_POST['materiaFortalecida'];
+  $aspectoProfesional=$_POST['aspectoProfesional'];
+  $proponeAsistir=$_POST['proponeAsistir'];
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
-  $solicitudPrev=0;
-  $estatusSolicitud=2;
-  $aprobacion=1;
-  $folio=$_SESSION['folio'];
   $matricula=$_SESSION['matricula'];
 
   // if ($folio!=0) {
@@ -36,27 +28,28 @@ session_start();
   // }
   // else {
 
-  $sql = "INSERT INTO solicitud( Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, empresa, tema, Nombre_Recibe, Contacto_empresa, Objetivo, Maestro, tipo_evento, tipo_actividad, responsable, solicitadoPrev, estatusSolicitud)
-  values(:territorio, :estado,:Ciudad, :Pais, :fecha, :hora, :lugar, :empresa, :tema, :Nombre_Recibe, :Contacto_empresa, :Objetivo, :Maestro, :tipo_evento, :tipo_actividad, :responsable, :solicitadoPrev, :estatusSolicitud )";
+  $sql = "INSERT INTO solicitud(Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, aspecto_pro, proponente, tipo_evento, tipo_actividad, responsable)
+  values(:territorio, :estado, :ciudad, :pais,  :fecha, :hora, :lugar, :tema, :Nombre_Recibe, :contactoEmpresa, :Objetivo, :materia, :Maestro, :aspectoProfesional, :proponeAsistir, :tipo_evento, :tipo_actividad, :responsable)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
   $stament->bindParam(':estado', $estado);
-  $stament->bindParam(':Ciudad', $ciudad);
-  $stament->bindParam(':Pais', $pais);
+  $stament->bindParam(':ciudad', $ciudad);
+  $stament->bindParam(':pais', $pais);
   $stament->bindParam(':fecha', $fecha);
   $stament->bindParam(':hora', $hora);
   $stament->bindParam(':lugar', $lugar);
-  $stament->bindParam(':empresa', $empresa);
   $stament->bindParam(':tema', $tema);
   $stament->bindParam(':Nombre_Recibe', $nombre_recibe);
-  $stament->bindParam(':Contacto_empresa', $contacto_empresa);
+  $stament->bindParam(':contactoEmpresa', $contacto_empresa);
   $stament->bindParam(':Objetivo', $objetivo);
+  $stament->bindParam(':materia', $materiaFortalecida);
   $stament->bindParam(':Maestro', $maestro);
+  $stament->bindParam(':aspectoProfesional', $aspectoProfesional);
+  $stament->bindParam(':proponeAsistir', $proponeAsistir);
   $stament->bindParam(':tipo_evento', $tipo_evento);
   $stament->bindParam(':tipo_actividad', $tipo_actividad);
   $stament->bindParam(':responsable', $responsable);
-  $stament->bindParam(':solicitadoPrev', $solicitudPrev);
-  $stament->bindParam(':estatusSolicitud', $estatusSolicitud);
+
 
   if(!$stament){
     echo "<script> alert('Error al cargar los datos'); </script>";

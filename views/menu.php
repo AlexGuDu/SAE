@@ -61,7 +61,7 @@
 
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Tema de la Visita:</label> <label id="tema_visita"></label> <br>
-              <label class="preview_label">Datos de Contacto de Empresa:</label> <label id="datos_contacto"></label>
+              <label class="preview_label">Correo de Empresa:</label> <label id="datos_contacto"></label>
             </div>
           </div> <!-- Row #3 -->
           <hr>
