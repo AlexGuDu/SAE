@@ -59,24 +59,24 @@ window.addEventListener('click', clickOutside);
       });
       // END
 
-      territorio_label.innerHTML = datos.Territorio;
-      pais_label.innerHTML = datos.Pais;
-      estado_label.innerHTML = nombre_estado(datos.Estado);
-      ciudad_label.innerHTML = datos.Ciudad;
-      tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
-      fecha_inicial_label.innerHTML = datos.fecha;
-      tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
-      hora_inicial_label.innerHTML = datos.hora;
-      nombre_empresa_label.innerHTML = datos.empresa;
-      tema_visita_label.innerHTML = datos.tema;
-      nombre_representante_label.innerHTML = datos.Nombre_Recibe;
-      datos_contacto_label.innerHTML = datos.Contacto_empresa;
-      objetivo_actividad_label.innerHTML = datos.Objetivo;
-      // materia fortalecida
-      maestro_responsable_label.innerHTML= datos.Maestro;
-      aspecto_profesional_label.innerHTML = datos.aspect_pro;
-      razon_propuesta_label.innerHTML = datos.proponente;
-      });
+    territorio_label.innerHTML = datos.Territorio;
+    pais_label.innerHTML = datos.Pais;
+    estado_label.innerHTML = nombre_estado(datos.Estado);
+    ciudad_label.innerHTML = datos.Ciudad;
+    tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
+    fecha_inicial_label.innerHTML = datos.fecha;
+    tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
+    hora_inicial_label.innerHTML = datos.hora;
+    nombre_empresa_label.innerHTML = datos.empresa;
+    tema_visita_label.innerHTML = datos.tema;
+    nombre_representante_label.innerHTML = datos.Nombre_Recibe;
+    datos_contacto_label.innerHTML = datos.Contacto_empresa;
+    objetivo_actividad_label.innerHTML = datos.Objetivo;
+    // materia fortalecida
+    maestro_responsable_label.innerHTML= datos.Maestro;
+    aspecto_profesional_label.innerHTML = datos.aspecto_pro;
+    razon_propuesta_label.innerHTML = datos.proponente;
+    });
 
     solicitudPopup.style.display = 'block';
   }
@@ -113,7 +113,6 @@ function ConsultaDeActividades(){
       } else {
         var msg = textoEstatus(datos[i+1]);
       }
-      console.log(msg);
       $('#consultaSolicitudes tbody').append(
           '<tr>'+
             '<td>'+datos[i]+'</td>'+
