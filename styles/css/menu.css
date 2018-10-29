@@ -40,6 +40,16 @@ html{
 	font-size: 0.9rem;
 }
 
+.smooth-jazz{
+  animation-name: slideHeader;
+	animation-duration: 1s;
+}
+
+.card{
+  border-radius: 1rem !important;
+}
+
+
 .btn{
 		border-radius: 15px;
 		transition-duration: 0.1s;
@@ -70,15 +80,6 @@ html{
 	color: #FFF;
 }
 
-/* .botonsm{
-	border-radius: 11px;
-	height: 30px;
-	width: 50%;
-	border-width: 1px;
-	transition-duration: 0.3s;
-	background-color: #FFF;
-	border-color: #13673A;
-} */
 
 .boton-add, .boton-del, .boton-regresar, .boton-plus{
     background-color: transparent;
