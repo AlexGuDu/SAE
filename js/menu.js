@@ -1,6 +1,6 @@
-document.getElementById('solicitarPermiso').addEventListener('click', openSolicitud)
-document.getElementById('registrarActividad').addEventListener('click', openRegistro)
-document.getElementById('popup_test').addEventListener('click', popSolicitud)
+document.getElementById('solicitarPermiso').addEventListener('click', openSolicitud);
+document.getElementById('registrarActividad').addEventListener('click', openRegistro);
+document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
 // var solicitudPopup = document.getElementById('solicitudPopup');
   var territorio_label = document.getElementById('territorio');

@@ -1,4 +1,72 @@
-// Ajax Tabla de Matriculas START
+
+//Eliminar session de matriculas al refrescar la pagina
+function limpiarMatriculas(){
+  $.ajax({
+    type : 'POST',
+    url : '../control/limpiarMatriculas.php',
+    dataType : 'json',
+    encode : true
+  })
+}
+//Eliminar session de matriculas al refrescar la pagina END
+
+// Funcionalidad Agregar matricula tabla solicitud
+var warningModalMatricula = document.getElementById('warningModalMatricula');
+var error1 = document.getElementById('error1');
+var error2 = document.getElementById('error2');
+var error3 = document.getElementById('error3');
+var error4 = document.getElementById('error4');
+window.addEventListener('click', clickOutside);
+error1.style.display='none';
+error2.style.display='none';
+error3.style.display='none';
+error4.style.display='none';
+  function clickOutside(e){
+    if(e.target == warningModalMatricula){
+    warningModalMatricula.style.display = 'none';
+    error1.style.display='none';
+    error2.style.display='none';
+    error3.style.display='none';
+    error4.style.display='none';
+    }
+  }
+  $(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+        warningModalMatricula.style.display = 'none';
+        error1.style.display='none';
+        error2.style.display='none';
+        error3.style.display='none';
+        error4.style.display='none';
+    }
+  });
+  document.getElementById('ok_modalMatricula').addEventListener('click', function(){
+    warningModalMatricula.style.display = 'none';
+    error1.style.display='none';
+    error2.style.display='none';
+    error3.style.display='none';
+    error4.style.display='none';
+  })
+
+  //Quitar matricula de la trabla solictud
+  function borrar(matricula){
+    $(document).on('click', '.boton-del', function (event) {
+    event.preventDefault();
+    $(this).closest('tr').remove();
+});
+    var datosEnviados = {
+      'matricula' : matricula
+    };
+    $.ajax({
+      type : 'POST',
+      url : '../control/quitarMatricula.php',
+      data : datosEnviados,
+      dataType : 'json',
+      encode : true
+    })
+  }
+  //Quitar matricula de la trabla solictud END
+
+//Agregar alumno a trabla de solicitud
 $('#Agregar').click(function(){
   var datosEnviados = {
     'matricula' : $('#matriculas').val()
@@ -11,17 +79,40 @@ $('#Agregar').click(function(){
     encode : true
   })
   .done(function(datos){
+    //Error no se ingreso nunguna matricula
+    if (datos.error==1) {
+      warningModalMatricula.style.display = 'block';
+      error1.style.display='block';
+    }
+    //Error matricula no existe
+    else if (datos.error==2) {
+      warningModalMatricula.style.display = 'block';
+      error2.style.display='block';
+    }
+    //Error Matricula de sesion
+    else if (datos.error==3) {
+      warningModalMatricula.style.display = 'block';
+      error3.style.display='block';
+    }
+    //Error matricula ya existe en la tabla
+    else if (datos.error==4) {
+      warningModalMatricula.style.display = 'block';
+      error4.style.display='block';
+    }
+    else {
     $('#datos_tabla tbody').append(
         '<tr>'+
+          '<td>'+'<input type="button" onclick="borrar('+datos.d5+')" name="boton" class="boton boton-del">'+'</td>'+
           '<td>'+datos.d4+'</td>'+
           '<td>'+datos.d1+'</td>'+
           '<td>'+datos.d2+'</td>'+
           '<td>'+datos.d3+'</td>'+
         '</tr>'
     );
+    }
     });
   });
-// Ajax Tabla de Matriculas END
+//  Funcionalidad Agregar matricula tabla solicitud END
 
 
 

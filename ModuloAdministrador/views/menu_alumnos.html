@@ -11,7 +11,8 @@
   </head>
 
 
-  <body onload="ConsultaDeRegistros()">
+
+  <body onload="consultaDeAlumnos()">
     <!-- HEADER -->
     <div id="Header">
         <script type="text/javascript">
@@ -41,18 +42,29 @@
     <div id="entirePage" class="col-md-8 col-sm-10">
     <div class="container" >
       <div class="form-group">
-          <label> <b> Alumnos </b> </label>
+
+        <div class="row justify-content-center align-items-center">
+        <label> <h2><b> Alumnos </b></h2>  </label>
       </div>
+        <div class="row justify-content-center align-items-center">
+        <input type="text" class="form-control" style="width:20%" id="search" placeholder="Buscar...">
+        </div>
+      </div>
+
+
         <div class="row justify-content-center">
             <div class="col-25 col-lg-20 ">
-                <table class="table table-bordered table-hover" id='consulta' >
+                <table class="table table-bordered table-hover" id='consultaAlum' >
+
                   <thead id="header-table">
                       <tr>
                           <th>Acciones</th>
                           <th>Matricula</th>
                           <th>Nombre</th>
-                          <th>Numero</th>
+                          <th>Grupo</th>
                           <th>Carrera</th>
+                          <th>Etapa</th>
+
                       </tr>
                   </thead>
                   <tbody>

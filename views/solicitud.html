@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body onload="limpiarMatriculas()">
     <!-- HEADER -->
     <div style="height:30px"></div>
     <div id="Header">
@@ -402,6 +402,7 @@
                                 <table class="table table-bordered" id="datos_tabla">
                                     <thead>
                                         <tr>
+                                            <td>Accion</td>
                                             <td>Matricula</td>
                                             <td>Nombre</td>
                                             <td>Carrera</td>
@@ -551,6 +552,15 @@
         <div class="modal-content">
             <h2>Favor de llenar todos los campos.</h2>
             <input id="ok_modal"  class="btn btn-success btn-lg" type="button" name="ok_modal" value="Ok">
+        </div>
+    </div>
+    <div id="warningModalMatricula" class="modal">
+        <div class="modal-content">
+          <h2 id="error1">No se ingreso ninguna matricula</h2>
+          <h2 id="error2">La matricula que ingreso no existe</h2>
+          <h2 id="error3">No puede ingresar su matricula en esta tabla</h2>
+          <h2 id="error4">La matricula ya fue ingresada</h2>
+          <input id="ok_modalMatricula"  class="btn btn-success btn-lg" type="button" name="ok_modal" value="Ok">
         </div>
     </div>
 
