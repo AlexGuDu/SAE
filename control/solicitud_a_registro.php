@@ -2,11 +2,11 @@
 require_once '../config/connection.php';
 
 $folio=$_POST['folio'];
-$aprobacionRegistro = 1;
+$aprobacionCoordinador = 1;
 
-  $sql = "UPDATE alumnosolicitud SET aprobacionRegistro=:aprobacionRegistro where Folio='$folio'";
+  $sql = "UPDATE alumnosolicitud SET aprobacionCoordinador=:aprobacionCoordinador where Folio='$folio'";
   $stament = $dbh->prepare($sql);
-  $stament->bindParam(':aprobacionRegistro', $aprobacionRegistro);
+  $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
 
   $stament->execute();
   header('Location: ../views/home.php');
