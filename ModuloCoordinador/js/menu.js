@@ -49,35 +49,10 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
-   window.location.href = "../views/menu.html";
+
   });
  }
- function clickOutside(e){
-   if(e.target == comentarioAceptarS){
-   comentarioAceptarS.style.display = 'none';
-   }
-   if(e.target == comentarioDenegarS){
-   comentarioDenegarS.style.display = 'none';
-   }
-   if(e.target == comentarioAceptarR){
-   comentarioAceptarR.style.display = 'none';
-   }
-   if(e.target == comentarioDenegarR){
-   comentarioDenegarR.style.display = 'none';
-   }
-   if(e.target == solicitudPopup){
-   solicitudPopup.style.display = 'none';
-   }
- }
- $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key maps to keycode `27`
-       comentarioAceptarS.style.display = 'none';
-       comentarioDenegarS.style.display = 'none';
-       comentarioAceptarR.style.display = 'none';
-       comentarioDenegarR.style.display = 'none';
-       solicitudPopup.style.display = 'none';
-   }
-});
+
 
  function comentarioRechazaS(folio){
    comentarioDenegarS.style.display = 'block';
@@ -93,7 +68,7 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
-   window.location.href = "../views/menu.html";
+
   });
  }
 
@@ -111,7 +86,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
-   window.location.href = "../views/menu.html";
+
   });
  }
 
@@ -130,7 +105,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
-   window.location.href = "../views/menu.html";
+
   });
  }
 
@@ -167,7 +142,32 @@ function comentarioAceptaR(folio){
     solicitudPopup.style.display = 'block';
   }
 
-
+  function clickOutside(e){
+    if(e.target == comentarioAceptarS){
+    comentarioAceptarS.style.display = 'none';
+    }
+    if(e.target == comentarioDenegarS){
+    comentarioDenegarS.style.display = 'none';
+    }
+    if(e.target == comentarioAceptarR){
+    comentarioAceptarR.style.display = 'none';
+    }
+    if(e.target == comentarioDenegarR){
+    comentarioDenegarR.style.display = 'none';
+    }
+    if(e.target == solicitudPopup){
+    solicitudPopup.style.display = 'none';
+    }
+  }
+  $(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+        comentarioAceptarS.style.display = 'none';
+        comentarioDenegarS.style.display = 'none';
+        comentarioAceptarR.style.display = 'none';
+        comentarioDenegarR.style.display = 'none';
+        solicitudPopup.style.display = 'none';
+    }
+ });
 
 document.getElementById('cerrarPreview').addEventListener('click', function(){
   solicitudPopup.style.display = 'none';
