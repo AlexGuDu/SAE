@@ -63,10 +63,26 @@ function comentarioAceptaS(folio){
    if(e.target == comentarioAceptarS){
    comentarioAceptarS.style.display = 'none';
    }
+   if(e.target == comentarioDenegarS){
+   comentarioDenegarS.style.display = 'none';
+   }
+   if(e.target == comentarioAceptarR){
+   comentarioAceptarR.style.display = 'none';
+   }
+   if(e.target == comentarioDenegarR){
+   comentarioDenegarR.style.display = 'none';
+   }
+   if(e.target == solicitudPopup){
+   solicitudPopup.style.display = 'none';
+   }
  }
  $(document).keyup(function(e) {
     if (e.keyCode == 27) { // escape key maps to keycode `27`
        comentarioAceptarS.style.display = 'none';
+       comentarioDenegarS.style.display = 'none';
+       comentarioAceptarR.style.display = 'none';
+       comentarioDenegarR.style.display = 'none';
+       solicitudPopup.style.display = 'none';
    }
 });
 
@@ -87,16 +103,6 @@ function comentarioAceptaS(folio){
    window.location.href = "../views/menu.html";
   });
  }
- function clickOutside(e){
-   if(e.target == comentarioDenegarS){
-   comentarioDenegarS.style.display = 'none';
-   }
- }
- $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key maps to keycode `27`
-       comentarioDenegarS.style.display = 'none';
-   }
-});
 
 function comentarioAceptaR(folio){
   comentarioAceptarR.style.display = 'block';
@@ -115,16 +121,7 @@ function comentarioAceptaR(folio){
    window.location.href = "../views/menu.html";
   });
  }
- function clickOutside(e){
-   if(e.target == comentarioAceptarR){
-   comentarioAceptarR.style.display = 'none';
-   }
- }
- $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key maps to keycode `27`
-       comentarioAceptarR.style.display = 'none';
-   }
-});
+
 
  function comentarioRechazaR(folio){
    comentarioDenegarR.style.display = 'block';
@@ -143,16 +140,7 @@ function comentarioAceptaR(folio){
    window.location.href = "../views/menu.html";
   });
  }
- function clickOutside(e){
-   if(e.target == comentarioDenegarR){
-   comentarioDenegarR.style.display = 'none';
-   }
- }
- $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key maps to keycode `27`
-       comentarioDenegarR.style.display = 'none';
-   }
-});
+
 
   function popSolicitud(folio){
     var datosEnviados = {
@@ -186,18 +174,6 @@ function comentarioAceptaR(folio){
     solicitudPopup.style.display = 'block';
   }
 
-  function clickOutside(e){
-    if(e.target == solicitudPopup){
-    solicitudPopup.style.display = 'none';
-    }
-
-  }
-
-  $(document).keyup(function(e) {
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-        solicitudPopup.style.display = 'none';
-    }
-});
 document.getElementById('cerrarPreview').addEventListener('click', function(){
   solicitudPopup.style.display = 'none';
 })
