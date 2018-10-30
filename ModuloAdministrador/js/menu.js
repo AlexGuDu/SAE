@@ -196,15 +196,15 @@ function consultaDeSolicitud(){
   })
   .done(function(datos){
       for (var i = 1; i < datos.count; i=i+4) {
-    $('#consultaSolicitud tbody').append(
-        '<tr>'+
-          '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaS('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaS('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
-          '<td>'+datos[i+1]+'</td>'+
-          '<td>'+datos[i]+'</td>'+
-          '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
-          '<td>'+datos[i+2]+'</td>'+
-        '</tr>');
-    }
+        $('#consultaSolicitud tbody').append(
+          '<tr>'+
+            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaS('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaS('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
+            '<td>'+datos[i+1]+'</td>'+
+            '<td>'+datos[i]+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+            '<td>'+datos[i+2]+'</td>'+
+          '</tr>');
+      }
     });
   }
 
@@ -218,15 +218,15 @@ function consultaDeSolicitud(){
     })
     .done(function(datos){
         for (var i = 1; i < datos.count; i=i+4) {
-      $('#consultaRegistro tbody').append(
-          '<tr>'+
-            '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
-            '<td>'+datos[i+1]+'</td>'+
-            '<td>'+datos[i]+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
-            '<td>'+datos[i+2]+'</td>'+
-          '</tr>');
-      }
+          $('#consultaRegistro tbody').append(
+            '<tr>'+
+              '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
+              '<td>'+datos[i+1]+'</td>'+
+              '<td>'+datos[i]+'</td>'+
+              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+              '<td>'+datos[i+2]+'</td>'+
+            '</tr>');
+        }
       });
     }
 
