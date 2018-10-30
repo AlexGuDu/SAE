@@ -60,8 +60,8 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
-   window.location.href = "../views/menu.html";
   });
+
  }
 
 
@@ -187,6 +187,7 @@ document.getElementById('cerrarPreview').addEventListener('click', function(){
 // Ajax Tabla de Matriculas START
 
 function consultaDeSolicitud(){
+  $('#consultaSolicitud tbody').empty();
   $.ajax({
     type : 'POST',
     url : '../control/consultaSolicitud.php',
@@ -208,6 +209,7 @@ function consultaDeSolicitud(){
   }
 
   function consultaDeRegistro(){
+    $('#consultaRegistro tbody').empty();
     $.ajax({
       type : 'POST',
       url : '../control/consultaRegistro.php',
