@@ -47,7 +47,7 @@ function comentarioAceptaS(folio){
   $('#agregar').click(function(){
    var datosEnviados = {
      'folio' : folio ,
-     'comentario' : $('#comentario').val()
+     'comentario' : $('#com_sol_aceptar').val()
    };
    $.ajax({
      type : 'POST',
@@ -68,7 +68,7 @@ function comentarioAceptaS(folio){
     $('#rechazar').click(function(){
    var datosEnviados = {
      'folio' : folio,
-      'comentario' : $('#comentarioRechazar').val()
+      'comentario' : $('#com_sol_denegar').val()
    };
    $.ajax({
      type : 'POST',
@@ -87,7 +87,7 @@ function comentarioAceptaR(folio){
   $('#agregarR').click(function(){
    var datosEnviados = {
      'folio' : folio ,
-     'comentario' : $('#comentario').val()
+     'comentario' : $('#com_reg_aceptar').val()
    };
    $.ajax({
      type : 'POST',
@@ -107,7 +107,7 @@ function comentarioAceptaR(folio){
     $('#rechazaR').click(function(){
    var datosEnviados = {
      'folio' : folio,
-      'comentario' : $('#comentarioRechazar').val()
+      'comentario' : $('#com_reg_denegar').val()
    };
    $.ajax({
      type : 'POST',
