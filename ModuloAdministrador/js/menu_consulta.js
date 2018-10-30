@@ -3,6 +3,11 @@ document.getElementById('regresar').addEventListener('click', openMenuAdministra
 function openMenuAdministrador(){
   window.location.href = "../views/menu.html";
 }
+
+function generarReporte() {
+  window.location.href = "../control/generarReporte.php";
+}
+
 // Ajax Tabla de Matriculas START
 function ConsultaDeAlumnos(){
   var j=1;

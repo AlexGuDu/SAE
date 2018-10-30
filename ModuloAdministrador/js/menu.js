@@ -56,6 +56,7 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -83,6 +84,7 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -110,6 +112,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -137,6 +140,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
