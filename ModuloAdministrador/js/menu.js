@@ -1,12 +1,16 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('alumnos').addEventListener('click', openAlumnos);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
-document.getElementById('regresaR').addEventListener('click', cerrarpopup);
-document.getElementById('regresaS').addEventListener('click', cerrarpopup);
-document.getElementById('regresarR').addEventListener('click', cerrarpopup);
-document.getElementById('regresarR').addEventListener('click', cerrarpopup);
+document.getElementById('exit_sol_aceptar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_sol_denegar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_reg_aceptar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_reg_denegar').addEventListener('click', cerrarpopup);
 window.addEventListener('click', clickOutside);
- // var comentarioAceptarSS = document.getElementById('comentarioAceptarSS');
+var comentarioAceptarS = document.getElementById('comentarioAceptarS');
+var comentarioDenegarS = document.getElementById('comentarioDenegarS');
+var comentarioAceptarR = document.getElementById('comentarioAceptarR');
+var comentarioDenegarR = document.getElementById('comentarioDenegarR');
+
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
 var responsable_label = document.getElementById('responsable');
@@ -59,32 +63,7 @@ function comentarioAceptaS(folio){
    window.location.href = "../views/menu.html";
   });
  }
- function clickOutside(e){
-   if(e.target == comentarioAceptarS){
-   comentarioAceptarS.style.display = 'none';
-   }
-   if(e.target == comentarioDenegarS){
-   comentarioDenegarS.style.display = 'none';
-   }
-   if(e.target == comentarioAceptarR){
-   comentarioAceptarR.style.display = 'none';
-   }
-   if(e.target == comentarioDenegarR){
-   comentarioDenegarR.style.display = 'none';
-   }
-   if(e.target == solicitudPopup){
-   solicitudPopup.style.display = 'none';
-   }
- }
- $(document).keyup(function(e) {
-    if (e.keyCode == 27) { // escape key maps to keycode `27`
-       comentarioAceptarS.style.display = 'none';
-       comentarioDenegarS.style.display = 'none';
-       comentarioAceptarR.style.display = 'none';
-       comentarioDenegarR.style.display = 'none';
-       solicitudPopup.style.display = 'none';
-   }
-});
+
 
  function comentarioRechazaS(folio){
    comentarioDenegarS.style.display = 'block';
@@ -173,6 +152,33 @@ function comentarioAceptaR(folio){
 
     solicitudPopup.style.display = 'block';
   }
+
+  function clickOutside(e){
+    if(e.target == comentarioAceptarS){
+    comentarioAceptarS.style.display = 'none';
+    }
+    if(e.target == comentarioDenegarS){
+    comentarioDenegarS.style.display = 'none';
+    }
+    if(e.target == comentarioAceptarR){
+    comentarioAceptarR.style.display = 'none';
+    }
+    if(e.target == comentarioDenegarR){
+    comentarioDenegarR.style.display = 'none';
+    }
+    if(e.target == solicitudPopup){
+    solicitudPopup.style.display = 'none';
+    }
+  }
+  $(document).keyup(function(e) {
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+        comentarioAceptarS.style.display = 'none';
+        comentarioDenegarS.style.display = 'none';
+        comentarioAceptarR.style.display = 'none';
+        comentarioDenegarR.style.display = 'none';
+        solicitudPopup.style.display = 'none';
+    }
+  });
 
 document.getElementById('cerrarPreview').addEventListener('click', function(){
   solicitudPopup.style.display = 'none';

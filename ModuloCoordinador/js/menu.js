@@ -1,8 +1,15 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
+document.getElementById('exit_sol_aceptar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_sol_denegar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_reg_aceptar').addEventListener('click', cerrarpopup);
+document.getElementById('exit_reg_denegar').addEventListener('click', cerrarpopup);
 window.addEventListener('click', clickOutside);
 
 var comentarioAceptarS = document.getElementById('comentarioAceptarS');
+var comentarioDenegarS = document.getElementById('comentarioDenegarS');
+var comentarioAceptarR = document.getElementById('comentarioAceptarR');
+var comentarioDenegarR = document.getElementById('comentarioDenegarR');
 
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
