@@ -1,7 +1,7 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
- // var comentarioAceptarSS = document.getElementById('comentarioAceptarSS');
+ var comentarioAceptarS = document.getElementById('comentarioAceptarS');
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
 var responsable_label = document.getElementById('responsable');
