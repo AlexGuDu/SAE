@@ -58,9 +58,13 @@ function comentarioAceptaS(folio){
      url : '../control/aceptarSolicitud.php',
      data : datosEnviados,
      dataType : 'json',
-     encode : true
+     encode : true,
+     complete: function(){
+       cerrarpopup();
+       consultaDeSolicitud();
+     }
    })
-   cerrarpopup();
+
   });
 
  }
@@ -78,9 +82,13 @@ function comentarioAceptaS(folio){
      url : '../control/rechazarSolicitud.php',
      data : datosEnviados,
      dataType : 'json',
-     encode : true
+     encode : true,
+     complete: function(){
+       cerrarpopup();
+       consultaDeSolicitud();
+     }
    })
-   cerrarpopup();
+
   });
  }
 
@@ -96,9 +104,12 @@ function comentarioAceptaR(folio){
      url : '../control/aceptarRegistro.php',
      data : datosEnviados,
      dataType : 'json',
-     encode : true
+     encode : true,
+     complete: function(){
+       cerrarpopup();
+       consultaDeSolicitud();
+     }
    })
-   cerrarpopup();
   });
  }
 
@@ -115,9 +126,12 @@ function comentarioAceptaR(folio){
      url : '../control/rechazarRegistro.php',
      data : datosEnviados,
      dataType : 'json',
-     encode : true
+     encode : true,
+     complete: function(){
+       cerrarpopup();
+       consultaDeSolicitud();
+     }
    })
-   cerrarpopup();
   });
  }
 
