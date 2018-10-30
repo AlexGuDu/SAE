@@ -1,7 +1,9 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
- var comentarioAceptarS = document.getElementById('comentarioAceptarS');
+
+var comentarioAceptarS = document.getElementById('comentarioAceptarS');
+
 var territorio_label = document.getElementById('territorio');
 var pais_label = document.getElementById('pais');
 var responsable_label = document.getElementById('responsable');
@@ -26,13 +28,16 @@ function openActividades(){
 
 }
 
+function cerrarpopup() {
+  comentarioAceptarR.style.display = 'none';
+  comentarioAceptarS.style.display = 'none';
+  comentarioDenegarR.style.display = 'none';
+  comentarioDenegarS.style.display = 'none';
+}
+
 function comentarioAceptaS(folio){
   comentarioAceptarS.style.display = 'block';
   $('#agregar').click(function(){
-   $(document).on('click', '.boton-add', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio ,
      'comentario' : $('#comentario').val()
@@ -44,6 +49,7 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -60,10 +66,6 @@ function comentarioAceptaS(folio){
  function comentarioRechazaS(folio){
    comentarioDenegarS.style.display = 'block';
     $('#rechazar').click(function(){
-   $(document).on('click', '.boton-del', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio,
       'comentario' : $('#comentarioRechazar').val()
@@ -75,6 +77,7 @@ function comentarioAceptaS(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -91,10 +94,6 @@ function comentarioAceptaS(folio){
 function comentarioAceptaR(folio){
   comentarioAceptarR.style.display = 'block';
   $('#agregarR').click(function(){
-   $(document).on('click', '.boton-add', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio ,
      'comentario' : $('#comentario').val()
@@ -106,6 +105,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
@@ -122,10 +122,6 @@ function comentarioAceptaR(folio){
  function comentarioRechazaR(folio){
    comentarioDenegarR.style.display = 'block';
     $('#rechazaR').click(function(){
-   $(document).on('click', '.boton-del', function (event) {
-   event.preventDefault();
-   $(this).closest('tr').remove();
- });
    var datosEnviados = {
      'folio' : folio,
       'comentario' : $('#comentarioRechazar').val()
@@ -137,6 +133,7 @@ function comentarioAceptaR(folio){
      dataType : 'json',
      encode : true
    })
+   window.location.href = "../views/menu.html";
   });
  }
  function clickOutside(e){
