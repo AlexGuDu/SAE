@@ -220,6 +220,7 @@ function consultaDeSolicitud(){
   }
 
   function consultaDeRegistro(){
+    console.log('hey');
     $('#consultaRegistro tbody').empty();
     $.ajax({
       type : 'POST',
@@ -228,6 +229,7 @@ function consultaDeSolicitud(){
       encode : true
     })
     .done(function(datos){
+      console.log('entro a php');
         for (var i = 1; i < datos.count; i=i+4) {
           $('#consultaRegistro tbody').append(
             '<tr>'+
