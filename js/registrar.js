@@ -77,7 +77,7 @@ function limpiarMatriculas(){
 //Eliminar session de matriculas al refrescar la pagina END
 
 //Agregar alumno a trabla de solicitud
-$('#Agregar').click(function(){
+$('#boton_ingresar_matricula').click(function(){
   var datosEnviados = {
     'matricula' : $('#ingresar_matricula').val()
   };
