@@ -17,12 +17,14 @@ var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+var error5 = document.getElementById('error5');
 
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
 error3.style.display='none';
 error4.style.display='none';
+error5.style.display='none';
   function clickOutside(e){
     if(e.target == warningModalMatricula){
     warningModalMatricula.style.display = 'none';
@@ -30,6 +32,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
     }
   }
   $(document).keyup(function(e) {
@@ -39,6 +42,7 @@ error4.style.display='none';
         error2.style.display='none';
         error3.style.display='none';
         error4.style.display='none';
+        error5.style.display='none';
     }
   });
   document.getElementById('ok_modalMatricula').addEventListener('click', function(){
@@ -47,6 +51,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
   })
 
   //Quitar matricula de la trabla solictud
@@ -101,6 +106,10 @@ $('#boton_ingresar_matricula').click(function(){
     else if (datos.error==4) {
       warningModalMatricula.style.display = 'block';
       error4.style.display='block';
+    }
+    else if (datos.error==5) {
+      warningModalMatricula.style.display = 'block';
+      error5.style.display='block';
     }
     else {
     ingresar_matricula.value="";
