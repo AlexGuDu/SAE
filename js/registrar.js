@@ -328,7 +328,10 @@ folio.addEventListener('change', function(){
       nombreActividad.disabled = "disabled";
       nombreOrganiza.disabled = "disabled";
       objetivoEvento.disabled = "disabled";
+      materiaFortalecida_input.disabled = "disabled";
       maestroMateria.disabled = "disabled";
+      aspectoProfesional_input.disabled = "disabled";
+      proponeAsistir_input.disabled = "disabled";
       ingresar_matricula.disabled = "disabled";
       boton_ingresar_matricula.disabled = "disabled";
 
