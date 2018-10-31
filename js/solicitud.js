@@ -68,9 +68,9 @@ error4.style.display='none';
   //Quitar matricula de la trabla solictud END
 
 //Agregar alumno a trabla de solicitud
-$('#Agregar').click(function(){
+$('#boton_ingresar_matricula').click(function(){
   var datosEnviados = {
-    'matricula' : $('#matriculas').val()
+    'matricula' : $('#ingresar_matricula').val()
   };
   $.ajax({
     type : 'POST',
