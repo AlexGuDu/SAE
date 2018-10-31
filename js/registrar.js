@@ -110,6 +110,7 @@ $('#boton_ingresar_matricula').click(function(){
       error4.style.display='block';
     }
     else {
+    ingresar_matricula.value="";
     $('#mostrarMatriculas tbody').append(
         '<tr>'+
           '<td>'+'<input type="button" onclick="borrar('+datos.d5+')" name="boton" class="boton boton-del">'+'</td>'+
