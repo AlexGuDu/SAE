@@ -102,7 +102,7 @@ function comentarioAceptaR(folio){
      encode : true,
      complete: function(){
        cerrarpopup();
-       consultaDeSolicitud();
+       consultaDeRegistro();
      }
    })
   });
@@ -124,7 +124,7 @@ function comentarioAceptaR(folio){
      encode : true,
      complete: function(){
        cerrarpopup();
-       consultaDeSolicitud();
+       consultaDeRegistro();
      }
    })
 
@@ -220,7 +220,6 @@ function consultaDeSolicitud(){
   }
 
   function consultaDeRegistro(){
-    console.log('hey');
     $('#consultaRegistro tbody').empty();
     $.ajax({
       type : 'POST',

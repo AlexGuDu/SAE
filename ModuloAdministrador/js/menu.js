@@ -107,7 +107,7 @@ function comentarioAceptaR(folio){
      encode : true,
      complete: function(){
        cerrarpopup();
-       consultaDeSolicitud();
+       consultaDeRegistro();
      }
    })
   });
@@ -129,7 +129,7 @@ function comentarioAceptaR(folio){
      encode : true,
      complete: function(){
        cerrarpopup();
-       consultaDeSolicitud();
+       consultaDeRegistro();
      }
    })
   });
