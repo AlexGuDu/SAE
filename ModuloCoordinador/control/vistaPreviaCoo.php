@@ -1,7 +1,7 @@
 <?php
 require '../../config/connection.php';
 $folio=$_POST['folio'];
-$sql="SELECT * FROM solicitud where folio= :folio";
+$sql="SELECT * FROM actividad where folio= :folio";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
