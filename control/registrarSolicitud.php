@@ -77,21 +77,19 @@ session_start();
   if(isset($_SESSION['matriculas'])){
     for ($i=0; $i<$cantidad ; $i++) {
       if ($_SESSION['matriculas'][$i]!=0) {
-      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio) values( :matricula, :folio)";
       $stament = $dbh->prepare($sql);
       $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
       $stament->bindParam(':folio', $folio);
-      $stament->bindParam(':aprobacion', $aprobacion);
       $stament->execute();
       }
     }
 
   }
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio) values( :matricula, :folio)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matricula']);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprobacion);
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');

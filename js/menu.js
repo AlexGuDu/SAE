@@ -2,7 +2,7 @@ document.getElementById('solicitarPermiso').addEventListener('click', openSolici
 document.getElementById('registrarActividad').addEventListener('click', openRegistro);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
-// var solicitudPopup = document.getElementById('solicitudPopup');
+  var solicitudPopup = document.getElementById('solicitudPopup');
   var territorio_label = document.getElementById('territorio');
   var pais_label = document.getElementById('pais');
   var estado_label = document.getElementById('estado');

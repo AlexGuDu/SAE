@@ -21,12 +21,7 @@ session_start();
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
   $matricula=$_SESSION['matricula'];
-
-  // if ($folio!=0) {
-  //     $sql = "UPDATE alumnosolicitud c set aprobacionRegistro=1  WHERE folio=$folio and Matricula=$matricula";
-  //     header('Location:../views/home.php');
-  // }
-  // else {
+  $aprobacionCoordinador = 1;
 
   $sql = "INSERT INTO solicitud(Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, aspecto_pro, proponente, tipo_evento, tipo_actividad, responsable)
   values(:territorio, :estado, :ciudad, :pais,  :fecha, :hora, :lugar, :tema, :Nombre_Recibe, :contactoEmpresa, :Objetivo, :materia, :Maestro, :aspectoProfesional, :proponeAsistir, :tipo_evento, :tipo_actividad, :responsable)";
@@ -72,20 +67,20 @@ session_start();
   if(isset($_SESSION['matriculas'])){
     for ($i=0; $i<$cantidad ; $i++) {
       if ($_SESSION['matriculas'][$i]!=0) {
-      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionCoordinador) values( :matricula, :folio, :aprobacionCoordinador)";
       $stament = $dbh->prepare($sql);
       $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
       $stament->bindParam(':folio', $folio);
-      $stament->bindParam(':aprobacion', $aprobacion);
+        $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
       $stament->execute();
       }
     }
   }
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionCoordinador) values( :matricula, :folio, :aprobacionCoordinador)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matricula']);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprobacion);
+  $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');

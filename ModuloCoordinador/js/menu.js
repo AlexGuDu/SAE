@@ -40,6 +40,10 @@ function cerrarpopup() {
   comentarioAceptarS.style.display = 'none';
   comentarioDenegarR.style.display = 'none';
   comentarioDenegarS.style.display = 'none';
+  console.log(comentarioAceptarR);
+  console.log(comentarioAceptarS);
+  console.log(comentarioDenegarR);
+  console.log(comentarioDenegarR);
 }
 
 function comentarioAceptaS(folio){
@@ -228,7 +232,6 @@ function consultaDeSolicitud(){
       encode : true
     })
     .done(function(datos){
-      console.log('entro a php');
         for (var i = 1; i < datos.count; i=i+4) {
           $('#consultaRegistro tbody').append(
             '<tr>'+
