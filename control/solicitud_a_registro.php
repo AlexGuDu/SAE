@@ -1,5 +1,6 @@
 <?php
 require_once '../config/connection.php';
+session_start();
 
 $folio=$_POST['folio'];
 $matricula=$_SESSION['matricula'];
