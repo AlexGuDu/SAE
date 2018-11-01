@@ -43,6 +43,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-4">
+                          <a type="button"  data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                            Tooltip on top
+                          </a>
                               <label> SELECCIONE SI EL EVENTO SERA DENTRO DE TERRITORIO NACIONAL O EXTRANJERO: </label>
                               <div class="btn-group btn-group-toggle" data-toggle="buttons" id="territory_button_group">
                                 <label class="btn btn-success btn-sm active" id="territorioNac">
@@ -588,7 +591,13 @@
 
 </body>
 <!-- SCRIPTS -->
+<script src="../assets/popper/popper.min.js"></script>
 <script src="../assets/bootstrap/bootstrap.min.js"></script>
 <script src="../js/solicitud.js"></script>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+</script>
 
 </html>
