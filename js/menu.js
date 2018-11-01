@@ -55,27 +55,27 @@ window.addEventListener('click', clickOutside);
         encode: true
       })
       .done(function(datos){
-        materia_fortalecida.innerHTML =  datos.NomMateria;
+        materia_fortalecida.innerHTML =  datos.NomMateria.toUpperCase();
       });
       // END
 
-    territorio_label.innerHTML = datos.Territorio;
-    pais_label.innerHTML = datos.Pais;
-    estado_label.innerHTML = nombre_estado(datos.Estado);
-    ciudad_label.innerHTML = datos.Ciudad;
-    tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
-    fecha_inicial_label.innerHTML = datos.fecha;
-    tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
-    hora_inicial_label.innerHTML = datos.hora;
-    nombre_empresa_label.innerHTML = datos.empresa;
-    tema_visita_label.innerHTML = datos.tema;
-    nombre_representante_label.innerHTML = datos.Nombre_Recibe;
-    datos_contacto_label.innerHTML = datos.Contacto_empresa;
-    objetivo_actividad_label.innerHTML = datos.Objetivo;
+    territorio_label.innerHTML = datos.Territorio.toUpperCase();
+    pais_label.innerHTML = datos.Pais.toUpperCase();
+    estado_label.innerHTML = nombre_estado(datos.Estado).toUpperCase();
+    ciudad_label.innerHTML = datos.Ciudad.toUpperCase();
+    tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento).toUpperCase();
+    fecha_inicial_label.innerHTML = datos.fecha.toUpperCase();
+    tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad).toUpperCase();
+    hora_inicial_label.innerHTML = datos.hora.toUpperCase();
+    nombre_empresa_label.innerHTML = datos.empresa.toUpperCase();
+    tema_visita_label.innerHTML = datos.tema.toUpperCase();
+    nombre_representante_label.innerHTML = datos.Nombre_Recibe.toUpperCase();
+    datos_contacto_label.innerHTML = datos.Contacto_empresa.toUpperCase();
+    objetivo_actividad_label.innerHTML = datos.Objetivo.toUpperCase();
     // materia fortalecida
-    maestro_responsable_label.innerHTML= datos.Maestro;
-    aspecto_profesional_label.innerHTML = datos.aspecto_pro;
-    razon_propuesta_label.innerHTML = datos.proponente;
+    maestro_responsable_label.innerHTML= datos.Maestro.toUpperCase();
+    aspecto_profesional_label.innerHTML = datos.aspecto_pro.toUpperCase();
+    razon_propuesta_label.innerHTML = datos.proponente.toUpperCase();
     });
 
     solicitudPopup.style.display = 'block';

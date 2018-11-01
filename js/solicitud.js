@@ -177,7 +177,7 @@ $('#boton_ingresar_matricula').click(function(){
       tipo_actividad.options[8].hidden = true;
       tipo_actividad.options[9].hidden = true;
       tipo_actividad.options[10].hidden = true;
-      tipo_actividad.options[11].hidden = true;
+      tipo_actividad.options[11].hidden = false;  // Otro
     }
     if(tipo_evento.value == '2'){                // Cientifica
       tipo_actividad.options[1].hidden = true;

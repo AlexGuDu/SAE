@@ -161,27 +161,27 @@ function comentarioAceptaR(folio, matricula){
        encode: true
      })
      .done(function(datos){
-       materia_fortalecida.innerHTML =  datos.NomMateria;
+       materia_fortalecida.innerHTML =  datos.NomMateria.toUpperCase();
      });
      // END
 
-   territorio_label.innerHTML = datos.Territorio;
-   pais_label.innerHTML = datos.Pais;
-   estado_label.innerHTML = nombre_estado(datos.Estado);
-   ciudad_label.innerHTML = datos.Ciudad;
-   tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
-   fecha_inicial_label.innerHTML = datos.fecha;
-   tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
-   hora_inicial_label.innerHTML = datos.hora;
-   nombre_empresa_label.innerHTML = datos.empresa;
-   tema_visita_label.innerHTML = datos.tema;
-   nombre_representante_label.innerHTML = datos.Nombre_Recibe;
-   datos_contacto_label.innerHTML = datos.Contacto_empresa;
-   objetivo_actividad_label.innerHTML = datos.Objetivo;
-   // materia fortalecida
-   maestro_responsable_label.innerHTML= datos.Maestro;
-   aspecto_profesional_label.innerHTML = datos.aspecto_pro;
-   razon_propuesta_label.innerHTML = datos.proponente;
+     territorio_label.innerHTML = datos.Territorio.toUpperCase();
+     pais_label.innerHTML = datos.Pais.toUpperCase();
+     estado_label.innerHTML = nombre_estado(datos.Estado).toUpperCase();
+     ciudad_label.innerHTML = datos.Ciudad.toUpperCase();
+     tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento).toUpperCase();
+     fecha_inicial_label.innerHTML = datos.fecha.toUpperCase();
+     tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad).toUpperCase();
+     hora_inicial_label.innerHTML = datos.hora.toUpperCase();
+     nombre_empresa_label.innerHTML = datos.empresa.toUpperCase();
+     tema_visita_label.innerHTML = datos.tema.toUpperCase();
+     nombre_representante_label.innerHTML = datos.Nombre_Recibe.toUpperCase();
+     datos_contacto_label.innerHTML = datos.Contacto_empresa.toUpperCase();
+     objetivo_actividad_label.innerHTML = datos.Objetivo.toUpperCase();
+     // materia fortalecida
+     maestro_responsable_label.innerHTML= datos.Maestro.toUpperCase();
+     aspecto_profesional_label.innerHTML = datos.aspecto_pro.toUpperCase();
+     razon_propuesta_label.innerHTML = datos.proponente.toUpperCase();
    });
 
    solicitudPopup.style.display = 'block';
@@ -235,7 +235,7 @@ function consultaDeSolicitud(){
             '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaS('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaS('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
             '<td>'+datos[i+1]+'</td>'+
             '<td>'+datos[i]+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
             '<td>'+datos[i+2]+'</td>'+
           '</tr>');
       }
@@ -257,7 +257,7 @@ function consultaDeSolicitud(){
               '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+','+datos[i+1]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+','+datos[i+1]+')" class="botonsm boton-del">'+'</td>'+
               '<td>'+datos[i+1]+'</td>'+
               '<td>'+datos[i]+'</td>'+
-              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Vista Previa</button>'+'</td>'+
+              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
               '<td>'+datos[i+2]+'</td>'+
             '</tr>');
         }
