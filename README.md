@@ -12,6 +12,11 @@ Se tiene como objetivo que la versión final integre a estudiantes (grupos e ind
 </p>
 
 ---
+<p>
+<h3>Herramientas y Recursos</h3>
+</p>
+- Versiones de Bases de Datos. *at:* [Directorio (Google Drive)](https://drive.google.com/open?id=1ZaR01O2jDn89wiiVcVMonGoruZ0xCyST)
+---
 
 <p>
 <h3>Contacto</h3>
