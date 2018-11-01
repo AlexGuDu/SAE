@@ -14,7 +14,7 @@
 </head>
 
 
-<body  onload="ConsultaDeActividades()">
+<body onload="ConsultaDeActividades()">
     <br>
     <!-- HEADER -->
     <div id="Header">
