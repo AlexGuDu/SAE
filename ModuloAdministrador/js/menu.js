@@ -92,11 +92,12 @@ function comentarioAceptaS(folio){
   });
  }
 
-function comentarioAceptaR(folio){
+function comentarioAceptaR(folio, matricula){
   comentarioAceptarR.style.display = 'block';
   $('#agregarR').click(function(){
    var datosEnviados = {
      'folio' : folio ,
+     'matricula' : matricula,
      'comentario' : $('#com_reg_aceptar').val()
    };
    $.ajax({

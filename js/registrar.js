@@ -368,6 +368,7 @@ folio.addEventListener('change', function(){
 
       $('#mostrarMatriculas tbody').append(
         '<tr>'+
+        '<td>---</td>'+
         '<td>'+datos.alumno[i]+'</td>'+
         '<td>'+datos.alumno[i+1]+'</td>'+
         '<td>'+datos.alumno[i+2]+'</td>'+
