@@ -16,7 +16,7 @@ $stament->bindParam(':carrera', $carrera);
 $stament->execute();
 foreach ($stament as $filas):
   $datos[$i]=$filas['tema'];
-  $datos[$i+1]=$filas['responsable'];
+  $datos[$i+1]=$filas['Matricula'];
   $datos[$i+2]=$filas['fecha_registro'];
   $datos[$i+3]=$filas['folio'];
 $i=$i+4;
