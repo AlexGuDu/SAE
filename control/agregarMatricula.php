@@ -15,6 +15,10 @@ else {
   foreach ($stament as $filas):
     if($filas['Matricula']==$matricula){
         $bandera=1;
+        if($filas['Contra']==''){
+          $flag=1;
+          $datos['error']=5;
+        }
 
     }
   endforeach;

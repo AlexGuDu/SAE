@@ -3,7 +3,7 @@ require '../config/connection.php';
 session_start();
 $i=1;
 $folio=$_POST['folio'];
-$sql="SELECT * FROM solicitud where folio=:folio";
+$sql="SELECT * FROM actividad where folio=:folio";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();
@@ -30,7 +30,7 @@ $datos['tipo_evento']=$stament['tipo_evento'];
 
 endforeach;
 
-$sql="SELECT * FROM alumno a,alumnosolicitud b where a.Matricula=b.Matricula and b.folio= :folio";
+$sql="SELECT * FROM alumno a,alumnoactividad b where a.Matricula=b.Matricula and b.folio= :folio";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':folio', $folio);
 $stament->execute();

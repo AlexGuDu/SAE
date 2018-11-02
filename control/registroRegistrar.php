@@ -21,14 +21,9 @@ session_start();
   $maestro=$_POST['maestroMateria'];
   $responsable=$_SESSION['matricula'];
   $matricula=$_SESSION['matricula'];
+  $aprobacionCoordinador = 1;
 
-  // if ($folio!=0) {
-  //     $sql = "UPDATE alumnosolicitud c set aprobacionRegistro=1  WHERE folio=$folio and Matricula=$matricula";
-  //     header('Location:../views/home.php');
-  // }
-  // else {
-
-  $sql = "INSERT INTO solicitud(Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, aspecto_pro, proponente, tipo_evento, tipo_actividad, responsable)
+  $sql = "INSERT INTO actividad(Territorio, Estado, Ciudad, Pais, fecha, hora, lugar, tema, Nombre_Recibe, Contacto_empresa, Objetivo, materia, Maestro, aspecto_pro, proponente, tipo_evento, tipo_actividad, responsable)
   values(:territorio, :estado, :ciudad, :pais,  :fecha, :hora, :lugar, :tema, :Nombre_Recibe, :contactoEmpresa, :Objetivo, :materia, :Maestro, :aspectoProfesional, :proponeAsistir, :tipo_evento, :tipo_actividad, :responsable)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':territorio', $territorio);
@@ -59,7 +54,7 @@ session_start();
   }
 
   $cantidad=COUNT($_SESSION['matriculas']);
-  $sql="SELECT * FROM solicitud where Territorio='$territorio' and Estado='$estado' and Ciudad='$ciudad' and fecha='$fecha'
+  $sql="SELECT * FROM actividad where Territorio='$territorio' and Estado='$estado' and Ciudad='$ciudad' and fecha='$fecha'
   and hora='$hora' and empresa='$empresa' and tema='$tema' and Nombre_Recibe='$nombre_recibe' and Contacto_empresa='$contacto_empresa' and Objetivo='$objetivo'
   and Maestro='$maestro' and tipo_evento='$tipo_evento' and tipo_actividad='$tipo_actividad' and responsable='$responsable'";
   $filas = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -72,20 +67,20 @@ session_start();
   if(isset($_SESSION['matriculas'])){
     for ($i=0; $i<$cantidad ; $i++) {
       if ($_SESSION['matriculas'][$i]!=0) {
-      $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+      $sql = "INSERT INTO alumnoactividad(Matricula, Folio, aprobacionCoordinador) values( :matricula, :folio, :aprobacionCoordinador)";
       $stament = $dbh->prepare($sql);
       $stament->bindParam(':matricula', $_SESSION['matriculas'][$i]);
       $stament->bindParam(':folio', $folio);
-      $stament->bindParam(':aprobacion', $aprobacion);
+        $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
       $stament->execute();
       }
     }
   }
-  $sql = "INSERT INTO alumnosolicitud(Matricula, Folio, aprobacionRegistro) values( :matricula, :folio, :aprobacion)";
+  $sql = "INSERT INTO alumnoactividad(Matricula, Folio, aprobacionCoordinador) values( :matricula, :folio, :aprobacionCoordinador)";
   $stament = $dbh->prepare($sql);
   $stament->bindParam(':matricula', $_SESSION['matricula']);
   $stament->bindParam(':folio', $folio);
-  $stament->bindParam(':aprobacion', $aprobacion);
+  $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
   $stament->execute();
   unset( $_SESSION['matriculas']);
   header('Location:../views/home.php');

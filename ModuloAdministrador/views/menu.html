@@ -28,7 +28,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-1">
-              <input type="button" name="" class="boton-regresar" id="regresaS">
+              <input type="button" name="" class="boton-regresar" id="exit_sol_aceptar">
             </div>
             <div class="col-md-9">
               <h1>Aceptar solicitud</h1>
@@ -37,12 +37,12 @@
           <div class="row">
             <div class="col-md-11">
               <label class="preview_label">Comentario</label><br>
-              <textarea id="comentario" name="comentario" rows="8" cols="80"></textarea>
+              <textarea id="com_sol_aceptar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <input type="button" id="agregar" name="boton"  class="botonsm boton-add" value=" " >
+              <input type="button" id="sol_aceptar" name="boton"  class="botonsm boton-add" value=" " >
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <div class="row">
             <div class="col-md-1">
               <div class="col-md-1">
-                <input type="button" name="" class="boton-regresar" id="regresarS">
+                <input type="button" name="" class="boton-regresar" id="exit_sol_denegar">
               </div>
             </div>
             <div class="col-md-9">
@@ -65,12 +65,12 @@
           <div class="row">
             <div class="col-md-11">
               <label class="preview_label">Comentario</label><br>
-              <textarea id="comentarioRechazar" name="comentario" rows="8" cols="80"></textarea>
+              <textarea id="com_sol_denegar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <input type="button" id="rechazar" name="boton" class="botonsm boton-del" value=" " >
+              <input type="button" id="sol_denegar" name="boton" class="botonsm boton-del" value=" " >
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-1">
-              <input type="button" name="" class="boton-regresar" id="regresaR">
+              <input type="button" name="" class="boton-regresar" id="exit_reg_aceptar">
             </div>
             <div class="col-md-9">
               <h1>Aceptar registro</h1>
@@ -91,12 +91,12 @@
           <div class="row">
             <div class="col-md-11">
               <label class="preview_label">Comentario</label><br>
-              <textarea id="comentarioR" name="comentario" rows="8" cols="80"></textarea>
+              <textarea id="com_reg_aceptar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <input type="button" id="agregarR" name="boton" class="botonsm boton-add" value=" " >
+              <input type="button" id="reg_aceptar" name="boton" class="botonsm boton-add" value=" " >
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@
           <div class="row">
             <div class="col-md-1">
               <div class="col-md-1">
-                <input type="button" name="" class="boton-regresar" id="regresarR">
+                <input type="button" name="" class="boton-regresar" id="exit_reg_denegar">
               </div>
             </div>
             <div class="col-md-9">
@@ -119,12 +119,12 @@
           <div class="row">
             <div class="col-md-11">
               <label class="preview_label">Comentario</label><br>
-              <textarea id="comentarioRechazarR" name="comentario" rows="8" cols="80"></textarea>
+              <textarea id="com_reg_denegar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <input type="button" id="rechazarR" name="boton" class="botonsm boton-del" value=" " >
+              <input type="button" id="reg_denegar" name="boton" class="botonsm boton-del" value=" " >
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
     </div>
 
     <div id="solicitudPopup" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+      <div id="entirePopup" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -167,7 +167,7 @@
 
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Tema de la Visita:</label> <label id="tema_visita"></label> <br>
-              <label class="preview_label">Datos de Contacto de Empresa:</label> <label id="datos_contacto"></label>
+              <label class="preview_label">Correo de Empresa:</label> <label id="datos_contacto"></label>
             </div>
           </div> <!-- Row #3 -->
           <hr>
@@ -180,7 +180,7 @@
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Materia Fortalecida:</label> <label id="materia_fortalecida"></label> <br>
-              <label class="preview_label">Aspectol Profesiona Fortalecido:</label> <label id="aspecto_profesional"></label>
+              <label class="preview_label">Aspecto Profesional Fortalecido:</label> <label id="aspecto_profesional"></label>
             </div>
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>

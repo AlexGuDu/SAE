@@ -11,17 +11,20 @@ function limpiarMatriculas(){
 //Eliminar session de matriculas al refrescar la pagina END
 
 // Funcionalidad Agregar matricula tabla solicitud
+var ingresar_matricula = document.getElementById('ingresar_matricula');
 var warningModalMatricula = document.getElementById('warningModalMatricula');
 var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+var error5 = document.getElementById('error5');
 
 window.addEventListener('click', clickOutside);
 error1.style.display='none';
 error2.style.display='none';
 error3.style.display='none';
 error4.style.display='none';
+error5.style.display='none';
   function clickOutside(e){
     if(e.target == warningModalMatricula){
     warningModalMatricula.style.display = 'none';
@@ -29,6 +32,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
     }
   }
   $(document).keyup(function(e) {
@@ -38,6 +42,7 @@ error4.style.display='none';
         error2.style.display='none';
         error3.style.display='none';
         error4.style.display='none';
+        error5.style.display='none';
     }
   });
   document.getElementById('ok_modalMatricula').addEventListener('click', function(){
@@ -46,6 +51,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
   })
 
   //Quitar matricula de la trabla solictud
@@ -68,9 +74,10 @@ error4.style.display='none';
   //Quitar matricula de la trabla solictud END
 
 //Agregar alumno a trabla de solicitud
-$('#Agregar').click(function(){
+$('#boton_ingresar_matricula').click(function(){
+
   var datosEnviados = {
-    'matricula' : $('#matriculas').val()
+    'matricula' : $('#ingresar_matricula').val()
   };
   $.ajax({
     type : 'POST',
@@ -100,7 +107,12 @@ $('#Agregar').click(function(){
       warningModalMatricula.style.display = 'block';
       error4.style.display='block';
     }
+    else if (datos.error==5) {
+      warningModalMatricula.style.display = 'block';
+      error5.style.display='block';
+    }
     else {
+    ingresar_matricula.value="";
     $('#datos_tabla tbody').append(
         '<tr>'+
           '<td>'+'<input type="button" onclick="borrar('+datos.d5+')" name="boton" class="boton boton-del">'+'</td>'+
@@ -165,7 +177,7 @@ $('#Agregar').click(function(){
       tipo_actividad.options[8].hidden = true;
       tipo_actividad.options[9].hidden = true;
       tipo_actividad.options[10].hidden = true;
-      tipo_actividad.options[11].hidden = true;
+      tipo_actividad.options[11].hidden = false;  // Otro
     }
     if(tipo_evento.value == '2'){                // Cientifica
       tipo_actividad.options[1].hidden = true;
@@ -503,12 +515,6 @@ window.addEventListener('click', clickOutside);
 
 
 
-  // nextBtn_1.addEventListener('click', test);
-  // function test(){
-  //   if (estado == "" || estado == 0){
-  //     console.log('fill it out');
-  //   }
-  // }
 
 // Funcionalidad Validar Llenado de Forms y Transiciones de Modulos END
 
