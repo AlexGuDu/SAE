@@ -166,7 +166,6 @@ $('#boton_ingresar_matricula').click(function(){
     tipo_actividad.disabled = false;
     tipo_actividad.value = "0";
     if(tipo_evento.value == '1'){                 // Vinculacion:
-      tipo_actividad.selected == tipo_actividad.options[12];
       tipo_actividad.options[1].hidden = false;   // Visitas Empresariales
       tipo_actividad.options[2].hidden = false;   // Viajes de Estudio
       tipo_actividad.options[3].hidden = false;   // Practicas Academicas
