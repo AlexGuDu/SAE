@@ -23,6 +23,7 @@ var error1 = document.getElementById('error1');
 var error2 = document.getElementById('error2');
 var error3 = document.getElementById('error3');
 var error4 = document.getElementById('error4');
+var error5 = document.getElementById('error5');
 var folio_val;
 
 function limpiarMatriculas(){
@@ -39,6 +40,7 @@ error1.style.display='none';
 error2.style.display='none';
 error3.style.display='none';
 error4.style.display='none';
+error5.style.display='none';
   function clickOutside(e){
     if(e.target == warningModalMatricula){
     warningModalMatricula.style.display = 'none';
@@ -46,6 +48,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
     }
   }
   $(document).keyup(function(e) {
@@ -55,6 +58,7 @@ error4.style.display='none';
         error2.style.display='none';
         error3.style.display='none';
         error4.style.display='none';
+        error5.style.display='none';
     }
   });
   document.getElementById('ok_modalMatricula').addEventListener('click', function(){
@@ -63,6 +67,7 @@ error4.style.display='none';
     error2.style.display='none';
     error3.style.display='none';
     error4.style.display='none';
+    error5.style.display='none';
   })
 /*------------------------------------------------------------------------------------------------------*/
 //Eliminar session de matriculas al refrescar la pagina
@@ -77,7 +82,7 @@ function limpiarMatriculas(){
 //Eliminar session de matriculas al refrescar la pagina END
 
 //Agregar alumno a trabla de solicitud
-$('#Agregar').click(function(){
+$('#boton_ingresar_matricula').click(function(){
   var datosEnviados = {
     'matricula' : $('#ingresar_matricula').val()
   };
@@ -109,7 +114,12 @@ $('#Agregar').click(function(){
       warningModalMatricula.style.display = 'block';
       error4.style.display='block';
     }
+    else if (datos.error==5) {
+      warningModalMatricula.style.display = 'block';
+      error5.style.display='block';
+    }
     else {
+    ingresar_matricula.value="";
     $('#mostrarMatriculas tbody').append(
         '<tr>'+
           '<td>'+'<input type="button" onclick="borrar('+datos.d5+')" name="boton" class="boton boton-del">'+'</td>'+
@@ -162,7 +172,7 @@ function borrar(matricula){
       tipo_actividad.options[8].hidden = true;
       tipo_actividad.options[9].hidden = true;
       tipo_actividad.options[10].hidden = true;
-      tipo_actividad.options[11].hidden = true;
+      tipo_actividad.options[11].false = true;   // Otro
     }
     if(tipo_evento.value == '2'){                // Cientifica
       tipo_actividad.options[1].hidden = true;
@@ -328,7 +338,10 @@ folio.addEventListener('change', function(){
       nombreActividad.disabled = "disabled";
       nombreOrganiza.disabled = "disabled";
       objetivoEvento.disabled = "disabled";
+      materiaFortalecida_input.disabled = "disabled";
       maestroMateria.disabled = "disabled";
+      aspectoProfesional_input.disabled = "disabled";
+      proponeAsistir_input.disabled = "disabled";
       ingresar_matricula.disabled = "disabled";
       boton_ingresar_matricula.disabled = "disabled";
 
@@ -355,6 +368,7 @@ folio.addEventListener('change', function(){
 
       $('#mostrarMatriculas tbody').append(
         '<tr>'+
+        '<td>---</td>'+
         '<td>'+datos.alumno[i]+'</td>'+
         '<td>'+datos.alumno[i+1]+'</td>'+
         '<td>'+datos.alumno[i+2]+'</td>'+

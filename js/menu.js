@@ -2,7 +2,7 @@ document.getElementById('solicitarPermiso').addEventListener('click', openSolici
 document.getElementById('registrarActividad').addEventListener('click', openRegistro);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 window.addEventListener('click', clickOutside);
-// var solicitudPopup = document.getElementById('solicitudPopup');
+  var solicitudPopup = document.getElementById('solicitudPopup');
   var territorio_label = document.getElementById('territorio');
   var pais_label = document.getElementById('pais');
   var estado_label = document.getElementById('estado');
@@ -21,6 +21,19 @@ window.addEventListener('click', clickOutside);
   var maestro_responsable_label = document.getElementById('maestro_responsable');
   var razon_propuesta_label = document.getElementById('razon_propuesta');
   var materiaName;
+  var card_cientifica = document.getElementById('card_cientifica');
+  var card_cultural = document.getElementById('card_cultural');
+  var card_vinculacion = document.getElementById('card_vinculacion');
+  var card_deportiva = document.getElementById('card_deportiva');
+  var card_responsabilidad_social = document.getElementById('card_responsabilidad_social');
+  var count_cientifica = document.getElementById('count_cientifica');
+  var count_cultural = document.getElementById('count_cultural');
+  var count_vinculacion = document.getElementById('count_vinculacion');
+  var count_deportiva = document.getElementById('count_deportiva');
+  var count_responsabilidad_social = document.getElementById('count_responsabilidad_social');
+  var actividades_realizadas = document.getElementById('actividades_realizadas');
+  var barra_progreso = document.getElementById('barra_progreso');
+
 
 
   function openSolicitud(){
@@ -55,27 +68,27 @@ window.addEventListener('click', clickOutside);
         encode: true
       })
       .done(function(datos){
-        materia_fortalecida.innerHTML =  datos.NomMateria;
+        materia_fortalecida.innerHTML =  datos.NomMateria.toUpperCase();
       });
       // END
 
-    territorio_label.innerHTML = datos.Territorio;
-    pais_label.innerHTML = datos.Pais;
-    estado_label.innerHTML = nombre_estado(datos.Estado);
-    ciudad_label.innerHTML = datos.Ciudad;
-    tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento);
-    fecha_inicial_label.innerHTML = datos.fecha;
-    tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad);
-    hora_inicial_label.innerHTML = datos.hora;
-    nombre_empresa_label.innerHTML = datos.empresa;
-    tema_visita_label.innerHTML = datos.tema;
-    nombre_representante_label.innerHTML = datos.Nombre_Recibe;
-    datos_contacto_label.innerHTML = datos.Contacto_empresa;
-    objetivo_actividad_label.innerHTML = datos.Objetivo;
+    territorio_label.innerHTML = datos.Territorio.toUpperCase();
+    pais_label.innerHTML = datos.Pais.toUpperCase();
+    estado_label.innerHTML = nombre_estado(datos.Estado).toUpperCase();
+    ciudad_label.innerHTML = datos.Ciudad.toUpperCase();
+    tipo_evento_label.innerHTML = nombre_evento(datos.tipo_evento).toUpperCase();
+    fecha_inicial_label.innerHTML = datos.fecha.toUpperCase();
+    tipo_actividad_label.innerHTML = nombre_actividad(datos.tipo_actividad).toUpperCase();
+    hora_inicial_label.innerHTML = datos.hora.toUpperCase();
+    nombre_empresa_label.innerHTML = datos.empresa.toUpperCase();
+    tema_visita_label.innerHTML = datos.tema.toUpperCase();
+    nombre_representante_label.innerHTML = datos.Nombre_Recibe.toUpperCase();
+    datos_contacto_label.innerHTML = datos.Contacto_empresa.toUpperCase();
+    objetivo_actividad_label.innerHTML = datos.Objetivo.toUpperCase();
     // materia fortalecida
-    maestro_responsable_label.innerHTML= datos.Maestro;
-    aspecto_profesional_label.innerHTML = datos.aspecto_pro;
-    razon_propuesta_label.innerHTML = datos.proponente;
+    maestro_responsable_label.innerHTML= datos.Maestro.toUpperCase();
+    aspecto_profesional_label.innerHTML = datos.aspecto_pro.toUpperCase();
+    razon_propuesta_label.innerHTML = datos.proponente.toUpperCase();
     });
 
     solicitudPopup.style.display = 'block';
@@ -149,6 +162,95 @@ function ConsultaDeActividades(){
     }
   });
 
+}
+
+function ConsultaDeCumplimiento(){
+  $.ajax({
+    type : 'POST',
+    url : '../control/informacionCumplimiento.php',
+    dataType : 'json',
+    encode : true
+  }).done(function(datos){
+    count_vinculacion.innerHTML = datos.act01;
+    count_cientifica.innerHTML = datos.act02;
+    count_deportiva.innerHTML = datos.act03;
+    count_responsabilidad_social.innerHTML = datos.act04;
+    count_cultural.innerHTML = datos.act05;
+
+    actividades_realizadas.innerHTML = 'Actividades realizadas ('+datos.total+'/5)';
+    switch (datos.total) {
+      case 0:
+        barra_progreso.innerHTML = '0%';
+        barra_progreso.style.width = '2%';
+      break;
+      case 1:
+        barra_progreso.innerHTML = '20%';
+        barra_progreso.style.width = '20%';
+      break;
+      case 2:
+        barra_progreso.innerHTML = '40%';
+        barra_progreso.style.width = '40%';
+      break;
+      case 3:
+        barra_progreso.innerHTML = '60%';
+        barra_progreso.style.width = '60%';
+      break;
+      case 4:
+        barra_progreso.innerHTML = '80%';
+        barra_progreso.style.width = '80%';
+      break;
+      case 5:
+        barra_progreso.innerHTML = '100%';
+        barra_progreso.style.width = '100%';
+        barra_progreso.style.color = 'black';
+        barra_progreso.style.fontWeight = 'bold';
+        barra_progreso.classList.add('bg-warning');
+        makeItRain();
+      break;
+
+      default:
+      barra_progreso.innerHTML = 'Un error ha ocurrido!';
+      barra_progreso.style.width = '33%';
+
+    }
+
+    if (datos.act01!=0) {
+      count_vinculacion.classList.add("badge");
+      count_vinculacion.classList.add("badge-pill");
+      count_vinculacion.classList.add("badge-success");
+      card_vinculacion.classList.add("border");
+      card_vinculacion.classList.add("border-success");
+    }
+    if (datos.act02!=0) {
+      count_cientifica.classList.add("badge");
+      count_cientifica.classList.add("badge-pill");
+      count_cientifica.classList.add("badge-success");
+      card_cientifica.classList.add("border");
+      card_cientifica.classList.add("border-success");
+    }
+    if (datos.act03!=0) {
+      count_deportiva.classList.add("badge");
+      count_deportiva.classList.add("badge-pill");
+      count_deportiva.classList.add("badge-success");
+      card_deportiva.classList.add("border");
+      card_deportiva.classList.add("border-success");
+    }
+    if (datos.act04!=0) {
+      count_responsabilidad_social.classList.add("badge");
+      count_responsabilidad_social.classList.add("badge-pill");
+      count_responsabilidad_social.classList.add("badge-success");
+      card_responsabilidad_social.classList.add("border");
+      card_responsabilidad_social.classList.add("border-success");
+    }
+    if (datos.act05!=0) {
+      count_cultural.classList.add("badge");
+      count_cultural.classList.add("badge-pill");
+      count_cultural.classList.add("badge-success");
+      card_cultural.classList.add("border");
+      card_cultural.classList.add("border-success");
+    }
+
+  });
 }
 
 
@@ -347,4 +449,48 @@ function textoEstatus(estatus){
     return "0";
 
   }
+}
+
+function makeItRain(){
+  // Some random colors
+  const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+  const numBalls = 50;
+  const balls = [];
+
+  for (let i = 0; i < numBalls; i++) {
+    let ball = document.createElement("div");
+    ball.classList.add("ball");
+    ball.style.background = colors[Math.floor(Math.random() * colors.length)];
+    ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+    ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+    ball.style.transform = `scale(${Math.random()})`;
+    ball.style.width = `${Math.random()}em`;
+    ball.style.height = ball.style.width;
+
+    balls.push(ball);
+    document.body.append(ball);
+  }
+
+  // Keyframes
+  balls.forEach((el, i, ra) => {
+    let to = {
+      x: Math.random() * (i % 2 === 0 ? -11 : 11),
+      y: Math.random() * 12
+    };
+
+    let anim = el.animate(
+      [
+        { transform: "translate(0, 0)" },
+        { transform: `translate(${to.x}rem, ${to.y}rem)` }
+      ],
+      {
+        duration: (Math.random() + 1) * 2000, // random duration
+        direction: "alternate",
+        fill: "both",
+        iterations: Infinity,
+        easing: "ease-in-out"
+      }
+    );
+  });
 }
