@@ -14,7 +14,7 @@
 </head>
 
 
-<body onload="ConsultaDeActividades()">
+<body onload="ConsultaDeActividades(); ConsultaDeCumplimiento();">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -96,9 +96,9 @@
     <!-- BOTONES ACTIVIDAD -->
 
   <div class="container smooth-jazz" style="text-align: center;">
-    <h4>Actividades realizadas (2/5)</h4>
-    <div class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
-        <div class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+    <h4 id="actividades_realizadas">Actividades realizadas (2/5)</h4>
+    <div id="barra_wrapper" class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
+        <div id="barra_progreso" class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
   </div>
   <br>
@@ -150,7 +150,7 @@
         </div>
         <br><br>
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 s">
+            <div class="col-12 col-lg-7 pane">
                 <table class="table table-bordered table-hover" id="consultaRegistros">
                     <thead id="header-table">
                         <tr>
@@ -171,56 +171,62 @@
                 </table>
             </div>
         </div>
-        <br>
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body bg-success" style="border-radius: 1rem;">
-                Cientifica<label class="float-right">(1)</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Cultural<label class="float-right">(0)</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Vinculacion<label class="float-right">(0)</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1">
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body bg-success" style="border-radius: 1rem;">
-                Deportiva<label class="float-right">(1)</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Otros <label class="float-right">(0)</label>
-              </div>
-            </div>
-          </div>
-        </div>
+        <hr>
         <br>
 
+
+        <div class="row justify-content-center">
+          <h4>Cumplimiento de Actividades por Categoria</h4>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card" id="card_cientifica">
+              <div class="card-body" >
+                Cientifica<label id="count_cientifica" class="countlabel float-right"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <div class="card" id="card_cultural">
+              <div class="card-body" >
+                Cultural<label id="count_cultural" class="countlabel float-right"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card" id="card_vinculacion">
+              <div class="card-body" >
+                Vinculacion<label id="count_vinculacion" class="countlabel float-right"></label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-3">
+            <div class="card" id="card_deportiva">
+              <div class="card-body">
+                Deportiva<label id="count_deportiva" class="countlabel float-right"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+          <div class="col-md-3">
+            <div class="card" id="card_responsabilidad_social">
+              <div class="card-body">
+                Responsabilidad Social <label id="count_responsabilidad_social" class="countlabel float-right"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
 
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">

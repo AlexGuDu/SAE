@@ -2,6 +2,11 @@ html{
   background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.5;
+}
 
 #entirePage {
 		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
@@ -46,8 +51,14 @@ html{
 }
 
 .card{
-  border-radius: 1rem !important;
+  border-radius: 1rem;
+  font-size: 1.1rem;
 }
+
+.border{
+  border-width: 2px !important;
+}
+
 
 
 .btn{
@@ -149,6 +160,10 @@ html{
 .preview_label{
 	font-size: 1.1rem;
 	font-weight: bold;
+}
+
+.countlabel{
+  font-size: 1rem;
 }
 
 #Header{
