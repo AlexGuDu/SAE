@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>SAE - Menu</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">

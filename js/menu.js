@@ -120,6 +120,7 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
+    console.log(datos.count);
     for (var i = 1; i < datos.count; i=i+5) {
       if(datos[i+2]!=0){
         var msg = textoEstatus(datos[i+2]);
@@ -211,6 +212,7 @@ function ConsultaDeCumplimiento(){
       default:
       barra_progreso.innerHTML = 'Un error ha ocurrido!';
       barra_progreso.style.width = '33%';
+      barra_progreso.classList.add('bg-danger');
 
     }
 
