@@ -96,7 +96,7 @@
     <!-- BOTONES ACTIVIDAD -->
 
   <div class="container smooth-jazz" style="text-align: center;">
-    <h4 id="actividades_realizadas">Actividades realizadas (2/5)</h4>
+    <h4 id="actividades_realizadas">Actividades realizadas (0/5)</h4>
     <div id="barra_wrapper" class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
         <div id="barra_progreso" class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
