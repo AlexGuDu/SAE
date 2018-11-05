@@ -15,6 +15,7 @@ define('USERNAME', $cleardb_username);
 define('PASSWORD', $cleardb_password);
 define('DATABASE', $cleardb_db);
 
+
 try {
   $dbh = new PDO(
     'mysql:host=' . SERVER .';dbname=' . DATABASE, // Cadena de conexion
