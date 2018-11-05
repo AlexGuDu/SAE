@@ -64,7 +64,7 @@ if(isset($_SESSION['matricula'])){
                     <p class="texto">
                         Has olvidado tu contrase&ntilde;a? O no te has registrado?
                         <br>
-                        <a href="alumnoRegistro.php">Entra aqui</a>
+                        <a href="views/alumnoRegistro.php">Entra aqui</a>
                     </p>
             </div>
         </div>
