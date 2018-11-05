@@ -1,9 +1,9 @@
 <?php
 
-define('SERVER', 'localhost');
-define('DATABASE', 'sae');
-define('USERNAME', 'root');
-define('PASSWORD', '');
+define('SERVER', 'us-cdbr-iron-east-01.cleardb.net');
+define('DATABASE', 'heroku_26c40112c9d3cd0');
+define('USERNAME', 'b1fc433e9998d9');
+define('PASSWORD', '813a4239');
 
 try {
   $dbh = new PDO(
