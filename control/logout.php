@@ -3,7 +3,7 @@ session_start();
 unset($_SESSION['matricula']);
 unset($_SESSION['matriculas']);
 unset($_SESSION['error']);
-header('Location: ../views/index.php');
+header('Location: ../index.php');
 
 
  ?>
