@@ -92,5 +92,5 @@ session_start();
   $stament->bindParam(':folio', $folio);
   $stament->execute();
   unset( $_SESSION['matriculas']);
-  header('Location:../views/index.php');
+  header('Location:../index.php');
  ?>
