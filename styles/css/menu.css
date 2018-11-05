@@ -51,7 +51,7 @@ html{
 	font-size: 0.9rem;
 }
 
-.smooth-jazz{
+.smooth-jazz, .admbtn, .actnbar{
   animation-name: slideHeader;
 	animation-duration: 1s;
 }
@@ -113,6 +113,7 @@ html{
 
 .boton-regresar{
 	background-image: url(../../assets/img/regresar.png);
+  background-size: 2rem;
 	height: 50px;
 
 }
