@@ -25,6 +25,7 @@ $datos['aspecto_pro']=$stament['aspecto_pro'];
 $datos['proponente']=$stament['proponente'];
 $datos['tipo_actividad']=$stament['tipo_actividad'];
 $datos['tipo_evento']=$stament['tipo_evento'];
+$datos['comentario']=$stament['Comentario'];
 endforeach;
 echo json_encode($datos);
  ?>

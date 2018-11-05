@@ -28,6 +28,7 @@ var materia_fortalecida_label = document.getElementById('materia_fortalecida');
 var aspecto_profesional_label = document.getElementById('aspecto_profesional');
 var maestro_responsable_label = document.getElementById('maestro_responsable');
 var razon_propuesta_label = document.getElementById('razon_propuesta');
+var comentario_label = document.getElementById('comentario');
 
 function openActividades(){
   window.location.href = "../views/menu_consultas.html";
@@ -45,7 +46,29 @@ function cerrarpopup() {
   comentarioDenegarS.style.display = 'none';
 }
 
+function cleanComment(){
+  document.getElementById('com_sol_aceptar').value="";
+  document.getElementById('com_sol_denegar').value="";
+  document.getElementById('com_reg_aceptar').value="";
+  document.getElementById('com_reg_denegar').value="";
+}
+
 function comentarioAceptaS(folio){
+  cleanComment();
+  var datosEnviados = {
+    'folio' : folio
+  }
+  $.ajax({
+    type : 'POST',
+    url : '../control/comentarioActividad.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(comentario){
+    document.getElementById('com_sol_aceptar').value=comentario;
+  });
+
   comentarioAceptarS.style.display = 'block';
   $('#sol_aceptar').click(function(){
    var datosEnviados = {
@@ -63,13 +86,26 @@ function comentarioAceptaS(folio){
        consultaDeSolicitud();
      }
    })
-
   });
-
  }
 
 
  function comentarioRechazaS(folio){
+   cleanComment();
+   var datosEnviados = {
+     'folio' : folio
+   }
+   $.ajax({
+     type : 'POST',
+     url : '../control/comentarioActividad.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+   .done(function(comentario){
+     document.getElementById('com_sol_denegar').value=comentario;
+   });
+
    comentarioDenegarS.style.display = 'block';
     $('#sol_denegar').click(function(){
    var datosEnviados = {
@@ -87,11 +123,25 @@ function comentarioAceptaS(folio){
        consultaDeSolicitud();
      }
    })
-
   });
  }
 
 function comentarioAceptaR(folio, matricula){
+  cleanComment();
+  var datosEnviados = {
+    'folio' : folio
+  }
+  $.ajax({
+    type : 'POST',
+    url : '../control/comentarioActividad.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(comentario){
+    document.getElementById('com_reg_aceptar').value=comentario;
+  });
+
   comentarioAceptarR.style.display = 'block';
   $('#reg_aceptar').click(function(){
    var datosEnviados = {
@@ -115,6 +165,21 @@ function comentarioAceptaR(folio, matricula){
 
 
  function comentarioRechazaR(folio, matricula){
+   cleanComment();
+   var datosEnviados = {
+     'folio' : folio
+   }
+   $.ajax({
+     type : 'POST',
+     url : '../control/comentarioActividad.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+   .done(function(comentario){
+     document.getElementById('com_reg_denegar').value=comentario;
+   });
+
    comentarioDenegarR.style.display = 'block';
     $('#reg_denegar').click(function(){
    var datosEnviados = {
@@ -182,6 +247,7 @@ function comentarioAceptaR(folio, matricula){
      maestro_responsable_label.innerHTML= datos.Maestro.toUpperCase();
      aspecto_profesional_label.innerHTML = datos.aspecto_pro.toUpperCase();
      razon_propuesta_label.innerHTML = datos.proponente.toUpperCase();
+     comentario_label.innerHTML = datos.comentario.toUpperCase();
    });
 
    solicitudPopup.style.display = 'block';
@@ -229,13 +295,20 @@ function consultaDeSolicitud(){
     encode : true
   })
   .done(function(datos){
+    if (datos.count == 1) {
+      $('#consultaSolicitud tbody').append(
+        '<tr>'+
+          '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+        '</tr>'
+      );
+    }
       for (var i = 1; i < datos.count; i=i+4) {
         $('#consultaSolicitud tbody').append(
-          '<tr>'+
+          '<tr style="text-align:center;">'+
             '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaS('+datos[i+3]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaS('+datos[i+3]+')" class="botonsm boton-del">'+'</td>'+
             '<td>'+datos[i+1]+'</td>'+
             '<td>'+datos[i]+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'</td>'+
             '<td>'+datos[i+2]+'</td>'+
           '</tr>');
       }
@@ -251,13 +324,20 @@ function consultaDeSolicitud(){
       encode : true
     })
     .done(function(datos){
+      if (datos.count == 1) {
+        $('#consultaRegistro tbody').append(
+          '<tr>'+
+            '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+          '</tr>'
+        );
+      }
         for (var i = 1; i < datos.count; i=i+4) {
           $('#consultaRegistro tbody').append(
-            '<tr>'+
+            '<tr style="text-align:center;">'+
               '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+','+datos[i+1]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+','+datos[i+1]+')" class="botonsm boton-del">'+'</td>'+
               '<td>'+datos[i+1]+'</td>'+
               '<td>'+datos[i]+'</td>'+
-              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'</td>'+
               '<td>'+datos[i+2]+'</td>'+
             '</tr>');
         }

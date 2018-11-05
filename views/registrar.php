@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+Session_start();
+if(!isset($_SESSION['matricula'])){
+  $_SESSION['error']=2;
+	header('Location: ../index.php');
+}
+?>
+
 <html lang="en" dir="ltr">
 
 <head>

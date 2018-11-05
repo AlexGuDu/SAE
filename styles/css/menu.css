@@ -2,11 +2,17 @@ html{
   background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.5;
+}
 
 #entirePage {
+
 		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
 		border-radius: 35px;
-		background: #F4F4F4FF;
+		background:rgba(244, 244, 244, 0.5);
 		height: auto;
 		width: auto;
 		padding-top: 20px;
@@ -33,6 +39,11 @@ html{
     transform: translate(-50%, -50%);
 }
 
+#greenhr{
+  background-color: green;
+  opacity: 0.5;
+}
+
 .estatus{
 	border-radius: 0.5rem;
 	padding: 0.5rem;
@@ -40,14 +51,20 @@ html{
 	font-size: 0.9rem;
 }
 
-.smooth-jazz{
+.smooth-jazz, .admbtn, .actnbar{
   animation-name: slideHeader;
 	animation-duration: 1s;
 }
 
 .card{
-  border-radius: 1rem !important;
+  border-radius: 1rem;
+  font-size: 1.1rem;
 }
+
+.border{
+  border-width: 2px !important;
+}
+
 
 
 .btn{
@@ -96,6 +113,7 @@ html{
 
 .boton-regresar{
 	background-image: url(../../assets/img/regresar.png);
+  background-size: 2rem;
 	height: 50px;
 
 }
@@ -131,6 +149,12 @@ html{
 	background-color: #187f48;
 }
 
+.table-emptymsg{
+  text-align: center;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
 
 .modal{
 		display: none;
@@ -151,10 +175,54 @@ html{
 	font-weight: bold;
 }
 
+.countlabel{
+  font-size: 1rem;
+}
+
 #Header{
 	animation-name: slideHeader;
 	animation-duration: 1s;
 }
+
+#barra_progreso{
+  font-size: 1.5rem;
+}
+
+.stripe {
+  height: 1.8rem;
+
+}
+.stripe__segment {
+  width: 12.5%;
+  height: 100%;
+  float: left;
+}
+
+.stripe__segment:nth-child(1) {
+  background-color: #21275b;
+}
+.stripe__segment:nth-child(2) {
+  background-color: #71c596;
+}
+.stripe__segment:nth-child(3) {
+  background-color: #069cdb;
+}
+.stripe__segment:nth-child(4) {
+  background-color: #ed6752;
+}
+.stripe__segment:nth-child(5) {
+  background-color: #f09e52;
+}
+.stripe__segment:nth-child(6) {
+  background-color: #39beb8;
+}
+.stripe__segment:nth-child(7) {
+  background-color: #015e85;
+}
+.stripe__segment:nth-child(8) {
+  background-color: #006e61;
+}
+
 
 
 @keyframes slideHeader{

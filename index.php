@@ -2,7 +2,7 @@
 <?php
 Session_start();
 if(isset($_SESSION['matricula'])){
-	header('Location: menu.php');
+	header('Location: views/menu.php');
 }
 ?>
 <html lang="en">
@@ -13,9 +13,9 @@ if(isset($_SESSION['matricula'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- BOOTSTRAP Y CSS STYLES -->
-    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../styles/css/home.css">
-    <title>Login Alumnos</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/css/home.css">
+    <title>SAE - Login</title>
 </head>
 
 <body>
@@ -23,8 +23,8 @@ if(isset($_SESSION['matricula'])){
     <div class="container-fluid" id="header">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
-                <img id="Letras" src="../assets/img/uabc-letras.png" alt="Letras UABC">
+                <img id="Escudo" src="assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
+                <img id="Letras" src="assets/img/uabc-letras.png" alt="Letras UABC">
             </div>
         </div>
     </div>
@@ -35,10 +35,10 @@ if(isset($_SESSION['matricula'])){
         <div class="row">
             <div id="ingresar" class="col-11 col-md-10 col-lg-6">
                 <br>
-                <img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
+                <img id="logo" src="assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
                 <br>
                     <div class="form-group">
-											  <form id="ingresarForm" action="../control/loginSAE.php" method="post" >
+											  <form id="ingresarForm" action="control/loginSAE.php" method="post" >
                         <label> Matricula </label>
                         <input type="text" class="form-control" autofocus="autofocus" name="matricula">
                     </div>
@@ -48,20 +48,23 @@ if(isset($_SESSION['matricula'])){
 												</form>
                     </div>
 
-						
+
                     <button type="submit" id="iniciarSesion" form="ingresarForm">Iniciar</button> <br><br>
                     <?php
                     if(isset($_SESSION['error'])){
-                      if ($_SESSION['error']=1) {
+                      if ($_SESSION['error']==1) {
                         echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
                       }
+											if ($_SESSION['error']==2) {
+												echo '<p style="color:rgb(255,0,0);">Es necesario iniciar sesion primeramente.</p>';
+											}
                       unset($_SESSION['error']);
                     }
                     ?>
                     <p class="texto">
                         Has olvidado tu contrase&ntilde;a? O no te has registrado?
                         <br>
-                        <a href="alumnoRegistro.php">Entra aqui</a>
+                        <a href="views/alumnoRegistro.php">Entra aqui</a>
                     </p>
             </div>
         </div>
@@ -69,7 +72,7 @@ if(isset($_SESSION['matricula'])){
 
     <!-- FIN DE INGRESAR -->
     <script src="assets/bootstrap/bootstrap.min.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

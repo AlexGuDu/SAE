@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 
+<?php
+Session_start();
+if(!isset($_SESSION['matricula'])){
+  $_SESSION['error']=2;
+	header('Location: ../index.php');
+}
+?>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>SAE - Menu</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </head>
 
 
-<body onload="ConsultaDeActividades()">
+<body onload="ConsultaDeActividades(); ConsultaDeCumplimiento();">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -28,6 +37,22 @@
     <div id="solicitudPopup" class="modal">
       <div id="entirePopup" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7">
         <div class="container">
+          <div class="row" id="stripe_1">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-12 col-sm-12">
+              <div class="stripe" >
+                <div class="stripe__segment" style="border-radius: 10rem 0 0 2rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 10rem 2rem 0;"></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+          </div> <!-- Row #0 --> <br>
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Territorio:</label> <label id="territorio"></label> <br>
@@ -49,10 +74,7 @@
               <label class="preview_label">Hora Inicial de Evento:</label> <label id="hora_inicial"></label>
             </div>
           </div><!-- Row #2 -->
-
-
           <hr>
-
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Nombre de la Empresa:</label> <label id="nombre_empresa"></label> <br>
@@ -80,14 +102,38 @@
               <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
               <label class="preview_label">Razon de Propuesta:</label> <label id="razon_propuesta"></label>
             </div>
-          </div> <!-- Row #5 --> <br>
+          </div> <!-- Row #5 -->
+          <hr>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <label class="preview_label">Comentario por Administracion:</label> <label id="comentario"></label>
+            </div>
+          </div> <!-- Row #6 -->
+          <br>
           <div class="row">
             <div class="col-md-4 col-sm-4"></div>
             <div class="col-md-4 col-sm-4">
-              <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
+              <button id="cerrarPreview" class="boton fas fa-eye-slash" type="button" name="cerrar"></button>
             </div>
             <div class="col-md-4 col-sm-4"></div>
-          </div> <!-- Row #6 -->
+          </div> <!-- Row #7 -->
+          <br>
+          <div class="row">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-12 col-sm-12">
+              <div class="stripe">
+                <div class="stripe__segment" style="border-radius: 2rem 0 0 10rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 2rem 10rem 0;"></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+          </div> <!-- Row #8 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->
@@ -96,13 +142,12 @@
     <!-- BOTONES ACTIVIDAD -->
 
   <div class="container smooth-jazz" style="text-align: center;">
-    <h4>Actividades realizadas (2/5)</h4>
-    <div class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
-        <div class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+    <h4 id="actividades_realizadas">Actividades realizadas (0/5)</h4>
+    <div id="barra_wrapper" class="progress" style="height: 3rem; border-outline: 5px solid green; border-radius: 10px">
+        <div id="barra_progreso" class="progress-bar progress-bar-striped progress-bar-animated text-lg bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
   </div>
   <br>
-
 
   <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
@@ -133,11 +178,11 @@
                       <tr>
                         <th colspan="4">Solicitudes de Actividades</th>
                       </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>
-                            <th>Fecha</th>
+                            <th>Fecha de Emision</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,13 +195,13 @@
         </div>
         <br><br>
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-7 s">
+            <div class="col-12 col-lg-7 pane">
                 <table class="table table-bordered table-hover" id="consultaRegistros">
                     <thead id="header-table">
                         <tr>
                           <th colspan="4">Registros de Cumplimiento de Actividades</th>
                         </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>
@@ -171,21 +216,27 @@
                 </table>
             </div>
         </div>
+        <div class="row justify-content-center"><div class="col-md-8"><hr id="greenhr"></div></div>
+        <br>
+
+        <div class="row justify-content-center">
+          <h4>Cumplimiento de Actividades por Categoria</h4>
+        </div>
         <br>
         <div class="row justify-content-center">
           <div class="col-md-3">
-            <div class="card">
-              <div class="card-body bg-success" style="border-radius: 1rem;">
-                Cientifica<label class="float-right">(1)</label>
+            <div class="card" id="card_cientifica">
+              <div class="card-body" >
+                Cientifica<label id="count_cientifica" class="countlabel float-right"></label>
               </div>
             </div>
           </div>
           <div class="col-md-1">
           </div>
           <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Cultural<label class="float-right">(0)</label>
+            <div class="card" id="card_cultural">
+              <div class="card-body" >
+                Cultural<label id="count_cultural" class="countlabel float-right"></label>
               </div>
             </div>
           </div>
@@ -193,18 +244,18 @@
         <br>
         <div class="row justify-content-center">
           <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Vinculacion<label class="float-right">(0)</label>
+            <div class="card" id="card_vinculacion">
+              <div class="card-body" >
+                Vinculacion<label id="count_vinculacion" class="countlabel float-right"></label>
               </div>
             </div>
           </div>
           <div class="col-md-1">
           </div>
           <div class="col-md-3">
-            <div class="card">
-              <div class="card-body bg-success" style="border-radius: 1rem;">
-                Deportiva<label class="float-right">(1)</label>
+            <div class="card" id="card_deportiva">
+              <div class="card-body">
+                Deportiva<label id="count_deportiva" class="countlabel float-right"></label>
               </div>
             </div>
           </div>
@@ -212,16 +263,20 @@
         <br>
         <div class="row justify-content-center">
           <div class="col-md-3">
-            <div class="card">
-              <div class="card-body" style="border-radius: 1rem;">
-                Otros <label class="float-right">(0)</label>
+            <div class="card" id="card_responsabilidad_social">
+              <div class="card-body">
+                Responsabilidad Social <label id="count_responsabilidad_social" class="countlabel float-right"></label>
               </div>
             </div>
           </div>
         </div>
         <br>
 
+        <div id="cert_button">
 
+        </div>
+
+        <br>
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
             <form class="" action="../control/logout.php">
@@ -229,9 +284,13 @@
             </form>
           </div>
         </div>
+
+
+
       </div> <!-- Whole container -->
     </div> <!-- Entire content -->
     </div>
+
     <div style="height:60px"></div>
 
 

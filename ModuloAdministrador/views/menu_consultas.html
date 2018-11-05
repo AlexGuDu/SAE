@@ -10,7 +10,7 @@
 </head>
 
 
-<body onload="ConsultaDeAlumnos()">
+<body onload="ConsultaDeAlumnos(); makeAllSortable();">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -37,10 +37,10 @@
 
     <br>
     <!-- TABLA ACTIVIDADES -->
-    <div class="container">
+    <div class="container actnbar">
       <div class="row justify-content-center align-items-center">
-        <div class="col-md-1 col-sm-1">
-          <input type="button" name="" class="boton-regresar" value="regresar" id="regresar">
+        <div class="col-md-1 col-sm-1" >
+          <input type="button" name="" class="boton-regresar" id="regresar" style="padding: 1rem;">
         </div>
           <label> VISTA GENERAL </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label> PERIODO </label>  &nbsp;&nbsp;
@@ -54,35 +54,42 @@
       </div>
     </div>
 
-        <div class="row justify-content-center">
-            <div style="overflow-y:scroll; height:350px;">
-                <table class="table table-bordere" id="Alumnos" >
-                  <thead id="header-table"  style=" ">
-                      <tr>
-                          <th>#</th>
-                          <th>CARRERA</th>
-                          <th>MATRICULA</th>
-                          <th>ACTIVIDADES</th>
-                          <th>VINCULACION</th>
-                          <th>CIENTIFICA</th>
-                          <th>DEPORTIVA</th>
-                          <th>SOCIAL</th>
-                          <th>CULTURAL</th>
-                      </tr>
-                  </thead>
-                  <tbody style=" ">
-                    <!-- Cargar Folios - AJAX -->
 
-                    <!-- Cargar Folios - AJAX -->
-                  </tbody>
-              </table>
-            </div>
+
+    </div>
+        <br>
+        <div class="row justify-content-center">
+            <div id="entirePage" style="padding:2rem;">
+              <div style="overflow-y:scroll; height:350px; padding: 1rem;">
+                  <table class="table table-bordere" id="Alumnos" >
+                    <thead id="header-table"  style=" ">
+                        <tr>
+                            <th>#</th>
+                            <th style="cursor: pointer;">CARRERA</th>
+                            <th style="cursor: pointer;">MATRICULA</th>
+                            <th style="cursor: pointer;">ACTIVIDADES</th>
+                            <th style="cursor: pointer;">VINCULACION</th>
+                            <th style="cursor: pointer;">CIENTIFICA</th>
+                            <th style="cursor: pointer;">DEPORTIVA</th>
+                            <th style="cursor: pointer;">SOCIAL</th>
+                            <th style="cursor: pointer;">CULTURAL</th>
+                        </tr>
+                    </thead>
+                    <tbody style=" ">
+                      <!-- Cargar Folios - AJAX -->
+
+                      <!-- Cargar Folios - AJAX -->
+                    </tbody>
+                </table>
+              </div>
+            </div> <!-- entire page id -->
         </div>
+        <br>
     </div>
     <div class="container">
     <div class="row justify-content-center align-items-center">
-    <div class="col-md-1 col-sm-1">
-      <input type="button" name="" class="boton" value="Generar reporte" onclick="generarReporte()" id="reporte">
+    <div class="col-md-2 col-sm-2" >
+      <input style="height: 2.5rem;" type="button" name="" class="boton admbtn" value="Generar Reporte" onclick="generarReporte()" id="reporte">
     </div>
   </div>
 </div>

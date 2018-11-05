@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+Session_start();
+if(!isset($_SESSION['matricula'])){
+  $_SESSION['error']=2;
+	header('Location: ../index.php');
+}
+?>
+
 <html lang="en" dir="ltr">
 
 <head>
@@ -440,7 +448,7 @@
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <div class="form-group">
-                                <label>LUGAR DEL EVENTOO</label>
+                                <label>LUGAR DEL EVENTO</label>
                                 <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento" id="lugar_evento" >
                             </div>
                             <br>
