@@ -15,7 +15,7 @@ if(isset($_SESSION['matricula'])){
     <!-- BOOTSTRAP Y CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/css/home.css">
-    <title>SAE - Login</title>
+    <title>Login Alumnos</title>
 </head>
 
 <body>
@@ -48,15 +48,12 @@ if(isset($_SESSION['matricula'])){
 												</form>
                     </div>
 
-
+						
                     <button type="submit" id="iniciarSesion" form="ingresarForm">Iniciar</button> <br><br>
                     <?php
                     if(isset($_SESSION['error'])){
-                      if ($_SESSION['error']==1) {
+                      if ($_SESSION['error']=1) {
                         echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
-                      }
-											if ($_SESSION['error']==2) {
-                        echo '<p style="color:rgb(255,0,0);">Es necesario iniciar sesion primero.</p>';
                       }
                       unset($_SESSION['error']);
                     }

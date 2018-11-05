@@ -11,6 +11,6 @@ $aprobacionCoordinador = 1;
   $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
 
   $stament->execute();
-  header('Location: ../views/home.php');
+  header('Location: ../views/index.php');
 
 ?>

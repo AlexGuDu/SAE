@@ -83,6 +83,6 @@ session_start();
   $stament->bindParam(':aprobacionCoordinador', $aprobacionCoordinador);
   $stament->execute();
   unset( $_SESSION['matriculas']);
-  header('Location:../views/home.php');
+  header('Location:../views/index.php');
 
  ?>

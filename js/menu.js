@@ -33,15 +33,16 @@ window.addEventListener('click', clickOutside);
   var count_responsabilidad_social = document.getElementById('count_responsabilidad_social');
   var actividades_realizadas = document.getElementById('actividades_realizadas');
   var barra_progreso = document.getElementById('barra_progreso');
+  var cert_button = document.getElementById('cert_button');
 
 
 
   function openSolicitud(){
-    window.location.href = "../views/solicitud.html";
+    window.location.href = "../views/solciitud.php";
   }
 
   function openRegistro(){
-    window.location.href = "../views/registrar.html";
+    window.location.href = "../views/registrar.php";
   }
 
   function popSolicitud(folio){
@@ -120,6 +121,7 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
+    console.log(datos.count);
     for (var i = 1; i < datos.count; i=i+5) {
       if(datos[i+2]!=0){
         var msg = textoEstatus(datos[i+2]);
@@ -206,11 +208,17 @@ function ConsultaDeCumplimiento(){
         barra_progreso.style.fontWeight = 'bold';
         barra_progreso.classList.add('bg-warning');
         makeItRain();
+        cert_button.innerHTML= '<div class="row justify-content-center">'+
+                                  '<div class="col-md-3 col-sm-3">'+
+                                    '<button onClick="certPdf();" type="button" class="boton" name="button">IMPRIMIR CERTIFICADO</button>'+
+                                  '</div>'+
+                                '</div>';
       break;
 
       default:
       barra_progreso.innerHTML = 'Un error ha ocurrido!';
       barra_progreso.style.width = '33%';
+      barra_progreso.classList.add('bg-danger');
 
     }
 
@@ -251,6 +259,10 @@ function ConsultaDeCumplimiento(){
     }
 
   });
+}
+
+function certPdf(){
+    window.location.href = "../control/certificado.php";
 }
 
 

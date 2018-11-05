@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 
+<?php
+Session_start();
+if(!isset($_SESSION['matricula'])){
+  $_SESSION['error']=2;
+	header('Location: home.php');
+}
+?>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>SAE - Menu</title>
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -228,6 +236,11 @@
         </div>
         <br>
 
+        <div id="cert_button">
+
+        </div>
+
+        <br>
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
             <form class="" action="../control/logout.php">
@@ -235,6 +248,9 @@
             </form>
           </div>
         </div>
+
+
+
       </div> <!-- Whole container -->
     </div> <!-- Entire content -->
     </div>

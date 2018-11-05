@@ -21,7 +21,7 @@ Microsoft Excel™ 2007 shipped with a new file format, namely Microsoft Office 
 
 ### OOCalc
 
-aka Open Document Format (ODF) or OASIS, this is the OpenOffice.org XML File Format for spreadsheets. It comprises a zip archive including several components all of which are text files, most of these with markup in the eXtensible Markup Language (XML). It is the standard file format for OpenOffice.org Calc and StarCalc, and files typically have an extension of .ods. The published specification for the file format is available from the OASIS Open Office XML Format Technical Committee web page ([http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office#technical][5]). Other information is available from the OpenOffice.org XML File Format web page ([http://xml.openoffice.org/general.html][6]), part of the OpenOffice.org project.
+aka Open Document Format (ODF) or OASIS, this is the OpenOffice.org XML File Format for spreadsheets. It comprises a zip archive including several components all of which are text files, most of these with markup in the eXtensible Markup Language (XML). It is the standard file format for OpenOffice.org Calc and StarCalc, and files typically have an extension of .ods. The published specification for the file format is available from the OASIS Open Office XML Format Technical Committee web page ([http://www.oasis-open.org/committees/tc_index.php?wg_abbrev=office#technical][5]). Other information is available from the OpenOffice.org XML File Format web page ([http://xml.openoffice.org/general.html][6]), part of the OpenOffice.org project.
 
 ### SYLK
 
@@ -55,6 +55,6 @@ HyperText Markup Language (HTML) is the main markup language for creating web pa
   [2]: http://download.microsoft.com/download/2/4/8/24862317-78F0-4C4B-B355-C7B2C1D997DB/%5bMS-XLS%5d.pdf
   [3]: http://msdn.microsoft.com/en-us/library/aa140066%28office.10%29.aspx
   [4]: http://www.ecma-international.org/news/TC45_current_work/TC45_available_docs.htm
-  [5]: http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office
+  [5]: http://www.oasis-open.org/committees/tc_index.php?wg_abbrev=office
   [6]: http://xml.openoffice.org/general.html
   [7]: http://projects.gnome.org/gnumeric/doc/file-format-gnumeric.shtml
