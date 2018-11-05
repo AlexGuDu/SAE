@@ -31,11 +31,11 @@ var razon_propuesta_label = document.getElementById('razon_propuesta');
 var comentario_label = document.getElementById('comentario');
 
 function openActividades(){
-  window.location.href = "../views/menu_consultas.html";
+  window.location.href = "../views/menu_consultas.php";
 
 }
 function openAlumnos(){
-  window.location.href = "../views/menu_alumnos.html";
+  window.location.href = "../views/menu_alumnos.php";
 
 }
 

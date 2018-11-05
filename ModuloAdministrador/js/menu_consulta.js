@@ -1,7 +1,7 @@
 document.getElementById('regresar').addEventListener('click', openMenuAdministrador);
 
 function openMenuAdministrador(){
-  window.location.href = "../views/menu.html";
+  window.location.href = "../views/menu.php";
 }
 
 function generarReporte() {

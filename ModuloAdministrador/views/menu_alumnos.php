@@ -5,7 +5,7 @@
     <title>Alumnos</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/css/menu.css">
+    <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -55,8 +55,8 @@
 
 
         <div class="row justify-content-center">
-            <div class="col-25 col-lg-20 " style="overflow-y:scroll; height:350px;">
-                <table class="table table-bordered table-hover" id='consultaAlum' >
+            <div >
+                <table class="table table-bordered table-hover scroll" id='consultaAlum' >
 
                   <thead id="header-table">
                       <tr>

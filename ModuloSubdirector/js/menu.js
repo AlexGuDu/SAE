@@ -22,7 +22,7 @@ var maestro_responsable_label = document.getElementById('maestro_responsable');
 var razon_propuesta_label = document.getElementById('razon_propuesta');
 
 function openActividades(){
-  window.location.href = "../views/menu_consultas.html";
+  window.location.href = "../views/menu_consultas.php";
 }
 
   function popSolicitud(folio){

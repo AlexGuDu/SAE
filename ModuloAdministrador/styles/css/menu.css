@@ -65,7 +65,19 @@ html{
   border-width: 2px !important;
 }
 
+tbody, thead tr { display: block; }
+ tbody {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+ tbody td, thead th {
+    width: 140px;
+}
 
+ thead th:last-child {
+    width: 156px; /* 140px + 16px scrollbar width */
+}
 
 .btn{
 		border-radius: 15px;

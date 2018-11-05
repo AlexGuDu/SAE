@@ -13,5 +13,5 @@ $stament->bindParam(':correo', $correo);
 $stament->bindParam(':grupo', $grupo);
 $stament->bindParam(':telefono', $telefono);
 $stament->execute();
-header('Location: ../views/menu_alumnos.html');
+header('Location: ../views/menu_alumnos.php');
  ?>
