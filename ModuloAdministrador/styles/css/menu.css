@@ -1,5 +1,5 @@
 html{
-  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+  background: url("../../../assets/img/wbg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 .ball {
@@ -65,19 +65,6 @@ html{
   border-width: 2px !important;
 }
 
-tbody, thead tr { display: block; }
- tbody {
-    height: 400px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
- tbody td, thead th {
-    width: 140px;
-}
-
- thead th:last-child {
-    width: 156px; /* 140px + 16px scrollbar width */
-}
 
 .btn{
 		border-radius: 15px;
@@ -124,23 +111,23 @@ tbody, thead tr { display: block; }
 }
 
 .boton-regresar{
-	background-image: url(../../assets/img/regresar.png);
+	background-image: url(../../../assets/img/regresar.png);
   background-size: 2rem;
 	height: 50px;
 
 }
 
 .boton-add{
-		background-image: url(../../assets/img/exito.png);
+		background-image: url(../../../assets/img/exito.png);
 }
 
 .boton-del{
-		background-image: url(../../assets/img/error.png);
+		background-image: url(../../../assets/img/error.png);
 }
 
 
 .boton-plus{
-	background-image: url(../../assets/img/mas.png);
+	background-image: url(../../../assets/img/mas.png);
 }
 
 /* .botonsm:hover {

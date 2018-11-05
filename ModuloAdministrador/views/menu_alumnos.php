@@ -5,10 +5,25 @@
     <title>Alumnos</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/css/menu.css">
+    <link rel="stylesheet" href="../../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style media="screen">
+    tbody, thead tr { display: block; }
+     tbody {
+        height: 400px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+     tbody td, thead th {
+        width: 130px;
+    }
+
+     thead th:last-child {
+        width: 170px; /* 140px + 16px scrollbar width */
+    }
+    </style>
   </head>
 
 
