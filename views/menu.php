@@ -88,14 +88,21 @@ if(!isset($_SESSION['matricula'])){
               <label class="preview_label">Maestro Responsable:</label> <label id="maestro_responsable"></label> <br>
               <label class="preview_label">Razon de Propuesta:</label> <label id="razon_propuesta"></label>
             </div>
-          </div> <!-- Row #5 --> <br>
+          </div> <!-- Row #5 -->
+          <hr>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <label class="preview_label">Comentario por Administracion:</label> <label id="comentario"></label>
+            </div>
+          </div> <!-- Row #6 -->
+          <br>
           <div class="row">
             <div class="col-md-4 col-sm-4"></div>
             <div class="col-md-4 col-sm-4">
               <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
             </div>
             <div class="col-md-4 col-sm-4"></div>
-          </div> <!-- Row #6 -->
+          </div> <!-- Row #7 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->

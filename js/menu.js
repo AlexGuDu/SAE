@@ -20,6 +20,7 @@ window.addEventListener('click', clickOutside);
   var aspecto_profesional_label = document.getElementById('aspecto_profesional');
   var maestro_responsable_label = document.getElementById('maestro_responsable');
   var razon_propuesta_label = document.getElementById('razon_propuesta');
+  var comentario_label = document.getElementById('comentario');
   var materiaName;
   var card_cientifica = document.getElementById('card_cientifica');
   var card_cultural = document.getElementById('card_cultural');
@@ -90,6 +91,7 @@ window.addEventListener('click', clickOutside);
     maestro_responsable_label.innerHTML= datos.Maestro.toUpperCase();
     aspecto_profesional_label.innerHTML = datos.aspecto_pro.toUpperCase();
     razon_propuesta_label.innerHTML = datos.proponente.toUpperCase();
+    comentario_label.innerHTML = datos.comentario.toUpperCase();
     });
 
     solicitudPopup.style.display = 'block';
