@@ -41,7 +41,30 @@ function cerrarpopup() {
   comentarioDenegarS.style.display = 'none';
 }
 
+function cleanComment(){
+  document.getElementById('com_sol_aceptar').value="";
+  document.getElementById('com_sol_denegar').value="";
+  document.getElementById('com_reg_aceptar').value="";
+  document.getElementById('com_reg_denegar').value="";
+}
+
+
 function comentarioAceptaS(folio){
+  cleanComment();
+  var datosEnviados = {
+    'folio' : folio
+  }
+  $.ajax({
+    type : 'POST',
+    url : '../control/comentarioActividad.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(comentario){
+    document.getElementById('com_sol_aceptar').value=comentario;
+  });
+
   comentarioAceptarS.style.display = 'block';
   $('#sol_aceptar').click(function(){
    var datosEnviados = {
@@ -65,6 +88,21 @@ function comentarioAceptaS(folio){
 
 
  function comentarioRechazaS(folio){
+   cleanComment();
+   var datosEnviados = {
+     'folio' : folio
+   }
+   $.ajax({
+     type : 'POST',
+     url : '../control/comentarioActividad.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+   .done(function(comentario){
+     document.getElementById('com_sol_denegar').value=comentario;
+   });
+
    comentarioDenegarS.style.display = 'block';
     $('#sol_denegar').click(function(){
    var datosEnviados = {
@@ -87,6 +125,21 @@ function comentarioAceptaS(folio){
  }
 
 function comentarioAceptaR(folio, matricula){
+  cleanComment();
+  var datosEnviados = {
+    'folio' : folio
+  }
+  $.ajax({
+    type : 'POST',
+    url : '../control/comentarioActividad.php',
+    data : datosEnviados,
+    dataType : 'json',
+    encode : true
+  })
+  .done(function(comentario){
+    document.getElementById('com_reg_aceptar').value=comentario;
+  });
+
   comentarioAceptarR.style.display = 'block';
   $('#reg_aceptar').click(function(){
    var datosEnviados = {
@@ -110,6 +163,21 @@ function comentarioAceptaR(folio, matricula){
 
 
  function comentarioRechazaR(folio, matricula){
+   cleanComment();
+   var datosEnviados = {
+     'folio' : folio
+   }
+   $.ajax({
+     type : 'POST',
+     url : '../control/comentarioActividad.php',
+     data : datosEnviados,
+     dataType : 'json',
+     encode : true
+   })
+   .done(function(comentario){
+     document.getElementById('com_reg_denegar').value=comentario;
+   });
+
    comentarioDenegarR.style.display = 'block';
     $('#reg_denegar').click(function(){
    var datosEnviados = {
@@ -225,6 +293,13 @@ function consultaDeSolicitud(){
     encode : true
   })
   .done(function(datos){
+    if (datos.count == 1) {
+      $('#consultaSolicitud tbody').append(
+        '<tr>'+
+          '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+        '</tr>'
+      );
+    }
       for (var i = 1; i < datos.count; i=i+4) {
         $('#consultaSolicitud tbody').append(
           '<tr>'+
@@ -247,6 +322,13 @@ function consultaDeSolicitud(){
       encode : true
     })
     .done(function(datos){
+      if (datos.count == 1) {
+        $('#consultaRegistro tbody').append(
+          '<tr>'+
+            '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+          '</tr>'
+        );
+      }
         for (var i = 1; i < datos.count; i=i+4) {
           $('#consultaRegistro tbody').append(
             '<tr>'+
