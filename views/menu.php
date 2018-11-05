@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+Session_start();
+if(!isset($_SESSION['matricula'])){
+  $_SESSION['error']=2;
+	header('Location: home.php');
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -228,6 +236,11 @@
         </div>
         <br>
 
+        <div id="cert_button">
+
+        </div>
+
+        <br>
         <div class="row justify-content-center">
           <div class="col-md-2 col-sm-2">
             <form class="" action="../control/logout.php">
@@ -235,6 +248,9 @@
             </form>
           </div>
         </div>
+
+
+
       </div> <!-- Whole container -->
     </div> <!-- Entire content -->
     </div>

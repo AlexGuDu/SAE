@@ -48,12 +48,15 @@ if(isset($_SESSION['matricula'])){
 												</form>
                     </div>
 
-						
+
                     <button type="submit" id="iniciarSesion" form="ingresarForm">Iniciar</button> <br><br>
                     <?php
                     if(isset($_SESSION['error'])){
-                      if ($_SESSION['error']=1) {
+                      if ($_SESSION['error']==1) {
                         echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
+                      }
+											if ($_SESSION['error']==2) {
+                        echo '<p style="color:rgb(255,0,0);">Es necesario iniciar sesion primero.</p>';
                       }
                       unset($_SESSION['error']);
                     }
