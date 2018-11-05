@@ -16,6 +16,7 @@ if(!isset($_SESSION['matricula'])){
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -99,7 +100,7 @@ if(!isset($_SESSION['matricula'])){
           <div class="row">
             <div class="col-md-4 col-sm-4"></div>
             <div class="col-md-4 col-sm-4">
-              <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
+              <button id="cerrarPreview" class="boton fas fa-eye-slash" type="button" name="cerrar"></button>
             </div>
             <div class="col-md-4 col-sm-4"></div>
           </div> <!-- Row #7 -->
@@ -117,7 +118,6 @@ if(!isset($_SESSION['matricula'])){
       </div>
   </div>
   <br>
-
 
   <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
@@ -148,11 +148,11 @@ if(!isset($_SESSION['matricula'])){
                       <tr>
                         <th colspan="4">Solicitudes de Actividades</th>
                       </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>
-                            <th>Fecha</th>
+                            <th>Fecha de Emision</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -171,7 +171,7 @@ if(!isset($_SESSION['matricula'])){
                         <tr>
                           <th colspan="4">Registros de Cumplimiento de Actividades</th>
                         </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>
