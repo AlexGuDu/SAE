@@ -292,7 +292,10 @@ var conEmp = document.getElementById('contactoEmpresa');
 
 // S3
 var objEve = document.getElementById('objetivoEvento');
+var matFort = document.getElementById('materiaCB');
 var maeMat = document.getElementById('maestroMateria');
+var aspPro = document.getElementById('aspectoProfesional');
+var propAsi = document.getElementById('proponeAsistir')
 
 nextBtn_1.addEventListener('click', openSection_2);
 nextBtn_2.addEventListener('click', openSection_3);
@@ -442,15 +445,26 @@ window.addEventListener('click', clickOutside);
   function validateSection_3(){
     // Validar Section Three START
     var objetivoEvento = document.forms["entireForm"]["objetivoEvento"].value;
+    var materiaFortalecida = document.forms["entireForm"]["materiaFortalecida"].value;
     var maestroMateria = document.forms["entireForm"]["maestroMateria"].value;
-    // pending more inputs
+    var aspectoProfesional = document.forms["entireForm"]["aspectoProfesional"].value;
+    var proponeAsistir = document.forms["entireForm"]["proponeAsistir"].value;
 
-    if(objetivoEvento == "" || maestroMateria == ""){
+    if(objetivoEvento == "" || materiaFortalecida == "" || materiaFortalecida == 0 ||  maestroMateria == "" || aspectoProfesional == "" || aspectoProfesional == 0 || proponeAsistir == "" || proponeAsistir == 0){
       if (objetivoEvento == "") {
         objEve.style.backgroundColor = '#ffa76d';
       }
+      if ( materiaFortalecida == "" || materiaFortalecida == 0) {
+        matFort.style.backgroundColor = '#ffa76d';
+      }
       if (maestroMateria == "") {
         maeMat.style.backgroundColor = '#ffa76d';
+      }
+      if (aspectoProfesional == "" || aspectoProfesional == 0) {
+        aspPro.style.backgroundColor = '#ffa76d';
+      }
+      if (proponeAsistir == "" || proponeAsistir == 0) {
+        propAsi.style.backgroundColor = '#ffa76d';
       }
       warningModal.style.display = 'block';
       return false;
@@ -508,10 +522,18 @@ window.addEventListener('click', clickOutside);
   objEve.onclick = function(){
     objEve.style.backgroundColor = 'white';
   };
+  matFort.onclick = function(){
+    matFort.style.backgroundColor = 'white';
+  };
   maeMat.onclick = function(){
     maeMat.style.backgroundColor = 'white';
   };
-
+  aspPro.onclick = function(){
+    aspPro.style.backgroundColor = 'white';
+  };
+  propAsi.onclick = function(){
+    propAsi.style.backgroundColor = 'white';
+  };
 
 
 
