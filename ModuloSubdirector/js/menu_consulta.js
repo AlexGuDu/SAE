@@ -1,7 +1,7 @@
 document.getElementById('regresar').addEventListener('click', openMenuCoordinador);
 
 function openMenuCoordinador(){
-  window.location.href = "../views/menu.html";
+  window.location.href = "../views/menu.php";
 }
 // Ajax Tabla de Matriculas START
 function ConsultaDeAlumnos(){

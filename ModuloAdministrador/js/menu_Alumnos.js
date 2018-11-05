@@ -3,11 +3,11 @@ document.getElementById('regresar').addEventListener('click', openMenuAdministra
 
 
 function openMenuAdministrador(){
-  window.location.href = "../views/menu.html";
+  window.location.href = "../views/menu.php";
 }
 
 function openActividades(){
-  window.location.href = "../views/menu_consultas.html";
+  window.location.href = "../views/menu_consultas.php";
 }
 function modificarAlumno(matricula){
   var datosEnviados = {
