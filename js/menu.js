@@ -121,7 +121,13 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
-    console.log(datos.count);
+    if (datos.count == 1) {
+      $('#consultaSolicitudes tbody').append(
+        '<tr>'+
+          '<td colspan="4" class="table-emptymsg" >No hay actividades pendientes</td>'+
+        '</tr>'
+      );
+    }
     for (var i = 1; i < datos.count; i=i+5) {
       if(datos[i+2]!=0){
         var msg = textoEstatus(datos[i+2]);
@@ -146,8 +152,14 @@ function ConsultaDeActividades(){
     encode : true
   })
   .done(function(datos){
+    if (datos.count == 1) {
+      $('#consultaRegistros tbody').append(
+        '<tr>'+
+          '<td colspan="4" class="table-emptymsg" >No hay actividades pendientes</td>'+
+        '</tr>'
+      );
+    }
     for (var i = 1; i < datos.count; i=i+5) {
-
       if(datos[i+2]!=0){
         var msg = textoEstatus(datos[i+2]);
       } else {

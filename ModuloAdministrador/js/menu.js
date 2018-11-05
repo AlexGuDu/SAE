@@ -229,6 +229,13 @@ function consultaDeSolicitud(){
     encode : true
   })
   .done(function(datos){
+    if (datos.count == 1) {
+      $('#consultaSolicitud tbody').append(
+        '<tr>'+
+          '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+        '</tr>'
+      );
+    }
       for (var i = 1; i < datos.count; i=i+4) {
         $('#consultaSolicitud tbody').append(
           '<tr>'+
@@ -251,6 +258,13 @@ function consultaDeSolicitud(){
       encode : true
     })
     .done(function(datos){
+      if (datos.count == 1) {
+        $('#consultaRegistro tbody').append(
+          '<tr>'+
+            '<td colspan="5" class="table-emptymsg" >No hay actividades pendientes</td>'+
+          '</tr>'
+        );
+      }
         for (var i = 1; i < datos.count; i=i+4) {
           $('#consultaRegistro tbody').append(
             '<tr>'+

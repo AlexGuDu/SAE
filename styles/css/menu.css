@@ -149,6 +149,12 @@ html{
 	background-color: #187f48;
 }
 
+.table-emptymsg{
+  text-align: center;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
 
 .modal{
 		display: none;
@@ -176,6 +182,10 @@ html{
 #Header{
 	animation-name: slideHeader;
 	animation-duration: 1s;
+}
+
+#barra_progreso{
+  font-size: 1.5rem;
 }
 
 
