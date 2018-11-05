@@ -446,7 +446,7 @@ if(!isset($_SESSION['matricula'])){
                     <div class="row justify-content-center">
                         <div class="col-12">
                             <div class="form-group">
-                                <label>LUGAR DEL EVENTOO</label>
+                                <label>LUGAR DEL EVENTO</label>
                                 <input type="text" class="form-control" placeholder="ej. CECUT" name="lugar_evento" id="lugar_evento" >
                             </div>
                             <br>
