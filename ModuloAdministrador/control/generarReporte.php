@@ -1,14 +1,14 @@
 <?php
-
+$date = date("Y-m-d");
 header('Content-Type: application/vnd.ms-excel');
-header('Content-Disposition: attachment; filename=reporte.xls');
+header('Content-Disposition: attachment; filename=reporte'.$date.'.xls');
 
 require('../../config/PHPExcel-1.8/Classes/PHPExcel.php');
 
 $excel = new PHPExcel();
 
-$excel->getProperties()->setCreator('Sae')->setLastModifiedBy('Sae')->
-        setTitle('Reporte');
+$excel->getProperties()->setCreator('SAE')->setLastModifiedBy('SAE')->
+        setTitle('Reporte'.$date);
 
 $excel->setActiveSheetIndex(0);
 
