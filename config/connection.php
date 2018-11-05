@@ -1,9 +1,20 @@
 <?php
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db = substr($cleardb_url["path"], 1);
 
-define('SERVER', 'us-cdbr-iron-east-01.cleardb.net');
-define('DATABASE', 'heroku_26c40112c9d3cd0');
-define('USERNAME', 'b1fc433e9998d9');
-define('PASSWORD', '813a4239');
+// define('SERVER', 'localhost');
+// define('DATABASE', 'sae');
+// define('USERNAME', 'root');
+// define('PASSWORD', '');
+
+define('SERVER', $cleardb_server);
+define('USERNAME', $cleardb_username);
+define('PASSWORD', $cleardb_password);
+define('DATABASE', $cleardb_db);
+
 
 try {
   $dbh = new PDO(
