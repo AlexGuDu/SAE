@@ -19,7 +19,7 @@ foreach ($statement as $row):
 endforeach;
 $total = $act01+$act02+$act03+$act04+$act05;
 
-if ($total <= 5) {
+if ($total < 5) {
   header('Location: ../views/menu.php');
 }
 

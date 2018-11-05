@@ -179,9 +179,8 @@ if(!isset($_SESSION['matricula'])){
                 </table>
             </div>
         </div>
-        <hr>
+        <div class="row justify-content-center"><div class="col-md-8"><hr id="greenhr"></div></div>
         <br>
-
 
         <div class="row justify-content-center">
           <h4>Cumplimiento de Actividades por Categoria</h4>
