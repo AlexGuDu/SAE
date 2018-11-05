@@ -5,10 +5,10 @@ $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
 $cleardb_db = substr($cleardb_url["path"], 1);
 
-// define('SERVER', 'localhost');
-// define('DATABASE', 'sae');
-// define('USERNAME', 'root');
-// define('PASSWORD', '');
+// $cleardb_server = 'localhost';
+// $cleardb_username = 'root';
+// $cleardb_password = '';
+// $cleardb_db = 'sae';
 
 define('SERVER', $cleardb_server);
 define('USERNAME', $cleardb_username);

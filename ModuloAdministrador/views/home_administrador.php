@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
-    <title>Login Alumnos</title>
+    <title>SAE - Login Administrador</title>
 </head>
 
 <body>
