@@ -9,9 +9,10 @@ html{
 }
 
 #entirePage {
+
 		box-shadow: 0 5px 8px 0 rgba(0,0,0,0.4), 0 7px 20px 0 rgba(0,0,0,0.4);
 		border-radius: 35px;
-		background: #F4F4F4FF;
+		background:rgba(244, 244, 244, 0.5);
 		height: auto;
 		width: auto;
 		padding-top: 20px;
@@ -36,6 +37,11 @@ html{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#greenhr{
+  background-color: green;
+  opacity: 0.5;
 }
 
 .estatus{
