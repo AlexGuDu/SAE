@@ -24,6 +24,7 @@ if ($total < 5) {
 }
 
 $pdf = new FPDF();
+$pdf->SetTitle('sae'.$matricula);
 $pdf->AddPage();
 $pdf->SetFont('Helvetica','',16);
 
@@ -54,5 +55,5 @@ $pdf->SetFont('Helvetica','B',16);
 $pdf->Cell(65,10,  "Total:", 1, 0);
 $pdf->Cell(20,10,  $total, 1, 1, 'C');
 
-$pdf->Output();
+$pdf->Output('D', ('sae'.$matricula.'.pdf'));
 ?>
