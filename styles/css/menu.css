@@ -188,6 +188,42 @@ html{
   font-size: 1.5rem;
 }
 
+.stripe {
+  height: 1.8rem;
+
+}
+.stripe__segment {
+  width: 12.5%;
+  height: 100%;
+  float: left;
+}
+
+.stripe__segment:nth-child(1) {
+  background-color: #21275b;
+}
+.stripe__segment:nth-child(2) {
+  background-color: #71c596;
+}
+.stripe__segment:nth-child(3) {
+  background-color: #069cdb;
+}
+.stripe__segment:nth-child(4) {
+  background-color: #ed6752;
+}
+.stripe__segment:nth-child(5) {
+  background-color: #f09e52;
+}
+.stripe__segment:nth-child(6) {
+  background-color: #39beb8;
+}
+.stripe__segment:nth-child(7) {
+  background-color: #015e85;
+}
+.stripe__segment:nth-child(8) {
+  background-color: #006e61;
+}
+
+
 
 @keyframes slideHeader{
     from{

@@ -16,6 +16,7 @@ if(!isset($_SESSION['matricula'])){
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -36,6 +37,22 @@ if(!isset($_SESSION['matricula'])){
     <div id="solicitudPopup" class="modal">
       <div id="entirePopup" class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-7">
         <div class="container">
+          <div class="row" id="stripe_1">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-12 col-sm-12">
+              <div class="stripe" >
+                <div class="stripe__segment" style="border-radius: 10rem 0 0 2rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 10rem 2rem 0;"></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+          </div> <!-- Row #0 --> <br>
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Territorio:</label> <label id="territorio"></label> <br>
@@ -57,10 +74,7 @@ if(!isset($_SESSION['matricula'])){
               <label class="preview_label">Hora Inicial de Evento:</label> <label id="hora_inicial"></label>
             </div>
           </div><!-- Row #2 -->
-
-
           <hr>
-
           <div class="row">
             <div class="col-md-6 col-sm-6">
               <label class="preview_label">Nombre de la Empresa:</label> <label id="nombre_empresa"></label> <br>
@@ -99,10 +113,27 @@ if(!isset($_SESSION['matricula'])){
           <div class="row">
             <div class="col-md-4 col-sm-4"></div>
             <div class="col-md-4 col-sm-4">
-              <input id="cerrarPreview" class="boton" type="button" name="cerrar" value="CERRAR">
+              <button id="cerrarPreview" class="boton fas fa-eye-slash" type="button" name="cerrar"></button>
             </div>
             <div class="col-md-4 col-sm-4"></div>
           </div> <!-- Row #7 -->
+          <br>
+          <div class="row">
+            <div class="col-md-4 col-sm-4"></div>
+            <div class="col-md-12 col-sm-12">
+              <div class="stripe">
+                <div class="stripe__segment" style="border-radius: 2rem 0 0 10rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 2rem 10rem 0;"></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4"></div>
+          </div> <!-- Row #8 -->
         </div> <!-- Container -->
       </div> <!-- Entire Page -->
     </div> <!-- Modal -->
@@ -117,7 +148,6 @@ if(!isset($_SESSION['matricula'])){
       </div>
   </div>
   <br>
-
 
   <div id="entirePage" class="col-md-8 col-sm-8">
     <!-- BOTONES ACTIVIDAD -->
@@ -148,11 +178,11 @@ if(!isset($_SESSION['matricula'])){
                       <tr>
                         <th colspan="4">Solicitudes de Actividades</th>
                       </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>
-                            <th>Fecha</th>
+                            <th>Fecha de Emision</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -171,7 +201,7 @@ if(!isset($_SESSION['matricula'])){
                         <tr>
                           <th colspan="4">Registros de Cumplimiento de Actividades</th>
                         </tr>
-                        <tr class="header-table-columns">
+                        <tr class="header-table-columns" style="text-align:center;">
                             <th>Actividades</th>
                             <th>Estatus</th>
                             <th>Consulta</th>

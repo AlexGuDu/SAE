@@ -137,10 +137,10 @@ function ConsultaDeActividades(){
         var msg = textoEstatus(datos[i+1]);
       }
       $('#consultaSolicitudes tbody').append(
-          '<tr>'+
+          '<tr style="text-align:center;">'+
             '<td>'+datos[i]+'</td>'+
             '<td>'+msg+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'</td>'+
             '<td>'+datos[i+3]+'</td>'+
           '</tr>'
       );
@@ -168,10 +168,10 @@ function ConsultaDeActividades(){
         var msg = textoEstatus(datos[i+1]);
       }
       $('#consultaRegistros tbody').append(
-          '<tr>'+
+          '<tr style="text-align:center;">'+
             '<td>'+datos[i]+'</td>'+
             '<td>'+msg+'</td>'+
-            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default" type="button" name="button" id="popup_test">Consultar</button>'+'</td>'+
+            '<td>'+'<button onclick="popSolicitud('+datos[i+4]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'</td>'+
             '<td>'+datos[i+3]+'</td>'+
           '</tr>'
       );
