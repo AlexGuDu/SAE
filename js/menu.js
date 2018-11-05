@@ -38,7 +38,7 @@ window.addEventListener('click', clickOutside);
 
 
   function openSolicitud(){
-    window.location.href = "../views/solciitud.php";
+    window.location.href = "../views/solicitud.php";
   }
 
   function openRegistro(){
