@@ -37,10 +37,10 @@
 
     <br>
     <!-- TABLA ACTIVIDADES -->
-    <div class="container">
+    <div class="container actnbar">
       <div class="row justify-content-center align-items-center">
         <div class="col-md-1 col-sm-1">
-          <input type="button" name="" class="boton-regresar" value="regresar" id="regresar">
+          <input type="button" name="" class="boton-regresar" id="regresar" style="padding: 1rem;">
         </div>
           <label> VISTA GENERAL </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <label> PERIODO </label>  &nbsp;&nbsp;
@@ -53,9 +53,11 @@
 
       </div>
     </div>
+    <br>
 
         <div class="row justify-content-center">
-            <div style="overflow-y:scroll; height:350px;">
+          <div id="entirePage"  style="padding:2rem;">
+            <div style="overflow-y:scroll; height:350px;"  style="padding:2rem;">
                 <table class="table table-bordere" id="Alumnos" >
                   <thead id="header-table"  style=" ">
                       <tr>
@@ -77,6 +79,7 @@
                   </tbody>
               </table>
             </div>
+          </div>
         </div>
     </div>
     <!-- FIN TABLA ACTIVIDADES -->
