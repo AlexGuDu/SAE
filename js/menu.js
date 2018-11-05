@@ -116,6 +116,8 @@ window.addEventListener('click', clickOutside);
 
 // Ajax Tabla de Solicitudes
 function ConsultaDeActividades(){
+  $('#consultaSolicitudes tbody').empty();
+  $('#consultaRegistros tbody').empty();
   $.ajax({
     type : 'POST',
     url : '../control/consultaSolicitudes.php',
