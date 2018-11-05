@@ -2,7 +2,7 @@
 <?php
 Session_start();
 if(isset($_SESSION['matricula'])){
-	header('Location: menu.php');
+	header('Location: views/menu.php');
 }
 ?>
 <html lang="en">
@@ -15,7 +15,7 @@ if(isset($_SESSION['matricula'])){
     <!-- BOOTSTRAP Y CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/css/home.css">
-    <title>Login Alumnos</title>
+    <title>SAE - Login</title>
 </head>
 
 <body>

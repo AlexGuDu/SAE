@@ -4,7 +4,7 @@
 Session_start();
 if(!isset($_SESSION['matricula'])){
   $_SESSION['error']=2;
-	header('Location: home.php');
+	header('Location: ../index.php');
 }
 ?>
 
