@@ -15,6 +15,7 @@ if(!isset($_SESSION['matricula'])){
     <title>Solicitud de Permiso</title>
     <!-- Bootstrap and CSS styles -->
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="../styles/css/solicitud.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- JQUERY -->
@@ -30,6 +31,7 @@ if(!isset($_SESSION['matricula'])){
             $("#Header").load("shared/_header-sae.php #header-sae");
         </script>
     </div><br>
+
     <!-- FIN HEADER  -->
 
     <div id="form_titulo" class="container">
@@ -405,7 +407,7 @@ if(!isset($_SESSION['matricula'])){
 
                         <div class="col-md-7 col-sm-7">
                             <div class="form-group">
-                                <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
+                                <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN: <sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Tu matricula ya está ingresada"></span></sup> </label>
                                 <div class="input-group">
                                     <input type="text" class="form-control form-control-lg" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingresar_matricula">
                                     <div class="input-group-append">

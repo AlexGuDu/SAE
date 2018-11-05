@@ -34,7 +34,7 @@ $stament->execute();
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
                 </div>
                 <div class="col-2 col-md-1 align-self-start">
-                    <img src="../assets/img/interrogacion.png" class="img-fluid" id="interrogacion">
+                    <img src="../assets/img/interrogacion.png" class="img-fluid" id="interrogacion" data-toggle="tooltip" data-placement="bottom" title="">
                 </div>
             </div>
         </div>
@@ -70,5 +70,11 @@ $stament->execute();
 
 </body>
 <script src="../../js/header-sae.js"></script>
+<script src="../../assets/popper/popper.min.js"></script>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+</script>
 
 </html>

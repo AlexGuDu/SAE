@@ -15,6 +15,7 @@ if(!isset($_SESSION['matricula'])){
     <title>Registro de actividad</title>
     <!-- Bootstrap and CSS styles -->
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="../styles/css/registrar.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
@@ -132,7 +133,7 @@ if(!isset($_SESSION['matricula'])){
                     <div class="col"> </div>
                     <div class="col-11 col-md-7">
                         <div class="form-group">
-                            <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN:</label>
+                            <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN: <sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Tu matricula ya está ingresada"></span></sup></label>
                             <div class="input-group">
                                 <input id="ingresar_matricula" type="text" class="form-control" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
