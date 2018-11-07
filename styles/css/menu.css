@@ -58,6 +58,9 @@ html{
     width: 110px;
 }
 
+.scroll>thead th {
+   cursor: pointer;
+}
  .scroll>thead th:last-child {
     width: 126px; /* 140px + 16px scrollbar width */
 }
