@@ -572,6 +572,10 @@ var previousBtn_1 = document.getElementById('previousBtn_one')
 var previousBtn_2 = document.getElementById('previousBtn_two')
 var registrarActividad = document.getElementById('registrarActividad');
 
+var progress1 = document.getElementById('bubble1');
+var progress2 = document.getElementById('bubble2');
+var progress3 = document.getElementById('bubble3');
+
 // Utilizadas para el cambio de colores dependiendo de campo vacio o seleccionado
 // S1
 var t_e = document.getElementById('eventoSelector');
@@ -617,6 +621,7 @@ var propAsi = document.getElementById('proponeAsistir')
     function returnToSection_1(){
       section_1.style.display = 'block'
       section_2.style.display = 'none'
+      progress2.setAttribute("class"," ");
     }
 
     // Regresar a Section TWO
@@ -624,6 +629,7 @@ var propAsi = document.getElementById('proponeAsistir')
       section_2.style.display = 'block';
       section_1.style.display = 'none'
       section_3.style.display = 'none'
+      progress3.setAttribute("class"," ");
     }
 
     // Validar Section One START
@@ -656,12 +662,14 @@ var propAsi = document.getElementById('proponeAsistir')
           section_2.style.display = 'block';
           section_1.style.display = 'none';
           section_3.style.display = 'none';
+          progress2.setAttribute("class", "completed");
         }
       } // if solicitud
       else {
         section_2.style.display = 'block';
         section_1.style.display = 'none';
         section_3.style.display = 'none';
+        progress2.setAttribute("class", "completed");
       }
     }
 
@@ -681,6 +689,7 @@ var propAsi = document.getElementById('proponeAsistir')
       } else {
         section_2.style.display = 'none';
         section_3.style.display = 'block';
+        progress3.setAttribute("class","completed");
       }
     }
 

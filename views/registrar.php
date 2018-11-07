@@ -16,6 +16,7 @@ if(!isset($_SESSION['matricula'])){
     <!-- Bootstrap and CSS styles -->
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/progressbar/progress-wizard.min.css" rel="stylesheet">
     <link href="../styles/css/registrar.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
@@ -37,7 +38,21 @@ if(!isset($_SESSION['matricula'])){
     </div>
 
     <form name="entireForm" action="../control/registroRegistrar.php" method="post" onsubmit="return validateSection_3();">
-        <div style="height:30px"></div>
+        <div style="height:55px">
+          <ul class="progress-indicator stepped">
+            <li class="completed" id="bubble1">
+              <span class="bubble"> </span>
+                <h5>1</h5>
+            </li>
+            <li class="" id="bubble2">
+              <span class="bubble"> </span>
+                <h5>2</h5>
+            </li>
+            <li class="" id="bubble3">
+              <span class="bubble"> </span>
+                <h5>3</h5>
+            </li>
+          </ul></div>
         <div id="entirePage">
             <!-- FIRST ROW CONTAINING DROPDOWNS, MATRICULA INPUT AND TABLE -->
             <div id="section_one">
