@@ -1,5 +1,5 @@
 html{
-  background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
+ background: url("../../assets/img/wbg.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -86,9 +86,7 @@ html{
 .boton-del{
 		background-image: url(../../assets/img/error.png);
 }
-.progress-indicator li{
-  height: 100%;
-}
+
  #header-sae{
      animation-name: slideHeader;
      animation-duration: 1s;

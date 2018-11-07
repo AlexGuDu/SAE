@@ -268,6 +268,11 @@ var nextBtn_1 = document.getElementById('nextBtn_one')
 var nextBtn_2 = document.getElementById('nextBtn_two')
 var previousBtn_1 = document.getElementById('previousBtn_one')
 var previousBtn_2 = document.getElementById('previousBtn_two')
+
+var progress1 = document.getElementById('bubble1');
+var progress2 = document.getElementById('bubble2');
+var progress3 = document.getElementById('bubble3');
+
 // var solicitarPermiso = document.getElementById('solicitarPermiso');
 
 
@@ -325,6 +330,7 @@ window.addEventListener('click', clickOutside);
   function returnToSection_1(){
     section_1.style.display = 'block'
     section_2.style.display = 'none'
+    progress2.setAttribute("class"," ");
   }
 
   // Regresar a Section TWO
@@ -332,6 +338,7 @@ window.addEventListener('click', clickOutside);
     section_2.style.display = 'block';
     section_1.style.display = 'none'
     section_3.style.display = 'none'
+    progress3.setAttribute("class"," ");
   }
 
   // Validar Section One START
@@ -377,6 +384,7 @@ window.addEventListener('click', clickOutside);
         section_2.style.display = 'block';
         section_1.style.display = 'none'
         section_3.style.display = 'none'
+        progress2.setAttribute("class", "completed");
       }
     }
     if (terrFlag == "ext") {
@@ -411,6 +419,7 @@ window.addEventListener('click', clickOutside);
         section_2.style.display = 'block';
         section_1.style.display = 'none'
         section_3.style.display = 'none'
+        progress2.setAttribute("class","completed");
       }
     }
 
@@ -439,6 +448,7 @@ window.addEventListener('click', clickOutside);
     } else {
       section_2.style.display = 'none'
       section_3.style.display = 'block';
+      progress3.setAttribute("class","completed");
     }
   }
 
