@@ -131,8 +131,7 @@ function genGraph(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true,
-                        max: 20
+                        beginAtZero:true
                     }
                 }]
             }
