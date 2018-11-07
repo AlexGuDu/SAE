@@ -3,10 +3,11 @@
     <meta charset="UTF-8">
     <title>Menu</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/css/menu.css">
+    <link rel="stylesheet" href="../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/chart/Chart.js"></script>
     <style media="screen">
     tbody, thead tr { display: block; }
      tbody {
@@ -25,7 +26,7 @@
 </head>
 
 
-<body onload="ConsultaDeAlumnos(); makeAllSortable();">
+<body onload="ConsultaDeAlumnos(); makeAllSortable(); genGraph();">
     <br>
     <!-- HEADER -->
     <div id="Header">
@@ -107,7 +108,57 @@
       <input style="height: 2.5rem;" type="button" name="" class="boton admbtn" value="Generar Reporte" onclick="generarReporte()" id="reporte">
     </div>
   </div>
-</div>
+</div> <br>
+
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="entirePageClass" id="box-myChart" style="padding:2rem;">
+        <canvas id="myChart" ></canvas>
+    </div>
+    <div class="entirePageClass" id="box-chartLAE" style="padding:2rem;" hidden="true">
+        <canvas id="chartLAE" ></canvas>
+    </div>
+    <div class="entirePageClass" id="box-chartLI" style="padding:2rem;" hidden="true">
+        <canvas id="chartLI" ></canvas>
+    </div>
+    <div class="entirePageClass"id="box-chartLNI" style="padding:2rem;" hidden="true">
+        <canvas id="chartLNI" ></canvas>
+    </div>
+    <div class="entirePageClass" id="box-chartLC" style="padding:2rem;" hidden="true">
+        <canvas id="chartLC" ></canvas>
+    </div>
+  </div>
+</div><br><br>
+
+
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-2 col-sm-2" >
+      <button id="graphLAE" class="boton admbtn" type="button" name="button">ESTADISTICA LAE</button>
+    </div>
+    <div class="col-md-2 col-sm-2" >
+      <button id="graphLI" class="boton admbtn" type="button" name="button">ESTADISTICA LI</button>
+    </div>
+  </div> <br>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-2 col-sm-2" >
+      <button id="graphLNI" class="boton admbtn" type="button" name="button">ESTADISTICA LNI</button>
+    </div>
+    <div class="col-md-2 col-sm-2" >
+      <button id="graphLC" class="boton admbtn" type="button" name="button">ESTADISTICA LC</button>
+    </div>
+  </div> <br>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-4 col-sm-4" >
+      <button id="graphALL" class="boton admbtn" type="button" name="button">ESTADISTICA GENERAL</button>
+    </div>
+  </div>
+</div> <br>
+
+
+
+
+<br>
     <!-- FIN TABLA ACTIVIDADES -->
     <script src="../../assets/bootstrap/bootstrap.min.js"></script>
     <script src="../js/menu_consulta.js"></script>
