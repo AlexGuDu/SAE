@@ -8,19 +8,7 @@
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <style media="screen">
-    tbody, thead tr { display: block; }
-     tbody {
-        height: 400px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-     tbody td, thead th {
-        width: 110px;
-    }
 
-     thead th:last-child {
-        width: 126px; /* 140px + 16px scrollbar width */
-    }
     </style>
 </head>
 
