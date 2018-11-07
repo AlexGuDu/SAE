@@ -192,7 +192,7 @@ function genGraphCarrera(carrera){
     var conteo_01 = conteo_por_actividad.vinculacion;
     var conteo_02 = conteo_por_actividad.cientifica;
     var conteo_03 = conteo_por_actividad.deportiva;
-    var conteo_04 = conteo_por_actividad.repsonsabilidad;
+    var conteo_04 = conteo_por_actividad.responsabilidad;
     var conteo_05 = conteo_por_actividad.cultural;
 
     var ctx = document.getElementById(graphToGenerate).getContext('2d');
