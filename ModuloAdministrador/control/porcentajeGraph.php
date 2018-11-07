@@ -21,7 +21,7 @@ foreach ($stament as $filas):
   $totalAlumnos_LAE = $totalAlumnos_LAE + 1;
 endforeach;
 
-$porcentajes['porcentaje_LAE']= $totalAlumnos_LAE_CACECA / $totalAlumnos_LAE;
+$porcentajes['porcentaje_LAE']= ($totalAlumnos_LAE_CACECA*100) / $totalAlumnos_LAE;
 //Alumnos Admin Final
 
 //Alumnos INFO Inicio
@@ -36,7 +36,7 @@ foreach ($stament as $filas):
   $totalAlumnos_LI = $totalAlumnos_LI + 1;
 endforeach;
 
-$porcentajes['porcentaje_LI']= $totalAlumnos_LI_CACECA / $totalAlumnos_LI;
+$porcentajes['porcentaje_LI']= ($totalAlumnos_LI_CACECA*100) / $totalAlumnos_LI;
 //Alumnos INFO Final
 
 //Alumnos NEGO-IN Inicio
@@ -51,7 +51,7 @@ foreach ($stament as $filas):
   $totalAlumnos_LNI = $totalAlumnos_LNI + 1;
 endforeach;
 
-$porcentajes['porcentaje_LNI']= $totalAlumnos_LNI_CACECA / $totalAlumnos_LNI;
+$porcentajes['porcentaje_LNI']= ($totalAlumnos_LNI_CACECA*100) / $totalAlumnos_LNI;
 //Alumnos NEGO-IN Final
 
 //Alumnos CONTA Inicio
@@ -66,7 +66,7 @@ foreach ($stament as $filas):
   $totalAlumnos_LC = $totalAlumnos_LC + 1;
 endforeach;
 
-$porcentajes['porcentaje_LC']= $totalAlumnos_LC_CACECA / $totalAlumnos_LC;
+$porcentajes['porcentaje_LC']= ($totalAlumnos_LC_CACECA*100) / $totalAlumnos_LC;
 //Alumnos CONTA Fin
 
 echo json_encode($porcentajes);

@@ -180,6 +180,7 @@ function genGraphCarrera(carrera){
   var datosEnviados = {
     'carrera' : carrera
   };
+  var tituloGraph = "ACTIVIDADES CUMPLIDAS POR " + carrera;
   $.ajax({
     type : 'POST',
     url : '../control/porcentajeGraph_porCarrera.php',
@@ -188,7 +189,6 @@ function genGraphCarrera(carrera){
     encode : true
   })
   .done(function(conteo_por_actividad){
-    console.log(carrera);
     var conteo_01 = conteo_por_actividad.vinculacion;
     var conteo_02 = conteo_por_actividad.cientifica;
     var conteo_03 = conteo_por_actividad.deportiva;
@@ -199,9 +199,9 @@ function genGraphCarrera(carrera){
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Vinculacion", "Cientifica", "Deportiva", "responsabilidad Social", "Cultural"],
+            labels: ["Vinculacion", "Cientifica", "Deportiva", "Responsabilidad Social", "Cultural"],
             datasets: [{
-                label: 'Cantidad de Actividades Cumplidas',
+                label: tituloGraph,
                 data: [conteo_01, conteo_02, conteo_03, conteo_04, conteo_05],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
