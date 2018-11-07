@@ -9,21 +9,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <style media="screen">
-    tbody, thead tr { display: block; }
-     tbody {
-        height: 400px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-     tbody td, thead th {
-        width: 130px;
-    }
-
-     thead th:last-child {
-        width: 170px; /* 140px + 16px scrollbar width */
-    }
-    </style>
   </head>
 
 
@@ -72,7 +57,6 @@
         <div class="row justify-content-center">
             <div >
                 <table class="table table-bordered table-hover scroll" id='consultaAlum' >
-
                   <thead id="header-table">
                       <tr>
                           <th>Acciones<sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Modificar datos de alumno"></th>

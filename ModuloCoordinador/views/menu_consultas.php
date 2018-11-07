@@ -7,21 +7,6 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <style media="screen">
-    tbody, thead tr { display: block; }
-     tbody {
-        height: 400px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-     tbody td, thead th {
-        width: 110px;
-    }
-
-     thead th:last-child {
-        width: 126px; /* 140px + 16px scrollbar width */
-    }
-    </style>
 </head>
 
 
@@ -102,19 +87,7 @@
     <script src="../js/menu_consulta.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
-     // Write on keyup event of keyword input element
-     $(document).ready(function(){
-     $("#search").keyup(function(){
-     _this = this;
-     // Show only matching TR, hide rest of them
-     $.each($("#Alumnos tbody tr"), function() {
-     if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
-     $(this).hide();
-     else
-     $(this).show();
-     });
-     });
-    });
+
     </script>
 </body>
 

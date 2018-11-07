@@ -67,15 +67,15 @@
                   <table class="table table-bordere scroll" id="Alumnos" >
                     <thead id="header-table"  style=" ">
                         <tr>
-                            <th style="cursor: pointer;">#</th>
-                            <th style="cursor: pointer;">CARRERA</th>
-                            <th style="cursor: pointer;">MATRICULA</th>
-                            <th style="cursor: pointer;">ACTIVIDADES</th>
-                            <th style="cursor: pointer;">VINCULACION</th>
-                            <th style="cursor: pointer;">CIENTIFICA</th>
-                            <th style="cursor: pointer;">DEPORTIVA</th>
-                            <th style="cursor: pointer;">SOCIAL</th>
-                            <th style="cursor: pointer;">CULTURAL</th>
+                            <th >#</th>
+                            <th >CARRERA</th>
+                            <th >MATRICULA</th>
+                            <th >ACTIVIDADES</th>
+                            <th >VINCULACION</th>
+                            <th >CIENTIFICA</th>
+                            <th >DEPORTIVA</th>
+                            <th >SOCIAL</th>
+                            <th >CULTURAL</th>
                         </tr>
                     </thead>
                     <tbody style=" ">
@@ -100,23 +100,6 @@
     <script src="../../assets/bootstrap/bootstrap.min.js"></script>
     <script src="../js/menu_consulta.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script>
-
-    // Write on keyup event of keyword input element
-    $(document).ready(function(){
-    $("#search").keyup(function(){
-    _this = this;
-    // Show only matching TR, hide rest of them
-    $.each($("#Alumnos tbody tr"), function() {
-    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
-    $(this).hide();
-    else
-    $(this).show();
-    });
-    });
-   });
-
-    </script>
 </body>
 
 </html>
