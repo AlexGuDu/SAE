@@ -10,10 +10,10 @@ $cleardb_username = 'root';
 $cleardb_password = '';
 $cleardb_db = 'sae';
 
-// define('SERVER', $cleardb_server);
-// define('USERNAME', $cleardb_username);
-// define('PASSWORD', $cleardb_password);
-// define('DATABASE', $cleardb_db);
+define('SERVER', $cleardb_server);
+define('USERNAME', $cleardb_username);
+define('PASSWORD', $cleardb_password);
+define('DATABASE', $cleardb_db);
 
 
 try {
