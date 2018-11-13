@@ -27,9 +27,6 @@
       <div class="col-md-1 col-sm-1">
         <input type="button" name="" class="boton-regresar admbtn" id="regresar" style="padding: 1rem;">
       </div>
-      <div class="col-md-3 col-sm-3">
-        <input type="button" name="" class="boton admbtn" value="Registrar" id="registrar">
-      </div>
     </div>
 
     <!-- BOTONES ACTIVIDAD -->
@@ -56,7 +53,7 @@
 
         <div class="row justify-content-center">
             <div >
-                <table class="table table-bordered table-hover scroll" id='consultaAlum' >
+                <table class="table table-bordered table-hover tablaAlumnos" id='consultaAlum' >
                   <thead id="header-table">
                       <tr>
                           <th>Acciones<sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Modificar datos de alumno"></th>

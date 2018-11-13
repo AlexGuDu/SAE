@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php
 Session_start();
 if(!isset($_SESSION['matricula'])){
@@ -7,9 +6,7 @@ if(!isset($_SESSION['matricula'])){
 	header('Location: ../index.php');
 }
 ?>
-
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <title>Solicitud de Permiso</title>
@@ -21,9 +18,7 @@ if(!isset($_SESSION['matricula'])){
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 </head>
-
 <body onload="limpiarMatriculas(); materia_ComboBox();">
     <!-- HEADER -->
     <div style="height:30px"></div>
@@ -122,7 +117,7 @@ if(!isset($_SESSION['matricula'])){
                             </select>
                                 <br>
                                 <label>INGRESE LA CIUDAD: </label>
-                                <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad" id="nac_ciudad">
+                                <input type="text" class="form-control" placeholder="ej. Tijuana" name="ciudad" onkeypress="return soloLetras(event)" id="nac_ciudad">
                             </div>
                             <div id="formExt" class="form-group">
                                 <label>SELECCIONE EL PAIS: </label>
@@ -373,10 +368,10 @@ if(!isset($_SESSION['matricula'])){
                             </select>
                                 <br>
                                 <label>INGRESE EL ESTADO: </label>
-                                <input type="text" class="form-control" placeholder="ej. California" name="estado_extranjera" id="ext_estado">
+                                <input type="text" class="form-control" placeholder="ej. California" name="estado_extranjera" onkeypress="return soloLetras(event)" id="ext_estado">
                                 <br>
                                 <label>INGRESE LA CIUDAD: </label>
-                                <input type="text" class="form-control" placeholder="ej. Anaheim" name="ciudad_extranjera" id="ext_ciudad">
+                                <input type="text" class="form-control" placeholder="ej. Anaheim" name="ciudad_extranjera" onkeypress="return soloLetras(event)" id="ext_ciudad">
                             </div>
                             <div style="height:5px;"></div>
                             <hr style="height: 10px;">
@@ -426,7 +421,7 @@ if(!isset($_SESSION['matricula'])){
                             <div class="form-group">
                                 <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN: <sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Tu matricula ya está ingresada"></span></sup> </label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingresar_matricula">
+                                    <input type="text" class="form-control form-control-lg" placeholder="ej. 1218229" onkeypress="return soloNumeros(event)" aria-label="Recipient's username" aria-describedby="basic-addon2" id="ingresar_matricula">
                                     <div class="input-group-append">
                                         <button class="btn btn-success" id="boton_ingresar_matricula" type="button">Agregar</button>
                                     </div>
@@ -503,7 +498,7 @@ if(!isset($_SESSION['matricula'])){
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="recibeEmpresa">Nombre de quien los recibe en la empresa:</label>
-                                <input type="text" class="form-control" id="recibeEmpresa" name="recibeEmpresa">
+                                <input type="text" class="form-control" id="recibeEmpresa" onkeypress="return soloLetras(event)" name="recibeEmpresa">
                             </div>
                         </div>
 
@@ -551,7 +546,7 @@ if(!isset($_SESSION['matricula'])){
                         <div class="col-md-8 col-sm-8">
                             <div class="form-group">
                                 <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
-                                <input type="text" class="form-control" id="maestroMateria" name="maestroMateria">
+                                <input type="text" class="form-control" id="maestroMateria" onkeypress="return soloLetras(event)" name="maestroMateria">
                             </div>
                         </div>
 

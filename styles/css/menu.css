@@ -49,7 +49,7 @@ html{
 }
 
 .scroll>tbody,.scroll>thead tr { display: block; }
- .scroll >tbody {
+.scroll >tbody {
     height: 400px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -63,6 +63,23 @@ html{
 }
  .scroll>thead th:last-child {
     width: 126px; /* 140px + 16px scrollbar width */
+}
+
+.tablaAlumnos>tbody,.tablaAlumnos>thead tr { display: block; }
+.tablaAlumnos>tbody {
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.tablaAlumnos>tbody td,.tablaAlumnos>thead th {
+    width: 160px;
+}
+
+.tablaAlumnos>thead th {
+   cursor: pointer;
+}
+.tablaAlumnos>thead th:last-child {
+    width: 160px; /* 140px + 16px scrollbar width */
 }
 
 .estatus{
