@@ -150,9 +150,9 @@ if(!isset($_SESSION['matricula'])){
                         <div class="form-group">
                             <label>INGRESAR MATRICULA DE LOS INTEGRANTES QUE ASISTIRAN: <sup><span class="oi oi-question-mark" data-toggle="tooltip" data-placement="top" title="Tu matricula ya está ingresada"></span></sup></label>
                             <div class="input-group">
-                                <input id="ingresar_matricula" type="text" class="form-control" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <input id="ingresar_matricula" type="text" class="form-control" onkeypress="return soloNumeros(event)" placeholder="ej. 1218229" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
-                                    <button class="btn btn-dark" type="button" id="boton_ingresar_matricula">Ingresar</button>
+                                    <button class="btn btn-dark" type="button" id="boton_ingresar_matricula" >Ingresar</button>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +221,7 @@ if(!isset($_SESSION['matricula'])){
                     <div class="col-8 col-md-7">
                         <div class="form-group">
                             <label for="nombreOrganiza">Nombre de quien organiza:</label>
-                            <input type="text" class="form-control" id="nombreOrganiza" name="nombreOrganiza">
+                            <input type="text" class="form-control" id="nombreOrganiza" onkeypress="return soloLetras(event)" name="nombreOrganiza">
                         </div>
                         <br>
                         <div class="text-center">
@@ -258,7 +258,7 @@ if(!isset($_SESSION['matricula'])){
                     <div class="col-md-8 col-sm-8">
                         <div class="form-group">
                             <label for="maestroMateria">Nombre del maestro responsable de la materia:</label>
-                            <input type="text" class="form-control" id="maestroMateria" name="maestroMateria">
+                            <input type="text" class="form-control" id="maestroMateria" onkeypress="return soloLetras(event)" name="maestroMateria">
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>Menu</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/css/menu.css">
+    <link rel="stylesheet" href="../../styles/css/menu.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -51,7 +51,7 @@
           <select class="form-control-sm" name="semestre">
             <option selected value="0"> 2018-2 </option>
           </select >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <label> Tipo de evento </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label> Buscar: </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="text" class="form-control" style="width:20%" id="search" placeholder="Buscar...">
 
 
