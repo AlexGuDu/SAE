@@ -2,7 +2,7 @@
 require '../config/PHPPDF/fpdf.php';
 require '../config/connection.php';
 session_start();
-$sql="SELECT * FROM alumno where Matricula= :matricula";
+$sql="SELECT * FROM alumnoregactividad a, alumno b where a.matricula=b.Matricula and a.matricula=:matricula";
 $statement = $dbh->prepare($sql);
 $statement->bindParam(':matricula', $_SESSION['matricula']);
 $statement->execute();
