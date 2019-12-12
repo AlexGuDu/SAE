@@ -5,7 +5,7 @@ $carrera = $_POST['carrera'];
 $conteo_por_actividad['vinculacion'] = 0;
 $conteo_por_actividad['cientifica'] = 0;
 $conteo_por_actividad['deportiva'] = 0;
-$conteo_por_actividad['responsabilidad social'] = 0;
+$conteo_por_actividad['responsabilidadSocial'] = 0;
 $conteo_por_actividad['cultural'] = 0;
 //Alumnos Admin Inicio
 $sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera='$carrera' and a.Matricula = b.matricula";
@@ -15,7 +15,7 @@ foreach ($stament as $filas):
   $conteo_por_actividad['vinculacion'] = $conteo_por_actividad['vinculacion']  + $filas['ActVinculacion'];
   $conteo_por_actividad['cientifica'] = $conteo_por_actividad['cientifica'] + $filas['ActCientifica'];
   $conteo_por_actividad['deportiva'] = $conteo_por_actividad['deportiva'] + $filas['ActDeportiva'];
-  $conteo_por_actividad['responsabilidad social'] = $conteo_por_actividad['responsabilidad social'] + $filas['ActResponsabilidadSocial'];
+  $conteo_por_actividad['responsabilidadSocial'] = $conteo_por_actividad['responsabilidadSocial'] + $filas['ActResponsabilidadSocial'];
   $conteo_por_actividad['cultural'] = $conteo_por_actividad['cultural'] + $filas['ActCultural'];
 endforeach;
 

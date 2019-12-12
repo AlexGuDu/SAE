@@ -10,7 +10,7 @@ foreach ($stament as $filas):
   $carrera=$filas['CarreraAsig'];
 endforeach;
 
-$sql="SELECT * FROM `alumno` where Carrera= :carrera";
+$sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera= :carrera and a.Matricula = b.matricula";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':carrera', $carrera);
 $stament->execute();
