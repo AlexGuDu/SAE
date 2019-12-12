@@ -26,7 +26,7 @@ endforeach;
 
 $nombre_evento = 'Act'.$nombre_evento;
 
-$sql = "UPDATE alumno set $nombre_evento = $nombre_evento+1  WHERE Matricula = $matricula";
+$sql = "UPDATE alumnoregactividad set $nombre_evento = $nombre_evento+1  WHERE Matricula = $matricula";
 $statement = $dbh->prepare($sql);
 $statement->execute();
 
