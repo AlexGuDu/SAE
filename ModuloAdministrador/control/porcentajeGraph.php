@@ -10,11 +10,11 @@ $totalAlumnos_LNI_CACECA = 0;
 $totalAlumnos_LC_CACECA = 0;
 
 //Alumnos Admin Inicio
-$sql="SELECT * FROM alumno where Carrera='ADMINISTRACION DE EMPRESAS'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b  where Carrera='ADMINISTRACION DE EMPRESAS' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($stament as $filas):
-  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidad Social']+$filas['ActCultural'];
+  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidadSocial']+$filas['ActCultural'];
   if ($totalActividades != 0) {
     $totalAlumnos_LAE_CACECA = $totalAlumnos_LAE_CACECA + 1;
   }
@@ -25,11 +25,11 @@ $porcentajes['porcentaje_LAE']= ($totalAlumnos_LAE_CACECA*100) / $totalAlumnos_L
 //Alumnos Admin Final
 
 //Alumnos INFO Inicio
-$sql="SELECT * FROM alumno where Carrera='INFORMATICA'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b  where Carrera='INFORMATICA' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($stament as $filas):
-  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidad Social']+$filas['ActCultural'];
+  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidadSocial']+$filas['ActCultural'];
   if ($totalActividades != 0) {
     $totalAlumnos_LI_CACECA = $totalAlumnos_LI_CACECA + 1;
   }
@@ -40,11 +40,11 @@ $porcentajes['porcentaje_LI']= ($totalAlumnos_LI_CACECA*100) / $totalAlumnos_LI;
 //Alumnos INFO Final
 
 //Alumnos NEGO-IN Inicio
-$sql="SELECT * FROM alumno where Carrera='NEGOCIOS INTERNACIONALES'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b  where Carrera='NEGOCIOS INTERNACIONALES' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($stament as $filas):
-  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidad Social']+$filas['ActCultural'];
+  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidadSocial']+$filas['ActCultural'];
   if ($totalActividades != 0) {
     $totalAlumnos_LNI_CACECA = $totalAlumnos_LNI_CACECA + 1;
   }
@@ -55,11 +55,11 @@ $porcentajes['porcentaje_LNI']= ($totalAlumnos_LNI_CACECA*100) / $totalAlumnos_L
 //Alumnos NEGO-IN Final
 
 //Alumnos CONTA Inicio
-$sql="SELECT * FROM alumno where Carrera='CONTADURIA'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b  where Carrera='CONTADURIA' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($stament as $filas):
-  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidad Social']+$filas['ActCultural'];
+  $totalActividades=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidadSocial']+$filas['ActCultural'];
   if ($totalActividades != 0) {
     $totalAlumnos_LC_CACECA = $totalAlumnos_LC_CACECA + 1;
   }
