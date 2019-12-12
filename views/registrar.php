@@ -37,7 +37,7 @@ if(!isset($_SESSION['matricula'])){
       <h1>Registro de Cumplimiento de Actividad</h1>
     </div>
 
-    <form name="entireForm" action="../control/registroRegistrar.php" method="post" onsubmit="return validateSection_3();">
+    <form name="entireForm" action="../control/registroRegistrar.php" method="post" enctype="multipart/form-data" onsubmit="return validateSection_3();">
         <div style="height:55px">
           <ul class="progress-indicator stepped">
             <li class="completed" id="bubble1">
@@ -286,6 +286,15 @@ if(!isset($_SESSION['matricula'])){
                             <option value="Subdireccion">Subdireccion</option>
                             <option value="Otros">Otros</option>
                           </select>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-sm-8">
+                      <div class="form-group">
+                          <label for="proponeAsistir">Adjuntar evidencia: </label>
+                          <input type="file" name="fileEvidence" id="fileEvidence">
                       </div>
                     </div>
                 </div>

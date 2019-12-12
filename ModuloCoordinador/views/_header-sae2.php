@@ -2,9 +2,9 @@
 <?php
 require_once '../../config/connection.php';
 session_start();
-$sql="SELECT * FROM coocarrera where numEmp= :numEmp";
+$sql="SELECT * FROM coocarrera WHERE numEmp = :numEmp";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
+$stament->bindParam(':numEmp', $_SESSION['numEmpCoordinador']);
 $stament->execute();
 
  ?>
@@ -44,7 +44,7 @@ $stament->execute();
         <div class="container" id="info-alumno">
             <div class="row justify-content-end  top-buffer-alumno">
                 <div class="col-6">
-                    <p class="text-center">Nombre Coordinador</p>
+                    <p class="text-center">Coordinador</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center"><?php foreach ($stament as $filas) :
                      echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
@@ -53,7 +53,8 @@ $stament->execute();
                 <div class="col-6">
                     <p class="text-center">Carrera</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center" ><?php
+                    <p class="text-center" >
+                        <?php
                      echo $filas['CarreraAsig'];
                    endforeach; ?></p>
                 </div>

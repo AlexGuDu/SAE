@@ -4,7 +4,7 @@ session_start();
 $i=1;
 $sql="SELECT * FROM coocarrera where numEmp= :numEmp";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
+$stament->bindParam(':numEmp', $_SESSION['numEmpCoordinador']);
 $stament->execute();
 foreach ($stament as $filas):
   $carrera=$filas['CarreraAsig'];

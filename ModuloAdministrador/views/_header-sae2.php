@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-// require_once '../../config/connection.php';
-// session_start();
-// $sql="SELECT * FROM coocarrera where numEmp= :numEmp";
-// $stament = $dbh->prepare($sql);
-// $stament->bindParam(':numEmp', $_SESSION['numEmp']);
-// $stament->execute();
+require_once '../../config/connection.php';
+session_start();
+$sql="SELECT * FROM coofp WHERE numEmp = :numEmp";
+$stament = $dbh->prepare($sql);
+$stament->bindParam(':numEmp', $_SESSION['numEmpAdministrador']);
+$stament->execute();
  ?>
 <html>
 
@@ -43,18 +43,24 @@
         <div class="container" id="info-alumno">
             <div class="row justify-content-end  top-buffer-alumno">
                 <div class="col-6">
-                    <p class="text-center">Nombre Coordinadora de Formacion Profesional</p>
+                    <p class="text-center">Coordinador de Formación Profesional</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center"><?php //foreach ($stament as $filas) :
-                    // echo $filas['ApePa']." ".$filas['ApeMa']." ".$filas['Nombre'];
-                    ?></p>
+                    <p class="text-center">
+                        <?php 
+                            foreach ($stament as $filas) :
+                            echo $filas['Nombre'];
+                        ?>
+                    </p>
                 </div>
                 <div class="col-6">
-                    <p class="text-center">Puesto</p>
+                    <p class="text-center">Numero de Empleado</p>
                     <img src="../../assets/img/linea-verde.png" class="img-fluid">
-                    <p class="text-center" ><?php
-                  //   echo $filas['CarreraAsig'];
-                  // endforeach; ?></p>
+                    <p class="text-center" >
+                        <?php
+                            echo $filas['numEmp'];
+                            endforeach;
+                        ?>
+                    </p>
                 </div>
             </div>
         </div>
