@@ -8,7 +8,7 @@
 $cleardb_server = 'localhost';
 $cleardb_username = 'root';
 $cleardb_password = '';
-$cleardb_db = 'sae2';
+$cleardb_db = 'sae';
 
 define('SERVER', $cleardb_server);
 define('USERNAME', $cleardb_username);
