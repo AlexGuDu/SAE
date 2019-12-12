@@ -20,9 +20,9 @@ foreach ($stament as $filas):
   $datos[$i+2]=$filas['ActVinculacion'];
   $datos[$i+3]=$filas['ActCientifica'];
   $datos[$i+4]=$filas['ActDeportiva'];
-  $datos[$i+5]=$filas['ActResponsabilidad Social'];
+  $datos[$i+5]=$filas['ActResponsabilidadSocial'];
   $datos[$i+6]=$filas['ActCultural'];
-  $datos[$i+7]=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidad Social']+$filas['ActCultural'];
+  $datos[$i+7]=$filas['ActVinculacion']+$filas['ActCientifica']+$filas['ActDeportiva']+$filas['ActResponsabilidadSocial']+$filas['ActCultural'];
   $i=$i+8;
 endforeach;
 $datos['count']=$i;

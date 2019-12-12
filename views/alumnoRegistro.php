@@ -79,7 +79,7 @@ Session_start();
             <?php
             if(isset($_SESSION['error'])){
               if ($_SESSION['error']==1) {
-                echo '<label style="color:rgb(255,0,0);">La matricula intenta registrar ya se encuentra registrada.</label>';
+                echo '<label style="color:rgb(255,0,0);">La matricula que intenta registrar ya se encuentra registrada.</label>';
               }
               if ($_SESSION['error']==2) {
                 echo '<label style="color:rgb(255,0,0);">No se encontro un alumno con esta matricula!.</label>';

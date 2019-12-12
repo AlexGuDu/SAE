@@ -38,7 +38,7 @@ $i=2;
 $count=0;
 
 //Alumnos Admin Inicio
-$sql="SELECT * FROM alumno where Carrera='ADMINISTRACION DE EMPRESAS'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera='ADMINISTRACION DE EMPRESAS' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 //Agregar alumnos
@@ -50,7 +50,7 @@ foreach ($stament as $filas):
   $pagina->setCellValue('D'.($i), $filas['ActVinculacion']);
   $pagina->setCellValue('E'.($i), $filas['ActCientifica']);
   $pagina->setCellValue('F'.($i), $filas['ActDeportiva']);
-  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidad Social']);
+  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidadSocial']);
   $pagina->setCellValue('H'.($i), $filas['ActCultural']);
   $pagina->setCellValue('I'.($i), '=SUM(D'.$i.':H'.$i.')');
   $pagina->setCellValue('J'.($i), '=IF(I'.$i.'=0,0,1)');
@@ -73,7 +73,7 @@ endforeach;
 
 
 //Alumnos INFO Inicio
-$sql="SELECT * FROM alumno where Carrera='INFORMATICA'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera='INFORMATICA' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 $count=0;
 $i=$i+2;
@@ -105,7 +105,7 @@ foreach ($stament as $filas):
   $pagina->setCellValue('D'.($i), $filas['ActVinculacion']);
   $pagina->setCellValue('E'.($i), $filas['ActCientifica']);
   $pagina->setCellValue('F'.($i), $filas['ActDeportiva']);
-  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidad Social']);
+  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidadSocial']);
   $pagina->setCellValue('H'.($i), $filas['ActCultural']);
   $pagina->setCellValue('I'.($i), '=SUM(D'.$i.':H'.$i.')');
   $pagina->setCellValue('J'.($i), '=IF(I'.$i.'=0,0,1)');
@@ -127,7 +127,7 @@ endforeach;
 //Alumnos INFO Final
 
 //Alumnos NEGO-IN Inicio
-$sql="SELECT * FROM alumno where Carrera='NEGOCIOS INTERNACIONALES'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera='NEGOCIOS INTERNACIONALES' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 $count=0;
 $i=$i+2;
@@ -157,7 +157,7 @@ foreach ($stament as $filas):
   $pagina->setCellValue('D'.($i), $filas['ActVinculacion']);
   $pagina->setCellValue('E'.($i), $filas['ActCientifica']);
   $pagina->setCellValue('F'.($i), $filas['ActDeportiva']);
-  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidad Social']);
+  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidadSocial']);
   $pagina->setCellValue('H'.($i), $filas['ActCultural']);
   $pagina->setCellValue('I'.($i), '=SUM(D'.$i.':H'.$i.')');
   $pagina->setCellValue('J'.($i), '=IF(I'.$i.'=0,0,1)');
@@ -179,7 +179,7 @@ endforeach;
 //Alumnos NEGO-IN Final
 
 //Alumnos CONTA Inicio
-$sql="SELECT * FROM alumno where Carrera='CONTADURIA'";
+$sql="SELECT * FROM alumno a, alumnoregactividad b where Carrera='CONTADURIA' and a.Matricula = b.matricula";
 $stament = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 $count=0;
 $i=$i+2;
@@ -210,7 +210,7 @@ foreach ($stament as $filas):
   $pagina->setCellValue('D'.($i), $filas['ActVinculacion']);
   $pagina->setCellValue('E'.($i), $filas['ActCientifica']);
   $pagina->setCellValue('F'.($i), $filas['ActDeportiva']);
-  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidad Social']);
+  $pagina->setCellValue('G'.($i), $filas['ActResponsabilidadSocial']);
   $pagina->setCellValue('H'.($i), $filas['ActCultural']);
   $pagina->setCellValue('I'.($i), '=SUM(D'.$i.':H'.$i.')');
   $pagina->setCellValue('J'.($i), '=IF(I'.$i.'=0,0,1)');
@@ -236,7 +236,6 @@ endforeach;
   foreach (range('A','K') as $column ):
     $pagina->getColumnDimension($column)->setAutoSize(true);
   endforeach;
-
 //Descargar excel
 $objWriter = PHPExcel_IOFactory::createWriter($excel, 'Excel5');
 $objWriter->save('php://output');

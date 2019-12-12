@@ -14,7 +14,7 @@ foreach ($statement as $row):
   $act01=$row['ActVinculacion'];
   $act02=$row['ActCientifica'];
   $act03=$row['ActDeportiva'];
-  $act04=$row['ActResponsabilidad Social'];
+  $act04=$row['ActResponsabilidadSocial'];
   $act05=$row['ActCultural'];
 endforeach;
 $total = $act01+$act02+$act03+$act04+$act05;
