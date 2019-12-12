@@ -10,7 +10,7 @@ if(strlen($numEmp) > 0 && strlen($pass) > 0){
   foreach ($stament as $filas):
     if($filas['numEmp']==$numEmp && $filas['Contra']==$pass){
         $bandera=1;
-        $_SESSION['numEmp']=$numEmp;
+        $_SESSION['numEmpAdministrador']=$numEmp;
     }
   endforeach;
   if ($bandera==1) {

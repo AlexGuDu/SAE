@@ -4,7 +4,7 @@ require_once '../../config/connection.php';
 session_start();
 $sql="SELECT * FROM coofp WHERE numEmp = :numEmp";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmp']);
+$stament->bindParam(':numEmp', $_SESSION['numEmpAdministrador']);
 $stament->execute();
  ?>
 <html>
