@@ -1,7 +1,12 @@
+<?php
+require '../../config/connection.php';
+session_start();
+ ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>:: Importar de Excel a la Base de Datos ::</title>
 </head>
+
 <body>
     Selecciona el archivo a importar:
     <form name="importa" method="post" action="<?php echo $_SERVER['PHP_SELF'] ; ?>" enctype="multipart/form-data" >
@@ -18,7 +23,6 @@
         $tipo = $_FILES['excel']['type'];
         $destino = "bak_" . $archivo;
         if (copy($_FILES['excel']['tmp_name'], $destino)){
-            echo "Archivo Cargado Con Éxito";
         }
         else{
             echo "Error Al Cargar el Archivo";
@@ -34,9 +38,7 @@
             // Asignar hoja de excel activa
             $objPHPExcel->setActiveSheetIndex(0);
             //conectamos con la base de datos
-            $conexion = mysqli_connect("localhost", "root", '', 'sae');
-            $cn = mysqli_connect("localhost", "root", '') or die("ERROR EN LA CONEXION");
-            $db = mysqli_select_db($cn,'sae') or die("ERROR AL CONECTAR A LA BD");
+            $conexion = mysqli_connect($cleardb_server,$cleardb_username,$cleardb_password, $cleardb_db);
             // Llenamos el arreglo con los datos  del archivo xlsx
             for ($i = 1; $i <= $objPHPExcel->setActiveSheetIndex(0)->getHighestRow(); $i++) {
                 $_DATOS_EXCEL[$i]['Matricula'] = $objPHPExcel->getActiveSheet()->getCell('A' . $i )->getCalculatedValue();
@@ -56,7 +58,7 @@
         //para ir recuperando los datos obtenidos
         //del excel e ir insertandolos en la BD
         $sql = "DELETE from alumno";
-        $result = mysqli_query($conexion,$sql) or die (mysqli_error($db));
+        $result = mysqli_query($conexion,$sql) or die (mysqli_error($conexion));
         $i= 1;
         foreach ($_DATOS_EXCEL as $campo => $valor) {
             $matricula= $_DATOS_EXCEL[$i]['Matricula'];
@@ -67,7 +69,19 @@
             $Etapa= $_DATOS_EXCEL[$i]['Etapa'];
             $i=$i+1;
             $sql = "INSERT INTO alumno(Matricula, ApePa, ApeMa, Nombre, Carrera, Etapa) VALUES ('$matricula','$Apepa','$ApeMA','$Nombre','$Carrera','$Etapa')";
-            $result = mysqli_query($conexion,$sql) or die (mysqli_error($db));
+            $result = mysqli_query($conexion,$sql) or die (mysqli_error($conexion));
+
+            $sql="SELECT count(*) FROM alumnoregactividad where matricula=:matricula";
+            $statement = $dbh->prepare($sql);
+            $statement->bindParam(':matricula', $matricula);
+            $statement->execute();
+            $count = $statement;
+            if($count->fetchColumn() == 0)
+            {
+              $sql = "INSERT INTO alumnoregactividad(matricula) VALUES ('$matricula')";
+              $result = mysqli_query($conexion,$sql) or die (mysqli_error($conexion));
+            }
+
             if (!$result) {
                 echo "Error al insertar registro " . $campo;
                 $errores+=1;
