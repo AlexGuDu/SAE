@@ -8,7 +8,6 @@ $stament->bindParam(':numEmpAdministrador', $_SESSION['numEmpAdministrador']);
 $stament->execute();
 $sql="SELECT * FROM alumno a,actividad b, alumnoactividad c where a.Matricula=c.Matricula and b.folio=c.Folio and c.aprobacionRegistro=1 and c.aprobacionCoordinador=2 ";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':carrera', $carrera);
 $stament->execute();
 foreach ($stament as $filas):
   $datos[$i]=$filas['tema'];
