@@ -3,9 +3,9 @@ require '../../config/connection.php';
 session_start();
 $i=1;
 $asd=12;
-$sql="SELECT * FROM coocarrera where numEmp= :numEmp";
+$sql="SELECT * FROM coofp where numEmp= :numEmpAdministrador";
 $stament = $dbh->prepare($sql);
-$stament->bindParam(':numEmp', $_SESSION['numEmpAdministrador']);
+$stament->bindParam(':numEmpAdministrador', $_SESSION['numEmpAdministrador']);
 $stament->execute();
 foreach ($stament as $filas):
   $carrera=$filas['CarreraAsig'];
