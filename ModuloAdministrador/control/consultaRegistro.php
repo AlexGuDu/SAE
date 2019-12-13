@@ -3,14 +3,11 @@ require '../../config/connection.php';
 session_start();
 $i=1;
 $asd=12;
-$sql="SELECT * FROM coocarrera where numEmp= :numEmp";
+$sql="SELECT * FROM coofp where numEmp= :numEmp";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':numEmp', $_SESSION['numEmpAdministrador']);
 $stament->execute();
-foreach ($stament as $filas):
-  $carrera=$filas['CarreraAsig'];
-endforeach;
-$sql="SELECT * FROM alumno a,actividad b, alumnoactividad c where a.Matricula=c.Matricula and b.folio=c.Folio and a.Carrera= :carrera and c.aprobacionRegistro=1 and c.aprobacionCoordinador=2 ";
+$sql="SELECT * FROM alumno a,actividad b, alumnoactividad c where a.Matricula=c.Matricula and b.folio=c.Folio and c.aprobacionRegistro=1 and c.aprobacionCoordinador=2 ";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':carrera', $carrera);
 $stament->execute();
