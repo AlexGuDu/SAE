@@ -290,7 +290,6 @@ document.getElementById('cerrarPreview').addEventListener('click', function(){
 })
 
 function showPreviewImgEvidence(imgEvidenceFileName){
-  console.log("First time coming in:::" + imgEvidenceFileName)
   previewImgEvidence.src = "../../assets/evidencia_imagen/" + imgEvidenceFileName;
   previewImgEvidencePopup.style.display = 'block';
 }
@@ -343,7 +342,6 @@ function consultaDeSolicitud(){
         );
       }
         for (var i = 1; i < datos.count; i=i+5) {
-          console.log("imgfilename " + datos[i+4]);
           $('#consultaRegistro tbody').append(
             '<tr style="text-align:center;">'+
               '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+','+datos[i+1]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+','+datos[i+1]+')" class="botonsm boton-del">'+'</td>'+

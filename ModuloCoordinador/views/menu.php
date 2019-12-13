@@ -228,6 +228,49 @@
         </div> <!-- Container -->
     </div> <!-- Modal -->
 
+    <div id="previewImgEvidencePopup" class="modal">
+        <div id="entirePopup" class="container col-xl-4" id="container-popup">
+          <div class="row" id="stripe_1">
+            <div class="col-xl-12 col-sm-12">
+              <div class="stripe">
+                <div class="stripe__segment" style="border-radius: 10rem 0 0 2rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 10rem 2rem 0;"></div>
+              </div>
+            </div>
+          </div>
+         <br>
+          <div class="row">
+            <div class="col-xl-2 col-sm-2"> </div>
+              <div class="col-xl-8 col-sm-8">
+                  <img id="previewImgEvidence" width="400" height="400">
+              </div>
+            <div class="col-xl-2 col-sm-2"> </div>
+          </div> 
+          <br>
+          <div class="row">
+            <div class="col-xl-12 col-sm-12">
+              <div class="stripe">
+                <div class="stripe__segment" style="border-radius: 2rem 0 0 10rem;"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment"></div>
+                <div class="stripe__segment" style="border-radius: 0 2rem 10rem 0;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- Container -->
+    </div> <!-- Modal -->
+
     <div class="row justify-content-center">
       <div class="col-md-3 col-sm-3">
         <input type="button" name="" class="boton admbtn" value="Consultar actividades registradas" id="actividadRegistradas">

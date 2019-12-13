@@ -19,7 +19,8 @@ foreach ($stament as $filas):
   $datos[$i+1]=$filas['Matricula'];
   $datos[$i+2]=$filas['fecha_registro'];
   $datos[$i+3]=$filas['folio'];
-$i=$i+4;
+  $datos[$i+4]=$filas['evidenciaImg'];
+  $i=$i+5;
 endforeach;
 $datos['count']=$i;
 echo json_encode($datos);

@@ -269,6 +269,9 @@ function comentarioAceptaR(folio, matricula){
     if(e.target == solicitudPopup){
     solicitudPopup.style.display = 'none';
     }
+    if(e.target == previewImgEvidencePopup){
+      previewImgEvidencePopup.style.display = 'none';
+    }
   }
   $(document).keyup(function(e) {
      if (e.keyCode == 27) { // escape key maps to keycode `27`
@@ -277,12 +280,18 @@ function comentarioAceptaR(folio, matricula){
         comentarioAceptarR.style.display = 'none';
         comentarioDenegarR.style.display = 'none';
         solicitudPopup.style.display = 'none';
+        previewImgEvidencePopup.style.display = 'none';
     }
  });
 
 document.getElementById('cerrarPreview').addEventListener('click', function(){
   solicitudPopup.style.display = 'none';
 })
+
+function showPreviewImgEvidence(imgEvidenceFileName){
+  previewImgEvidence.src = "../../assets/evidencia_imagen/" + imgEvidenceFileName;
+  previewImgEvidencePopup.style.display = 'block';
+}
 
 // Ajax Tabla de Matriculas START
 
@@ -331,13 +340,13 @@ function consultaDeSolicitud(){
           '</tr>'
         );
       }
-        for (var i = 1; i < datos.count; i=i+4) {
+        for (var i = 1; i < datos.count; i=i+5) {
           $('#consultaRegistro tbody').append(
             '<tr style="text-align:center;">'+
               '<td>'+'<input type="button" name="boton" class="botonsm boton-add" onclick="comentarioAceptaR('+datos[i+3]+','+datos[i+1]+')"  id="popup_agregar"> <input type="button" name="" onclick="comentarioRechazaR('+datos[i+3]+','+datos[i+1]+')" class="botonsm boton-del">'+'</td>'+
               '<td>'+datos[i+1]+'</td>'+
               '<td>'+datos[i]+'</td>'+
-              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'</td>'+
+              '<td>'+'<button onclick="popSolicitud('+datos[i+3]+')" class="btn btn-default fas fa-eye" type="button" name="button" id="popup_test"></button>'+'  <button onclick="showPreviewImgEvidence(\''+datos[i+4]+'\')" class="btn btn-default fas fa-file-image" type="button" name="button" id="popImagePreview"></button>'  +'</td>'+
               '<td>'+datos[i+2]+'</td>'+
             '</tr>');
         }
