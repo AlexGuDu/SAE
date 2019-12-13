@@ -233,7 +233,7 @@
     </div> <!-- Modal -->
 
     <div id="previewImgEvidencePopup" class="modal">
-        <div id="entirePopup" class="container col-xl-8" id="container-popup">
+        <div id="entirePopup" class="container col-xl-4" id="container-popup">
           <div class="row" id="stripe_1">
             <div class="col-xl-12 col-sm-12">
               <div class="stripe">
@@ -248,13 +248,15 @@
               </div>
             </div>
           </div>
-         
+         <br>
           <div class="row">
-            <div class="col-xl-12 col-sm-12">
-                <img id="previewImgEvidence" width="500" height="600">
+          <div class="col-xl-2 col-sm-2"> </div>
+            <div class="col-xl-8 col-sm-8">
+                <img id="previewImgEvidence" width="450" height="500">
             </div>
+          <div class="col-xl-2 col-sm-2"> </div>
           </div> 
-          
+          <br>
           <div class="row">
             <div class="col-xl-12 col-sm-12">
               <div class="stripe">

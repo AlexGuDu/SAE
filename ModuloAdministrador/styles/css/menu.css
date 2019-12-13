@@ -169,6 +169,11 @@ html{
 		animation-duration: .5s;
 }
 
+#previewImgEvidencePopup{
+	width: auto;
+	height: auto;
+}
+
 .preview_label{
 	font-size: 1.1rem;
 	font-weight: bold;
