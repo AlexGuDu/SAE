@@ -5,17 +5,42 @@ session_start();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>:: Importar de Excel a la Base de Datos ::</title>
+    <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../../styles/css/menu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">  
 </head>
 
 <body>
-    Selecciona el archivo a importar:
-    <form name="importa" method="post" action="<?php echo $_SERVER['PHP_SELF'] ; ?>" enctype="multipart/form-data" >
-        <input type="file" name="excel" />
-        <input type='submit' name='enviar'  value="Importar"  />
-        <input type="hidden" value="upload" name="action" />
-    </form>
+
+    <br>
+    <!-- HEADER -->
+    <div id="Header">
+        <script type="text/javascript">
+            $("#Header").load("_header-sae2.php #header-sae");
+        </script>
+    </div>
+    <!-- FIN HEADER -->
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-lg-3"></div>
+            <div class="col-md-6 col-lg-6">
+            Selecciona el archivo a importar:
+            <form name="importa" method="post" action="<?php echo $_SERVER['PHP_SELF'] ; ?>" enctype="multipart/form-data" >
+                <input type="file" name="excel" />
+                <input type='submit' name='enviar'  value="Importar"  />
+                <input type="hidden" value="upload" name="action" />
+            </form>
+            </div>
+            <div class="col-md-3 col-lg-3"></div>
+        </div>
+    </div>
+    
     <!-- CARGA LA MISMA PAGINA MANDANDO LA VARIABLE upload -->
     <?php
     $action=" ";
@@ -94,5 +119,6 @@ session_start();
         unlink($destino);
     }
     ?>
+     <script src="../../assets/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
