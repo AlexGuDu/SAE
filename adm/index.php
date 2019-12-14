@@ -13,12 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- BOOTSTRAP Y CSS STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../styles/css/home.css">
-    <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
-    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
-    <title>SAE - Login Coordinador</title>
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../styles/css/home_coordinador.css">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <title>SAE - Login Administrador</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
     <div class="container-fluid" id="header">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <img id="Escudo" src="../../assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
-                <img id="Letras" src="../../assets/img/uabc-letras.png" alt="Letras UABC">
+                <img id="Escudo" src="../assets/img/logo-uabc.png" alt="Escudo UABC"> &nbsp;
+                <img id="Letras" src="../assets/img/uabc-letras.png" alt="Letras UABC">
             </div>
         </div>
     </div>
@@ -38,11 +38,11 @@
         <div class="row">
             <div id="ingresar" class="col-11 col-md-10 col-lg-6">
                 <br>
-                <img id="logo" src="../../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
+                <img id="logo" src="../assets/img/Logo Oficial.png" alt="Escudo S.A.E.">
                 <br>
 
                     <div class="form-group">
-                        <form id="ingresarForm" action="../control/loginSAECoo.php" method="post" >
+                        <form id="ingresarForm" action="control/loginSAEAdmin.php" method="post" >
                         <label> Numero de empleado: </label>
                         <input type="text" class="form-control" autofocus="autofocus" name="numEmp">
                     </div>
