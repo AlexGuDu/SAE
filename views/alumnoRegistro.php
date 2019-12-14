@@ -7,7 +7,9 @@ Session_start();
 	<!-- BOOTSTRAP Y CSS STYLES -->
 	<title>Registro de alumnos</title>
 	<link rel="stylesheet" type="text/css" href="../assets/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../styles/css/alumnoRegistro.css">
+  <link rel="stylesheet" type="text/css" href="../styles/css/alumnoRegistro.css">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 </head>

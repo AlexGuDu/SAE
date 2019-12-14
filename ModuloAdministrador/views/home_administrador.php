@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home.css">
     <link rel="stylesheet" type="text/css" href="../../styles/css/home_coordinador.css">
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
     <title>SAE - Login Administrador</title>
 </head>
 
@@ -61,7 +63,7 @@
                     <p class="texto">
                         Has olvidado tu contrase&ntilde;a? O no te has registrado?
                         <br>
-                        <a href="alumnoRegistro.php">Entra aqui</a>
+                        <a href="">Entra aqui</a>
                     </p>
             </div>
         </div>

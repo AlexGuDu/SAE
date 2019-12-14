@@ -5,6 +5,8 @@ session_start();
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>:: Importar de Excel a la Base de Datos ::</title>
+    <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>

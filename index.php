@@ -15,6 +15,8 @@ if(isset($_SESSION['matricula'])){
     <!-- BOOTSTRAP Y CSS STYLES -->
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/css/home.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <title>SAE - Login</title>
 </head>
 

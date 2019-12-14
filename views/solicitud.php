@@ -15,6 +15,8 @@ if(!isset($_SESSION['matricula'])){
     <link href="../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="../assets/progressbar/progress-wizard.min.css" rel="stylesheet">
     <link href="../styles/css/solicitud.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
