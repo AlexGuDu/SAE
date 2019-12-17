@@ -289,8 +289,11 @@ if(!isset($_SESSION['numEmpAdministrador'])){
       <div class="col-md-3 col-sm-3">
         <input type="button" name="" class="boton admbtn" value="Consultar actividades registradas" id="actividadRegistradas">
       </div>
-      <div class="col-md-3 col-sm-3">
+      <div class="col-md-2 col-sm-2">
         <input type="button" name="" class="boton admbtn" value="Alumnos" id="alumnos">
+      </div>
+      <div class="col-md-2 col-sm-2">
+        <input type="button" name="" class="boton admbtn" value="Actualizar alumnos" id="actualizar_alumnos">
       </div>
       </div>
     </div>
@@ -311,7 +314,7 @@ if(!isset($_SESSION['numEmpAdministrador'])){
 
     <br>
     <!-- TABLA ACTIVIDADES -->
-    <<div id="entirePage" class="col-md-8 col-sm-10">
+    <div id="entirePage" class="col-md-8 col-sm-10">
     <div class="container" >
       <div class="form-group">
           <label> <b> Solicitudes para desarrollar actividades por atender </b> </label>

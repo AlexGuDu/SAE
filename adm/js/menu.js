@@ -1,5 +1,6 @@
 document.getElementById('actividadRegistradas').addEventListener('click', openActividades);
 document.getElementById('alumnos').addEventListener('click', openAlumnos);
+document.getElementById('actualizar_alumnos').addEventListener('click', openActualizarAlumnos);
 document.getElementById('popup_test').addEventListener('click', popSolicitud);
 document.getElementById('exit_sol_aceptar').addEventListener('click', cerrarpopup);
 document.getElementById('exit_sol_denegar').addEventListener('click', cerrarpopup);
@@ -37,7 +38,10 @@ function openActividades(){
 }
 function openAlumnos(){
   window.location.href = "../views/menu_alumnos.php";
+}
 
+function openActualizarAlumnos(){
+  window.location.href = "../views/actualizarAlumnos.php";
 }
 
 function cerrarpopup() {

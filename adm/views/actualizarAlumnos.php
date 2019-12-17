@@ -9,7 +9,7 @@ if(!isset($_SESSION['numEmpAdministrador'])){
  ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>:: Importar de Excel a la Base de Datos ::</title>
+    <title>Actualizar alumnos</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
