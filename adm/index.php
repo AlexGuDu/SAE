@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-// Session_start();
-// if(isset($_SESSION['matricula'])){
-// 	header('Location: menu.php');
-// }
+Session_start();
+if(isset($_SESSION['numEmpAdministrador'])){
+	header('Location: views/menu.php');
+}
 ?>
 <html lang="en">
 
@@ -43,17 +43,21 @@
                     <button type="submit" id="iniciarSesion" form="ingresarForm">Iniciar</button> <br><br>
                     <?php
                     if(isset($_SESSION['error'])){
-                      if ($_SESSION['error']=1) {
-                        echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
-                      }
-                      unset($_SESSION['error']);
+                        if ($_SESSION['error']==1) {
+                            echo '<p style="color:rgb(255,0,0);">La autentificaci&oacute;n ha fallado. Por favor int&eacute;ntelo de nuevo.</p>';
+                        }
+                        if ($_SESSION['error']==2) {
+                            echo '<p style="color:rgb(255,0,0);">Es necesario iniciar sesion primeramente.</p>';
+                        }
+                        unset($_SESSION['error']);
                     }
                     ?>
-                    <p class="texto">
+                    
+                    <!-- <p class="texto">
                         Has olvidado tu contrase&ntilde;a? O no te has registrado?
                         <br>
                         <a href="">Entra aqui</a>
-                    </p>
+                    </p> -->
             </div>
         </div>
     </div>

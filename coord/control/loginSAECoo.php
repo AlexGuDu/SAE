@@ -21,6 +21,6 @@ if(strlen($numEmp) > 0 && strlen($pass) > 0){
   }
 }else{
   $_SESSION['error']=1;
-header('Location: ../');
+  header('Location: ../');
 }
 ?>

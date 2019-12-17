@@ -1,5 +1,13 @@
 <html lang="en">
 
+<?php
+Session_start();
+if(!isset($_SESSION['numEmpAdministrador'])){
+  $_SESSION['error']=2;
+	header('Location: ../index.php');
+}
+?>
+
 <head>
     <meta charset="UTF-8">
     <title>Menu Administrador</title>

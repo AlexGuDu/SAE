@@ -15,12 +15,12 @@ if(strlen($numEmp) > 0 && strlen($pass) > 0){
   endforeach;
   if ($bandera==1) {
     header('Location: ../views/menu.php');
-  }else {
+  } else {
     $_SESSION['error']=1;
     header('Location: ../');
   }
 }else{
   $_SESSION['error']=1;
-header('Location: ../');
+  header('Location: ../');
 }
 ?>

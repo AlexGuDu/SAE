@@ -18,10 +18,10 @@ if(strlen($matricula) > 0 && strlen($pass) > 0){
     header('Location: ../views/menu.php');
   }else {
     $_SESSION['error']=1;
-    header('Location: ../index.php');
+    header('Location: ../');
   }
 }else{
   $_SESSION['error']=1;
-header('Location: ../index.php');
+  header('Location: ../');
 }
 ?>
