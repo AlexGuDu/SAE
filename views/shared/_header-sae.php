@@ -44,7 +44,7 @@ $stament->execute();
         <div class="container" id="info-alumno">
             <div class="row justify-content-end  top-buffer-alumno">
                 <div class="col-4">
-                    <p class="text-center">Matr&Iacute;cula</p>
+                    <p class="text-center">Matr&iacute;cula</p>
                     <img src="../assets/img/linea-verde.png" class="img-fluid">
                     <p class="text-center" id="matricula"><?php foreach ($stament as $filas) :
                       echo $filas['Matricula'];
