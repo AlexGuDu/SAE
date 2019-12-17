@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Menu</title>
+    <title>Actividades registradas</title>
     <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/menu.css">
     <link rel="shortcut icon" href="../../assets/img/favicon.ico" type="image/x-icon">
@@ -12,7 +12,7 @@
 </head>
 
 
-<body  onload="ConsultaDeAlumnos()">
+<body onload="ConsultaDeAlumnos()">
     <br>
     <!-- HEADER -->
     <div id="Header">

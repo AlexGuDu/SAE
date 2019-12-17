@@ -9,7 +9,7 @@ if(!isset($_SESSION['matricula'])){
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>Solicitud de Permiso</title>
+    <title>Solicitud de permiso</title>
     <!-- Bootstrap and CSS styles -->
     <link href="../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/iconic/css/open-iconic-bootstrap.min.css" rel="stylesheet">
