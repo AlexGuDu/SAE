@@ -1,6 +1,11 @@
 <?php
 require '../../config/connection.php';
 session_start();
+
+if(!isset($_SESSION['numEmpAdministrador'])){
+    $_SESSION['error']=2;
+      header('Location: ../index.php');
+  }
  ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

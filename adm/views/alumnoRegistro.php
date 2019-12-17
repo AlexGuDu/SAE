@@ -1,6 +1,10 @@
 <?php
 require_once '../../config/connection.php';
 Session_start();
+if(!isset($_SESSION['numEmpAdministrador'])){
+  $_SESSION['error']=2;
+	header('Location: ../index.php');
+}
 $sql="SELECT * FROM alumno where Matricula= :matricula";
 $stament = $dbh->prepare($sql);
 $stament->bindParam(':matricula', $_SESSION['matricula']);
