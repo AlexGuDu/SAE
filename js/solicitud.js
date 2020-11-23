@@ -5,6 +5,10 @@ function soloLetras(e) {
     letras = "áéíóúabcdefghijklmnñopqrstuvwxyz-,.";
     especiales = [8, 37, 39, 46];
 
+    if (key == 32){
+      return " ";
+    }
+    
     tecla_especial = false
     for(var i in especiales) {
         if(key == especiales[i]) {
