@@ -36,25 +36,26 @@ if(!isset($_SESSION['numEmpAdministrador'])){
     <br>
 
     <div id="comentarioAceptarS" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+      <div id="entirePopup" class="col-md-4 col-lg-4">
         <div class="container">
           <div class="row">
-            <div class="col-md-1">
-              <input type="button" name="" class="boton-regresar" id="exit_sol_aceptar">
+            <div class="col-md-2">
+              <input type="button" name="" class="boton-regresar" id="exit_sol_aceptar" style="padding: 20px;">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <h1>Aceptar solicitud</h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
               <label class="preview_label">Comentario</label><br>
               <textarea id="com_sol_aceptar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col-md-3">
-              <input type="button" id="sol_aceptar" name="boton"  class="botonsm boton-add" value=" " >
+            <div class="col-md-12">
+              <input type="button" id="sol_aceptar" name="boton"  class="botonsm boton-add float-right" value=" " >
             </div>
           </div>
         </div>
@@ -62,27 +63,26 @@ if(!isset($_SESSION['numEmpAdministrador'])){
     </div>
 
     <div id="comentarioDenegarS" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+      <div id="entirePopup" class="col-md-4 col-lg-4">
         <div class="container">
           <div class="row">
-            <div class="col-md-1">
-              <div class="col-md-1">
-                <input type="button" name="" class="boton-regresar" id="exit_sol_denegar">
-              </div>
+            <div class="col-md-2">
+                <input type="button" name="" class="boton-regresar" id="exit_sol_denegar" style="padding: 20px">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <h1>Rechazar solicitud</h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
               <label class="preview_label">Comentario</label><br>
               <textarea id="com_sol_denegar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col-md-3">
-              <input type="button" id="sol_denegar" name="boton" class="botonsm boton-del" value=" " >
+            <div class="col-md-12">
+              <input type="button" id="sol_denegar" name="boton" class="botonsm boton-del float-right" value=" " >
             </div>
           </div>
         </div>
@@ -90,25 +90,26 @@ if(!isset($_SESSION['numEmpAdministrador'])){
     </div>
 
     <div id="comentarioAceptarR" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+      <div id="entirePopup" class="col-md-4 col-lg-4">
         <div class="container">
           <div class="row">
-            <div class="col-md-1">
-              <input type="button" name="" class="boton-regresar" id="exit_reg_aceptar">
+            <div class="col-md-2">
+              <input type="button" name="" class="boton-regresar" id="exit_reg_aceptar" style="padding: 20px;">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <h1>Aceptar registro</h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
               <label class="preview_label">Comentario</label><br>
               <textarea id="com_reg_aceptar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col-md-3">
-              <input type="button" id="reg_aceptar" name="boton" class="botonsm boton-add" value=" " >
+            <div class="col-md-12">
+              <input type="button" id="reg_aceptar" name="boton" class="botonsm boton-add float-right" value=" " >
             </div>
           </div>
         </div>
@@ -116,27 +117,26 @@ if(!isset($_SESSION['numEmpAdministrador'])){
     </div>
 
     <div id="comentarioDenegarR" class="modal">
-      <div id="entirePopup" class="col-md-6 col-lg-10">
+      <div id="entirePopup" class="col-md-4 col-lg-4">
         <div class="container">
           <div class="row">
-            <div class="col-md-1">
-              <div class="col-md-1">
-                <input type="button" name="" class="boton-regresar" id="exit_reg_denegar">
-              </div>
+            <div class="col-md-2">
+              <input type="button" name="" class="boton-regresar" id="exit_reg_denegar" style="padding: 20px;">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <h1>Rechazar registro</h1>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-12">
               <label class="preview_label">Comentario</label><br>
               <textarea id="com_reg_denegar" name="comentario" rows="8" cols="80"></textarea>
             </div>
           </div>
+          <br>
           <div class="row">
-            <div class="col-md-3">
-              <input type="button" id="reg_denegar" name="boton" class="botonsm boton-del" value=" " >
+            <div class="col-md-12">
+              <input type="button" id="reg_denegar" name="boton" class="botonsm boton-del float-right" value=" " >
             </div>
           </div>
         </div>
